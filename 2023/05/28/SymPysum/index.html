@@ -2,20 +2,28 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
     <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/mhchem.min.js" integrity="sha384-LIgAiYlGSAdpNC9+YDjDPF6JeS/RRIumtNo0CmyQERZ/+g0h9MbuYQwf/5pQ4Y4M" crossorigin="anonymous"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        <script type="text/x-mathjax-config">
+
+</script>
         <script>
             // 对所有链接跳转事件绑定pjax容器pjax-container 
             $(document).pjax('a', '#pjax-container', {
             fragment:'#pjax-container',
             timeout:8000
             });   
-        </script>  
+        </script>
         <!--pjax：防止跳转页面音乐暂停-->
         <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         <meta charset="utf-8" />
-
         <title>SymPy 相關功能整理 | 棉花糖的小窩</title>
-        <meta name="author" content="Marumallow" />
-        <meta name="description" content="期末考我要炸了!!!" />
+        <meta name="author" content="棉花糖" />
+        <meta name="description" content="點文章跳轉的時候會播歌請注意一下" />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <link rel="icon" href="/images/favicon.png" />
@@ -62,7 +70,7 @@
   Vue.component('aplayer', VueAPlayer)
 </script>
 
-
+        
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
         <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
@@ -81,13 +89,24 @@
         <script>
             $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
         </script>
-    <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+        <canvas
+        id="fireworks"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"
+        ></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+        <div id="cursor"></div>
+        <link rel="stylesheet" href="/css/cursor.min.css">
+        <script src="/js/cursor.min.js"></script>
+
+    <!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
 <script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 <script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
 </head>
     <body>
         <div id="layout">
-            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
             <div id="pjax-container">
                 <!-- 我使用的APlayer本体 -->
                     <div class="aplayer" 
@@ -101,6 +120,19 @@
                         data-theme="#cc543a" 
                         data-preload="none ">
                     </div>
+            <script>
+                // 对所有链接跳转事件绑定pjax容器pjax-container 
+                $(document).pjax('a', '#pjax-container', {
+                fragment:'#pjax-container',
+                timeout:8000
+                });   
+            </script>
+            
+            <!--pjax：防止跳转页面音乐暂停-->
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+            <meta charset="utf-8" />
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+
             <transition name="fade">
                 <div id="loading" v-show="loading">
                     <div id="loading-circle">
@@ -221,7 +253,8 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div class="article">
+                    
+<div class="article">
     <!--pjax：防止跳转页面音乐暂停-->
     <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
@@ -229,6 +262,7 @@
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
     <!-- require MetingJS -->
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
     <div>
         <h1>SymPy 相關功能整理</h1>
     </div>
@@ -257,12 +291,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #00a596">期末考</a>
+                <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ff7d73">期末考</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #ffa2c4">講義</a>
+                <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #00bcd4">講義</a>
             </span>
             
         </span>
@@ -271,187 +305,235 @@
     
     <div class="content" v-pre>
         
-    <div id="aplayer-ypEtJHLK" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
-<h1><span id="symbolic-mathematics-in-python-with-sympy">Symbolic Mathematics in Python with <code>SymPy</code></span></h1><h2><span id="前言">前言</span></h2><ul>
+    <div id="aplayer-sPAPcDsG" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<h1><span id="symbolic-mathematics-in-python-with-sympy"> Symbolic Mathematics in Python with <code>SymPy</code></span></h1>
+<h2><span id="前言"> 前言</span></h2>
+<ul>
 <li><code>SymPy</code> 是一款將編碼轉為可執行數學演算的 <code>Python</code> 套件。以其易執行的可做為的替代品，例如 <code>Mathematica</code>, <code>Maple</code>, <code>Sage</code> 等等。</li>
 <li><code>SymPy</code> 基本上全部建置在 <code>Python</code> 裡並不需要載額外封包。</li>
 </ul>
-<h2><span id="using-sympy-as-a-calculator">Using <code>SymPy</code> as a calculator</span></h2><pre><code class="python">import sympy as sp
+<h2><span id="using-sympy-as-a-calculator"> Using <code>SymPy</code> as a calculator</span></h2>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">import</span> sympy <span class="hljs-keyword">as</span> sp
 </code></pre>
-<h3><span id="1-sympy-的基本運算">1. <code>SymPy</code> 的基本運算</span></h3><h4><span id="除法">除法</span></h4><pre><code class="python">u = sp.Integer(24)
-u/8, u/7
-## Output: (3, 24/7)
+<h3><span id="1-sympy-的基本運算"> 1. <code>SymPy</code> 的基本運算</span></h3>
+<h4><span id="除法"> 除法</span></h4>
+<pre class="highlight"><code class="python">u = sp.Integer(<span class="hljs-number">24</span>)
+u/<span class="hljs-number">8</span>, u/<span class="hljs-number">7</span>
+<span class="hljs-comment">## Output: (3, 24/7)</span>
 </code></pre>
-<h4><span id="rational-class">Rational class</span></h4><p>用分數的形式呈現</p>
-<pre><code class="python">a = sp.Rational(1, 2)
-a, a*2
-## Output: (1/2, 1)
+<h4><span id="rational-class"> Rational class</span></h4>
+<p>用分數的形式呈現</p>
+<pre class="highlight"><code class="python">a = sp.Rational(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
+a, a*<span class="hljs-number">2</span>
+<span class="hljs-comment">## Output: (1/2, 1)</span>
 </code></pre>
-<h4><span id="float-class">Float class</span></h4><p>用浮點數的形式呈現</p>
-<pre><code class="python">sp.Float(3.53) + sp.Float(3)
-## Output: 6.53
+<h4><span id="float-class"> Float class</span></h4>
+<p>用浮點數的形式呈現</p>
+<pre class="highlight"><code class="python">sp.Float(<span class="hljs-number">3.53</span>) + sp.Float(<span class="hljs-number">3</span>)
+<span class="hljs-comment">## Output: 6.53</span>
 </code></pre>
 <p>在一般的 <code>Python</code> 中，浮點數的運算會有誤差，但在 <code>SymPy</code> 中，浮點數的運算會是精確的。</p>
-<pre><code class="python">3.53 + 3
-## Output: 6.529999999999999
+<pre class="highlight"><code class="python"><span class="hljs-number">3.53</span> + <span class="hljs-number">3</span>
+<span class="hljs-comment">## Output: 6.529999999999999</span>
 </code></pre>
-<h4><span id="sympy-中的常數"><code>SymPy</code> 中的常數</span></h4><p>SymPy 中的常數是以 <code>sp.常數名稱</code> 的形式呈現，例如 <code>sp.pi</code>、<code>sp.E</code>、<code>sp.I</code> 等等。<br>如果要將常數轉為浮點數，可以使用 <code>evalf()</code> 函數。</p>
-<pre><code class="python">sp.pi**2, sp.pi.evalf()
-## Output: (pi**2, 3.14159265358979)
-(sp.pi + sp.exp(1)).evalf()
-## Output: 5.85987448204884
+<h4><span id="sympy-中的常數"> <code>SymPy</code> 中的常數</span></h4>
+<p>SymPy 中的常數是以 <code>sp.常數名稱</code> 的形式呈現，例如 <code>sp.pi</code>、<code>sp.E</code>、<code>sp.I</code> 等等。<br>
+如果要將常數轉為浮點數，可以使用 <code>evalf()</code> 函數。</p>
+<pre class="highlight"><code class="python">sp.pi**<span class="hljs-number">2</span>, sp.pi.evalf()
+<span class="hljs-comment">## Output: (pi**2, 3.14159265358979)</span>
+(sp.pi + sp.exp(<span class="hljs-number">1</span>)).evalf()
+<span class="hljs-comment">## Output: 5.85987448204884</span>
 </code></pre>
-<h4><span id="表達特定位數的浮點數">表達特定位數的浮點數</span></h4><pre><code class="python">sqrt2 = sp.sqrt(2).evalf(10)
+<h4><span id="表達特定位數的浮點數"> 表達特定位數的浮點數</span></h4>
+<pre class="highlight"><code class="python">sqrt2 = sp.sqrt(<span class="hljs-number">2</span>).evalf(<span class="hljs-number">10</span>)
 sqrt2
-## Output: 1.414213562
+<span class="hljs-comment">## Output: 1.414213562</span>
 </code></pre>
-<h4><span id="sympy-中的無限大"><code>SymPy</code> 中的無限大</span></h4><pre><code class="python">sp.oo
+<h4><span id="sympy-中的無限大"> <code>SymPy</code> 中的無限大</span></h4>
+<pre class="highlight"><code class="python">sp.oo
 </code></pre>
-<h2><span id="defining-symbols-and-symbolic-operations">Defining symbols and symbolic operations</span></h2><h3><span id="定義符號">定義符號</span></h3><p>可以使用 <code>Symbol()</code> 函數來定義符號</p>
-<pre><code class="python">x = sp.Symbol(&#39;x&#39;)
+<h2><span id="defining-symbols-and-symbolic-operations"> Defining symbols and symbolic operations</span></h2>
+<h3><span id="定義符號"> 定義符號</span></h3>
+<p>可以使用 <code>Symbol()</code> 函數來定義符號</p>
+<pre class="highlight"><code class="python">x = sp.Symbol(<span class="hljs-string">&#x27;x&#x27;</span>)
 </code></pre>
-<h3><span id="定義多個符號">定義多個符號</span></h3><p>定義多個符號時，可以使用 <code>symbols()</code> 函數</p>
-<pre><code class="python">x,y = sp.symbols(&#39;x,y&#39;)
+<h3><span id="定義多個符號"> 定義多個符號</span></h3>
+<p>定義多個符號時，可以使用 <code>symbols()</code> 函數</p>
+<pre class="highlight"><code class="python">x,y = sp.symbols(<span class="hljs-string">&#x27;x,y&#x27;</span>)
 </code></pre>
-<h3><span id="展開式">展開式</span></h3><pre><code class="python">p = (x + 2)*(x + 3)
+<h3><span id="展開式"> 展開式</span></h3>
+<pre class="highlight"><code class="python">p = (x + <span class="hljs-number">2</span>)*(x + <span class="hljs-number">3</span>)
 p2 = sp.expand(p)
-## Output: x**2 + 5*x + 6
+<span class="hljs-comment">## Output: x**2 + 5*x + 6</span>
 </code></pre>
-<h3><span id="因式分解">因式分解</span></h3><pre><code class="python">sp.factor(p2)
-## Output: (x + 2)*(x + 3)
+<h3><span id="因式分解"> 因式分解</span></h3>
+<pre class="highlight"><code class="python">sp.factor(p2)
+<span class="hljs-comment">## Output: (x + 2)*(x + 3)</span>
 </code></pre>
-<h3><span id="x次方由小到大排列">x次方由小到大排列</span></h3><pre><code class="python">sp.init_printing(order=&#39;rev-lex&#39;)
+<h3><span id="x次方由小到大排列"> x次方由小到大排列</span></h3>
+<pre class="highlight"><code class="python">sp.init_printing(order=<span class="hljs-string">&#x27;rev-lex&#x27;</span>)
 p2
-## Output: 6 + 5*x + x**2
+<span class="hljs-comment">## Output: 6 + 5*x + x**2</span>
 </code></pre>
-<pre><code class="python">sp.init_printing(order=&#39;lex&#39;)
-x = sp.Symbol(&#39;x&#39;)
-y = sp.Symbol(&#39;y&#39;)
+<pre class="highlight"><code class="python">sp.init_printing(order=<span class="hljs-string">&#x27;lex&#x27;</span>)
+x = sp.Symbol(<span class="hljs-string">&#x27;x&#x27;</span>)
+y = sp.Symbol(<span class="hljs-string">&#x27;y&#x27;</span>)
 p3 = x*x + x*y + x*y + y*y
 p3
-## Output: x**2 + 2*x*y + y**2
+<span class="hljs-comment">## Output: x**2 + 2*x*y + y**2</span>
 </code></pre>
-<h3><span id="帶入值">帶入值</span></h3><pre><code class="python">p3.subs(&#123;x:1, y:2&#125;) # We use dictionary to specify the values of x and y
-## Output: 9
+<h3><span id="帶入值"> 帶入值</span></h3>
+<pre class="highlight"><code class="python">p3.subs(&#123;x:<span class="hljs-number">1</span>, y:<span class="hljs-number">2</span>&#125;) <span class="hljs-comment"># We use dictionary to specify the values of x and y</span>
+<span class="hljs-comment">## Output: 9</span>
 </code></pre>
-<h3><span id="簡化">簡化</span></h3><p>用<code>simplify()</code>函數來簡化</p>
-<pre><code class="python">sp.simplify(p3.subs(&#123;x:1-y&#125;)) 
-# The result turns out to be 1 because the other terms of the expression cancel each other.
-## Output: 1
+<h3><span id="簡化"> 簡化</span></h3>
+<p>用<code>simplify()</code>函數來簡化</p>
+<pre class="highlight"><code class="python">sp.simplify(p3.subs(&#123;x:<span class="hljs-number">1</span>-y&#125;)) 
+<span class="hljs-comment"># The result turns out to be 1 because the other terms of the expression cancel each other.</span>
+<span class="hljs-comment">## Output: 1</span>
 </code></pre>
-<h2><span id="solving-equations-symbolically">Solving equations symbolically</span></h2><h3><span id="解方程式">解方程式</span></h3><p><code>solve()</code>函數可以解方程式</p>
-<pre><code class="python">x = sp.Symbol(&#39;x&#39;)
-expr = x - 5 - 7
+<h2><span id="solving-equations-symbolically"> Solving equations symbolically</span></h2>
+<h3><span id="解方程式"> 解方程式</span></h3>
+<p><code>solve()</code>函數可以解方程式</p>
+<pre class="highlight"><code class="python">x = sp.Symbol(<span class="hljs-string">&#x27;x&#x27;</span>)
+expr = x - <span class="hljs-number">5</span> - <span class="hljs-number">7</span>
 sp.solve(expr)
-## Output: [12]
+<span class="hljs-comment">## Output: [12]</span>
 </code></pre>
-<h4><span id="字典形式">字典形式</span></h4><p>用<code>dict=True</code>得到字典形式</p>
-<pre><code class="python">x = sp.Symbol(&#39;x&#39;)
-expr = x**2 + 5*x + 4
-sp.solve(expr), sp.solve(expr, dict=True)
-## Output: ([-4, -1], [&#123;x: -4&#125;, &#123;x: -1&#125;])
+<h4><span id="字典形式"> 字典形式</span></h4>
+<p>用<code>dict=True</code>得到字典形式</p>
+<pre class="highlight"><code class="python">x = sp.Symbol(<span class="hljs-string">&#x27;x&#x27;</span>)
+expr = x**<span class="hljs-number">2</span> + <span class="hljs-number">5</span>*x + <span class="hljs-number">4</span>
+sp.solve(expr), sp.solve(expr, <span class="hljs-built_in">dict</span>=<span class="hljs-literal">True</span>)
+<span class="hljs-comment">## Output: ([-4, -1], [&#123;x: -4&#125;, &#123;x: -1&#125;])</span>
 </code></pre>
-<h3><span id="解方程式組">解方程式組</span></h3><pre><code class="python">x = sp.Symbol(&#39;x&#39;)
-y = sp.Symbol(&#39;y&#39;)
-expr1 = 2*x + 3*y - 6
-expr2 = 3*x + 2*y - 12
+<h3><span id="解方程式組"> 解方程式組</span></h3>
+<pre class="highlight"><code class="python">x = sp.Symbol(<span class="hljs-string">&#x27;x&#x27;</span>)
+y = sp.Symbol(<span class="hljs-string">&#x27;y&#x27;</span>)
+expr1 = <span class="hljs-number">2</span>*x + <span class="hljs-number">3</span>*y - <span class="hljs-number">6</span>
+expr2 = <span class="hljs-number">3</span>*x + <span class="hljs-number">2</span>*y - <span class="hljs-number">12</span>
 
-sp.solve((expr1, expr2), dict=True)
-## Output: [&#123;x: 24/5, y: -6/5&#125;]
+sp.solve((expr1, expr2), <span class="hljs-built_in">dict</span>=<span class="hljs-literal">True</span>)
+<span class="hljs-comment">## Output: [&#123;x: 24/5, y: -6/5&#125;]</span>
 </code></pre>
-<h4><span id="解的形式">解的形式</span></h4><p><code>nsolve()</code> -&gt; 帶著符號的解<br><code>nroots()</code> -&gt; 數值解</p>
-<pre><code class="python">expr1 = x**3 + 2*x**2 -1
-sp.solve(expr1), sp.nroots(expr1, n=3) # n is the number of digits to calculate
+<h4><span id="解的形式"> 解的形式</span></h4>
+<p><code>nsolve()</code> -&gt; 帶著符號的解<br>
+<code>nroots()</code> -&gt; 數值解</p>
+<pre class="highlight"><code class="python">expr1 = x**<span class="hljs-number">3</span> + <span class="hljs-number">2</span>*x**<span class="hljs-number">2</span> -<span class="hljs-number">1</span>
+sp.solve(expr1), sp.nroots(expr1, n=<span class="hljs-number">3</span>) <span class="hljs-comment"># n is the number of digits to calculate</span>
 </code></pre>
-<h2><span id="plotting-using-sympy">Plotting using <code>SymPy</code></span></h2><p>可以用<code>plot()</code>函數來畫圖<br>加上設定<code>title</code>、<code>xlabel</code>、<code>ylabel</code>等</p>
-<pre><code class="python">x=sp.Symbol(&#39;x&#39;)
-sp.plot(2*x + 3, (x, -5, 5), title=&#39;A Line&#39;, xlabel=&#39;x&#39;, ylabel=&#39;2x+3&#39;);
+<h2><span id="plotting-using-sympy"> Plotting using <code>SymPy</code></span></h2>
+<p>可以用<code>plot()</code>函數來畫圖<br>
+加上設定<code>title</code>、<code>xlabel</code>、<code>ylabel</code>等</p>
+<pre class="highlight"><code class="python">x=sp.Symbol(<span class="hljs-string">&#x27;x&#x27;</span>)
+sp.plot(<span class="hljs-number">2</span>*x + <span class="hljs-number">3</span>, (x, -<span class="hljs-number">5</span>, <span class="hljs-number">5</span>), title=<span class="hljs-string">&#x27;A Line&#x27;</span>, xlabel=<span class="hljs-string">&#x27;x&#x27;</span>, ylabel=<span class="hljs-string">&#x27;2x+3&#x27;</span>);
 </code></pre>
-<h2><span id="calculus-with-sympy">Calculus with <code>SymPy</code></span></h2><h3><span id="極限">極限</span></h3><pre><code class="python">x = sp.Symbol(&#39;x&#39;)
-l = sp.Limit(1/x, x, sp.oo) # (function, variable, limit)
+<h2><span id="calculus-with-sympy"> Calculus with <code>SymPy</code></span></h2>
+<h3><span id="極限"> 極限</span></h3>
+<pre class="highlight"><code class="python">x = sp.Symbol(<span class="hljs-string">&#x27;x&#x27;</span>)
+l = sp.Limit(<span class="hljs-number">1</span>/x, x, sp.oo) <span class="hljs-comment"># (function, variable, limit)</span>
 </code></pre>
-<h4><span id="極限的實值">極限的實值</span></h4><pre><code class="python">l.doit()
-## Output: 0
+<h4><span id="極限的實值"> 極限的實值</span></h4>
+<pre class="highlight"><code class="python">l.doit()
+<span class="hljs-comment">## Output: 0</span>
 </code></pre>
-<h4><span id="負極限">負極限</span></h4><pre><code class="python">sp.Limit(1/x, x, 0, dir=&#39;-&#39;).doit()
-## Output: -oo
+<h4><span id="負極限"> 負極限</span></h4>
+<pre class="highlight"><code class="python">sp.Limit(<span class="hljs-number">1</span>/x, x, <span class="hljs-number">0</span>, <span class="hljs-built_in">dir</span>=<span class="hljs-string">&#x27;-&#x27;</span>).doit()
+<span class="hljs-comment">## Output: -oo</span>
 </code></pre>
-<h3><span id="微分">微分</span></h3><pre><code class="python">t = sp.Symbol(&#39;t&#39;)
-St = 5*t**2 + 2*t + 8
+<h3><span id="微分"> 微分</span></h3>
+<pre class="highlight"><code class="python">t = sp.Symbol(<span class="hljs-string">&#x27;t&#x27;</span>)
+St = <span class="hljs-number">5</span>*t**<span class="hljs-number">2</span> + <span class="hljs-number">2</span>*t + <span class="hljs-number">8</span>
 sp.Derivative(St, t)
-## Output: (d/dt)(5*t**2 + 2*t + 8, t)
+<span class="hljs-comment">## Output: (d/dt)(5*t**2 + 2*t + 8, t)</span>
 </code></pre>
-<h4><span id="微分的結果">微分的結果</span></h4><pre><code class="python">sp.Derivative(St, t).doit()
-## Output: 10*t + 2
+<h4><span id="微分的結果"> 微分的結果</span></h4>
+<pre class="highlight"><code class="python">sp.Derivative(St, t).doit()
+<span class="hljs-comment">## Output: 10*t + 2</span>
 </code></pre>
 <p>我們也可以直接使用 <code>diff()</code> 函數來進行微分</p>
-<pre><code class="python">sp.diff(St, t)
-## Output: 10*t + 2
+<pre class="highlight"><code class="python">sp.diff(St, t)
+<span class="hljs-comment">## Output: 10*t + 2</span>
 </code></pre>
-<h4><span id="帶入">帶入</span></h4><pre><code class="python">t1 = sp.Symbol(&#39;t1&#39;)
-d.doit().subs(&#123;t:t1&#125;), d.doit().subs(&#123;t:1&#125;)
-## Output: (10*t1 + 2, 12)
+<h4><span id="帶入"> 帶入</span></h4>
+<pre class="highlight"><code class="python">t1 = sp.Symbol(<span class="hljs-string">&#x27;t1&#x27;</span>)
+d.doit().subs(&#123;t:t1&#125;), d.doit().subs(&#123;t:<span class="hljs-number">1</span>&#125;)
+<span class="hljs-comment">## Output: (10*t1 + 2, 12)</span>
 </code></pre>
-<h3><span id="finding-the-integrals-of-functions">Finding the integrals of functions</span></h3><h4><span id="積分">積分</span></h4><pre><code class="python">x = sp.Symbol(&#39;x&#39;)
+<h3><span id="finding-the-integrals-of-functions"> Finding the integrals of functions</span></h3>
+<h4><span id="積分"> 積分</span></h4>
+<pre class="highlight"><code class="python">x = sp.Symbol(<span class="hljs-string">&#x27;x&#x27;</span>)
 sp.Integral(sp.sin(x), x)
-## Output: Integral(sin(x), x)dx
+<span class="hljs-comment">## Output: Integral(sin(x), x)dx</span>
 </code></pre>
-<h5><span id="積分的結果">積分的結果</span></h5><pre><code class="python">sp.Integral(sp.sin(x), x).doit()
-## Output: -cos(x)
+<h5><span id="積分的結果"> 積分的結果</span></h5>
+<pre class="highlight"><code class="python">sp.Integral(sp.sin(x), x).doit()
+<span class="hljs-comment">## Output: -cos(x)</span>
 </code></pre>
 <p>同樣的，我們也可以直接使用 <code>integrate()</code> 函數來進行積分</p>
-<pre><code class="python">sp.integrate(sp.sin(x), x), sp.integrate(sp.log(x), x)
-## Output: (-cos(x), x*log(x) - x)
+<pre class="highlight"><code class="python">sp.integrate(sp.sin(x), x), sp.integrate(sp.log(x), x)
+<span class="hljs-comment">## Output: (-cos(x), x*log(x) - x)</span>
 </code></pre>
-<h4><span id="定積分">定積分</span></h4><p>要計算定積分，可以使用 <code>Integral()</code> 函數，並且指定積分的範圍</p>
-<pre><code class="python"># sp.Integral(sp.sin(x), (x, 0, sp.pi / 2)).doit()
-sp.integrate(sp.sin(x), (x, 0, sp.pi / 2))
-## Output: 1
+<h4><span id="定積分"> 定積分</span></h4>
+<p>要計算定積分，可以使用 <code>Integral()</code> 函數，並且指定積分的範圍</p>
+<pre class="highlight"><code class="python"><span class="hljs-comment"># sp.Integral(sp.sin(x), (x, 0, sp.pi / 2)).doit()</span>
+sp.integrate(sp.sin(x), (x, <span class="hljs-number">0</span>, sp.pi / <span class="hljs-number">2</span>))
+<span class="hljs-comment">## Output: 1</span>
 </code></pre>
 <p>反常積分也可以使用</p>
-<pre><code class="python">sp.integrate(sp.exp(-x), (x, 0, sp.oo))
-## Output: 1
+<pre class="highlight"><code class="python">sp.integrate(sp.exp(-x), (x, <span class="hljs-number">0</span>, sp.oo))
+<span class="hljs-comment">## Output: 1</span>
 </code></pre>
-<h3><span id="序列展開">序列展開</span></h3><p>我們可以使用 <code>series()</code> 函數來展開序列</p>
-<pre><code class="python">sp.series(sp.cos(x), x, 0, 10)
-## Output: 1 - x**2/2 + x**4/24 - x**6/720 + x**8/40320 + O(x**10)
+<h3><span id="序列展開"> 序列展開</span></h3>
+<p>我們可以使用 <code>series()</code> 函數來展開序列</p>
+<pre class="highlight"><code class="python">sp.series(sp.cos(x), x, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>)
+<span class="hljs-comment">## Output: 1 - x**2/2 + x**4/24 - x**6/720 + x**8/40320 + O(x**10)</span>
 </code></pre>
 <p>也可以移除 <code>O(x**10)</code> 的部分</p>
-<pre><code class="python">sp.series(sp.cos(x), x, 0, 10).removeO()
-## Output: 1 - x**2/2 + x**4/24 - x**6/720 + x**8/40320
+<pre class="highlight"><code class="python">sp.series(sp.cos(x), x, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>).removeO()
+<span class="hljs-comment">## Output: 1 - x**2/2 + x**4/24 - x**6/720 + x**8/40320</span>
 </code></pre>
-<h3><span id="lambafy">lambafy()</span></h3><p>lambafy() 函數可以將符號函數轉換成數值函數</p>
-<pre><code class="python">expr = sp.series(sp.cos(x), x, 0, 10).removeO()
-f = sp.utilities.lambdify(x, expr, &#39;numpy&#39;)
-f(0)
-## Output: 1.0
+<h3><span id="lambafy"> lambafy()</span></h3>
+<p>lambafy() 函數可以將符號函數轉換成數值函數</p>
+<pre class="highlight"><code class="python">expr = sp.series(sp.cos(x), x, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>).removeO()
+f = sp.utilities.lambdify(x, expr, <span class="hljs-string">&#x27;numpy&#x27;</span>)
+f(<span class="hljs-number">0</span>)
+<span class="hljs-comment">## Output: 1.0</span>
 </code></pre>
-<h2><span id="linear-algebra-with-sympy">Linear algebra with <code>SymPy</code></span></h2><p>建立矩陣</p>
-<pre><code class="python">m1 = sp.Matrix([[a,b,c], [x, y, z], [a, b, c]])
+<h2><span id="linear-algebra-with-sympy"> Linear algebra with <code>SymPy</code></span></h2>
+<p>建立矩陣</p>
+<pre class="highlight"><code class="python">m1 = sp.Matrix([[a,b,c], [x, y, z], [a, b, c]])
 m1
-## Output: Matrix([
-## [a, b, c],
-## [x, y, z],
-## [a, b, c]])
+<span class="hljs-comment">## Output: Matrix([</span>
+<span class="hljs-comment">## [a, b, c],</span>
+<span class="hljs-comment">## [x, y, z],</span>
+<span class="hljs-comment">## [a, b, c]])</span>
 </code></pre>
-<h3><span id="對角">對角</span></h3><p>用元素建立對角矩陣</p>
-<pre><code class="python">m2 = sp.diag(a,b,c)
+<h3><span id="對角"> 對角</span></h3>
+<p>用元素建立對角矩陣</p>
+<pre class="highlight"><code class="python">m2 = sp.diag(a,b,c)
 m2
-## Output: Matrix([
-## [a, 0, 0],
-## [0, b, 0],
-## [0, 0, c]])
+<span class="hljs-comment">## Output: Matrix([</span>
+<span class="hljs-comment">## [a, 0, 0],</span>
+<span class="hljs-comment">## [0, b, 0],</span>
+<span class="hljs-comment">## [0, 0, c]])</span>
 </code></pre>
-<h3><span id="矩陣運算">矩陣運算</span></h3><h4><span id="相加">相加</span></h4><pre><code class="python">3*m1 + m2
+<h3><span id="矩陣運算"> 矩陣運算</span></h3>
+<h4><span id="相加"> 相加</span></h4>
+<pre class="highlight"><code class="python"><span class="hljs-number">3</span>*m1 + m2
 </code></pre>
-<h4><span id="相乘">相乘</span></h4><pre><code class="python">m1*m2.T
+<h4><span id="相乘"> 相乘</span></h4>
+<pre class="highlight"><code class="python">m1*m2.T
 </code></pre>
-<h3><span id="反矩陣">反矩陣</span></h3><pre><code class="python">m2.inv()
+<h3><span id="反矩陣"> 反矩陣</span></h3>
+<pre class="highlight"><code class="python">m2.inv()
 </code></pre>
-<h3><span id="找特徵值">找特徵值</span></h3><pre><code class="python">m2.eigenvals()
-## Output: &#123;a: 1, b: 1, c: 1&#125;
+<h3><span id="找特徵值"> 找特徵值</span></h3>
+<pre class="highlight"><code class="python">m2.eigenvals()
+<span class="hljs-comment">## Output: &#123;a: 1, b: 1, c: 1&#125;</span>
 </code></pre>
-<h3><span id="找特徵向量">找特徵向量</span></h3><pre><code class="python">m2.eigenvects()
+<h3><span id="找特徵向量"> 找特徵向量</span></h3>
+<pre class="highlight"><code class="python">m2.eigenvects()
 </code></pre>
 
     </div>
@@ -467,6 +549,7 @@ m2
     
     
     
+    
 </div>
                     <footer id="footer">
     <div id="footer-wrap">
@@ -476,7 +559,7 @@ m2
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            &commat;Marumallow
+            &commat;棉花糖
         </div>
         <div>
             Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
@@ -485,19 +568,21 @@ m2
         
     </div>
 </footer>
-
+<!--頁面點擊小紅心-->
+<script type="text/javascript" src="/love.js"></script>
                 </div>
             </transition>
             
+                
+                
             <transition name="fade">
                 <div id="preview" ref="preview" v-show="previewShow">
                     <img id="preview-content" ref="previewContent" />
                 </div>
             </transition>
             
-                    <!--pjax：防止跳转页面音乐暂停-->
-            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         </div>
+
         <script src="/js/main.js"></script>
         
         
@@ -523,17 +608,15 @@ m2
 
 
         
-        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
         
-        <!--pjax：防止跳转页面音乐暂停-->
-        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
         <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
         <!-- require MetingJS -->
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
 
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
         <!-- require JQuery -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
         <!-- require pjax -->
@@ -544,12 +627,8 @@ m2
         <script>
             $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
         </script>
-        <!-- .css file path -->
-        <link rel="stylesheet" href="./player/index.bundle.css">
-        <!-- petite-vue CDN -->
-        <script src="https://unpkg.com/petite-vue"></script>
-        <!-- .js file path -->
-        <script src="./player/index.bundle.js"></script>
+
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/kp31/model.json"},"display":{"position":"right","width":200,"height":600},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+    
 </html>
 

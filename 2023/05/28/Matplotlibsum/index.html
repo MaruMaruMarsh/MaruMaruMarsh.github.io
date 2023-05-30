@@ -2,20 +2,28 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
     <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/mhchem.min.js" integrity="sha384-LIgAiYlGSAdpNC9+YDjDPF6JeS/RRIumtNo0CmyQERZ/+g0h9MbuYQwf/5pQ4Y4M" crossorigin="anonymous"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        <script type="text/x-mathjax-config">
+
+</script>
         <script>
             // 对所有链接跳转事件绑定pjax容器pjax-container 
             $(document).pjax('a', '#pjax-container', {
             fragment:'#pjax-container',
             timeout:8000
             });   
-        </script>  
+        </script>
         <!--pjax：防止跳转页面音乐暂停-->
         <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         <meta charset="utf-8" />
-
         <title>Matplotlib 相關功能整理 | 棉花糖的小窩</title>
-        <meta name="author" content="Marumallow" />
-        <meta name="description" content="期末考我要炸了!!!" />
+        <meta name="author" content="棉花糖" />
+        <meta name="description" content="點文章跳轉的時候會播歌請注意一下" />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <link rel="icon" href="/images/favicon.png" />
@@ -62,7 +70,7 @@
   Vue.component('aplayer', VueAPlayer)
 </script>
 
-
+        
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
         <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
@@ -81,13 +89,24 @@
         <script>
             $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
         </script>
-    <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+        <canvas
+        id="fireworks"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"
+        ></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+        <div id="cursor"></div>
+        <link rel="stylesheet" href="/css/cursor.min.css">
+        <script src="/js/cursor.min.js"></script>
+
+    <!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
 <script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 <script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
 </head>
     <body>
         <div id="layout">
-            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
             <div id="pjax-container">
                 <!-- 我使用的APlayer本体 -->
                     <div class="aplayer" 
@@ -101,6 +120,19 @@
                         data-theme="#cc543a" 
                         data-preload="none ">
                     </div>
+            <script>
+                // 对所有链接跳转事件绑定pjax容器pjax-container 
+                $(document).pjax('a', '#pjax-container', {
+                fragment:'#pjax-container',
+                timeout:8000
+                });   
+            </script>
+            
+            <!--pjax：防止跳转页面音乐暂停-->
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+            <meta charset="utf-8" />
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+
             <transition name="fade">
                 <div id="loading" v-show="loading">
                     <div id="loading-circle">
@@ -221,7 +253,8 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div class="article">
+                    
+<div class="article">
     <!--pjax：防止跳转页面音乐暂停-->
     <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
@@ -229,6 +262,7 @@
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
     <!-- require MetingJS -->
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
     <div>
         <h1>Matplotlib 相關功能整理</h1>
     </div>
@@ -257,7 +291,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #03a9f4">期末考</a>
+                <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #00bcd4">期末考</a>
             </span>
             
             <span class="tag">
@@ -271,18 +305,21 @@
     
     <div class="content" v-pre>
         
-    <div id="aplayer-HSMQJCUR" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
-<h1><span id="visualization-with-matplotlib">Visualization with Matplotlib</span></h1><!-- toc -->
-
+    <div id="aplayer-WAUcyXtR" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<h1><span id="visualization-with-matplotlib"> Visualization with Matplotlib</span></h1>
+<!-- toc -->
 <ul>
 <li><a href="#%E4%BB%8B%E7%B4%B9">介紹</a></li>
-<li><a href="#two-interfaces-for-the-matplotlib">Two interfaces for the <code>matplotlib</code></a><ul>
+<li><a href="#two-interfaces-for-the-matplotlib">Two interfaces for the <code>matplotlib</code></a>
+<ul>
 <li><a href="#functional-interface">Functional interface</a></li>
 <li><a href="#object-oriented-interface">Object-oriented interface</a></li>
 </ul>
 </li>
-<li><a href="#simple-plots">Simple plots</a><ul>
-<li><a href="#adjusting-the-plot-line-colors-styles-and-widths">Adjusting the plot: Line colors, styles and widths</a><ul>
+<li><a href="#simple-plots">Simple plots</a>
+<ul>
+<li><a href="#adjusting-the-plot-line-colors-styles-and-widths">Adjusting the plot: Line colors, styles and widths</a>
+<ul>
 <li><a href="#line-colors">Line colors</a></li>
 <li><a href="#line-styles">Line styles</a></li>
 <li><a href="#line-widths">Line widths</a></li>
@@ -291,11 +328,13 @@
 <li><a href="#matplotlib-tips"><code>Matplotlib</code> tips</a></li>
 </ul>
 </li>
-<li><a href="#simple-scatter-plots">Simple scatter plots</a><ul>
+<li><a href="#simple-scatter-plots">Simple scatter plots</a>
+<ul>
 <li><a href="#scatter-plots-with-pltscatter">Scatter plots with <code>plt.scatter</code></a></li>
 </ul>
 </li>
-<li><a href="#density-plots">Density plots</a><ul>
+<li><a href="#density-plots">Density plots</a>
+<ul>
 <li><a href="#histograms">Histograms</a></li>
 <li><a href="#binnings">binnings</a></li>
 <li><a href="#density">Density</a></li>
@@ -303,278 +342,314 @@
 </li>
 </ul>
 </li>
-<li><a href="#advance-plot">Advance plot</a><ul>
+<li><a href="#advance-plot">Advance plot</a>
+<ul>
 <li><a href="#filling-the-area-between-lines">Filling the area between lines</a></li>
 <li><a href="#plot-in-polar-coordinate">Plot in polar coordinate</a></li>
 </ul>
 </li>
-<li><a href="#customizing-plot">Customizing Plot</a><ul>
-<li><a href="#customizing-plot-legends">Customizing plot legends</a><ul>
+<li><a href="#customizing-plot">Customizing Plot</a>
+<ul>
+<li><a href="#customizing-plot-legends">Customizing plot legends</a>
+<ul>
 <li><a href="#text-and-annotation">Text and Annotation</a></li>
 <li><a href="#customizing-ticks-and-splines">Customizing ticks and splines</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#multiple-subplots">Multiple Subplots</a><ul>
+<li><a href="#multiple-subplots">Multiple Subplots</a>
+<ul>
 <li><a href="#pltsubplots"><code>plt.subplots()</code></a></li>
 </ul>
 </li>
 </ul>
 <!-- tocstop -->
-
-<h2><span id="介紹">介紹</span></h2><ul>
-<li>a multiplatform data visualization library built on <code>NumPy</code> <code>arrays</code> and designed to work with the broader <code>SciPy</code> stack. </li>
-<li>supports numerous backends and output types, which means we can count on it to work regardless of the operating system we are using or the output format we desire. </li>
+<h2><span id="介紹"> 介紹</span></h2>
+<ul>
+<li>a multiplatform data visualization library built on <code>NumPy</code> <code>arrays</code> and designed to work with the broader <code>SciPy</code> stack.</li>
+<li>supports numerous backends and output types, which means we can count on it to work regardless of the operating system we are using or the output format we desire.</li>
 <li>It has led to a large user base.</li>
 </ul>
-<pre><code class="python">import matplotlib as mpl
-import matplotlib.pyplot as plt
-import numpy as np
-plt.style.use(&#39;seaborn-v0_8-whitegrid&#39;)
+<pre class="highlight"><code class="python"><span class="hljs-keyword">import</span> matplotlib <span class="hljs-keyword">as</span> mpl
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+plt.style.use(<span class="hljs-string">&#x27;seaborn-v0_8-whitegrid&#x27;</span>)
 </code></pre>
-<h2><span id="two-interfaces-for-the-matplotlib">Two interfaces for the <code>matplotlib</code></span></h2><ol>
+<h2><span id="two-interfaces-for-the-matplotlib"> Two interfaces for the <code>matplotlib</code></span></h2>
+<ol>
 <li>a user-friendly functional-style state-based interface</li>
 <li>a more powerful object-oriented interface.</li>
 </ol>
-<p>The simplest method, <code>plot()</code> accept two <code>arrays</code> (<code>x</code> and <code>y</code>) as inputs. </p>
-<pre><code class="python">x = np.linspace(-np.pi, np.pi, 256)
-# `x` is now a array with 256 values ranging from $-\pi$ to $\pi$ (included).
+<p>The simplest method, <code>plot()</code> accept two <code>arrays</code> (<code>x</code> and <code>y</code>) as inputs.</p>
+<pre class="highlight"><code class="python">x = np.linspace(-np.pi, np.pi, <span class="hljs-number">256</span>)
+<span class="hljs-comment"># `x` is now a array with 256 values ranging from $-\pi$ to $\pi$ (included).</span>
 C, S = np.cos(x), np.sin(x)
-# `C` is the cosine (256 values) and `S` is the sine (256 values).
+<span class="hljs-comment"># `C` is the cosine (256 values) and `S` is the sine (256 values).</span>
 </code></pre>
-<h3><span id="functional-interface">Functional interface</span></h3><pre><code class="python"># 1. create a plot figure
+<h3><span id="functional-interface"> Functional interface</span></h3>
+<pre class="highlight"><code class="python"><span class="hljs-comment"># 1. create a plot figure</span>
 plt.figure() 
 </code></pre>
-<pre><code class="python">#2. create the first of two panels and set current axis
-plt.subplot(2, 1, 1) # (rows, columns, panel number)
+<pre class="highlight"><code class="python"><span class="hljs-comment">#2. create the first of two panels and set current axis</span>
+plt.subplot(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>) <span class="hljs-comment"># (rows, columns, panel number)</span>
 plt.plot(x, S)
 </code></pre>
-<pre><code class="python"># 3. create the second panel and set current axis
-plt.subplot(2, 1, 2)
+<pre class="highlight"><code class="python"><span class="hljs-comment"># 3. create the second panel and set current axis</span>
+plt.subplot(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
 plt.plot(x, C)
 </code></pre>
-<pre><code class="python">plt.savefig(&quot;test.jpg&quot;);
-# Note that the semicolon at the end of the last line is intentional: it suppresses the textual
-# representation of the plot from the output
+<pre class="highlight"><code class="python">plt.savefig(<span class="hljs-string">&quot;test.jpg&quot;</span>);
+<span class="hljs-comment"># Note that the semicolon at the end of the last line is intentional: it suppresses the textual</span>
+<span class="hljs-comment"># representation of the plot from the output</span>
 </code></pre>
 <ul>
-<li>this interface is <em><strong>stateful</strong></em>:<br>it maintains information about the “current” figure and axes, which serve as the targets for all <code>plt</code> commands.</li>
+<li>this interface is <em><strong>stateful</strong></em>:<br>
+it maintains information about the “current” figure and axes, which serve as the targets for all <code>plt</code> commands.</li>
 </ul>
-<p>We can obtain a reference to these by using </p>
+<p>We can obtain a reference to these by using</p>
 <ul>
 <li><code>plt.gcf()</code> (get current figure)</li>
 <li><code>plt.gca()</code> (get current axes)</li>
 </ul>
-<p>Although quick and convenient for basic plots, it can lead to difficulties. For instance, </p>
+<p>Although quick and convenient for basic plots, it can lead to difficulties. For instance,</p>
 <ul>
 <li>after creating the second panel, how can we return to the first one and add something?</li>
 </ul>
-<h3><span id="object-oriented-interface">Object-oriented interface</span></h3><p>對於較複雜的情境或是需要更多控制的情境，物件導向的介面會很有幫助。<br>物件導向的介面會將圖表的每個元件都視為物件，而不是將圖表視為一個整體。</p>
-<pre><code class="python"># 1. First create a grid of plots
-# ax will be an array of two Axes objects
-fig, ax = plt.subplots(2)
+<h3><span id="object-oriented-interface"> Object-oriented interface</span></h3>
+<p>對於較複雜的情境或是需要更多控制的情境，物件導向的介面會很有幫助。<br>
+物件導向的介面會將圖表的每個元件都視為物件，而不是將圖表視為一個整體。</p>
+<pre class="highlight"><code class="python"><span class="hljs-comment"># 1. First create a grid of plots</span>
+<span class="hljs-comment"># ax will be an array of two Axes objects</span>
+fig, ax = plt.subplots(<span class="hljs-number">2</span>)
 </code></pre>
-<pre><code class="python"># 2. Call plot() method on the appropriate object
-ax[0].plot(x, S)
-ax[1].plot(x, C);
+<pre class="highlight"><code class="python"><span class="hljs-comment"># 2. Call plot() method on the appropriate object</span>
+ax[<span class="hljs-number">0</span>].plot(x, S)
+ax[<span class="hljs-number">1</span>].plot(x, C);
 </code></pre>
-<h2><span id="simple-plots">Simple plots</span></h2><p>要創建一個簡單的圖表，我們</p>
+<h2><span id="simple-plots"> Simple plots</span></h2>
+<p>要創建一個簡單的圖表，我們</p>
 <ol>
 <li>Call the <code>plt.figure()</code> to create a new figure. (optional for <code>%matplotlib inline</code>)</li>
-<li>Generate a sequence of $x$ values usually using <code>linspace()</code>.</li>
-<li>Generate a sequence of $y$ values usually by substitute the x values into a function.</li>
+<li>Generate a sequence of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span> values usually using <code>linspace()</code>.</li>
+<li>Generate a sequence of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> values usually by substitute the x values into a function.</li>
 <li>Input <code>plt.plot(x, y, [format], **kwargs)</code> where <code>[format]</code> is an (optional) format string, and <code>**kwargs</code> are (optional) keyword arguments specifying the line properties of the plot.</li>
 <li>Utilize <code>plt</code> functions to enhance the figure with features such as a title, legend, grid lines, etc.</li>
 <li>Input <code>plt.show()</code> to display the resulting figure (this step is optional in a Jupyter notebook).</li>
 </ol>
-<h3><span id="adjusting-the-plot-line-colors-styles-and-widths">Adjusting the plot: Line colors, styles and widths</span></h3><h4><span id="line-colors">Line colors</span></h4><p><code>color</code> keyword:</p>
-<pre><code class="python">plt.plot(x, np.cos(x - 0), color=&#39;blue&#39;)         # specify color by name
-plt.plot(x, np.cos(x - 1), color=&#39;g&#39;)            # short color code (rgbcmyk)
-plt.plot(x, np.cos(x - 2), color=&#39;0.75&#39;)         # grayscale between 0 and 1
-plt.plot(x, np.cos(x - 4), color=(1.0,0.2,0.3)); # RGB tuple, values 0 to 1
+<h3><span id="adjusting-the-plot-line-colors-styles-and-widths"> Adjusting the plot: Line colors, styles and widths</span></h3>
+<h4><span id="line-colors"> Line colors</span></h4>
+<p><code>color</code> keyword:</p>
+<pre class="highlight"><code class="python">plt.plot(x, np.cos(x - <span class="hljs-number">0</span>), color=<span class="hljs-string">&#x27;blue&#x27;</span>)         <span class="hljs-comment"># specify color by name</span>
+plt.plot(x, np.cos(x - <span class="hljs-number">1</span>), color=<span class="hljs-string">&#x27;g&#x27;</span>)            <span class="hljs-comment"># short color code (rgbcmyk)</span>
+plt.plot(x, np.cos(x - <span class="hljs-number">2</span>), color=<span class="hljs-string">&#x27;0.75&#x27;</span>)         <span class="hljs-comment"># grayscale between 0 and 1</span>
+plt.plot(x, np.cos(x - <span class="hljs-number">4</span>), color=(<span class="hljs-number">1.0</span>,<span class="hljs-number">0.2</span>,<span class="hljs-number">0.3</span>)); <span class="hljs-comment"># RGB tuple, values 0 to 1</span>
 </code></pre>
-<h4><span id="line-styles">Line styles</span></h4><p><code>linestyle</code> keyword:</p>
-<pre><code class="python">plt.plot(x, x - 0, linestyle=&#39;-&#39;)  # solid
-plt.plot(x, x - 1, linestyle=&#39;--&#39;) # dashed
-plt.plot(x, x - 2, linestyle=&#39;-.&#39;) # dashdot
-plt.plot(x, x - 3, linestyle=&#39;:&#39;)  # dotted
-plt.plot(x, x - 4, &#39;:k&#39;);          # dotted black 
-# You can save some keystrokes by combining these linestyle and color codes into a single non-keyword argument
+<h4><span id="line-styles"> Line styles</span></h4>
+<p><code>linestyle</code> keyword:</p>
+<pre class="highlight"><code class="python">plt.plot(x, x - <span class="hljs-number">0</span>, linestyle=<span class="hljs-string">&#x27;-&#x27;</span>)  <span class="hljs-comment"># solid</span>
+plt.plot(x, x - <span class="hljs-number">1</span>, linestyle=<span class="hljs-string">&#x27;--&#x27;</span>) <span class="hljs-comment"># dashed</span>
+plt.plot(x, x - <span class="hljs-number">2</span>, linestyle=<span class="hljs-string">&#x27;-.&#x27;</span>) <span class="hljs-comment"># dashdot</span>
+plt.plot(x, x - <span class="hljs-number">3</span>, linestyle=<span class="hljs-string">&#x27;:&#x27;</span>)  <span class="hljs-comment"># dotted</span>
+plt.plot(x, x - <span class="hljs-number">4</span>, <span class="hljs-string">&#x27;:k&#x27;</span>);          <span class="hljs-comment"># dotted black </span>
+<span class="hljs-comment"># You can save some keystrokes by combining these linestyle and color codes into a single non-keyword argument</span>
 </code></pre>
-<h4><span id="line-widths">Line widths</span></h4><p><code>linewidth</code> keyword:</p>
-<pre><code class="python">plt.plot(x, np.cos(x - 0)) 
-plt.plot(x, np.cos(x - 1), linewidth=&#39;5&#39;);
+<h4><span id="line-widths"> Line widths</span></h4>
+<p><code>linewidth</code> keyword:</p>
+<pre class="highlight"><code class="python">plt.plot(x, np.cos(x - <span class="hljs-number">0</span>)) 
+plt.plot(x, np.cos(x - <span class="hljs-number">1</span>), linewidth=<span class="hljs-string">&#x27;5&#x27;</span>);
 </code></pre>
-<h4><span id="axes-limits">Axes limits</span></h4><pre><code class="python">plt.plot(x, np.cos(x))
+<h4><span id="axes-limits"> Axes limits</span></h4>
+<pre class="highlight"><code class="python">plt.plot(x, np.cos(x))
 
-plt.xlim(-0.5, 10.5)
-plt.ylim(-1.5, 1.5);
+plt.xlim(-<span class="hljs-number">0.5</span>, <span class="hljs-number">10.5</span>)
+plt.ylim(-<span class="hljs-number">1.5</span>, <span class="hljs-number">1.5</span>);
 </code></pre>
-<h4><span id="labeling">Labeling</span></h4><pre><code class="python">plt.plot(x, np.sin(x), &#39;-g&#39;, label=&#39;sin(x)&#39;) # solid green line
-plt.plot(x, np.cos(x), &#39;:b&#39;, label=&#39;cos(x)&#39;) # dotted blue line
+<h4><span id="labeling"> Labeling</span></h4>
+<pre class="highlight"><code class="python">plt.plot(x, np.sin(x), <span class="hljs-string">&#x27;-g&#x27;</span>, label=<span class="hljs-string">&#x27;sin(x)&#x27;</span>) <span class="hljs-comment"># solid green line</span>
+plt.plot(x, np.cos(x), <span class="hljs-string">&#x27;:b&#x27;</span>, label=<span class="hljs-string">&#x27;cos(x)&#x27;</span>) <span class="hljs-comment"># dotted blue line</span>
 
-plt.title(&quot;A Sin/Cos Curve&quot;, fontsize=18)       # we can also specify the font size
-plt.xlabel(&quot;x&quot;, fontsize=14)
-plt.ylabel(&quot;sin(x)&quot;, fontsize=14)
-plt.legend(fontsize=12)
+plt.title(<span class="hljs-string">&quot;A Sin/Cos Curve&quot;</span>, fontsize=<span class="hljs-number">18</span>)       <span class="hljs-comment"># we can also specify the font size</span>
+plt.xlabel(<span class="hljs-string">&quot;x&quot;</span>, fontsize=<span class="hljs-number">14</span>)
+plt.ylabel(<span class="hljs-string">&quot;sin(x)&quot;</span>, fontsize=<span class="hljs-number">14</span>)
+plt.legend(fontsize=<span class="hljs-number">12</span>)
 
-plt.axis(&#39;equal&#39;);
+plt.axis(<span class="hljs-string">&#x27;equal&#x27;</span>);
 </code></pre>
-<p><img src="https://drive.google.com/uc?id=1zKJuabAWhclAXqLNr-usOpQC_WRiFgnP"></p>
-<h4><span id="matplotlib-tips"><code>Matplotlib</code> tips</span></h4><div align="center">
-
+<p><img src="https://drive.google.com/uc?id=1zKJuabAWhclAXqLNr-usOpQC_WRiFgnP" alt></p>
+<h4><span id="matplotlib-tips"> <code>Matplotlib</code> tips</span></h4>
+<div align="center">
 <table>
 <thead>
 <tr>
-<th align="center">Functional</th>
-<th align="center">OOP</th>
+<th style="text-align:center">Functional</th>
+<th style="text-align:center">OOP</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">plt.xlabel()</td>
-<td align="center">ax.set_xlabel()</td>
+<tbody>
+<tr>
+<td style="text-align:center">plt.xlabel()</td>
+<td style="text-align:center">ax.set_xlabel()</td>
 </tr>
 <tr>
-<td align="center">plt.ylabel()</td>
-<td align="center">ax.set_ylabel()</td>
+<td style="text-align:center">plt.ylabel()</td>
+<td style="text-align:center">ax.set_ylabel()</td>
 </tr>
 <tr>
-<td align="center">plt.xlim()</td>
-<td align="center">ax.set_xlim()</td>
+<td style="text-align:center">plt.xlim()</td>
+<td style="text-align:center">ax.set_xlim()</td>
 </tr>
 <tr>
-<td align="center">plt.ylim()</td>
-<td align="center">ax.set_ylim()</td>
+<td style="text-align:center">plt.ylim()</td>
+<td style="text-align:center">ax.set_ylim()</td>
 </tr>
 <tr>
-<td align="center">plt.title()</td>
-<td align="center">ax.set_title()</td>
+<td style="text-align:center">plt.title()</td>
+<td style="text-align:center">ax.set_title()</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
-
-<h3><span id="simple-scatter-plots">Simple scatter plots</span></h3><p>所謂的散佈圖，就是將資料點以點的方式呈現在圖表上。</p>
-<pre><code class="python">x = np.linspace(0, 10, 30)
+<h3><span id="simple-scatter-plots"> Simple scatter plots</span></h3>
+<p>所謂的散佈圖，就是將資料點以點的方式呈現在圖表上。</p>
+<pre class="highlight"><code class="python">x = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">30</span>)
 y = np.sin(x)
-plt.plot(x, y, &#39;o&#39;, color=&#39;black&#39;);
+plt.plot(x, y, <span class="hljs-string">&#x27;o&#x27;</span>, color=<span class="hljs-string">&#x27;black&#x27;</span>);
 </code></pre>
-<p>第三個參數 <code>&#39;o&#39;</code> 代表使用點的方式呈現資料點，而不是使用線的方式呈現資料點。<br>marker styles有很多種，可以參考<a target="_blank" rel="noopener" href="https://matplotlib.org/api/markers_api.html#module-matplotlib.markers">這裡</a>。</p>
-<h4><span id="scatter-plots-with-pltscatter">Scatter plots with <code>plt.scatter</code></span></h4><p>進階的散佈圖可以使用 <code>plt.scatter</code> 來呈現。<br>主要的差異在於 <code>plt.scatter</code> 可以讓我們在每個資料點上設定不同的顏色、大小、形狀等等。</p>
-<pre><code class="python">np.random.seed(42)
+<p>第三個參數 <code>'o'</code> 代表使用點的方式呈現資料點，而不是使用線的方式呈現資料點。<br>
+marker styles有很多種，可以參考<a target="_blank" rel="noopener" href="https://matplotlib.org/api/markers_api.html#module-matplotlib.markers">這裡</a>。</p>
+<h4><span id="scatter-plots-with-pltscatter"> Scatter plots with <code>plt.scatter</code></span></h4>
+<p>進階的散佈圖可以使用 <code>plt.scatter</code> 來呈現。<br>
+主要的差異在於 <code>plt.scatter</code> 可以讓我們在每個資料點上設定不同的顏色、大小、形狀等等。</p>
+<pre class="highlight"><code class="python">np.random.seed(<span class="hljs-number">42</span>)
 
-x = np.random.randn(100)
-y = np.random.randn(100)
-colors = np.random.rand(100)
-sizes = 1000 * np.random.rand(100)
+x = np.random.randn(<span class="hljs-number">100</span>)
+y = np.random.randn(<span class="hljs-number">100</span>)
+colors = np.random.rand(<span class="hljs-number">100</span>)
+sizes = <span class="hljs-number">1000</span> * np.random.rand(<span class="hljs-number">100</span>)
 
-plt.scatter(x, y, c=colors, s=sizes, alpha=0.3, cmap=&#39;viridis&#39;)
-plt.colorbar(); # show color scale
+plt.scatter(x, y, c=colors, s=sizes, alpha=<span class="hljs-number">0.3</span>, cmap=<span class="hljs-string">&#x27;viridis&#x27;</span>)
+plt.colorbar(); <span class="hljs-comment"># show color scale</span>
 </code></pre>
 <p>想看所有的Matplotlib colormaps，可以參考<a target="_blank" rel="noopener" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">list of colormaps</a>.</p>
-<h3><span id="density-plots">Density plots</span></h3><h4><span id="histograms">Histograms</span></h4><p>一個常見的資料視覺化方式是直方圖，可以使用 <code>plt.hist</code> 來呈現。</p>
-<pre><code class="python">np.random.seed(42)
-data = np.random.normal(size=1000)
+<h3><span id="density-plots"> Density plots</span></h3>
+<h4><span id="histograms"> Histograms</span></h4>
+<p>一個常見的資料視覺化方式是直方圖，可以使用 <code>plt.hist</code> 來呈現。</p>
+<pre class="highlight"><code class="python">np.random.seed(<span class="hljs-number">42</span>)
+data = np.random.normal(size=<span class="hljs-number">1000</span>)
 plt.hist(data);
 </code></pre>
-<h4><span id="binnings">binnings</span></h4><p><code>plt.hist</code> 有一個參數 <code>bins</code>，可以用來調整直方圖的區間數。</p>
-<pre><code class="python">plt.hist(data, bins=30, density=True, alpha=0.5, color=&#39;steelblue&#39;, edgecolor=&#39;none&#39;)
-x = np.linspace(-4,4,100)
-y = 1/(2*np.pi)**0.5 * np.exp(-x**2/2)
-plt.plot(x,y,&#39;b&#39;,alpha=0.8);
+<h4><span id="binnings"> binnings</span></h4>
+<p><code>plt.hist</code> 有一個參數 <code>bins</code>，可以用來調整直方圖的區間數。</p>
+<pre class="highlight"><code class="python">plt.hist(data, bins=<span class="hljs-number">30</span>, density=<span class="hljs-literal">True</span>, alpha=<span class="hljs-number">0.5</span>, color=<span class="hljs-string">&#x27;steelblue&#x27;</span>, edgecolor=<span class="hljs-string">&#x27;none&#x27;</span>)
+x = np.linspace(-<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">100</span>)
+y = <span class="hljs-number">1</span>/(<span class="hljs-number">2</span>*np.pi)**<span class="hljs-number">0.5</span> * np.exp(-x**<span class="hljs-number">2</span>/<span class="hljs-number">2</span>)
+plt.plot(x,y,<span class="hljs-string">&#x27;b&#x27;</span>,alpha=<span class="hljs-number">0.8</span>);
 </code></pre>
-<h4><span id="density">Density</span></h4><p>density&#x3D;True 可以讓直方圖的面積總和為1，這樣就可以當作機率密度函數來看待。</p>
-<h2><span id="advance-plot">Advance plot</span></h2><h3><span id="filling-the-area-between-lines">Filling the area between lines</span></h3><p>要畫出兩條線之間的區域，可以使用<code>plt.fill_between()</code></p>
-<pre><code class="python">x = np.linspace(0, 2*np.pi, 1000)
+<h4><span id="density"> Density</span></h4>
+<p>density=True 可以讓直方圖的面積總和為1，這樣就可以當作機率密度函數來看待。</p>
+<h2><span id="advance-plot"> Advance plot</span></h2>
+<h3><span id="filling-the-area-between-lines"> Filling the area between lines</span></h3>
+<p>要畫出兩條線之間的區域，可以使用<code>plt.fill_between()</code></p>
+<pre class="highlight"><code class="python">x = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>*np.pi, <span class="hljs-number">1000</span>)
 
-plt.plot(x, np.sin(x), &#39;r&#39;)
-plt.plot(x, np.cos(x), &#39;g&#39;)
-plt.fill_between(x, np.cos(x), np.sin(x), color=&#39;red&#39;, alpha=0.1);
+plt.plot(x, np.sin(x), <span class="hljs-string">&#x27;r&#x27;</span>)
+plt.plot(x, np.cos(x), <span class="hljs-string">&#x27;g&#x27;</span>)
+plt.fill_between(x, np.cos(x), np.sin(x), color=<span class="hljs-string">&#x27;red&#x27;</span>, alpha=<span class="hljs-number">0.1</span>);
 </code></pre>
-<h3><span id="plot-in-polar-coordinate">Plot in polar coordinate</span></h3><p>要畫極座標的圖，可以使用 <code>plt.polar()</code></p>
-<pre><code class="python">t = np.linspace(0, 2*np.pi, 64)
+<h3><span id="plot-in-polar-coordinate"> Plot in polar coordinate</span></h3>
+<p>要畫極座標的圖，可以使用 <code>plt.polar()</code></p>
+<pre class="highlight"><code class="python">t = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>*np.pi, <span class="hljs-number">64</span>)
 
-# plot in polar coordinates
-plt.axes(projection=&#39;polar&#39;)
-plt.plot(t, np.sin(t), &#39;-&#39;);
+<span class="hljs-comment"># plot in polar coordinates</span>
+plt.axes(projection=<span class="hljs-string">&#x27;polar&#x27;</span>)
+plt.plot(t, np.sin(t), <span class="hljs-string">&#x27;-&#x27;</span>);
 
 
-# Set ticks for polar coordinate
-plt.xticks([0, np.pi/2, np.pi, 3*np.pi/2], [&#39;0&#39;, &#39;$\pi/2$&#39;, &#39;$\pi$&#39;, &#39;$3\pi/2$&#39;]);
+<span class="hljs-comment"># Set ticks for polar coordinate</span>
+plt.xticks([<span class="hljs-number">0</span>, np.pi/<span class="hljs-number">2</span>, np.pi, <span class="hljs-number">3</span>*np.pi/<span class="hljs-number">2</span>], [<span class="hljs-string">&#x27;0&#x27;</span>, <span class="hljs-string">&#x27;$\pi/2$&#x27;</span>, <span class="hljs-string">&#x27;$\pi$&#x27;</span>, <span class="hljs-string">&#x27;$3\pi/2$&#x27;</span>]);
 </code></pre>
 <blockquote>
-<p>Note that we would expect that a radius of 0 designates the origin, and a negative radius is reflected across the origin<br>in particular, the polar coordinates $(r, t)$ and $(-r, t+\pi)$ should designate the same point.<br>We can enforce this behavior using the following code:</p>
+<p>Note that we would expect that a radius of 0 designates the origin, and a negative radius is reflected across the origin<br>
+in particular, the polar coordinates <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>r</mi><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(r, t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mo>−</mo><mi>r</mi><mo separator="true">,</mo><mi>t</mi><mo>+</mo><mi>π</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-r, t+\pi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mclose">)</span></span></span></span> should designate the same point.<br>
+We can enforce this behavior using the following code:</p>
 </blockquote>
-<pre><code class="python">t = np.linspace(0, 2*np.pi, 64)
+<pre class="highlight"><code class="python">t = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>*np.pi, <span class="hljs-number">64</span>)
 r = np.sin(t)
-# plot in polar coordinates
-plt.axes(projection=&#39;polar&#39;)
-plt.plot(t+(r&lt;0)*np.pi, np.abs(r), &#39;-&#39;)
+<span class="hljs-comment"># plot in polar coordinates</span>
+plt.axes(projection=<span class="hljs-string">&#x27;polar&#x27;</span>)
+plt.plot(t+(r&lt;<span class="hljs-number">0</span>)*np.pi, np.<span class="hljs-built_in">abs</span>(r), <span class="hljs-string">&#x27;-&#x27;</span>)
 
-# Set ticks for polar coordinate
-plt.xticks([0, np.pi/2, np.pi, 3*np.pi/2], [&#39;0&#39;, &#39;$\pi/2$&#39;, &#39;$\pi$&#39;, &#39;$3\pi/2$&#39;]);
+<span class="hljs-comment"># Set ticks for polar coordinate</span>
+plt.xticks([<span class="hljs-number">0</span>, np.pi/<span class="hljs-number">2</span>, np.pi, <span class="hljs-number">3</span>*np.pi/<span class="hljs-number">2</span>], [<span class="hljs-string">&#x27;0&#x27;</span>, <span class="hljs-string">&#x27;$\pi/2$&#x27;</span>, <span class="hljs-string">&#x27;$\pi$&#x27;</span>, <span class="hljs-string">&#x27;$3\pi/2$&#x27;</span>]);
 </code></pre>
-<h2><span id="customizing-plot">Customizing Plot</span></h2><h3><span id="customizing-plot-legends">Customizing plot legends</span></h3><pre><code class="python">x = np.linspace(0, 10, 100)
-plt.plot(x, np.sin(x), &#39;-g&#39;, label=&#39;sin(x)&#39;)
-plt.plot(x, np.cos(x), &#39;:b&#39;, label=&#39;cos(x)&#39;)
-plt.axis(&#39;equal&#39;)
+<h2><span id="customizing-plot"> Customizing Plot</span></h2>
+<h3><span id="customizing-plot-legends"> Customizing plot legends</span></h3>
+<pre class="highlight"><code class="python">x = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">100</span>)
+plt.plot(x, np.sin(x), <span class="hljs-string">&#x27;-g&#x27;</span>, label=<span class="hljs-string">&#x27;sin(x)&#x27;</span>)
+plt.plot(x, np.cos(x), <span class="hljs-string">&#x27;:b&#x27;</span>, label=<span class="hljs-string">&#x27;cos(x)&#x27;</span>)
+plt.axis(<span class="hljs-string">&#x27;equal&#x27;</span>)
 
-plt.legend(loc=&#39;upper left&#39;, frameon=True)
+plt.legend(loc=<span class="hljs-string">&#x27;upper left&#x27;</span>, frameon=<span class="hljs-literal">True</span>)
 </code></pre>
-<h4><span id="text-and-annotation">Text and Annotation</span></h4><p>當我們想要在圖表上加上文字或是註解時，可以使用 <code>plt.text()</code> 或是 <code>plt.annotate()</code>。</p>
-<pre><code class="python">plt.figure()
-x = np.linspace(0, 20, 1000)
+<h4><span id="text-and-annotation"> Text and Annotation</span></h4>
+<p>當我們想要在圖表上加上文字或是註解時，可以使用 <code>plt.text()</code> 或是 <code>plt.annotate()</code>。</p>
+<pre class="highlight"><code class="python">plt.figure()
+x = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">20</span>, <span class="hljs-number">1000</span>)
 plt.plot(x, np.cos(x))
-plt.axis(&#39;equal&#39;)
+plt.axis(<span class="hljs-string">&#x27;equal&#x27;</span>)
 </code></pre>
-<pre><code class="python">plt.annotate(&#39;local maximum&#39;, xy=(6.28, 1), xytext=(10, 4), arrowprops=dict(facecolor=&#39;black&#39;), fontsize=14)
+<pre class="highlight"><code class="python">plt.annotate(<span class="hljs-string">&#x27;local maximum&#x27;</span>, xy=(<span class="hljs-number">6.28</span>, <span class="hljs-number">1</span>), xytext=(<span class="hljs-number">10</span>, <span class="hljs-number">4</span>), arrowprops=<span class="hljs-built_in">dict</span>(facecolor=<span class="hljs-string">&#x27;black&#x27;</span>), fontsize=<span class="hljs-number">14</span>)
 
-plt.annotate(&#39;local minimum&#39;, xy=(5 * np.pi, -1), xytext=(2, -6), arrowprops=dict(arrowstyle=&quot;-&gt;&quot;), fontsize=14)
-plt.text(3.14, -1, &#39;local minimum&#39;, fontsize=14, ha=&#39;center&#39;); # (x, y, text)
+plt.annotate(<span class="hljs-string">&#x27;local minimum&#x27;</span>, xy=(<span class="hljs-number">5</span> * np.pi, -<span class="hljs-number">1</span>), xytext=(<span class="hljs-number">2</span>, -<span class="hljs-number">6</span>), arrowprops=<span class="hljs-built_in">dict</span>(arrowstyle=<span class="hljs-string">&quot;-&gt;&quot;</span>), fontsize=<span class="hljs-number">14</span>)
+plt.text(<span class="hljs-number">3.14</span>, -<span class="hljs-number">1</span>, <span class="hljs-string">&#x27;local minimum&#x27;</span>, fontsize=<span class="hljs-number">14</span>, ha=<span class="hljs-string">&#x27;center&#x27;</span>); <span class="hljs-comment"># (x, y, text)</span>
 </code></pre>
-<h4><span id="customizing-ticks-and-splines">Customizing ticks and splines</span></h4><p>tick的定位和標籤可以使用 <code>plt.xticks()</code> 和 <code>plt.yticks()</code> 來調整。</p>
-<pre><code class="python">x = np.linspace(0, 20, 1000)
+<h4><span id="customizing-ticks-and-splines"> Customizing ticks and splines</span></h4>
+<p>tick的定位和標籤可以使用 <code>plt.xticks()</code> 和 <code>plt.yticks()</code> 來調整。</p>
+<pre class="highlight"><code class="python">x = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">20</span>, <span class="hljs-number">1000</span>)
 plt.plot(x, np.cos(x))
 plt.plot(x, np.sin(x))
-plt.axis(&#39;equal&#39;)
+plt.axis(<span class="hljs-string">&#x27;equal&#x27;</span>)
 
-# Set the ticks and tick labels
-plt.xticks([0, np.pi, 2 * np.pi, 3 * np.pi, 4 * np.pi],
-           [r&#39;$0$&#39;, r&#39;$\pi$&#39;, r&#39;$2\pi$&#39;, r&#39;$3\pi$&#39;, r&#39;$4\pi$&#39;], fontsize=14)
-plt.yticks([-1, 0, +1],  [r&#39;$-1$&#39;, r&#39;$0$&#39;, r&#39;$+1$&#39;], fontsize=14);
+<span class="hljs-comment"># Set the ticks and tick labels</span>
+plt.xticks([<span class="hljs-number">0</span>, np.pi, <span class="hljs-number">2</span> * np.pi, <span class="hljs-number">3</span> * np.pi, <span class="hljs-number">4</span> * np.pi],
+           [<span class="hljs-string">r&#x27;$0$&#x27;</span>, <span class="hljs-string">r&#x27;$\pi$&#x27;</span>, <span class="hljs-string">r&#x27;$2\pi$&#x27;</span>, <span class="hljs-string">r&#x27;$3\pi$&#x27;</span>, <span class="hljs-string">r&#x27;$4\pi$&#x27;</span>], fontsize=<span class="hljs-number">14</span>)
+plt.yticks([-<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, +<span class="hljs-number">1</span>],  [<span class="hljs-string">r&#x27;$-1$&#x27;</span>, <span class="hljs-string">r&#x27;$0$&#x27;</span>, <span class="hljs-string">r&#x27;$+1$&#x27;</span>], fontsize=<span class="hljs-number">14</span>);
 </code></pre>
 <p>Spines是指圖表的邊框，可以使用 <code>plt.gca()</code> 來取得目前的axes，然後使用 <code>ax.spines</code> 來調整。</p>
-<pre><code class="python">plt.figure(figsize=(8,5), dpi=80)
-X = np.linspace(-np.pi, np.pi, 256, endpoint=True)
+<pre class="highlight"><code class="python">plt.figure(figsize=(<span class="hljs-number">8</span>,<span class="hljs-number">5</span>), dpi=<span class="hljs-number">80</span>)
+X = np.linspace(-np.pi, np.pi, <span class="hljs-number">256</span>, endpoint=<span class="hljs-literal">True</span>)
 C = np.cos(X)
 S = np.sin(X)
 
-plt.plot(X, C, color=&quot;blue&quot;, linewidth=2.5, linestyle=&quot;-&quot;)
-plt.plot(X, S, color=&quot;red&quot;, linewidth=2.5, linestyle=&quot;-&quot;)
+plt.plot(X, C, color=<span class="hljs-string">&quot;blue&quot;</span>, linewidth=<span class="hljs-number">2.5</span>, linestyle=<span class="hljs-string">&quot;-&quot;</span>)
+plt.plot(X, S, color=<span class="hljs-string">&quot;red&quot;</span>, linewidth=<span class="hljs-number">2.5</span>, linestyle=<span class="hljs-string">&quot;-&quot;</span>)
 
 ax = plt.gca()
-ax.spines[[&#39;top&#39;, &#39;right&#39;]].set_visible(False)
-ax.spines[&#39;bottom&#39;].set_position((&#39;data&#39;,0))
-ax.spines[&#39;left&#39;].set_position((&#39;data&#39;,0))
+ax.spines[[<span class="hljs-string">&#x27;top&#x27;</span>, <span class="hljs-string">&#x27;right&#x27;</span>]].set_visible(<span class="hljs-literal">False</span>)
+ax.spines[<span class="hljs-string">&#x27;bottom&#x27;</span>].set_position((<span class="hljs-string">&#x27;data&#x27;</span>,<span class="hljs-number">0</span>))
+ax.spines[<span class="hljs-string">&#x27;left&#x27;</span>].set_position((<span class="hljs-string">&#x27;data&#x27;</span>,<span class="hljs-number">0</span>))
 </code></pre>
-<h2><span id="multiple-subplots">Multiple Subplots</span></h2><h3><span id="pltsubplots"><code>plt.subplots()</code></span></h3><p>要畫出多個子圖，可以使用 <code>plt.subplots()</code>，這個函數會回傳一個figure和一個axes的array。</p>
-<pre><code class="python">fig, ax = plt.subplots(2, 3)
-fig.subplots_adjust(hspace=0.5, wspace=0.4)
-for i in range(2):
-    for j in range(3):
-        ax[i, j].text(0.5, 0.5, str((i, j)), fontsize=18, ha=&#39;center&#39;, va=&#39;center&#39;)
+<h2><span id="multiple-subplots"> Multiple Subplots</span></h2>
+<h3><span id="pltsubplots"> <code>plt.subplots()</code></span></h3>
+<p>要畫出多個子圖，可以使用 <code>plt.subplots()</code>，這個函數會回傳一個figure和一個axes的array。</p>
+<pre class="highlight"><code class="python">fig, ax = plt.subplots(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+fig.subplots_adjust(hspace=<span class="hljs-number">0.5</span>, wspace=<span class="hljs-number">0.4</span>)
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>):
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">3</span>):
+        ax[i, j].text(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>, <span class="hljs-built_in">str</span>((i, j)), fontsize=<span class="hljs-number">18</span>, ha=<span class="hljs-string">&#x27;center&#x27;</span>, va=<span class="hljs-string">&#x27;center&#x27;</span>)
 </code></pre>
 <p>利用指令<code>plt.subplots_adjust()</code>可以調整子圖之間的間距。</p>
-<pre><code class="python">fig, ax = plt.subplots(2, 2, figsize=(8,8))
-fig.subplots_adjust(hspace=0.4, wspace=0.4)
+<pre class="highlight"><code class="python">fig, ax = plt.subplots(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, figsize=(<span class="hljs-number">8</span>,<span class="hljs-number">8</span>))
+fig.subplots_adjust(hspace=<span class="hljs-number">0.4</span>, wspace=<span class="hljs-number">0.4</span>)
 
-x = np.linspace(0, 10, 1000)
-ax[0,0].plot(x, np.sin(x))
-ax[0,1].plot(x, np.cos(x))
-ax[1,0].plot(x, x**2)
-ax[1,0].set_xscale(&#39;log&#39;) # Set the scale to log scale
-ax[1,0].set_yscale(&#39;log&#39;)
-ax[1,1].plot(x, x**2);
+x = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1000</span>)
+ax[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>].plot(x, np.sin(x))
+ax[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>].plot(x, np.cos(x))
+ax[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>].plot(x, x**<span class="hljs-number">2</span>)
+ax[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>].set_xscale(<span class="hljs-string">&#x27;log&#x27;</span>) <span class="hljs-comment"># Set the scale to log scale</span>
+ax[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>].set_yscale(<span class="hljs-string">&#x27;log&#x27;</span>)
+ax[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>].plot(x, x**<span class="hljs-number">2</span>);
 </code></pre>
 
     </div>
@@ -590,6 +665,7 @@ ax[1,1].plot(x, x**2);
     
     
     
+    
 </div>
                     <footer id="footer">
     <div id="footer-wrap">
@@ -599,7 +675,7 @@ ax[1,1].plot(x, x**2);
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            &commat;Marumallow
+            &commat;棉花糖
         </div>
         <div>
             Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
@@ -608,19 +684,21 @@ ax[1,1].plot(x, x**2);
         
     </div>
 </footer>
-
+<!--頁面點擊小紅心-->
+<script type="text/javascript" src="/love.js"></script>
                 </div>
             </transition>
             
+                
+                
             <transition name="fade">
                 <div id="preview" ref="preview" v-show="previewShow">
                     <img id="preview-content" ref="previewContent" />
                 </div>
             </transition>
             
-                    <!--pjax：防止跳转页面音乐暂停-->
-            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         </div>
+
         <script src="/js/main.js"></script>
         
         
@@ -646,17 +724,15 @@ ax[1,1].plot(x, x**2);
 
 
         
-        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
         
-        <!--pjax：防止跳转页面音乐暂停-->
-        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
         <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
         <!-- require MetingJS -->
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
 
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
         <!-- require JQuery -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
         <!-- require pjax -->
@@ -667,12 +743,8 @@ ax[1,1].plot(x, x**2);
         <script>
             $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
         </script>
-        <!-- .css file path -->
-        <link rel="stylesheet" href="./player/index.bundle.css">
-        <!-- petite-vue CDN -->
-        <script src="https://unpkg.com/petite-vue"></script>
-        <!-- .js file path -->
-        <script src="./player/index.bundle.js"></script>
+
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/kp31/model.json"},"display":{"position":"right","width":200,"height":600},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+    
 </html>
 

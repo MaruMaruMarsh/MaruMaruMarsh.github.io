@@ -2,20 +2,28 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
     <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/mhchem.min.js" integrity="sha384-LIgAiYlGSAdpNC9+YDjDPF6JeS/RRIumtNo0CmyQERZ/+g0h9MbuYQwf/5pQ4Y4M" crossorigin="anonymous"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        <script type="text/x-mathjax-config">
+
+</script>
         <script>
             // 对所有链接跳转事件绑定pjax容器pjax-container 
             $(document).pjax('a', '#pjax-container', {
             fragment:'#pjax-container',
             timeout:8000
             });   
-        </script>  
+        </script>
         <!--pjax：防止跳转页面音乐暂停-->
         <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         <meta charset="utf-8" />
-
         <title> | 棉花糖的小窩</title>
-        <meta name="author" content="Marumallow" />
-        <meta name="description" content="期末考我要炸了!!!" />
+        <meta name="author" content="棉花糖" />
+        <meta name="description" content="點文章跳轉的時候會播歌請注意一下" />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <link rel="icon" href="/images/favicon.png" />
@@ -62,7 +70,7 @@
   Vue.component('aplayer', VueAPlayer)
 </script>
 
-
+        
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
         <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
@@ -81,10 +89,21 @@
         <script>
             $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
         </script>
-    <meta name="generator" content="Hexo 6.3.0"></head>
+        <canvas
+        id="fireworks"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"
+        ></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+        <div id="cursor"></div>
+        <link rel="stylesheet" href="/css/cursor.min.css">
+        <script src="/js/cursor.min.js"></script>
+
+    <!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
     <body>
         <div id="layout">
-            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
             <div id="pjax-container">
                 <!-- 我使用的APlayer本体 -->
                     <div class="aplayer" 
@@ -98,6 +117,19 @@
                         data-theme="#cc543a" 
                         data-preload="none ">
                     </div>
+            <script>
+                // 对所有链接跳转事件绑定pjax容器pjax-container 
+                $(document).pjax('a', '#pjax-container', {
+                fragment:'#pjax-container',
+                timeout:8000
+                });   
+            </script>
+            
+            <!--pjax：防止跳转页面音乐暂停-->
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+            <meta charset="utf-8" />
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+
             <transition name="fade">
                 <div id="loading" v-show="loading">
                     <div id="loading-circle">
@@ -218,7 +250,8 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div class="article">
+                    
+<div class="article">
     <!--pjax：防止跳转页面音乐暂停-->
     <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
@@ -226,6 +259,7 @@
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
     <!-- require MetingJS -->
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
     <div>
         <h1></h1>
     </div>
@@ -241,95 +275,158 @@
     </div>
     
     <div class="content" v-pre>
-        <h1><span id="028-2019-03-09">0.2.8 - 2019-03-09</span></h1><ul>
-<li>Fixed: Edge form support.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/178">#178</a> - @robinnorth)</li>
-<li>Fixed: Removed keyup event listener for forms.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/184">#184</a> - @BehindTheMath)</li>
-<li>Fixed: Bugs in evalScripts().<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/186">#186</a> - @BehindTheMath)</li>
-<li>Fixed: Handle non-string HTML passed to loadContent().<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/200">#200</a> - @BehindTheMath)</li>
-<li>Tooling: Switch linting to ESLint and Prettier.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/191">#191</a> - @BehindTheMath)</li>
+        <h1><span id="028-2019-03-09"> 0.2.8 - 2019-03-09</span></h1>
+<ul>
+<li>Fixed: Edge form support.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/178">#178</a> - @robinnorth)</li>
+<li>Fixed: Removed keyup event listener for forms.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/184">#184</a> - @BehindTheMath)</li>
+<li>Fixed: Bugs in evalScripts().<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/186">#186</a> - @BehindTheMath)</li>
+<li>Fixed: Handle non-string HTML passed to loadContent().<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/200">#200</a> - @BehindTheMath)</li>
+<li>Tooling: Switch linting to ESLint and Prettier.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/191">#191</a> - @BehindTheMath)</li>
 </ul>
-<h1><span id="027-2018-08-15">0.2.7 - 2018-08-15</span></h1><ul>
-<li>Fixed: Parsing values of option elements in forms.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/162">#162</a> - @BehindTheMath)</li>
-<li>Fixed: Added index.d.ts to package.json so it will be installed by npm.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/commit/c589ab9c25bee6161bf3e557eaca44e51c14fb89">c589ab9</a> - @BehindTheMath)</li>
-<li>Fixed: <code>options.history</code> to correctly parse being set to false.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/165">#165</a> - @BehindTheMath).</li>
-<li>Fixed: Pass the current <code>options</code> object to <code>loadContent()</code>.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/171">#171</a> - @BehindTheMath)</li>
-<li>Fixed: Ensure correct XHR encoding for multipart&#x2F;form-data forms<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/174">#174</a> - @BehindTheMath)</li>
-<li>Added: More documentation.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/160">#160</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/171">#171</a> - @robinnorth, @BehindTheMath)</li>
+<h1><span id="027-2018-08-15"> 0.2.7 - 2018-08-15</span></h1>
+<ul>
+<li>Fixed: Parsing values of option elements in forms.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/162">#162</a> - @BehindTheMath)</li>
+<li>Fixed: Added index.d.ts to package.json so it will be installed by npm.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/commit/c589ab9c25bee6161bf3e557eaca44e51c14fb89">c589ab9</a> - @BehindTheMath)</li>
+<li>Fixed: <code>options.history</code> to correctly parse being set to false.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/165">#165</a> - @BehindTheMath).</li>
+<li>Fixed: Pass the current <code>options</code> object to <code>loadContent()</code>.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/171">#171</a> - @BehindTheMath)</li>
+<li>Fixed: Ensure correct XHR encoding for multipart/form-data forms<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/174">#174</a> - @BehindTheMath)</li>
+<li>Added: More documentation.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/160">#160</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/171">#171</a> - @robinnorth, @BehindTheMath)</li>
 </ul>
-<h1><span id="026-2018-04-30">0.2.6 - 2018-04-30</span></h1><ul>
-<li>Fixed: Form submission for GET requests.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/129">#129</a> - @robinnorth)</li>
-<li>Fixed: Refactor <code>loadUrl()</code> to make manually calling simpler.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/134">#134</a> - @robinnorth)</li>
-<li>Fixed: Support multiple select fields in form submissions.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/147">#147</a> - @robinnorth)</li>
-<li>Fixed: Use the same options object in <code>handle-response</code> as in <code>send-request</code>. This way, <code>pjax.state.options</code> will also have the request options.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/148">#148</a> - @BehindTheMath)</li>
-<li>Added: Move the XHR callback to a separate method, and trigger an error event if the response cannot be parsed.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/137">#137</a> - @BehindTheMath)</li>
-<li>Added: TypeScript definitions.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/138">#138</a> - @BehindTheMath)</li>
-<li>Added: <code>replaceNode</code> switch, as an alternative to the <code>outerHTML</code> switch.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/141">#141</a> - @BehindTheMath)</li>
-<li>Added: <code>X-PJAX-Selectors</code> HTTP header. This is a serialized JSON array of selectors, taken from <code>options.selectors</code>. You can use this to send back only the elements that Pjax will use to switch, instead of sending the whole page.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/144">#144</a> - @BehindTheMath)</li>
-<li>Added: An option to use <code>FormData</code> to submit forms.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/153">#153</a> - @BehindTheMath)</li>
-<li>Added: Tests.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/commit/f98f2dd63b48113ff91b6bd8808257bfc723ef6b">f98f2dd</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/145">#145</a> - @robinnorth, @BehindTheMath)</li>
+<h1><span id="026-2018-04-30"> 0.2.6 - 2018-04-30</span></h1>
+<ul>
+<li>Fixed: Form submission for GET requests.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/129">#129</a> - @robinnorth)</li>
+<li>Fixed: Refactor <code>loadUrl()</code> to make manually calling simpler.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/134">#134</a> - @robinnorth)</li>
+<li>Fixed: Support multiple select fields in form submissions.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/147">#147</a> - @robinnorth)</li>
+<li>Fixed: Use the same options object in <code>handle-response</code> as in <code>send-request</code>. This way, <code>pjax.state.options</code> will also have the request options.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/148">#148</a> - @BehindTheMath)</li>
+<li>Added: Move the XHR callback to a separate method, and trigger an error event if the response cannot be parsed.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/137">#137</a> - @BehindTheMath)</li>
+<li>Added: TypeScript definitions.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/138">#138</a> - @BehindTheMath)</li>
+<li>Added: <code>replaceNode</code> switch, as an alternative to the <code>outerHTML</code> switch.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/141">#141</a> - @BehindTheMath)</li>
+<li>Added: <code>X-PJAX-Selectors</code> HTTP header. This is a serialized JSON array of selectors, taken from <code>options.selectors</code>. You can use this to send back only the elements that Pjax will use to switch, instead of sending the whole page.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/144">#144</a> - @BehindTheMath)</li>
+<li>Added: An option to use <code>FormData</code> to submit forms.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/153">#153</a> - @BehindTheMath)</li>
+<li>Added: Tests.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/commit/f98f2dd63b48113ff91b6bd8808257bfc723ef6b">f98f2dd</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/145">#145</a> - @robinnorth, @BehindTheMath)</li>
 </ul>
-<h1><span id="025-2018-02-02">0.2.5 - 2018-02-02</span></h1><ul>
-<li>Fixed: Async switch functions now work correctly, because the DOM is now parsed after all the switches finish.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/79">#79</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/110">#110</a> - @oskarrough, @BehindTheMath, @robinnorth)</li>
-<li>Fixed: Bug on IE11 preventing AJAX page refresh.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/81">#81</a> - @CPTechnikVX)</li>
-<li>Fixed: Default switches are now available as <code>Pjax.switches</code>.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/92">#92</a> - @BehindTheMath)</li>
-<li>Fixed: An error that was caused by a missing <code>switchElementsAlt</code>.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/93">#93</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/104">#104</a> - @BehindTheMath, @robinnorth)</li>
-<li>Fixed: Incorrect <code>main</code> field in npm package<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/105">#105</a> - @robinnorth)</li>
-<li>Fixed: A pending XHR is now aborted if the user navigates somewhere else before the request is finished.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/114">#114</a> - @robinnorth)</li>
-<li>Fixed: When rendering new content, focus will now be removed only from elements within one of the containers manipulated by Pjax.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/116">#116</a> - @BehindTheMath)</li>
-<li>Fixed: Stop dispatching extraneous <code>pjax:complete</code> events when external scripts load<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/118">#118</a> - @robinnorth)</li>
-<li>Added: Send the <code>X-PJAX</code> header with XHR requests.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/80">#80</a> - @bram1028)</li>
+<h1><span id="025-2018-02-02"> 0.2.5 - 2018-02-02</span></h1>
+<ul>
+<li>Fixed: Async switch functions now work correctly, because the DOM is now parsed after all the switches finish.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/79">#79</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/110">#110</a> - @oskarrough, @BehindTheMath, @robinnorth)</li>
+<li>Fixed: Bug on IE11 preventing AJAX page refresh.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/81">#81</a> - @CPTechnikVX)</li>
+<li>Fixed: Default switches are now available as <code>Pjax.switches</code>.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/92">#92</a> - @BehindTheMath)</li>
+<li>Fixed: An error that was caused by a missing <code>switchElementsAlt</code>.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/93">#93</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/104">#104</a> - @BehindTheMath, @robinnorth)</li>
+<li>Fixed: Incorrect <code>main</code> field in npm package<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/105">#105</a> - @robinnorth)</li>
+<li>Fixed: A pending XHR is now aborted if the user navigates somewhere else before the request is finished.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/114">#114</a> - @robinnorth)</li>
+<li>Fixed: When rendering new content, focus will now be removed only from elements within one of the containers manipulated by Pjax.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/116">#116</a> - @BehindTheMath)</li>
+<li>Fixed: Stop dispatching extraneous <code>pjax:complete</code> events when external scripts load<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/118">#118</a> - @robinnorth)</li>
+<li>Added: Send the <code>X-PJAX</code> header with XHR requests.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/80">#80</a> - @bram1028)</li>
 <li>Added: Direct download link for script tags. (@MoOx)</li>
-<li>Added: Pass the element that triggered Pjax to the <code>pjax:send</code> event.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/94">#94</a> - @BehindTheMath)</li>
-<li>Added: An option to set a timeout for XHR requests.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/95">#95</a> - @BehindTheMath)</li>
-<li>Added: Checks for XHR redirects<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/101">#101</a> - @BehindTheMath)</li>
-<li>Added: Save scroll position with history, and restore when navigating backwards or forwards.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/110">#110</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/119">#119</a> - @BehindTheMath, @robinnorth)</li>
-<li>Added: Scroll to element position when URL contains a hash<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/110">#110</a> - @BehindTheMath)</li>
-<li>Added: Minified version of the Pjax bundle.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/115">#115</a> - @BehindTheMath)</li>
-<li>Changed: Miscellaneous code and tests cleanup.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/96">#96</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/98">#98</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/99">#99</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/1070">#100</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/107">#107</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/113">#113</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/120">#120</a> - @BehindTheMath, @MoOx, @robinnorth)</li>
+<li>Added: Pass the element that triggered Pjax to the <code>pjax:send</code> event.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/94">#94</a> - @BehindTheMath)</li>
+<li>Added: An option to set a timeout for XHR requests.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/95">#95</a> - @BehindTheMath)</li>
+<li>Added: Checks for XHR redirects<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/101">#101</a> - @BehindTheMath)</li>
+<li>Added: Save scroll position with history, and restore when navigating backwards or forwards.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/110">#110</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/119">#119</a> - @BehindTheMath, @robinnorth)</li>
+<li>Added: Scroll to element position when URL contains a hash<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/110">#110</a> - @BehindTheMath)</li>
+<li>Added: Minified version of the Pjax bundle.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/115">#115</a> - @BehindTheMath)</li>
+<li>Changed: Miscellaneous code and tests cleanup.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/96">#96</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/98">#98</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/99">#99</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/1070">#100</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/107">#107</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/113">#113</a>, <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/120">#120</a> - @BehindTheMath, @MoOx, @robinnorth)</li>
 </ul>
-<h1><span id="024-2016-06-28">0.2.4 - 2016-06-28</span></h1><ul>
-<li>Fixed: <code>refresh</code> should now work (use <code>this.parseDOM</code> for refresh)<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/67">#67</a> - @compressed)</li>
-<li>Fixed: Some attributes, such as <code>itemscope</code> have no corresponding value.<br>This change allows them to still be set.<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/67">#67</a> - @compressed)</li>
-<li>Added: <code>cacheBust</code> option<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/71">#71</a> - @tremby)</li>
+<h1><span id="024-2016-06-28"> 0.2.4 - 2016-06-28</span></h1>
+<ul>
+<li>Fixed: <code>refresh</code> should now work (use <code>this.parseDOM</code> for refresh)<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/67">#67</a> - @compressed)</li>
+<li>Fixed: Some attributes, such as <code>itemscope</code> have no corresponding value.<br>
+This change allows them to still be set.<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/67">#67</a> - @compressed)</li>
+<li>Added: <code>cacheBust</code> option<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/71">#71</a> - @tremby)</li>
 </ul>
-<h1><span id="023-2016-03-24">0.2.3 - 2016-03-24</span></h1><ul>
+<h1><span id="023-2016-03-24"> 0.2.3 - 2016-03-24</span></h1>
+<ul>
 <li>Fixed: <code>currentUrlFullReload</code> option now works</li>
-<li>Fixed: <code>this.reload</code> is now a Function<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/issues/65">#65</a>)</li>
+<li>Fixed: <code>this.reload</code> is now a Function<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/issues/65">#65</a>)</li>
 </ul>
-<h1><span id="022-2016-03-12">0.2.2 - 2016-03-12</span></h1><ul>
-<li>Fixed: added back standalone version in <code>./pjax.js</code><br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/issues/57">#57</a></li>
-<li>Fixed: error when using pjax with google analytics (<code>options</code> was undefined)<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/59">#59</a>)</li>
-<li>Fixed: HierarchyRequestError error<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/49">#49</a>)</li>
-<li>Fixed: <code>TypeError: Pjax.forEachEls is not a function</code><br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/52">#52</a>)</li>
-<li>Fixed: <code>TypeError: Pjax.executeScripts is not a function</code><br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/52">#52</a>)</li>
-<li>Fixed: <code>TypeError: Pjax.clone is not a function</code><br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/52">#52</a>)</li>
-<li>Added: Ignore events with prevented defaults<br>(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/50">#50</a>)</li>
+<h1><span id="022-2016-03-12"> 0.2.2 - 2016-03-12</span></h1>
+<ul>
+<li>Fixed: added back standalone version in <code>./pjax.js</code><br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/issues/57">#57</a></li>
+<li>Fixed: error when using pjax with google analytics (<code>options</code> was undefined)<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/59">#59</a>)</li>
+<li>Fixed: HierarchyRequestError error<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/49">#49</a>)</li>
+<li>Fixed: <code>TypeError: Pjax.forEachEls is not a function</code><br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/52">#52</a>)</li>
+<li>Fixed: <code>TypeError: Pjax.executeScripts is not a function</code><br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/52">#52</a>)</li>
+<li>Fixed: <code>TypeError: Pjax.clone is not a function</code><br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/52">#52</a>)</li>
+<li>Added: Ignore events with prevented defaults<br>
+(<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/50">#50</a>)</li>
 </ul>
-<h1><span id="021-2015-02-04">0.2.1 - 2015-02-04</span></h1><ul>
+<h1><span id="021-2015-02-04"> 0.2.1 - 2015-02-04</span></h1>
+<ul>
 <li>Fixed: it’s better when a release have actual files.</li>
 </ul>
-<h1><span id="020-2015-02-04">0.2.0 - 2015-02-04</span></h1><ul>
+<h1><span id="020-2015-02-04"> 0.2.0 - 2015-02-04</span></h1>
+<ul>
 <li>Fixed: prevent scrollTo from being converted from false to 0 (<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/33">#33</a>)</li>
 <li>Changed: code exploded in commonjs style</li>
 <li>Added: lots of tests</li>
 <li>Added: <code>refresh</code> method to force update a DOM element (<a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/36">#36</a>)</li>
 </ul>
-<h1><span id="014-2014-10-14">0.1.4 - 2014-10-14</span></h1><ul>
+<h1><span id="014-2014-10-14"> 0.1.4 - 2014-10-14</span></h1>
+<ul>
 <li>Fixed: allow to load pages without any attributes on <code>&lt;html&gt;</code> element (fix <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/issues/6">#6</a>)</li>
 <li>Fixed: make <code>Pjax.switches.sideBySide</code> method usable (fix <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/issues/13">#13</a>)</li>
 </ul>
-<h1><span id="013-2014-09-16">0.1.3 - 2014-09-16</span></h1><ul>
+<h1><span id="013-2014-09-16"> 0.1.3 - 2014-09-16</span></h1>
+<ul>
 <li>Fixed: clicking on the current url somewhere does not produce a full reload by default (see option <code>currentUrlFullReload</code>)</li>
 <li>Fixed: <code>document.implementation.createHTMLDocument</code> error (in IE10, ref <a target="_blank" rel="noopener" href="https://github.com/MoOx/pjax/pull/16">#16</a>)</li>
 </ul>
-<h1><span id="012-2014-04-03">0.1.2 - 2014-04-03</span></h1><ul>
+<h1><span id="012-2014-04-03"> 0.1.2 - 2014-04-03</span></h1>
+<ul>
 <li>Changed: <code>pjax.js</code> relocated in <code>src/</code></li>
 <li>Fixed: <code>&lt;html&gt;</code> attributes of pjaxified document are now available</li>
 </ul>
-<h1><span id="011-2014-04-02">0.1.1 - 2014-04-02</span></h1><ul>
+<h1><span id="011-2014-04-02"> 0.1.1 - 2014-04-02</span></h1>
+<ul>
 <li>Fixed: safer UMD wrapper (fix concat issue)</li>
 </ul>
-<h1><span id="010-2014-03-24">0.1.0 - 2014-03-24</span></h1><p>✨ Initial release</p>
+<h1><span id="010-2014-03-24"> 0.1.0 - 2014-03-24</span></h1>
+<p>✨ Initial release</p>
 
     </div>
     
@@ -344,6 +441,7 @@
     
     
     
+    
 </div>
                     <footer id="footer">
     <div id="footer-wrap">
@@ -353,7 +451,7 @@
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            &commat;Marumallow
+            &commat;棉花糖
         </div>
         <div>
             Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
@@ -362,19 +460,21 @@
         
     </div>
 </footer>
-
+<!--頁面點擊小紅心-->
+<script type="text/javascript" src="/love.js"></script>
                 </div>
             </transition>
             
+                
+                
             <transition name="fade">
                 <div id="preview" ref="preview" v-show="previewShow">
                     <img id="preview-content" ref="previewContent" />
                 </div>
             </transition>
             
-                    <!--pjax：防止跳转页面音乐暂停-->
-            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         </div>
+
         <script src="/js/main.js"></script>
         
         
@@ -400,17 +500,15 @@
 
 
         
-        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
         
-        <!--pjax：防止跳转页面音乐暂停-->
-        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
         <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
         <!-- require MetingJS -->
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
 
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
         <!-- require JQuery -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
         <!-- require pjax -->
@@ -421,12 +519,8 @@
         <script>
             $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
         </script>
-        <!-- .css file path -->
-        <link rel="stylesheet" href="./player/index.bundle.css">
-        <!-- petite-vue CDN -->
-        <script src="https://unpkg.com/petite-vue"></script>
-        <!-- .js file path -->
-        <script src="./player/index.bundle.js"></script>
+
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/kp31/model.json"},"display":{"position":"right","width":200,"height":600},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+    
 </html>
 

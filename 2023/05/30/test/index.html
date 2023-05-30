@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/mhchem.min.js" integrity="sha384-LIgAiYlGSAdpNC9+YDjDPF6JeS/RRIumtNo0CmyQERZ/+g0h9MbuYQwf/5pQ4Y4M" crossorigin="anonymous"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        <script type="text/x-mathjax-config">
+
+</script>
+        <script>
+            // 对所有链接跳转事件绑定pjax容器pjax-container 
+            $(document).pjax('a', '#pjax-container', {
+            fragment:'#pjax-container',
+            timeout:8000
+            });   
+        </script>
+        <!--pjax：防止跳转页面音乐暂停-->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+        <meta charset="utf-8" />
+        <title>試試就逝世的擴充套件測試空白頁 | 棉花糖的小窩</title>
+        <meta name="author" content="棉花糖" />
+        <meta name="description" content="點文章跳轉的時候會播歌請注意一下" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.staticfile.org/waline/2.14.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.14.8/waline.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.14.8/waline-meta.min.css" />
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<script src="//cdn.jsdelivr.net/npm/vue-aplayer"></script>
+<script>
+  Vue.component('aplayer', VueAPlayer)
+</script>
+
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        <canvas
+        id="fireworks"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"
+        ></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+        <div id="cursor"></div>
+        <link rel="stylesheet" href="/css/cursor.min.css">
+        <script src="/js/cursor.min.js"></script>
+
+    <!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+    <body>
+        <div id="layout">
+            <div id="pjax-container">
+                <!-- 我使用的APlayer本体 -->
+                    <div class="aplayer" 
+                        data-id="2465890057" 
+                        data-server="netease" 
+                        data-type="playlist" 
+                        data-fixed="true" 
+                        data-autoplay="true" 
+                        data-order="random" 
+                        data-volume="0.55" 
+                        data-theme="#cc543a" 
+                        data-preload="none ">
+                    </div>
+            <script>
+                // 对所有链接跳转事件绑定pjax容器pjax-container 
+                $(document).pjax('a', '#pjax-container', {
+                fragment:'#pjax-container',
+                timeout:8000
+                });   
+            </script>
+            
+            <!--pjax：防止跳转页面音乐暂停-->
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+            <meta charset="utf-8" />
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>進度條正在跑跑中</p>
+                        <img src="/images/loading.gif" />
+                            </div>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>棉花糖的小窩</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+        <a href="/Links">
+            <i class="fa-solid fa-link fa-fw"></i>
+            <span>&ensp;Links</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;棉花糖的小窩</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+                <a href="/Links">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-link fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Links</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    
+<div class="article">
+    <!--pjax：防止跳转页面音乐暂停-->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div>
+        <h1>試試就逝世的擴充套件測試空白頁</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/30
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E9%9B%9C%E7%89%A9/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                雜物
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="color: #00bcd4">測試</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        
+    <div id="aplayer-nAYlFqWa" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<h3><span id="各種套件測試"> 各種套件測試</span></h3>
+<h4><span id="1-meting"> 1. meting</span></h4>
+<p>代碼：</p>
+<pre class="highlight"><code class="markdown">&#123;% meting "autoplay" "preload:auto"%&#125;
+</code></pre>
+<blockquote>
+<p>結果：就4你左下角的播放器啦哈哈</p>
+</blockquote>
+<h4><span id="2-mathjax"> 2. mathjax</span></h4>
+<p>代碼：</p>
+<pre class="highlight"><code class="markdown">&#123;% mathjax %&#125;
+\ce&#123;O2 + C -> CO2&#125;
+&#123;% endmathjax %&#125;
+</code></pre>
+<blockquote>
+<p>結果：<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.339ex;" xmlns="http://www.w3.org/2000/svg" width="16.491ex" height="1.959ex" role="img" focusable="false" viewbox="0 -716 7289.1 866" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-2-TEX-N-4F" d="M56 340Q56 423 86 494T164 610T270 680T388 705Q521 705 621 601T722 341Q722 260 693 191T617 75T510 4T388 -22T267 3T160 74T85 189T56 340ZM467 647Q426 665 388 665Q360 665 331 654T269 620T213 549T179 439Q174 411 174 354Q174 144 277 61Q327 20 385 20H389H391Q474 20 537 99Q603 188 603 354Q603 411 598 439Q577 592 467 647Z"/><path id="MJX-2-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/><path id="MJX-2-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/><path id="MJX-2-TEX-N-43" d="M56 342Q56 428 89 500T174 615T283 681T391 705Q394 705 400 705T408 704Q499 704 569 636L582 624L612 663Q639 700 643 704Q644 704 647 704T653 705H657Q660 705 666 699V419L660 413H626Q620 419 619 430Q610 512 571 572T476 651Q457 658 426 658Q322 658 252 588Q173 509 173 342Q173 221 211 151Q232 111 263 84T328 45T384 29T428 24Q517 24 571 93T626 244Q626 251 632 257H660L666 251V236Q661 133 590 56T403 -21Q262 -21 159 83T56 342Z"/><path id="MJX-2-TEX-N-27F6" d="M84 237T84 250T98 270H1444Q1328 357 1301 493Q1301 494 1301 496T1300 499Q1300 511 1317 511H1320Q1329 511 1332 510T1338 506T1341 497T1344 481T1352 456Q1374 389 1425 336T1544 261Q1553 258 1553 250Q1553 244 1548 241T1524 231T1486 212Q1445 186 1415 152T1370 85T1349 35T1341 4Q1339 -6 1336 -8T1320 -11Q1300 -11 1300 0Q1300 7 1305 25Q1337 151 1444 230H98Q84 237 84 250Z"/></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="4F" xlink:href="#MJX-2-TEX-N-4F"/></g></g><g data-mml-node="msub" transform="translate(778,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mpadded"><g data-mml-node="mphantom"/></g></g></g><g data-mml-node="TeXAtom" transform="translate(33,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mpadded"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"/></g></g></g></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1214.6,0)"/><g data-mml-node="mo" transform="translate(1436.8,0)"><use data-c="2B" xlink:href="#MJX-2-TEX-N-2B"/></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2437,0)"/><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2437,0)"><g data-mml-node="mi"><use data-c="43" xlink:href="#MJX-2-TEX-N-43"/></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(3159,0)"/><g data-mml-node="TeXAtom" data-mjx-texclass="REL" transform="translate(3436.8,0)"><g data-mml-node="mo"><use data-c="27F6" xlink:href="#MJX-2-TEX-N-27F6"/></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(5352.6,0)"/><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(5352.6,0)"><g data-mml-node="mi"><use data-c="43" xlink:href="#MJX-2-TEX-N-43"/><use data-c="4F" xlink:href="#MJX-2-TEX-N-4F" transform="translate(722,0)"/></g></g><g data-mml-node="msub" transform="translate(6852.6,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mpadded"><g data-mml-node="mphantom"/></g></g></g><g data-mml-node="TeXAtom" transform="translate(33,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mpadded"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-2-TEX-N-32"/></g></g></g></g></g></g></g></g></svg></mjx-container></p>
+</blockquote>
+<h4><span id="3-雨背景"> 3. 雨背景</span></h4>
+<p>在<code>layout.ejs</code>中的<code>&lt;head&gt;</code>和<code>&lt;/head&gt;</code>間加入：</p>
+<pre class="highlight"><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;background&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/js/background.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>然後在<code>source/js</code>中新建一個<code>background.min.js</code>，內容為：</p>
+<pre class="highlight"><code class="javascript">!<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<span class="hljs-keyword">var</span> t=(<span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span>+<span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span>)/<span class="hljs-number">8</span>,n=<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;background&quot;</span>),e=n.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&quot;2d&quot;</span>),o=<span class="hljs-number">1</span>,i=<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>,r=<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>,a=[],d=<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>,h=<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>,y=&#123;<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">tx</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">ty</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">z</span>:<span class="hljs-number">5e-4</span>&#125;;<span class="hljs-keyword">function</span> <span class="hljs-title function_">x</span>(<span class="hljs-params">t</span>)&#123;t.<span class="hljs-property">x</span>=<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()*i,t.<span class="hljs-property">y</span>=<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()*r&#125;<span class="hljs-keyword">function</span> <span class="hljs-title function_">m</span>(<span class="hljs-params"></span>)&#123;o=<span class="hljs-variable language_">window</span>.<span class="hljs-property">devicePixelRatio</span>||<span class="hljs-number">1</span>,i=<span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span>*o,r=<span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span>*o,n.<span class="hljs-property">width</span>=i,n.<span class="hljs-property">height</span>=r,a.<span class="hljs-title function_">forEach</span>(x)&#125;<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> c=<span class="hljs-number">0</span>;c&lt;t;c++)a.<span class="hljs-title function_">push</span>(&#123;<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">z</span>:<span class="hljs-number">.2</span>+<span class="hljs-number">.8</span>*<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()&#125;);<span class="hljs-title function_">m</span>(),<span class="hljs-keyword">function</span> <span class="hljs-title function_">t</span>(<span class="hljs-params"></span>)&#123;e.<span class="hljs-title function_">clearRect</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,i,r),y.<span class="hljs-property">tx</span>*=<span class="hljs-number">.95</span>,y.<span class="hljs-property">ty</span>*=<span class="hljs-number">.95</span>,y.<span class="hljs-property">x</span>+=<span class="hljs-number">.7</span>*(y.<span class="hljs-property">tx</span>-y.<span class="hljs-property">x</span>),y.<span class="hljs-property">y</span>+=<span class="hljs-number">.7</span>*(y.<span class="hljs-property">ty</span>-y.<span class="hljs-property">y</span>),a.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>)&#123;<span class="hljs-keyword">var</span> n,a,e;t.<span class="hljs-property">x</span>+=y.<span class="hljs-property">x</span>*t.<span class="hljs-property">z</span>,t.<span class="hljs-property">y</span>+=y.<span class="hljs-property">y</span>*t.<span class="hljs-property">z</span>,t.<span class="hljs-property">x</span>+=(t.<span class="hljs-property">x</span>-i/<span class="hljs-number">2</span>)*y.<span class="hljs-property">z</span>*t.<span class="hljs-property">z</span>,t.<span class="hljs-property">y</span>+=(t.<span class="hljs-property">y</span>-r/<span class="hljs-number">2</span>)*y.<span class="hljs-property">z</span>*t.<span class="hljs-property">z</span>,t.<span class="hljs-property">z</span>+=y.<span class="hljs-property">z</span>,(t.<span class="hljs-property">x</span>&lt;-<span class="hljs-number">50</span>||t.<span class="hljs-property">x</span>&gt;i+<span class="hljs-number">50</span>||t.<span class="hljs-property">y</span>&lt;-<span class="hljs-number">50</span>||t.<span class="hljs-property">y</span>&gt;r+<span class="hljs-number">50</span>)&amp;&amp;(t=t,n=<span class="hljs-string">&quot;z&quot;</span>,a=<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(y.<span class="hljs-property">tx</span>),e=<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(y.<span class="hljs-property">ty</span>),<span class="hljs-number">1</span>&lt;a&amp;&amp;<span class="hljs-number">1</span>&lt;e&amp;&amp;(n=<span class="hljs-string">&quot;h&quot;</span>==(e&lt;a?<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()&lt;<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(y.<span class="hljs-property">x</span>)/(a+e)?<span class="hljs-string">&quot;h&quot;</span>:<span class="hljs-string">&quot;v&quot;</span>:<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()&lt;<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(y.<span class="hljs-property">y</span>)/(a+e)?<span class="hljs-string">&quot;v&quot;</span>:<span class="hljs-string">&quot;h&quot;</span>)?<span class="hljs-number">0</span>&lt;y.<span class="hljs-property">x</span>?<span class="hljs-string">&quot;l&quot;</span>:<span class="hljs-string">&quot;r&quot;</span>:<span class="hljs-number">0</span>&lt;y.<span class="hljs-property">y</span>?<span class="hljs-string">&quot;t&quot;</span>:<span class="hljs-string">&quot;b&quot;</span>),t.<span class="hljs-property">z</span>=<span class="hljs-number">.2</span>+<span class="hljs-number">.8</span>*<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>(),<span class="hljs-string">&quot;z&quot;</span>===n?(t.<span class="hljs-property">z</span>=<span class="hljs-number">.1</span>,t.<span class="hljs-property">x</span>=<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()*i,t.<span class="hljs-property">y</span>=<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()*r):<span class="hljs-string">&quot;l&quot;</span>===n?(t.<span class="hljs-property">x</span>=-<span class="hljs-number">3</span>,t.<span class="hljs-property">y</span>=r*<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()):<span class="hljs-string">&quot;r&quot;</span>===n?(t.<span class="hljs-property">x</span>=i+<span class="hljs-number">3</span>,t.<span class="hljs-property">y</span>=r*<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()):<span class="hljs-string">&quot;t&quot;</span>===n?(t.<span class="hljs-property">x</span>=i*<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>(),t.<span class="hljs-property">y</span>=-<span class="hljs-number">3</span>):<span class="hljs-string">&quot;b&quot;</span>===n&amp;&amp;(t.<span class="hljs-property">x</span>=i*<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>(),t.<span class="hljs-property">y</span>=r+<span class="hljs-number">3</span>))&#125;),a.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>)&#123;e.<span class="hljs-title function_">beginPath</span>(),e.<span class="hljs-property">lineCap</span>=<span class="hljs-string">&quot;round&quot;</span>,e.<span class="hljs-property">lineWidth</span>=<span class="hljs-number">3</span>*t.<span class="hljs-property">z</span>*o,e.<span class="hljs-property">strokeStyle</span>=<span class="hljs-string">&quot;rgba(102,175,239,.2)&quot;</span>,e.<span class="hljs-title function_">beginPath</span>(),e.<span class="hljs-title function_">moveTo</span>(t.<span class="hljs-property">x</span>,t.<span class="hljs-property">y</span>);<span class="hljs-keyword">var</span> n=<span class="hljs-number">2</span>*y.<span class="hljs-property">x</span>,a=<span class="hljs-number">2</span>*y.<span class="hljs-property">y</span>;<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(n)&lt;<span class="hljs-number">.1</span>&amp;&amp;(n=<span class="hljs-number">.5</span>),<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(a)&lt;<span class="hljs-number">.1</span>&amp;&amp;(a=<span class="hljs-number">.5</span>),e.<span class="hljs-title function_">lineTo</span>(t.<span class="hljs-property">x</span>+n,t.<span class="hljs-property">y</span>+a),e.<span class="hljs-title function_">stroke</span>()&#125;),<span class="hljs-title function_">requestAnimationFrame</span>(t)&#125;(),<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;resize&quot;</span>,m),<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;mousemove&quot;</span>,<span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>)&#123;<span class="hljs-keyword">var</span> n,a,e;n=t.<span class="hljs-property">clientX</span>,t=t.<span class="hljs-property">clientY</span>,<span class="hljs-string">&quot;number&quot;</span>==<span class="hljs-keyword">typeof</span> d&amp;&amp;<span class="hljs-string">&quot;number&quot;</span>==<span class="hljs-keyword">typeof</span> h&amp;&amp;(a=n-d,e=t-h,y.<span class="hljs-property">tx</span>=y.<span class="hljs-property">x</span>+a/<span class="hljs-number">8</span>*o*<span class="hljs-number">1</span>,y.<span class="hljs-property">ty</span>=y.<span class="hljs-property">y</span>+e/<span class="hljs-number">8</span>*o*<span class="hljs-number">1</span>),d=n,h=t&#125;),<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;mouseleave&quot;</span>,<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;h=d=<span class="hljs-literal">null</span>&#125;)&#125;();
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
+    
+    
+    
+    
+    
+</div>
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2023 棉花糖的小窩
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;棉花糖
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+<!--頁面點擊小紅心-->
+<script type="text/javascript" src="/love.js"></script>
+                </div>
+            </transition>
+            
+                
+                
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+
+        <script src="/js/main.js"></script>
+        
+        
+
+
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "enable",
+        
+    });
+</script>
+
+
+
+        
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/kp31/model.json"},"display":{"position":"right","width":200,"height":600},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+    
+</html>
+

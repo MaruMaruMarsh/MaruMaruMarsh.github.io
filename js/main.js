@@ -13,7 +13,9 @@ const app = Vue.createApp({
     created() {
         window.addEventListener("load", () => {
             this.loading = false;
+            
         });
+
     },
     mounted() {
         window.addEventListener("scroll", this.handleScroll, true);
@@ -49,4 +51,5 @@ $(document).on('pjax:start', function () {
         window.aplayers = [];
     }
 });
+
 app.mount("#layout");
