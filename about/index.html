@@ -69,17 +69,7 @@
         <!-- require MetingJS -->
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
         <!-- 我使用的APlayer本体 -->
-        <div class="aplayer" 
-            data-id="2465890057" 
-            data-server="netease" 
-            data-type="playlist" 
-            data-fixed="true" 
-            data-autoplay="true" 
-            data-order="random" 
-            data-volume="0.55" 
-            data-theme="#cc543a" 
-            data-preload="auto" >
-        </div>
+
         <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
         <!-- require JQuery -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
@@ -91,7 +81,7 @@
         <script>
             $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
         </script>
-    </head>
+    <meta name="generator" content="Hexo 6.3.0"></head>
     <body>
         <div id="layout">
             <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
@@ -229,10 +219,6 @@
             <transition name="into">
                 <div id="main" v-show="!loading">
                     <div class="article">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-    <meta name="theme-color" content="{{ theme.android_chrome_color }}">
-    <meta name="generator" content="Hexo {{ hexo_version }}">
     <!--pjax：防止跳转页面音乐暂停-->
     <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
@@ -240,30 +226,6 @@
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
     <!-- require MetingJS -->
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-    <!-- 我使用的APlayer本体 -->
-    <div id="pjax-container">
-        <div class="aplayer" 
-            data-id="2465890057" 
-            data-server="netease" 
-            data-type="playlist" 
-            data-fixed="true" 
-            data-autoplay="true" 
-            data-order="random" 
-            data-volume="0.55" 
-            data-theme="#cc543a" 
-            data-preload="auto" >
-            </div>
-    </div>
-        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
-    <!-- require JQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-    <!-- require pjax -->
-    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
-    <script src="./node_modules/pjax/pjax.js"></script>
-    <script src="./pjax.min.js"></script>
-    <script>
-        $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
-    </script>
     <div>
         <h1>個檔咩</h1>
     </div>
@@ -362,20 +324,7 @@
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
         <!-- require MetingJS -->
         <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-        <div id="pjax-container">
-        <!-- 我使用的APlayer本体 -->
-            <div class="aplayer" 
-                data-id="2465890057" 
-                data-server="netease" 
-                data-type="playlist" 
-                data-fixed="true" 
-                data-autoplay="true" 
-                data-order="random" 
-                data-volume="0.55" 
-                data-theme="#cc543a" 
-                data-preload="auto" >
-            </div>
-        </div>
+
         <!-- require JQuery -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
         <!-- require pjax -->
