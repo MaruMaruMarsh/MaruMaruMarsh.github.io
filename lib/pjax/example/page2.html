@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <script>
+            // 对所有链接跳转事件绑定pjax容器pjax-container 
+            $(document).pjax('a', '#pjax-container', {
+            fragment:'#pjax-container',
+            timeout:8000
+            });   
+        </script>  
+        <!--pjax：防止跳转页面音乐暂停-->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+        <meta charset="utf-8" />
+
+        <title> | 棉花糖的小窩</title>
+        <meta name="author" content="Marumallow" />
+        <meta name="description" content="期末考我要炸了!!!" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+<script src="https://cdn.staticfile.org/waline/2.14.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.14.8/waline.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.14.8/waline-meta.min.css" />
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<script src="//cdn.jsdelivr.net/npm/vue-aplayer"></script>
+<script>
+  Vue.component('aplayer', VueAPlayer)
+</script>
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+        <div class="aplayer" 
+            data-id="2465890057" 
+            data-server="netease" 
+            data-type="playlist" 
+            data-fixed="true" 
+            data-autoplay="true" 
+            data-order="random" 
+            data-volume="0.55" 
+            data-theme="#cc543a" 
+            data-preload="auto" >
+        </div>
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+    </head>
+    <body>
+        <div id="layout">
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+            <div id="pjax-container">
+                <!-- 我使用的APlayer本体 -->
+                    <div class="aplayer" 
+                        data-id="2465890057" 
+                        data-server="netease" 
+                        data-type="playlist" 
+                        data-fixed="true" 
+                        data-autoplay="true" 
+                        data-order="random" 
+                        data-volume="0.55" 
+                        data-theme="#cc543a" 
+                        data-preload="none ">
+                    </div>
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>進度條正在跑跑中</p>
+                        <img src="/images/loading.gif" />
+                            </div>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>棉花糖的小窩</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+        <a href="/Links">
+            <i class="fa-solid fa-link fa-fw"></i>
+            <span>&ensp;Links</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;棉花糖的小窩</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+                <a href="/Links">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-link fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Links</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="theme-color" content="{{ theme.android_chrome_color }}">
+    <meta name="generator" content="Hexo {{ hexo_version }}">
+    <!--pjax：防止跳转页面音乐暂停-->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <!-- 我使用的APlayer本体 -->
+    <div id="pjax-container">
+        <div class="aplayer" 
+            data-id="2465890057" 
+            data-server="netease" 
+            data-type="playlist" 
+            data-fixed="true" 
+            data-autoplay="true" 
+            data-order="random" 
+            data-volume="0.55" 
+            data-theme="#cc543a" 
+            data-preload="auto" >
+            </div>
+    </div>
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+    <!-- require JQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <!-- require pjax -->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+    <script src="./node_modules/pjax/pjax.js"></script>
+    <script src="./pjax.min.js"></script>
+    <script>
+        $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+    </script>
+    <div>
+        <h1></h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/29
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Page 2</title>
+    <script src="../pjax.js"></script>
+    <script src="example.js"></script>
+  </head>
+  <body>
+    <div class="body">
+      <h1><span id="page-2">Page 2</span></h1>
+      Hello. Go to <a href="index.html" class="js-Pjax">Index</a>.
+    </div>
+  </body>
+</html>
+
+    </div>
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
+    
+    
+    
+    
+</div>
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2023 棉花糖的小窩
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Marumallow
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+                    <!--pjax：防止跳转页面音乐暂停-->
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "enable",
+        
+    });
+</script>
+
+
+
+        
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+        
+        <!--pjax：防止跳转页面音乐暂停-->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <div id="pjax-container">
+        <!-- 我使用的APlayer本体 -->
+            <div class="aplayer" 
+                data-id="2465890057" 
+                data-server="netease" 
+                data-type="playlist" 
+                data-fixed="true" 
+                data-autoplay="true" 
+                data-order="random" 
+                data-volume="0.55" 
+                data-theme="#cc543a" 
+                data-preload="auto" >
+            </div>
+        </div>
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        <!-- .css file path -->
+        <link rel="stylesheet" href="./player/index.bundle.css">
+        <!-- petite-vue CDN -->
+        <script src="https://unpkg.com/petite-vue"></script>
+        <!-- .js file path -->
+        <script src="./player/index.bundle.js"></script>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/kp31/model.json"},"display":{"position":"right","width":200,"height":600},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+</html>
+

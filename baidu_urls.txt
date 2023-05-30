@@ -1,1 +1,1 @@
-http://example.com/2023/05/28/Matplotlibsum/
+http://example.com/2023/05/29/NumPysum/

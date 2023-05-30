@@ -2,7 +2,17 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
     <head>
+        <script>
+            // 对所有链接跳转事件绑定pjax容器pjax-container 
+            $(document).pjax('a', '#pjax-container', {
+            fragment:'#pjax-container',
+            timeout:8000
+            });   
+        </script>  
+        <!--pjax：防止跳转页面音乐暂停-->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         <meta charset="utf-8" />
+
         <title>Matplotlib 相關功能整理 | 棉花糖的小窩</title>
         <meta name="author" content="Marumallow" />
         <meta name="description" content="期末考我要炸了!!!" />
@@ -38,21 +48,78 @@
 
 
 
+<script src="https://cdn.staticfile.org/waline/2.14.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.14.8/waline.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.14.8/waline-meta.min.css" />
+
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-    <meta name="generator" content="Hexo 6.3.0"></head>
+<script src="//cdn.jsdelivr.net/npm/vue-aplayer"></script>
+<script>
+  Vue.component('aplayer', VueAPlayer)
+</script>
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+        <div class="aplayer" 
+            data-id="2465890057" 
+            data-server="netease" 
+            data-type="playlist" 
+            data-fixed="true" 
+            data-autoplay="true" 
+            data-order="random" 
+            data-volume="0.55" 
+            data-theme="#cc543a" 
+            data-preload="auto" >
+        </div>
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+    <link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
     <body>
         <div id="layout">
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+            <div id="pjax-container">
+                <!-- 我使用的APlayer本体 -->
+                    <div class="aplayer" 
+                        data-id="2465890057" 
+                        data-server="netease" 
+                        data-type="playlist" 
+                        data-fixed="true" 
+                        data-autoplay="true" 
+                        data-order="random" 
+                        data-volume="0.55" 
+                        data-theme="#cc543a" 
+                        data-preload="none ">
+                    </div>
             <transition name="fade">
                 <div id="loading" v-show="loading">
                     <div id="loading-circle">
                         <h2>LOADING</h2>
                         <p>進度條正在跑跑中</p>
                         <img src="/images/loading.gif" />
+                            </div>
                     </div>
+                    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
                 </div>
             </transition>
             <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
@@ -165,6 +232,41 @@
             <transition name="into">
                 <div id="main" v-show="!loading">
                     <div class="article">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="theme-color" content="{{ theme.android_chrome_color }}">
+    <meta name="generator" content="Hexo {{ hexo_version }}">
+    <!--pjax：防止跳转页面音乐暂停-->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <!-- 我使用的APlayer本体 -->
+    <div id="pjax-container">
+        <div class="aplayer" 
+            data-id="2465890057" 
+            data-server="netease" 
+            data-type="playlist" 
+            data-fixed="true" 
+            data-autoplay="true" 
+            data-order="random" 
+            data-volume="0.55" 
+            data-theme="#cc543a" 
+            data-preload="auto" >
+            </div>
+    </div>
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+    <!-- require JQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <!-- require pjax -->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+    <script src="./node_modules/pjax/pjax.js"></script>
+    <script src="./pjax.min.js"></script>
+    <script>
+        $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+    </script>
     <div>
         <h1>Matplotlib 相關功能整理</h1>
     </div>
@@ -176,11 +278,90 @@
             2023/5/28
         </span>
         
+        <span class="category">
+            <a href="/categories/Python/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Python
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #00bcd4">期末考</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #00a596">講義</a>
+            </span>
+            
+        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <h1 id="Visualization-with-Matplotlib"><a href="#Visualization-with-Matplotlib" class="headerlink" title="Visualization with Matplotlib"></a>Visualization with Matplotlib</h1><h2 id="介紹"><a href="#介紹" class="headerlink" title="介紹"></a>介紹</h2><ul>
+        
+    <div id="aplayer-JrAicreD" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<h1><span id="visualization-with-matplotlib">Visualization with Matplotlib</span></h1><!-- toc -->
+
+<ul>
+<li><a href="#%E4%BB%8B%E7%B4%B9">介紹</a></li>
+<li><a href="#two-interfaces-for-the-matplotlib">Two interfaces for the <code>matplotlib</code></a><ul>
+<li><a href="#functional-interface">Functional interface</a></li>
+<li><a href="#object-oriented-interface">Object-oriented interface</a></li>
+</ul>
+</li>
+<li><a href="#simple-plots">Simple plots</a><ul>
+<li><a href="#adjusting-the-plot-line-colors-styles-and-widths">Adjusting the plot: Line colors, styles and widths</a><ul>
+<li><a href="#line-colors">Line colors</a></li>
+<li><a href="#line-styles">Line styles</a></li>
+<li><a href="#line-widths">Line widths</a></li>
+<li><a href="#axes-limits">Axes limits</a></li>
+<li><a href="#labeling">Labeling</a></li>
+<li><a href="#matplotlib-tips"><code>Matplotlib</code> tips</a></li>
+</ul>
+</li>
+<li><a href="#simple-scatter-plots">Simple scatter plots</a><ul>
+<li><a href="#scatter-plots-with-pltscatter">Scatter plots with <code>plt.scatter</code></a></li>
+</ul>
+</li>
+<li><a href="#density-plots">Density plots</a><ul>
+<li><a href="#histograms">Histograms</a></li>
+<li><a href="#binnings">binnings</a></li>
+<li><a href="#density">Density</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#advance-plot">Advance plot</a><ul>
+<li><a href="#filling-the-area-between-lines">Filling the area between lines</a></li>
+<li><a href="#plot-in-polar-coordinate">Plot in polar coordinate</a></li>
+</ul>
+</li>
+<li><a href="#customizing-plot">Customizing Plot</a><ul>
+<li><a href="#customizing-plot-legends">Customizing plot legends</a><ul>
+<li><a href="#text-and-annotation">Text and Annotation</a></li>
+<li><a href="#customizing-ticks-and-splines">Customizing ticks and splines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#multiple-subplots">Multiple Subplots</a><ul>
+<li><a href="#pltsubplots"><code>plt.subplots()</code></a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h2><span id="介紹">介紹</span></h2><ul>
 <li>a multiplatform data visualization library built on <code>NumPy</code> <code>arrays</code> and designed to work with the broader <code>SciPy</code> stack. </li>
 <li>supports numerous backends and output types, which means we can count on it to work regardless of the operating system we are using or the output format we desire. </li>
 <li>It has led to a large user base.</li>
@@ -190,7 +371,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 plt.style.use(&#39;seaborn-v0_8-whitegrid&#39;)
 </code></pre>
-<h2 id="Two-interfaces-for-the-matplotlib"><a href="#Two-interfaces-for-the-matplotlib" class="headerlink" title="Two interfaces for the matplotlib"></a>Two interfaces for the <code>matplotlib</code></h2><ol>
+<h2><span id="two-interfaces-for-the-matplotlib">Two interfaces for the <code>matplotlib</code></span></h2><ol>
 <li>a user-friendly functional-style state-based interface</li>
 <li>a more powerful object-oriented interface.</li>
 </ol>
@@ -200,7 +381,7 @@ plt.style.use(&#39;seaborn-v0_8-whitegrid&#39;)
 C, S = np.cos(x), np.sin(x)
 # `C` is the cosine (256 values) and `S` is the sine (256 values).
 </code></pre>
-<h3 id="Functional-interface"><a href="#Functional-interface" class="headerlink" title="Functional interface"></a>Functional interface</h3><pre><code class="python"># 1. create a plot figure
+<h3><span id="functional-interface">Functional interface</span></h3><pre><code class="python"># 1. create a plot figure
 plt.figure() 
 </code></pre>
 <pre><code class="python">#2. create the first of two panels and set current axis
@@ -227,7 +408,7 @@ plt.plot(x, C)
 <ul>
 <li>after creating the second panel, how can we return to the first one and add something?</li>
 </ul>
-<h3 id="Object-oriented-interface"><a href="#Object-oriented-interface" class="headerlink" title="Object-oriented interface"></a>Object-oriented interface</h3><p>對於較複雜的情境或是需要更多控制的情境，物件導向的介面會很有幫助。<br>物件導向的介面會將圖表的每個元件都視為物件，而不是將圖表視為一個整體。</p>
+<h3><span id="object-oriented-interface">Object-oriented interface</span></h3><p>對於較複雜的情境或是需要更多控制的情境，物件導向的介面會很有幫助。<br>物件導向的介面會將圖表的每個元件都視為物件，而不是將圖表視為一個整體。</p>
 <pre><code class="python"># 1. First create a grid of plots
 # ax will be an array of two Axes objects
 fig, ax = plt.subplots(2)
@@ -236,7 +417,7 @@ fig, ax = plt.subplots(2)
 ax[0].plot(x, S)
 ax[1].plot(x, C);
 </code></pre>
-<h2 id="Simple-plots"><a href="#Simple-plots" class="headerlink" title="Simple plots"></a>Simple plots</h2><p>要創建一個簡單的圖表，我們</p>
+<h2><span id="simple-plots">Simple plots</span></h2><p>要創建一個簡單的圖表，我們</p>
 <ol>
 <li>Call the <code>plt.figure()</code> to create a new figure. (optional for <code>%matplotlib inline</code>)</li>
 <li>Generate a sequence of $x$ values usually using <code>linspace()</code>.</li>
@@ -245,13 +426,13 @@ ax[1].plot(x, C);
 <li>Utilize <code>plt</code> functions to enhance the figure with features such as a title, legend, grid lines, etc.</li>
 <li>Input <code>plt.show()</code> to display the resulting figure (this step is optional in a Jupyter notebook).</li>
 </ol>
-<h3 id="Adjusting-the-plot-Line-colors-styles-and-widths"><a href="#Adjusting-the-plot-Line-colors-styles-and-widths" class="headerlink" title="Adjusting the plot: Line colors, styles and widths"></a>Adjusting the plot: Line colors, styles and widths</h3><h4 id="Line-colors"><a href="#Line-colors" class="headerlink" title="Line colors"></a>Line colors</h4><p><code>color</code> keyword:</p>
+<h3><span id="adjusting-the-plot-line-colors-styles-and-widths">Adjusting the plot: Line colors, styles and widths</span></h3><h4><span id="line-colors">Line colors</span></h4><p><code>color</code> keyword:</p>
 <pre><code class="python">plt.plot(x, np.cos(x - 0), color=&#39;blue&#39;)         # specify color by name
 plt.plot(x, np.cos(x - 1), color=&#39;g&#39;)            # short color code (rgbcmyk)
 plt.plot(x, np.cos(x - 2), color=&#39;0.75&#39;)         # grayscale between 0 and 1
 plt.plot(x, np.cos(x - 4), color=(1.0,0.2,0.3)); # RGB tuple, values 0 to 1
 </code></pre>
-<h4 id="Line-styles"><a href="#Line-styles" class="headerlink" title="Line styles"></a>Line styles</h4><p><code>linestyle</code> keyword:</p>
+<h4><span id="line-styles">Line styles</span></h4><p><code>linestyle</code> keyword:</p>
 <pre><code class="python">plt.plot(x, x - 0, linestyle=&#39;-&#39;)  # solid
 plt.plot(x, x - 1, linestyle=&#39;--&#39;) # dashed
 plt.plot(x, x - 2, linestyle=&#39;-.&#39;) # dashdot
@@ -259,16 +440,16 @@ plt.plot(x, x - 3, linestyle=&#39;:&#39;)  # dotted
 plt.plot(x, x - 4, &#39;:k&#39;);          # dotted black 
 # You can save some keystrokes by combining these linestyle and color codes into a single non-keyword argument
 </code></pre>
-<h4 id="Line-widths"><a href="#Line-widths" class="headerlink" title="Line widths"></a>Line widths</h4><p><code>linewidth</code> keyword:</p>
+<h4><span id="line-widths">Line widths</span></h4><p><code>linewidth</code> keyword:</p>
 <pre><code class="python">plt.plot(x, np.cos(x - 0)) 
 plt.plot(x, np.cos(x - 1), linewidth=&#39;5&#39;);
 </code></pre>
-<h4 id="Axes-limits"><a href="#Axes-limits" class="headerlink" title="Axes limits"></a>Axes limits</h4><pre><code class="python">plt.plot(x, np.cos(x))
+<h4><span id="axes-limits">Axes limits</span></h4><pre><code class="python">plt.plot(x, np.cos(x))
 
 plt.xlim(-0.5, 10.5)
 plt.ylim(-1.5, 1.5);
 </code></pre>
-<h4 id="Labeling"><a href="#Labeling" class="headerlink" title="Labeling"></a>Labeling</h4><pre><code class="python">plt.plot(x, np.sin(x), &#39;-g&#39;, label=&#39;sin(x)&#39;) # solid green line
+<h4><span id="labeling">Labeling</span></h4><pre><code class="python">plt.plot(x, np.sin(x), &#39;-g&#39;, label=&#39;sin(x)&#39;) # solid green line
 plt.plot(x, np.cos(x), &#39;:b&#39;, label=&#39;cos(x)&#39;) # dotted blue line
 
 plt.title(&quot;A Sin/Cos Curve&quot;, fontsize=18)       # we can also specify the font size
@@ -279,7 +460,7 @@ plt.legend(fontsize=12)
 plt.axis(&#39;equal&#39;);
 </code></pre>
 <p><img src="https://drive.google.com/uc?id=1zKJuabAWhclAXqLNr-usOpQC_WRiFgnP"></p>
-<h4 id="Matplotlib-tips"><a href="#Matplotlib-tips" class="headerlink" title="Matplotlib tips"></a><code>Matplotlib</code> tips</h4><div align="center">
+<h4><span id="matplotlib-tips"><code>Matplotlib</code> tips</span></h4><div align="center">
 
 <table>
 <thead>
@@ -311,13 +492,13 @@ plt.axis(&#39;equal&#39;);
 </tbody></table>
 </div>
 
-<h3 id="Simple-scatter-plots"><a href="#Simple-scatter-plots" class="headerlink" title="Simple scatter plots"></a>Simple scatter plots</h3><p>所謂的散佈圖，就是將資料點以點的方式呈現在圖表上。</p>
+<h3><span id="simple-scatter-plots">Simple scatter plots</span></h3><p>所謂的散佈圖，就是將資料點以點的方式呈現在圖表上。</p>
 <pre><code class="python">x = np.linspace(0, 10, 30)
 y = np.sin(x)
 plt.plot(x, y, &#39;o&#39;, color=&#39;black&#39;);
 </code></pre>
 <p>第三個參數 <code>&#39;o&#39;</code> 代表使用點的方式呈現資料點，而不是使用線的方式呈現資料點。<br>marker styles有很多種，可以參考<a target="_blank" rel="noopener" href="https://matplotlib.org/api/markers_api.html#module-matplotlib.markers">這裡</a>。</p>
-<h4 id="Scatter-plots-with-plt-scatter"><a href="#Scatter-plots-with-plt-scatter" class="headerlink" title="Scatter plots with plt.scatter"></a>Scatter plots with <code>plt.scatter</code></h4><p>進階的散佈圖可以使用 <code>plt.scatter</code> 來呈現。<br>主要的差異在於 <code>plt.scatter</code> 可以讓我們在每個資料點上設定不同的顏色、大小、形狀等等。</p>
+<h4><span id="scatter-plots-with-pltscatter">Scatter plots with <code>plt.scatter</code></span></h4><p>進階的散佈圖可以使用 <code>plt.scatter</code> 來呈現。<br>主要的差異在於 <code>plt.scatter</code> 可以讓我們在每個資料點上設定不同的顏色、大小、形狀等等。</p>
 <pre><code class="python">np.random.seed(42)
 
 x = np.random.randn(100)
@@ -329,26 +510,26 @@ plt.scatter(x, y, c=colors, s=sizes, alpha=0.3, cmap=&#39;viridis&#39;)
 plt.colorbar(); # show color scale
 </code></pre>
 <p>想看所有的Matplotlib colormaps，可以參考<a target="_blank" rel="noopener" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">list of colormaps</a>.</p>
-<h3 id="Density-plots"><a href="#Density-plots" class="headerlink" title="Density plots"></a>Density plots</h3><h4 id="Histograms"><a href="#Histograms" class="headerlink" title="Histograms"></a>Histograms</h4><p>一個常見的資料視覺化方式是直方圖，可以使用 <code>plt.hist</code> 來呈現。</p>
+<h3><span id="density-plots">Density plots</span></h3><h4><span id="histograms">Histograms</span></h4><p>一個常見的資料視覺化方式是直方圖，可以使用 <code>plt.hist</code> 來呈現。</p>
 <pre><code class="python">np.random.seed(42)
 data = np.random.normal(size=1000)
 plt.hist(data);
 </code></pre>
-<h4 id="binnings"><a href="#binnings" class="headerlink" title="binnings"></a>binnings</h4><p><code>plt.hist</code> 有一個參數 <code>bins</code>，可以用來調整直方圖的區間數。</p>
+<h4><span id="binnings">binnings</span></h4><p><code>plt.hist</code> 有一個參數 <code>bins</code>，可以用來調整直方圖的區間數。</p>
 <pre><code class="python">plt.hist(data, bins=30, density=True, alpha=0.5, color=&#39;steelblue&#39;, edgecolor=&#39;none&#39;)
 x = np.linspace(-4,4,100)
 y = 1/(2*np.pi)**0.5 * np.exp(-x**2/2)
 plt.plot(x,y,&#39;b&#39;,alpha=0.8);
 </code></pre>
-<h4 id="Density"><a href="#Density" class="headerlink" title="Density"></a>Density</h4><p>density&#x3D;True 可以讓直方圖的面積總和為1，這樣就可以當作機率密度函數來看待。</p>
-<h2 id="Advance-plot"><a href="#Advance-plot" class="headerlink" title="Advance plot"></a>Advance plot</h2><h3 id="Filling-the-area-between-lines"><a href="#Filling-the-area-between-lines" class="headerlink" title="Filling the area between lines"></a>Filling the area between lines</h3><p>要畫出兩條線之間的區域，可以使用<code>plt.fill_between()</code></p>
+<h4><span id="density">Density</span></h4><p>density&#x3D;True 可以讓直方圖的面積總和為1，這樣就可以當作機率密度函數來看待。</p>
+<h2><span id="advance-plot">Advance plot</span></h2><h3><span id="filling-the-area-between-lines">Filling the area between lines</span></h3><p>要畫出兩條線之間的區域，可以使用<code>plt.fill_between()</code></p>
 <pre><code class="python">x = np.linspace(0, 2*np.pi, 1000)
 
 plt.plot(x, np.sin(x), &#39;r&#39;)
 plt.plot(x, np.cos(x), &#39;g&#39;)
 plt.fill_between(x, np.cos(x), np.sin(x), color=&#39;red&#39;, alpha=0.1);
 </code></pre>
-<h3 id="Plot-in-polar-coordinate"><a href="#Plot-in-polar-coordinate" class="headerlink" title="Plot in polar coordinate"></a>Plot in polar coordinate</h3><p>要畫極座標的圖，可以使用 <code>plt.polar()</code></p>
+<h3><span id="plot-in-polar-coordinate">Plot in polar coordinate</span></h3><p>要畫極座標的圖，可以使用 <code>plt.polar()</code></p>
 <pre><code class="python">t = np.linspace(0, 2*np.pi, 64)
 
 # plot in polar coordinates
@@ -371,14 +552,14 @@ plt.plot(t+(r&lt;0)*np.pi, np.abs(r), &#39;-&#39;)
 # Set ticks for polar coordinate
 plt.xticks([0, np.pi/2, np.pi, 3*np.pi/2], [&#39;0&#39;, &#39;$\pi/2$&#39;, &#39;$\pi$&#39;, &#39;$3\pi/2$&#39;]);
 </code></pre>
-<h2 id="Customizing-Plot"><a href="#Customizing-Plot" class="headerlink" title="Customizing Plot"></a>Customizing Plot</h2><h3 id="Customizing-plot-legends"><a href="#Customizing-plot-legends" class="headerlink" title="Customizing plot legends"></a>Customizing plot legends</h3><pre><code class="python">x = np.linspace(0, 10, 100)
+<h2><span id="customizing-plot">Customizing Plot</span></h2><h3><span id="customizing-plot-legends">Customizing plot legends</span></h3><pre><code class="python">x = np.linspace(0, 10, 100)
 plt.plot(x, np.sin(x), &#39;-g&#39;, label=&#39;sin(x)&#39;)
 plt.plot(x, np.cos(x), &#39;:b&#39;, label=&#39;cos(x)&#39;)
 plt.axis(&#39;equal&#39;)
 
 plt.legend(loc=&#39;upper left&#39;, frameon=True)
 </code></pre>
-<h4 id="Text-and-Annotation"><a href="#Text-and-Annotation" class="headerlink" title="Text and Annotation"></a>Text and Annotation</h4><p>當我們想要在圖表上加上文字或是註解時，可以使用 <code>plt.text()</code> 或是 <code>plt.annotate()</code>。</p>
+<h4><span id="text-and-annotation">Text and Annotation</span></h4><p>當我們想要在圖表上加上文字或是註解時，可以使用 <code>plt.text()</code> 或是 <code>plt.annotate()</code>。</p>
 <pre><code class="python">plt.figure()
 x = np.linspace(0, 20, 1000)
 plt.plot(x, np.cos(x))
@@ -389,7 +570,7 @@ plt.axis(&#39;equal&#39;)
 plt.annotate(&#39;local minimum&#39;, xy=(5 * np.pi, -1), xytext=(2, -6), arrowprops=dict(arrowstyle=&quot;-&gt;&quot;), fontsize=14)
 plt.text(3.14, -1, &#39;local minimum&#39;, fontsize=14, ha=&#39;center&#39;); # (x, y, text)
 </code></pre>
-<h4 id="Customizing-ticks-and-splines"><a href="#Customizing-ticks-and-splines" class="headerlink" title="Customizing ticks and splines"></a>Customizing ticks and splines</h4><p>tick的定位和標籤可以使用 <code>plt.xticks()</code> 和 <code>plt.yticks()</code> 來調整。</p>
+<h4><span id="customizing-ticks-and-splines">Customizing ticks and splines</span></h4><p>tick的定位和標籤可以使用 <code>plt.xticks()</code> 和 <code>plt.yticks()</code> 來調整。</p>
 <pre><code class="python">x = np.linspace(0, 20, 1000)
 plt.plot(x, np.cos(x))
 plt.plot(x, np.sin(x))
@@ -414,7 +595,7 @@ ax.spines[[&#39;top&#39;, &#39;right&#39;]].set_visible(False)
 ax.spines[&#39;bottom&#39;].set_position((&#39;data&#39;,0))
 ax.spines[&#39;left&#39;].set_position((&#39;data&#39;,0))
 </code></pre>
-<h2 id="Multiple-Subplots"><a href="#Multiple-Subplots" class="headerlink" title="Multiple Subplots"></a>Multiple Subplots</h2><h3 id="plt-subplots"><a href="#plt-subplots" class="headerlink" title="plt.subplots()"></a><code>plt.subplots()</code></h3><p>要畫出多個子圖，可以使用 <code>plt.subplots()</code>，這個函數會回傳一個figure和一個axes的array。</p>
+<h2><span id="multiple-subplots">Multiple Subplots</span></h2><h3><span id="pltsubplots"><code>plt.subplots()</code></span></h3><p>要畫出多個子圖，可以使用 <code>plt.subplots()</code>，這個函數會回傳一個figure和一個axes的array。</p>
 <pre><code class="python">fig, ax = plt.subplots(2, 3)
 fig.subplots_adjust(hspace=0.5, wspace=0.4)
 for i in range(2):
@@ -440,15 +621,19 @@ ax[1,1].plot(x, x**2);
     
     
     
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
+    
+    
     
     
 </div>
-
                     <footer id="footer">
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2023 棉花糖的小窩
+            2023 - 2023 棉花糖的小窩
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
@@ -471,17 +656,74 @@ ax[1,1].plot(x, x**2);
                 </div>
             </transition>
             
+                    <!--pjax：防止跳转页面音乐暂停-->
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         </div>
         <script src="/js/main.js"></script>
         
         
 
 
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "enable",
+        
+    });
+</script>
+
 
 
         
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+        
+        <!--pjax：防止跳转页面音乐暂停-->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <div id="pjax-container">
+        <!-- 我使用的APlayer本体 -->
+            <div class="aplayer" 
+                data-id="2465890057" 
+                data-server="netease" 
+                data-type="playlist" 
+                data-fixed="true" 
+                data-autoplay="true" 
+                data-order="random" 
+                data-volume="0.55" 
+                data-theme="#cc543a" 
+                data-preload="auto" >
+            </div>
+        </div>
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        <!-- .css file path -->
+        <link rel="stylesheet" href="./player/index.bundle.css">
+        <!-- petite-vue CDN -->
+        <script src="https://unpkg.com/petite-vue"></script>
+        <!-- .js file path -->
+        <script src="./player/index.bundle.js"></script>
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/kp31/model.json"},"display":{"position":"right","width":200,"height":600},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
 </html>
 
-<script src="/js/<file>"></script>
-    <link rel="stylesheet" href="/css/<file>" />

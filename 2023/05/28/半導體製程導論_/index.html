@@ -2,7 +2,17 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
     <head>
+        <script>
+            // 对所有链接跳转事件绑定pjax容器pjax-container 
+            $(document).pjax('a', '#pjax-container', {
+            fragment:'#pjax-container',
+            timeout:8000
+            });   
+        </script>  
+        <!--pjax：防止跳转页面音乐暂停-->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         <meta charset="utf-8" />
+
         <title>&lt;半導體製程導論&gt; | 棉花糖的小窩</title>
         <meta name="author" content="Marumallow" />
         <meta name="description" content="期末考我要炸了!!!" />
@@ -38,21 +48,78 @@
 
 
 
+<script src="https://cdn.staticfile.org/waline/2.14.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.14.8/waline.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.14.8/waline-meta.min.css" />
+
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-    <meta name="generator" content="Hexo 6.3.0"></head>
+<script src="//cdn.jsdelivr.net/npm/vue-aplayer"></script>
+<script>
+  Vue.component('aplayer', VueAPlayer)
+</script>
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+        <div class="aplayer" 
+            data-id="2465890057" 
+            data-server="netease" 
+            data-type="playlist" 
+            data-fixed="true" 
+            data-autoplay="true" 
+            data-order="random" 
+            data-volume="0.55" 
+            data-theme="#cc543a" 
+            data-preload="auto" >
+        </div>
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+    <link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
     <body>
         <div id="layout">
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+            <div id="pjax-container">
+                <!-- 我使用的APlayer本体 -->
+                    <div class="aplayer" 
+                        data-id="2465890057" 
+                        data-server="netease" 
+                        data-type="playlist" 
+                        data-fixed="true" 
+                        data-autoplay="true" 
+                        data-order="random" 
+                        data-volume="0.55" 
+                        data-theme="#cc543a" 
+                        data-preload="none ">
+                    </div>
             <transition name="fade">
                 <div id="loading" v-show="loading">
                     <div id="loading-circle">
                         <h2>LOADING</h2>
                         <p>進度條正在跑跑中</p>
                         <img src="/images/loading.gif" />
+                            </div>
                     </div>
+                    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
                 </div>
             </transition>
             <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
@@ -165,6 +232,41 @@
             <transition name="into">
                 <div id="main" v-show="!loading">
                     <div class="article">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="theme-color" content="{{ theme.android_chrome_color }}">
+    <meta name="generator" content="Hexo {{ hexo_version }}">
+    <!--pjax：防止跳转页面音乐暂停-->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <!-- 我使用的APlayer本体 -->
+    <div id="pjax-container">
+        <div class="aplayer" 
+            data-id="2465890057" 
+            data-server="netease" 
+            data-type="playlist" 
+            data-fixed="true" 
+            data-autoplay="true" 
+            data-order="random" 
+            data-volume="0.55" 
+            data-theme="#cc543a" 
+            data-preload="auto" >
+            </div>
+    </div>
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+    <!-- require JQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <!-- require pjax -->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+    <script src="./node_modules/pjax/pjax.js"></script>
+    <script src="./pjax.min.js"></script>
+    <script>
+        $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+    </script>
     <div>
         <h1>&lt;半導體製程導論&gt;</h1>
     </div>
@@ -180,12 +282,14 @@
     </div>
     
     <div class="content" v-pre>
-        <h1 id="半導體製程導論"><a href="#半導體製程導論" class="headerlink" title="半導體製程導論"></a>半導體製程導論</h1><h2 id="第十章-Oxidation"><a href="#第十章-Oxidation" class="headerlink" title="第十章 Oxidation"></a>第十章 Oxidation</h2><h3 id="重點"><a href="#重點" class="headerlink" title="重點"></a>重點</h3><ul>
+        
+    <div id="aplayer-SaKhdUZl" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="preload: auto" data-server="undefined" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<h1><span id="半導體製程導論">半導體製程導論</span></h1><h2><span id="第十章-oxidation">第十章 Oxidation</span></h2><h3><span id="重點">重點</span></h3><ul>
 <li>氧化層薄膜的應用 (表10.1)</li>
 <li>乾式與濕式氧化</li>
 <li>氧化成長模型</li>
 </ul>
-<h3 id="內容摘錄"><a href="#內容摘錄" class="headerlink" title="內容摘錄"></a>內容摘錄</h3><h4 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h4><ul>
+<h3><span id="內容摘錄">內容摘錄</span></h3><h4><span id="intro">Intro</span></h4><ul>
 <li><strong>Grown oxide layer</strong><ul>
 <li>外加<ul>
 <li>high-purity oxygen</li>
@@ -219,16 +323,16 @@
 </ul>
 </li>
 </ul>
-<h5 id="自己的小畫線"><a href="#自己的小畫線" class="headerlink" title="自己的小畫線"></a>自己的小畫線</h5><blockquote>
+<h5><span id="自己的小畫線">自己的小畫線</span></h5><blockquote>
 <p>Grown的方法在反應時會消耗原有silicon，而deposit就不會。<br>命名會取”grow”的原因: indicate that temperature is used to cause the oxide to grow out of the silicon semiconductor material, actually consuming silicon in the process.</p>
 </blockquote>
-<h4 id="氧化層薄膜-oxide-film"><a href="#氧化層薄膜-oxide-film" class="headerlink" title="氧化層薄膜 oxide film"></a>氧化層薄膜 oxide film</h4><ul>
+<h4><span id="氧化層薄膜-oxide-film">氧化層薄膜 oxide film</span></h4><ul>
 <li>T between 750°C to 1100°C</li>
 <li>also referred to as <strong>thermal oxide</strong> or <strong>thermal silicon dioxide</strong></li>
 <li>Another term for silicon dioxide is <em>glass</em>.</li>
 <li>Silicon dioxide is a dielectric material and will not conduct electricity</li>
 </ul>
-<h4 id="Nature-of-Oxide-Film"><a href="#Nature-of-Oxide-Film" class="headerlink" title="Nature of Oxide Film"></a>Nature of Oxide Film</h4><ul>
+<h4><span id="nature-of-oxide-film">Nature of Oxide Film</span></h4><ul>
 <li>silicon surface exposed to $\ce{O2}$<br>$\to$ amorphous silicon dioxide grows</li>
 <li>atomic structure of this $\ce{SiO2}$ film &#x3D; 4 $\ce{O2}$ with 1 $\ce{Si}$ (<em>tetrahedron cell</em>)</li>
 <li>melting T of 1732°C grown <strong>intrinsic(pure) glass</strong><ul>
@@ -246,7 +350,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="氧化層薄膜的應用"><a href="#氧化層薄膜的應用" class="headerlink" title="氧化層薄膜的應用"></a><strong>氧化層薄膜的應用</strong></h4><ul>
+<h4><span id="氧化層薄膜的應用"><strong>氧化層薄膜的應用</strong></span></h4><ul>
 <li>氧化層的重要性<ul>
 <li>易於形成</li>
 <li>excellent interface with the underlying silicon material</li>
@@ -259,21 +363,21 @@
 </ol>
 </li>
 </ul>
-<h4 id="Uniform-oxide-growth-乾式-x2F-濕式氧化"><a href="#Uniform-oxide-growth-乾式-x2F-濕式氧化" class="headerlink" title="Uniform oxide growth (乾式&#x2F;濕式氧化)"></a>Uniform oxide growth (乾式&#x2F;濕式氧化)</h4><h5 id="Dry-Oxidation"><a href="#Dry-Oxidation" class="headerlink" title="Dry Oxidation"></a>Dry Oxidation</h5><blockquote>
+<h4><span id="uniform-oxide-growth-乾式x2f濕式氧化">Uniform oxide growth (乾式&#x2F;濕式氧化)</span></h4><h5><span id="dry-oxidation">Dry Oxidation</span></h5><blockquote>
 <p>The <strong>time</strong> and <strong>quality</strong> of this reaction varies and is affected by the purity of oxygen gas supplied to the silicon wafer surface and the reaction temperature</p>
 </blockquote>
 <p>$$<br>\ce{Si}\text{(solid)}+\ce{O2}\text{(gas)}\to\ce{SiO2}\text{(solid)}<br>$$</p>
 <ul>
 <li>The reaction <strong>rate is increased</strong> with an <strong>increase in temperature</strong></li>
 </ul>
-<h5 id="Wet-Oxidation"><a href="#Wet-Oxidation" class="headerlink" title="Wet Oxidation"></a>Wet Oxidation</h5><blockquote>
+<h5><span id="wet-oxidation">Wet Oxidation</span></h5><blockquote>
 <p>When water is introduced into the rxn<br>the rate of theoxidation reaction is increased further</p>
 </blockquote>
 <p>$$<br>\ce{Si}\text{(solid)}+\ce{2H2O}\text{(vapor)}\to\ce{SiO2}\text{(solid)}+\ce{2H2}\text{(gas)}<br>$$</p>
 <ul>
 <li>it produces a <strong>silicon dioxide film</strong> and <strong>hydrogen gas</strong><br>因氫分子易被氧化層捕捉，使其相較dry oxygen來說較不緻密。</li>
 </ul>
-<h4 id="Oxidation-Growth-Model"><a href="#Oxidation-Growth-Model" class="headerlink" title="Oxidation Growth Model"></a>Oxidation Growth Model</h4><h3 id="HW"><a href="#HW" class="headerlink" title="HW"></a>HW</h3><ol>
+<h4><span id="oxidation-growth-model">Oxidation Growth Model</span></h4><h3><span id="hw">HW</span></h3><ol>
 <li>Q10.1: What is the difference between a grown and deposited oxide layer<br>:::spoiler <strong>Ans here</strong><br> A grown oxide layer occurs on a wafer by providing externally supplied high-purity oxygen in an elevated-temperature environment to react with the silicon fab.<br> A deposited oxide later is generated by using an external silicon source and O2 and reacting these materials in a chamber to form a thin film on the wafer surface.<br>:::</li>
 <li>Q10.12: State the chemical reaction for dry oxidation. At what temperature range does this reaction usually take place?<br>:::spoiler <strong>Ans here</strong><br>$$ \ce{Si}\text{(solid)}+\ce{O2}\text{(gas)}\to\ce{SiO2}\text{(solid)}<br>$$<ul>
 <li>750°C to 1100°C<br>:::</li>
@@ -281,7 +385,7 @@
 </li>
 <li>Q10.15: What is diffusion? How does this occur in thermal oxidation?<br>:::spoiler <strong>Ans here</strong><br>Diffusion is the movement of one material through another. Atoms diffuse from regions of high concentration to regions of low concentration for solid, liquid or gas states.<br>Diffusion of oxygen atoms occurs during thermal oxidation.<br>:::</li>
 </ol>
-<h2 id="第十一、十二章-Deposition"><a href="#第十一、十二章-Deposition" class="headerlink" title="第十一、十二章 Deposition"></a>第十一、十二章 Deposition</h2><h3 id="重點-1"><a href="#重點-1" class="headerlink" title="重點"></a>重點</h3><ul>
+<h2><span id="第十一-十二章-deposition">第十一、十二章 Deposition</span></h2><h3><span id="重點">重點</span></h3><ul>
 <li>多層金屬化定義</li>
 <li>薄膜所需特性</li>
 <li>薄膜沉積<ul>
@@ -290,7 +394,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="內容摘錄-1"><a href="#內容摘錄-1" class="headerlink" title="內容摘錄"></a>內容摘錄</h3><h4 id="簡介早期的設計、裝配半導體"><a href="#簡介早期的設計、裝配半導體" class="headerlink" title="簡介早期的設計、裝配半導體"></a>簡介早期的設計、裝配半導體</h4><p>The design and fabrication of early semiconductor consist of : </p>
+<h3><span id="內容摘錄">內容摘錄</span></h3><h4><span id="簡介早期的設計-裝配半導體">簡介早期的設計、裝配半導體</span></h4><p>The design and fabrication of early semiconductor consist of : </p>
 <ol>
 <li>fabricating the semiconductor devices in silicon</li>
 <li>interconnecting the devices to one metal conducting layer sandwiched between silicon dioxide as the dielectric material<br><img src="https://i.imgur.com/PcB6gGI.png"><ul>
@@ -304,15 +408,15 @@
 <li>隨著科技進步，需要新的金屬導體來維持電性上的表現(electrical performance)</li>
 <li>先進的介電材料在金屬薄膜間沉積，提供了更足夠的絕緣保護</li>
 </ul>
-<h4 id="Film-Terminology"><a href="#Film-Terminology" class="headerlink" title="Film Terminology"></a>Film Terminology</h4><p><em><strong>Multilevel metallization</strong></em>:<br>metal and dielectric layers needed to interconnect the densely packed devices on the wafer. (如果沒介電絕緣的保護會發生短路)<br><em><strong>vias</strong></em>:<br>The metal layers are connected by openings in the dielectric film.<br><img src="https://i.imgur.com/HE76nGt.png"></p>
-<h4 id="Metal-amp-Dielectric-Layers"><a href="#Metal-amp-Dielectric-Layers" class="headerlink" title="Metal &amp; Dielectric Layers"></a>Metal &amp; Dielectric Layers</h4><h5 id="Metal-Layers"><a href="#Metal-Layers" class="headerlink" title="Metal Layers"></a>Metal Layers</h5><ul>
+<h4><span id="film-terminology">Film Terminology</span></h4><p><em><strong>Multilevel metallization</strong></em>:<br>metal and dielectric layers needed to interconnect the densely packed devices on the wafer. (如果沒介電絕緣的保護會發生短路)<br><em><strong>vias</strong></em>:<br>The metal layers are connected by openings in the dielectric film.<br><img src="https://i.imgur.com/HE76nGt.png"></p>
+<h4><span id="metal-amp-dielectric-layers">Metal &amp; Dielectric Layers</span></h4><h5><span id="metal-layers">Metal Layers</span></h5><ul>
 <li><em><strong>Aluminum metalization</strong></em> is the use of <strong>aluminum alloy</strong> for interconnect wiring</li>
 <li>Al metal deposited on entire surface of the wafer in a solid thin film and then etched to define the width and spacing of the <strong>interconnect lines</strong></li>
 <li>Each metal layer can be referred to as Metal-1, Metal-2, and so on.</li>
 <li><em>Critical layers</em> are those meal layers with linewidths etched to the critical dimension of the device</li>
 <li>Crital layer are <strong>sensitive to particulate contamination</strong> (killer defects) and reliability issues such as <strong>electromigration</strong> are more pronounced in fine geometry linewidths</li>
 </ul>
-<h5 id="Dielectric-Layers"><a href="#Dielectric-Layers" class="headerlink" title="Dielectric Layers"></a>Dielectric Layers</h5><ul>
+<h5><span id="dielectric-layers">Dielectric Layers</span></h5><ul>
 <li>The dielectric layer between the active devices in silion and the first metal layer is termed the <em><strong>first interlayer dielectric (ILD-1)</strong></em> </li>
 <li>The important function of the ILD-1 layer is to isolated transistor devices in two ways: <ul>
 <li>Elecrically from the metal interconnect layers</li>
@@ -331,22 +435,22 @@
 </ul>
 </li>
 </ul>
-<h4 id="Film-Deposition"><a href="#Film-Deposition" class="headerlink" title="Film Deposition"></a>Film Deposition</h4><p>The Film Characteristics</p>
+<h4><span id="film-deposition">Film Deposition</span></h4><p>The Film Characteristics</p>
 <ul>
 <li>Good step coverage</li>
 <li>Ability to fill high aspect ratio gaps (conformality)</li>
 <li>Good thickness unifotmity</li>
 </ul>
-<h5 id="Film-Step-Coverage"><a href="#Film-Step-Coverage" class="headerlink" title="Film-Step Coverage"></a>Film-Step Coverage</h5><ul>
+<h5><span id="film-step-coverage">Film-Step Coverage</span></h5><ul>
 <li>It is desirable for thin films to maintain a uniform thickness over surface features</li>
 <li>If the film thins excessively at a step, this can cause high stress, electrical shorts, or undesirable induced charges in the device<br><img src="https://i.imgur.com/vQufIyV.png"></li>
 </ul>
-<h5 id="High-Aspect-Ratio-Gaps"><a href="#High-Aspect-Ratio-Gaps" class="headerlink" title="High Aspect Ratio Gaps"></a>High Aspect Ratio Gaps</h5><ul>
+<h5><span id="high-aspect-ratio-gaps">High Aspect Ratio Gaps</span></h5><ul>
 <li>A small gep (trench or hole) is characterized by its <em>aspect ratio</em>, which is defined as the ration of its depth to width</li>
 <li>Aspect ratio is expressed as a ratio, such as 2:1, which in this case means the gap depth is two times the width</li>
 <li>Examples of gaps that require effective gap-fill capability are vias passing through the interlayer dielectric (ILD) and trenches for shallow trench isolation (STI)<br><img src="https://i.imgur.com/qjErmvc.png"></li>
 </ul>
-<h5 id="Film-Growth"><a href="#Film-Growth" class="headerlink" title="Film Growth"></a>Film Growth</h5><ul>
+<h5><span id="film-growth">Film Growth</span></h5><ul>
 <li>A deposited film grows in three distinct stages<ul>
 <li><em>nucleation</em>: where clusters of stable nuclei are formed</li>
 <li><em>nuclei coalescence</em> into clusters, also referred to as <em>island growth</em> (These randomly oriented island clusters grow based on surface mobility and the density of the cluster)</li>
@@ -354,22 +458,22 @@
 </ul>
 </li>
 </ul>
-<h4 id="Stages-of-Film-Growth"><a href="#Stages-of-Film-Growth" class="headerlink" title="Stages of Film Growth"></a>Stages of Film Growth</h4><p><img src="https://i.imgur.com/QVPh1MG.png"></p>
+<h4><span id="stages-of-film-growth">Stages of Film Growth</span></h4><p><img src="https://i.imgur.com/QVPh1MG.png"></p>
 <ol>
 <li>成核：氣體分子聚集在一起形成穩定的核團</li>
 <li>聚集：小的團聚集成塊狀</li>
 <li>連續薄膜：塊狀聚集的越多就可以形成連續薄膜</li>
 </ol>
-<h4 id="Techniques-of-Film-Deposition"><a href="#Techniques-of-Film-Deposition" class="headerlink" title="Techniques of Film Deposition"></a>Techniques of Film Deposition</h4><p><img src="https://i.imgur.com/CRgylda.png"></p>
-<h5 id="Chemical-Vapor-Deposition"><a href="#Chemical-Vapor-Deposition" class="headerlink" title="Chemical Vapor Deposition"></a>Chemical Vapor Deposition</h5><p>The Essential Aspect of CVD</p>
+<h4><span id="techniques-of-film-deposition">Techniques of Film Deposition</span></h4><p><img src="https://i.imgur.com/CRgylda.png"></p>
+<h5><span id="chemical-vapor-deposition">Chemical Vapor Deposition</span></h5><p>The Essential Aspect of CVD</p>
 <ol>
 <li><strong>Chemical action</strong> is involved, either through chemicalreaction or by thermal decomposition (referred to aspyrolysis).</li>
 <li>All material for the thin film is supplied by an <strong>external source</strong>.</li>
 <li>The reactants in a CVD process must start out in the <strong>vapor phase</strong> (as a gas).<br>:::danger<br>3個黑體關鍵字考試要寫到<br>:::</li>
 </ol>
-<h5 id="Schematic-of-CVD-Transport-and-Reaction-Steps"><a href="#Schematic-of-CVD-Transport-and-Reaction-Steps" class="headerlink" title="Schematic of CVD Transport and Reaction Steps"></a>Schematic of CVD Transport and Reaction Steps</h5><p><img src="https://i.imgur.com/kzXRthQ.png"></p>
-<h4 id="Types-of-CVD-Reactors-and-Principal-Characterictics"><a href="#Types-of-CVD-Reactors-and-Principal-Characterictics" class="headerlink" title="Types of CVD Reactors and Principal Characterictics"></a>Types of CVD Reactors and Principal Characterictics</h4><p><img src="https://i.imgur.com/3NyADXN.png"></p>
-<h5 id="APCVD-Atmospheric-Pressure-CVD"><a href="#APCVD-Atmospheric-Pressure-CVD" class="headerlink" title="APCVD (Atmospheric Pressure CVD)"></a>APCVD (Atmospheric Pressure CVD)</h5><ul>
+<h5><span id="schematic-of-cvd-transport-and-reaction-steps">Schematic of CVD Transport and Reaction Steps</span></h5><p><img src="https://i.imgur.com/kzXRthQ.png"></p>
+<h4><span id="types-of-cvd-reactors-and-principal-characterictics">Types of CVD Reactors and Principal Characterictics</span></h4><p><img src="https://i.imgur.com/3NyADXN.png"></p>
+<h5><span id="apcvd-atmospheric-pressure-cvd">APCVD (Atmospheric Pressure CVD)</span></h5><ul>
 <li>the reactor must be designed to have optimum reactant gas flow to every wafer in the system. (必須設計成讓最佳反應氣體能通到系統內每片wafer)</li>
 <li>These equipment designs use a belt or conveyor to carry the wafer samples through the reactor gases, which flow through the center of the reactor.</li>
 <li>Continuous-processing APCVD systems have <ul>
@@ -388,7 +492,7 @@
 </li>
 </ul>
 <p><img src="https://i.imgur.com/Rfy3dcj.png"></p>
-<h5 id="Low-pressure-CVD-LPCVD"><a href="#Low-pressure-CVD-LPCVD" class="headerlink" title="Low pressure CVD (LPCVD)"></a>Low pressure CVD (LPCVD)</h5><ul>
+<h5><span id="low-pressure-cvd-lpcvd">Low pressure CVD (LPCVD)</span></h5><ul>
 <li>LPCVD are &#x3D;&#x3D;more common&#x3D;&#x3D; now than APCVD because of their <ul>
 <li>lower cost</li>
 <li>higher production throughput</li>
@@ -401,7 +505,7 @@
 <li>Hot-wall reactors require periodic reaction chamber cleanup of particlesby routine maintenance</li>
 </ul>
 <p><img src="https://i.imgur.com/QS4xapz.png"></p>
-<h5 id="Plasma-Assisted-CVD"><a href="#Plasma-Assisted-CVD" class="headerlink" title="Plasma-Assisted CVD"></a>Plasma-Assisted CVD</h5><ul>
+<h5><span id="plasma-assisted-cvd">Plasma-Assisted CVD</span></h5><ul>
 <li>relies on plasma energy, in addition to thermal energy, to initiate and sustain the chemical reactions necessary for CVD</li>
 <li>The advantages of using plasma during CVD are:<ol>
 <li><strong>Lower processing temperature</strong> (250 - 450C)</li>
@@ -412,11 +516,11 @@
 </ol>
 </li>
 </ul>
-<h6 id="Film-Formation"><a href="#Film-Formation" class="headerlink" title="Film Formation"></a>Film Formation</h6><ul>
+<h6><span id="film-formation">Film Formation</span></h6><ul>
 <li>The plasma-assisted CV reaction necessary to form a film occurs when RE power is used to break up gas molecules in a vacuum</li>
 <li>The wafer is usually heated in order to assist the surface reactions and reduce the level of undesirable contaminants, such as hydrogen.</li>
 </ul>
-<h6 id="Plasma-Enhanced-CD-PECVD"><a href="#Plasma-Enhanced-CD-PECVD" class="headerlink" title="Plasma-Enhanced CD (PECVD)"></a>Plasma-Enhanced CD (PECVD)</h6><ul>
+<h6><span id="plasma-enhanced-cd-pecvd">Plasma-Enhanced CD (PECVD)</span></h6><ul>
 <li>The development of <em>plasma-enhanced</em> CVD (PECVD) uses plasma energy to create and sustain the CVD reaction.</li>
 <li>The important difference is the much lower PECVD deposition temperature. <blockquote>
 <p>For instance, silicon nitride (Si,N,) is depositedusing LPCVD at 800 to 900°C, yet cannot be deposited over aluminum metallization because Almelts at 660°C. On the other hand, silicon nitride deposited with PECVD at a temperature of 350°Cis suitable for this application</p>
@@ -426,9 +530,9 @@
 <li>Deposition parameters must be controlled to ensure the temperature gradient does not affect the film thickness uniformity</li>
 <li>Cold-wall reactors create fewer particles and require less downtime for cleaning</li>
 </ul>
-<h6 id="Film-Formation-during-Plasma-Based-CVD"><a href="#Film-Formation-during-Plasma-Based-CVD" class="headerlink" title="Film Formation during Plasma-Based CVD"></a>Film Formation during Plasma-Based CVD</h6><p><img src="https://i.imgur.com/aIn0w3J.png"></p>
-<h6 id="PECVD"><a href="#PECVD" class="headerlink" title="PECVD"></a>PECVD</h6><p><img src="https://i.imgur.com/3NWRUME.png"></p>
-<h5 id="Physical-Vapor-Deposition"><a href="#Physical-Vapor-Deposition" class="headerlink" title="Physical Vapor Deposition"></a>Physical Vapor Deposition</h5><ul>
+<h6><span id="film-formation-during-plasma-based-cvd">Film Formation during Plasma-Based CVD</span></h6><p><img src="https://i.imgur.com/aIn0w3J.png"></p>
+<h6><span id="pecvd">PECVD</span></h6><p><img src="https://i.imgur.com/3NWRUME.png"></p>
+<h5><span id="physical-vapor-deposition">Physical Vapor Deposition</span></h5><ul>
 <li>covers two major methods: <ul>
 <li><em>evaporation</em></li>
 <li><em>sputtering</em></li>
@@ -447,7 +551,7 @@
 <li>It <strong>is less directional than e-beam evaporation</strong> and typically can <strong>achieve much higher deposition rates</strong>.</li>
 </ul>
 <p><img src="https://i.imgur.com/oQN7t72.jpg"></p>
-<h3 id="HW-1"><a href="#HW-1" class="headerlink" title="HW"></a>HW</h3><ol>
+<h3><span id="hw">HW</span></h3><ol>
 <li>Q11.5: Define the aspect ratio. Why is a high-aspect ratio important for ULSI devices?<br>:::spoiler <strong>Ans here</strong><br>The aspect ratio of a small gap is defined as the ratio of its depth to width. The aspect ratio is important because the ability to fill very small gaps and holes on the surface of the wafer has become one of the most important film characteristics for devices.<br>:::</li>
 <li>Q11.6: List and describe three stages of film growth.<br>:::spoiler <strong>Ans here</strong><ol>
 <li>Nucleation: clusters of stable nuclei are formed, </li>
@@ -456,7 +560,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="第十三章-Photolithography-Surface-Preparation-to-Soft-Bake"><a href="#第十三章-Photolithography-Surface-Preparation-to-Soft-Bake" class="headerlink" title="第十三章 Photolithography: Surface Preparation to Soft Bake"></a>第十三章 Photolithography: Surface Preparation to Soft Bake</h2><h3 id="重點-2"><a href="#重點-2" class="headerlink" title="重點"></a>重點</h3><ul>
+<h2><span id="第十三章-photolithography-surface-preparation-to-soft-bake">第十三章 Photolithography: Surface Preparation to Soft Bake</span></h2><h3><span id="重點">重點</span></h3><ul>
 <li>微影之基本觀念，包括製程、DC、光頻譜、解析度及曝光度。</li>
 <li>正及負雕像術之差異。</li>
 <li>微影8個基本步驟。</li>
@@ -464,11 +568,11 @@
 <li>傳統i-line光阻的化學性及應用。</li>
 <li>深紫外光（DUV）光阻的化學性及優點。</li>
 </ul>
-<h3 id="內容摘錄-2"><a href="#內容摘錄-2" class="headerlink" title="內容摘錄"></a>內容摘錄</h3><h4 id="基本觀念"><a href="#基本觀念" class="headerlink" title="基本觀念"></a>基本觀念</h4><ul>
+<h3><span id="內容摘錄">內容摘錄</span></h3><h4><span id="基本觀念">基本觀念</span></h4><ul>
 <li>Photolithography produces a <strong>three-dimensional pattern</strong> on the surface of the wafer using a light-sensitive photoresist material and <strong>controlled exposure to light</strong>.</li>
 <li>photolithography別稱：<strong>photo, lithography, masking, and patterning</strong>.</li>
 </ul>
-<h4 id="Photolithography-Concepts"><a href="#Photolithography-Concepts" class="headerlink" title="Photolithography Concepts"></a>Photolithography Concepts</h4><ul>
+<h4><span id="photolithography-concepts">Photolithography Concepts</span></h4><ul>
 <li>Patterning Process<ul>
 <li>Photomask</li>
 <li>Reticle</li>
@@ -478,21 +582,21 @@
 <li>Light Spectrum</li>
 <li>Resolution</li>
 </ul>
-<h4 id="reticle-和-mask-間的區別"><a href="#reticle-和-mask-間的區別" class="headerlink" title="reticle 和 mask 間的區別"></a><em>reticle</em> 和 <em>mask</em> 間的區別</h4><h5 id="reticle"><a href="#reticle" class="headerlink" title="reticle"></a><em>reticle</em></h5><ol>
+<h4><span id="reticle-和-mask-間的區別"><em>reticle</em> 和 <em>mask</em> 間的區別</span></h4><h5><span id="reticle"><em>reticle</em></span></h5><ol>
 <li>搭配固定機(stepper)</li>
 <li>有reduction less (當UV光穿過的時候會將光做倍率縮放，投影在wafer上面積會比在reticle上面積小</li>
 <li>有1顆die或4顆die的設計(layout)</li>
 <li>4:1的比例：若reticle上面線寬4mm那wafer上只剩1mm</li>
 </ol>
-<h5 id="mask"><a href="#mask" class="headerlink" title="mask"></a><em>mask</em></h5><ol>
+<h5><span id="mask"><em>mask</em></span></h5><ol>
 <li>搭配接觸&#x2F;進階式曝光機(Contact&#x2F;Proximity Aligner System)</li>
 <li>mask多大wafer上曝光的面積就有多大</li>
 <li>1:1的比例<br>:::danger<br>可能考：請說明兩者間的差別還有在Photolithography上面使用的時候各自優缺點。<br>:::</li>
 </ol>
-<h4 id="Light-Spectrum"><a href="#Light-Spectrum" class="headerlink" title="Light Spectrum"></a>Light Spectrum</h4><p>Light Spectrum Energy is required to activate the photoresist and transfer the pattern from thereticle. The source of energy is in the form of radiation, typically an <strong>ultraviolet (UV) light</strong> source.</p>
-<h4 id="Resolution"><a href="#Resolution" class="headerlink" title="Resolution"></a>Resolution</h4><p>Resolution is the ability to differentiate between <strong>two closely spaced features on thewafer surface.</strong> (能辨別兩個很靠近的feature size<br>:::danger<br>曾經考過 Resolution<br>:::</p>
-<h4 id="Important-Wavelengths-for-Photolithography-Exposure"><a href="#Important-Wavelengths-for-Photolithography-Exposure" class="headerlink" title="Important Wavelengths for Photolithography Exposure"></a>Important Wavelengths for Photolithography Exposure</h4><p><img src="https://i.imgur.com/4ft1q3O.png"></p>
-<h4 id="Photolithography-Processes"><a href="#Photolithography-Processes" class="headerlink" title="Photolithography Processes"></a>Photolithography Processes</h4><ul>
+<h4><span id="light-spectrum">Light Spectrum</span></h4><p>Light Spectrum Energy is required to activate the photoresist and transfer the pattern from thereticle. The source of energy is in the form of radiation, typically an <strong>ultraviolet (UV) light</strong> source.</p>
+<h4><span id="resolution">Resolution</span></h4><p>Resolution is the ability to differentiate between <strong>two closely spaced features on thewafer surface.</strong> (能辨別兩個很靠近的feature size<br>:::danger<br>曾經考過 Resolution<br>:::</p>
+<h4><span id="important-wavelengths-for-photolithography-exposure">Important Wavelengths for Photolithography Exposure</span></h4><p><img src="https://i.imgur.com/4ft1q3O.png"></p>
+<h4><span id="photolithography-processes">Photolithography Processes</span></h4><ul>
 <li><p>Negative Resist</p>
 <ul>
 <li>Wafer image is <strong>opposite of mask image</strong></li>
@@ -508,9 +612,9 @@
 </ul>
 </li>
 </ul>
-<h4 id="Eight-Steps-of-Photolithography"><a href="#Eight-Steps-of-Photolithography" class="headerlink" title="Eight Steps of Photolithography"></a>Eight Steps of Photolithography</h4><p><img src="https://i.imgur.com/REEYmNW.png"><br>:::danger<br>期末考很常出現：問答、給圖說明步驟<br>:::</p>
-<h5 id="Step-1-Vapor-Prime"><a href="#Step-1-Vapor-Prime" class="headerlink" title="Step 1: Vapor Prime"></a>Step 1: Vapor Prime</h5><p>The first step in photolithography is to clean, dehydrate, and prime the surface of the wafer. The purpose of these steps is to <strong>promote good adhesion between the photoresist and the wafer surface.</strong><br>Immediately after the dehydration bake, the wafer is primed  with hexamethyldisilazane (HMDS), which acts as an <strong>adhesion promoter.</strong><br>用氣體的方式蒸塗在wafer表面，先上HMDS(很毒要小心)它光阻和substrate的附著力較好。<br><img src="https://i.imgur.com/pQNFTdV.png"></p>
-<h5 id="Step-2-Spin-Coat"><a href="#Step-2-Spin-Coat" class="headerlink" title="Step 2: Spin Coat"></a>Step 2: Spin Coat</h5><p>the wafer is coated with the liquid photoresist material by a spin coating method.<br>The wafer is mounted on a vacuum chuck, which is a flat metal or teflon disc that has small vacuumholes on its surface to hold the wafer.<br>then the water is spun to obtain a uniform coating of resist on the wafer.<br>其實也不是完全liquid而是稠狀液體，會用旋轉塗布機去旋塗在wafer表面。<br>會有一些設定好的參數，如轉速、<br><img src="https://i.imgur.com/0b4aEEl.png"></p>
+<h4><span id="eight-steps-of-photolithography">Eight Steps of Photolithography</span></h4><p><img src="https://i.imgur.com/REEYmNW.png"><br>:::danger<br>期末考很常出現：問答、給圖說明步驟<br>:::</p>
+<h5><span id="step-1-vapor-prime">Step 1: Vapor Prime</span></h5><p>The first step in photolithography is to clean, dehydrate, and prime the surface of the wafer. The purpose of these steps is to <strong>promote good adhesion between the photoresist and the wafer surface.</strong><br>Immediately after the dehydration bake, the wafer is primed  with hexamethyldisilazane (HMDS), which acts as an <strong>adhesion promoter.</strong><br>用氣體的方式蒸塗在wafer表面，先上HMDS(很毒要小心)它光阻和substrate的附著力較好。<br><img src="https://i.imgur.com/pQNFTdV.png"></p>
+<h5><span id="step-2-spin-coat">Step 2: Spin Coat</span></h5><p>the wafer is coated with the liquid photoresist material by a spin coating method.<br>The wafer is mounted on a vacuum chuck, which is a flat metal or teflon disc that has small vacuumholes on its surface to hold the wafer.<br>then the water is spun to obtain a uniform coating of resist on the wafer.<br>其實也不是完全liquid而是稠狀液體，會用旋轉塗布機去旋塗在wafer表面。<br>會有一些設定好的參數，如轉速、<br><img src="https://i.imgur.com/0b4aEEl.png"></p>
 <p>&#x3D;&#x3D;Process Summary:&#x3D;&#x3D;</p>
 <ul>
 <li>Wafer is held onto vacuum chuck</li>
@@ -526,7 +630,7 @@
 </ul>
 </li>
 </ul>
-<h5 id="Step-3-Soft-Bake"><a href="#Step-3-Soft-Bake" class="headerlink" title="Step 3: Soft Bake"></a>Step 3: Soft Bake</h5><p>this bake is to drive off <strong>most of the solvent</strong> in the resist. The soft bake process improves <strong>adhesion</strong>, promotes resist uniformity on the wafer, and yields better linewidth control during etching. Typical soft bake temperatures are <strong>90 to 100°C for 30 seconds</strong> on a hot plate,<br><img src="https://i.imgur.com/e8qydqe.png"></p>
+<h5><span id="step-3-soft-bake">Step 3: Soft Bake</span></h5><p>this bake is to drive off <strong>most of the solvent</strong> in the resist. The soft bake process improves <strong>adhesion</strong>, promotes resist uniformity on the wafer, and yields better linewidth control during etching. Typical soft bake temperatures are <strong>90 to 100°C for 30 seconds</strong> on a hot plate,<br><img src="https://i.imgur.com/e8qydqe.png"></p>
 <p>&#x3D;&#x3D;Characteristics of Soft Bake:&#x3D;&#x3D;</p>
 <ul>
 <li><strong>Improves Photoresist-to-Wafer Adhesion</strong></li>
@@ -540,7 +644,7 @@
 </ul>
 </li>
 </ul>
-<h5 id="Step-4-Alignment-and-Exposure-對準和曝光"><a href="#Step-4-Alignment-and-Exposure-對準和曝光" class="headerlink" title="Step 4: Alignment and Exposure(對準和曝光)"></a>Step 4: Alignment and Exposure(對準和曝光)</h5><p>the mask and wafer are exposed to controlled UV light to transfer the mask image to the resist-coated wafer</p>
+<h5><span id="step-4-alignment-and-exposure對準和曝光">Step 4: Alignment and Exposure(對準和曝光)</span></h5><p>the mask and wafer are exposed to controlled UV light to transfer the mask image to the resist-coated wafer</p>
 <ul>
 <li>轉移圖案到wafer上</li>
 <li>用UV light曝光</li>
@@ -557,15 +661,15 @@
 </ul>
 </li>
 </ul>
-<h5 id="Step-5-Post-Exposure-Bake-PEB"><a href="#Step-5-Post-Exposure-Bake-PEB" class="headerlink" title="Step 5: Post-Exposure Bake (PEB)"></a>Step 5: Post-Exposure Bake (PEB)</h5><ul>
+<h5><span id="step-5-post-exposure-bake-peb">Step 5: Post-Exposure Bake (PEB)</span></h5><ul>
 <li>如果是用deep UV作為光源一定要做曝後考才能完成曝光顯影動作，其他在傳統上可做可不做</li>
-<li><h2 id="現在漸漸變成所有都要做"><a href="#現在漸漸變成所有都要做" class="headerlink" title="現在漸漸變成所有都要做"></a>現在漸漸變成所有都要做</h2></li>
+<li><h2><span id="現在漸漸變成所有都要做">現在漸漸變成所有都要做</span></h2></li>
 <li>Required for Deep UV Resists</li>
 <li>Typical Temperatures 100 to 110°C on a hot plate</li>
 <li>Immediately after Exposure</li>
 <li>Has Become a Virtual Standard for DUV and Standard Resists</li>
 </ul>
-<h5 id="Step-6-Develop"><a href="#Step-6-Develop" class="headerlink" title="Step 6: Develop"></a>Step 6: Develop</h5><p>The soluble areas of the photoresist are dissolved by liquid developer chemicals, leaving visible patterns of islands and windows on the wafer surface.<br><img src="https://i.imgur.com/3dYp4Dv.png"><br>&#x3D;&#x3D;Process Summary:&#x3D;&#x3D;</p>
+<h5><span id="step-6-develop">Step 6: Develop</span></h5><p>The soluble areas of the photoresist are dissolved by liquid developer chemicals, leaving visible patterns of islands and windows on the wafer surface.<br><img src="https://i.imgur.com/3dYp4Dv.png"><br>&#x3D;&#x3D;Process Summary:&#x3D;&#x3D;</p>
 <ul>
 <li>Soluble areas of photoresist are dissolved by developer chemical</li>
 <li>Visible patterns appear on wafer<ul>
@@ -580,14 +684,14 @@
 </ul>
 </li>
 </ul>
-<h5 id="Step-7-Hard-Bake"><a href="#Step-7-Hard-Bake" class="headerlink" title="Step 7: Hard Bake"></a>Step 7: Hard Bake</h5><p>A post-development thermal bake, referred to as hard bake, is required to evaporate the remaining photoresist solvent and improve the adhesion of the resist to the wafer surface.</p>
+<h5><span id="step-7-hard-bake">Step 7: Hard Bake</span></h5><p>A post-development thermal bake, referred to as hard bake, is required to evaporate the remaining photoresist solvent and improve the adhesion of the resist to the wafer surface.</p>
 <ul>
 <li>A Post-Development Thermal Bake</li>
 <li><strong>Evaporate Remaining Solvent</strong></li>
 <li>Improve Resist-to-Wafer Adhesion</li>
 <li>Higher Temperature (120 to 140°C) than Soft Bake</li>
 </ul>
-<h4 id="Develop-Inspect"><a href="#Develop-Inspect" class="headerlink" title="Develop Inspect"></a>Develop Inspect</h4><ul>
+<h4><span id="develop-inspect">Develop Inspect</span></h4><ul>
 <li>Inspect to Verify a Quality Pattern<ul>
 <li>Identify Quality Problems (Defects)</li>
 <li>Characterize the Performance of the Photolithography Process</li>
@@ -601,7 +705,7 @@
 </li>
 <li>Typically an Automated Operation</li>
 </ul>
-<h4 id="Photoresist"><a href="#Photoresist" class="headerlink" title="Photoresist"></a>Photoresist</h4><ul>
+<h4><span id="photoresist">Photoresist</span></h4><ul>
 <li>Photoresist<ul>
 <li>Types of Photoresist</li>
 <li>Negative Versus Positive Photoresists</li>
@@ -615,12 +719,12 @@
 </li>
 <li>Deep UV (DUV) Photoresists</li>
 </ul>
-<h5 id="Types-of-Photoresist"><a href="#Types-of-Photoresist" class="headerlink" title="Types of Photoresist"></a>Types of Photoresist</h5><ul>
+<h5><span id="types-of-photoresist">Types of Photoresist</span></h5><ul>
 <li>負光阻：照到UV光的地方交鏈鍵結會接起來&amp;固化，且不容易溶解在顯影液</li>
 <li>正光阻：照到UV光的地方會破壞交鏈鍵結</li>
 <li>負光阻用比較少的原因：沖顯影液時會吸收，然後會讓圖案失真</li>
 </ul>
-<h5 id="Photoresist-Physical-Properties"><a href="#Photoresist-Physical-Properties" class="headerlink" title="Photoresist Physical Properties"></a>Photoresist Physical Properties</h5><ul>
+<h5><span id="photoresist-physical-properties">Photoresist Physical Properties</span></h5><ul>
 <li>Resolution:<br>可以辨別做光阻的pattern最小feature size</li>
 <li>Contrast<br><img src="https://i.imgur.com/9Z4V7HZ.png"></li>
 <li>Sensitivity(PS: 不要跟第一個搞混)<br>指單位面積所要提供光阻曝光所需的最小能量(焦耳<blockquote>
@@ -635,28 +739,28 @@
 </li>
 <li>Surface tension<br>Resist has molecular forces that create a relatively high surface tension so that the resist molecules hold together during the various process steps.<br>At the same time, the surface tension of resist must be low enough to provide for good flow and wafer coverage during application.</li>
 </ul>
-<h5 id="Negative-Resist-Cross-Linking"><a href="#Negative-Resist-Cross-Linking" class="headerlink" title="Negative Resist Cross-Linking"></a>Negative Resist Cross-Linking</h5><p><img src="https://i.imgur.com/BdrnBFW.jpg"></p>
-<h5 id="PAC-as-Dissolution-Inhibitor-in-Positive-I-Line-Resist"><a href="#PAC-as-Dissolution-Inhibitor-in-Positive-I-Line-Resist" class="headerlink" title="PAC as Dissolution Inhibitor in Positive I-Line Resist"></a>PAC as Dissolution Inhibitor in Positive I-Line Resist</h5><p><img src="https://i.imgur.com/SnLZPmG.jpg"></p>
-<h5 id="Deep-UV-DUV-Photoresists"><a href="#Deep-UV-DUV-Photoresists" class="headerlink" title="Deep UV (DUV) Photoresists"></a>Deep UV (DUV) Photoresists</h5><ul>
+<h5><span id="negative-resist-cross-linking">Negative Resist Cross-Linking</span></h5><p><img src="https://i.imgur.com/BdrnBFW.jpg"></p>
+<h5><span id="pac-as-dissolution-inhibitor-in-positive-i-line-resist">PAC as Dissolution Inhibitor in Positive I-Line Resist</span></h5><p><img src="https://i.imgur.com/SnLZPmG.jpg"></p>
+<h5><span id="deep-uv-duv-photoresists">Deep UV (DUV) Photoresists</span></h5><ul>
 <li><strong>i-line</strong> wavelength of <strong>365 nm</strong> — a CD of <strong>0.35 $\mu m$</strong> was achievable. </li>
 <li><strong>reduce the wavelength of</strong> the exposure light source to a value of around 250 nm (0.25 p.m) — a CD of 0.25 um on critical layers</li>
 <li><strong>248 nm</strong> UV wavelength referred to as <strong>deep UV (DUV)</strong></li>
 </ul>
-<h5 id="Chemical-Amplification-for-DUV-Resists"><a href="#Chemical-Amplification-for-DUV-Resists" class="headerlink" title="Chemical Amplification for DUV Resists:"></a>Chemical Amplification for DUV Resists:</h5><p><img src="https://i.imgur.com/eQ2LMQZ.png"></p>
-<h5 id="Chemically-Amplified-CA-DUV-Resist"><a href="#Chemically-Amplified-CA-DUV-Resist" class="headerlink" title="Chemically Amplified (CA) DUV Resist"></a>Chemically Amplified (CA) DUV Resist</h5><p><img src="https://i.imgur.com/hbYDWJT.jpg"></p>
-<h3 id="HW-2"><a href="#HW-2" class="headerlink" title="HW"></a>HW</h3><ol>
+<h5><span id="chemical-amplification-for-duv-resists">Chemical Amplification for DUV Resists:</span></h5><p><img src="https://i.imgur.com/eQ2LMQZ.png"></p>
+<h5><span id="chemically-amplified-ca-duv-resist">Chemically Amplified (CA) DUV Resist</span></h5><p><img src="https://i.imgur.com/hbYDWJT.jpg"></p>
+<h3><span id="hw">HW</span></h3><ol>
 <li>Q13.1: What is photolithograohy?<br>:::spoiler <strong>Ans here</strong><br>Photolithography produces a three-dimensional pattern on the surface of the wafer using a light-sensitive photoresist material and controlled exposure to light.<br>微影是利用光敏的光阻材料及控制其曝光量以在晶圓上產生三維的圖案<br>:::</li>
 <li>Q13.5: What is overlay accuracy, and how does this contribute to the mask overlay budget?<br>:::spoiler <strong>Ans here</strong><br>Overlay accuracy is the precise alignment between the pattern on the mask and the existing features on the wafer surface.<br>Since multiple masks are used during patterning, any overlay misalignment contributes to the total placement tolerances between the different features on the wafer surface, or mask overlay budget.<br>重疊精確：微影須將光罩圖案和已存在晶圓表面尺寸做精確對準<br>重疊預算：若重疊未對準使晶圓上不同尺寸間有位置扭曲，此為重疊預算，重疊預算高則會大幅降低電路密度，限制元件尺寸大小和IC特性<br>:::</li>
 <li>Q13.7: Explain the difference between negative and positive lithography.<br>:::spoiler <strong>Ans here</strong><br>Negative lithography prints a pattern on the wafer surface that is opposite the pattern in the mask. Positive lithography prints a pattern on the wafer that is the same pattern as on the mask.<br>負光阻：光阻曝光後其晶圓表面上的圖案和光罩上是相反的，光阻變成不溶解且鍵結硬化<br>:::</li>
 </ol>
-<h2 id="第十四章-Photolithography-Alignment-and-Exposure"><a href="#第十四章-Photolithography-Alignment-and-Exposure" class="headerlink" title="第十四章 Photolithography: Alignment and Exposure"></a>第十四章 Photolithography: Alignment and Exposure</h2><h3 id="重點-3"><a href="#重點-3" class="headerlink" title="重點"></a>重點</h3><ol>
+<h2><span id="第十四章-photolithography-alignment-and-exposure">第十四章 Photolithography: Alignment and Exposure</span></h2><h3><span id="重點">重點</span></h3><ol>
 <li>微影中對準及曝光之目的。</li>
 <li>曝光光源主要有哪兩種?其激發頻譜有何不同?對CD的影響?</li>
 <li>曝光設備，各世代機台的優缺點。</li>
 <li>標線板在微雕像中之用途?</li>
 <li>對準技術。</li>
 </ol>
-<h3 id="內容摘錄-3"><a href="#內容摘錄-3" class="headerlink" title="內容摘錄"></a>內容摘錄</h3><ul>
+<h3><span id="內容摘錄">內容摘錄</span></h3><ul>
 <li><strong>step-and-repeat</strong><ol>
 <li>The water is aligned to the reticle so that the pattern can be transferred to the proper location on the wafer surface. </li>
 <li>Once the best focus and alignment are obtained, a shutter opens to allow UV light to pass from the illuminator to the reticle through a projection lens and then onto the resist-coated wafer. </li>
@@ -664,16 +768,16 @@
 </ol>
 </li>
 </ul>
-<h4 id="Reticle-Pattern-Transfer-to-Resist"><a href="#Reticle-Pattern-Transfer-to-Resist" class="headerlink" title="Reticle Pattern Transfer to Resist"></a>Reticle Pattern Transfer to Resist</h4><p><img src="https://hackmd.io/_uploads/BJDVTetVn.png"></p>
-<h4 id="Layout-and-Dimensions-of-Reticle-Patterns"><a href="#Layout-and-Dimensions-of-Reticle-Patterns" class="headerlink" title="Layout and Dimensions of Reticle Patterns"></a>Layout and Dimensions of Reticle Patterns</h4><p><img src="https://hackmd.io/_uploads/By2R6lFN3.png"></p>
+<h4><span id="reticle-pattern-transfer-to-resist">Reticle Pattern Transfer to Resist</span></h4><p><img src="https://hackmd.io/_uploads/BJDVTetVn.png"></p>
+<h4><span id="layout-and-dimensions-of-reticle-patterns">Layout and Dimensions of Reticle Patterns</span></h4><p><img src="https://hackmd.io/_uploads/By2R6lFN3.png"></p>
 <ul>
 <li>小十字用來做對準，也叫align mark</li>
 <li>不同層對應不同光照來處理，表上列出每一道光照的圖層</li>
 </ul>
-<h5 id="Optical-Exposure"><a href="#Optical-Exposure" class="headerlink" title="Optical Exposure"></a>Optical Exposure</h5><ul>
+<h5><span id="optical-exposure">Optical Exposure</span></h5><ul>
 <li>線寬越小，對曝光光源要求越嚴苛，波長越短</li>
 </ul>
-<h5 id="Electromagnetic-Spectrum"><a href="#Electromagnetic-Spectrum" class="headerlink" title="Electromagnetic Spectrum"></a>Electromagnetic Spectrum</h5><ul>
+<h5><span id="electromagnetic-spectrum">Electromagnetic Spectrum</span></h5><ul>
 <li>所有可見與不可見的電磁波統稱為電磁頻譜(Electromagnetic Spectrum)</li>
 <li>UV spectrum (4nm~450nm)有以下幾種：<ol>
 <li>The vacuum ultraviolet (VUV)：157nm</li>
@@ -683,8 +787,8 @@
 </li>
 <li>必須在黃光下作業</li>
 </ul>
-<h4 id="Ultraviolet-Spectrum"><a href="#Ultraviolet-Spectrum" class="headerlink" title="Ultraviolet Spectrum"></a>Ultraviolet Spectrum</h4><p><img src="https://hackmd.io/_uploads/SJKgzbYV3.png"></p>
-<h4 id="Optical-Lithography"><a href="#Optical-Lithography" class="headerlink" title="Optical Lithography"></a>Optical Lithography</h4><p>Exposure Sources：</p>
+<h4><span id="ultraviolet-spectrum">Ultraviolet Spectrum</span></h4><p><img src="https://hackmd.io/_uploads/SJKgzbYV3.png"></p>
+<h4><span id="optical-lithography">Optical Lithography</span></h4><p>Exposure Sources：</p>
 <ol>
 <li><strong>Mercury Arc Lamp</strong><ul>
 <li>The high-pressure <em>mercury arc lamp</em> is used as the UV illumination source in all conventional i-line steppers</li>
@@ -703,12 +807,12 @@
 <li>i-line 的光阻劑量大概 100mJ&#x2F;cm$^2$ </li>
 <li>在DUV波段要花費太多時間不符成本</li>
 </ul>
-<h5 id="Excimer-Laser-準分子雷射"><a href="#Excimer-Laser-準分子雷射" class="headerlink" title="Excimer Laser (準分子雷射)"></a>Excimer Laser (準分子雷射)</h5><ul>
+<h5><span id="excimer-laser-準分子雷射">Excimer Laser (準分子雷射)</span></h5><ul>
 <li>主要的好處在於能提供DUV更多的光強彌補mercury arc lamp效率不好的問題</li>
 <li>laser light source: An exotic molecule fromed an atom of a noble gas and halogen (鈍氣分子&amp;鹵素，如ArF)<br><img src="https://hackmd.io/_uploads/rk3EPbF42.png"></li>
 </ul>
 <p><img src="https://hackmd.io/_uploads/B1kbwbt42.png"></p>
-<h4 id="Photolithograhy-Equipment"><a href="#Photolithograhy-Equipment" class="headerlink" title="Photolithograhy Equipment"></a>Photolithograhy Equipment</h4><ul>
+<h4><span id="photolithograhy-equipment">Photolithograhy Equipment</span></h4><ul>
 <li>Contact Aligner<ul>
 <li>每一次曝光就曝整片wafer</li>
 <li>光照和光阻是接觸的(曝光的時候光照放在光阻上)。<br>優點：好的解析度<br>缺點：會帶來一些汙染、壽命很短</li>
@@ -729,49 +833,49 @@
 <li>Extreme Ultraviolet (EUV) Lithography</li>
 <li>System (not included in the exam</li>
 </ul>
-<h4 id="Reticles-Materials"><a href="#Reticles-Materials" class="headerlink" title="Reticles Materials"></a>Reticles Materials</h4><ul>
+<h4><span id="reticles-materials">Reticles Materials</span></h4><ul>
 <li>材料用熔融矽土，好處是很低的熱膨脹係數，即便溫差很大線寬也不會影響</li>
 <li>光穿透率要好、沒有缺陷</li>
 <li>上面會鍍鉻膜，因為鉻膜可阻擋UV光前進</li>
 </ul>
-<h4 id="Comparison-of-Reticle-Versus-Mask"><a href="#Comparison-of-Reticle-Versus-Mask" class="headerlink" title="Comparison of Reticle Versus Mask"></a>Comparison of Reticle Versus Mask</h4><p><img src="https://hackmd.io/_uploads/HJ1TZfF42.jpg"></p>
-<h3 id="HW-3"><a href="#HW-3" class="headerlink" title="HW"></a>HW</h3><ol>
+<h4><span id="comparison-of-reticle-versus-mask">Comparison of Reticle Versus Mask</span></h4><p><img src="https://hackmd.io/_uploads/HJ1TZfF42.jpg"></p>
+<h3><span id="hw">HW</span></h3><ol>
 <li>Q14.5: Describe the relationship between light exposure wavelength and image resolution.<br>:::spoiler <strong>Ans here</strong><br>曝光波長越短，特徵尺寸解析越小<br>曝光波長越短，解析力愈高(能解析的尺寸R越小)<br>:::</li>
 </ol>
-<h2 id="第十五章-Photolithography-Resist-Development-and-Advanced-Lithography"><a href="#第十五章-Photolithography-Resist-Development-and-Advanced-Lithography" class="headerlink" title="第十五章 Photolithography: Resist Development and Advanced Lithography"></a>第十五章 Photolithography: Resist Development and Advanced Lithography</h2><h3 id="重點-4"><a href="#重點-4" class="headerlink" title="重點"></a>重點</h3><ol>
+<h2><span id="第十五章-photolithography-resist-development-and-advanced-lithography">第十五章 Photolithography: Resist Development and Advanced Lithography</span></h2><h3><span id="重點">重點</span></h3><ol>
 <li>傳統與化學倍增式DUV光阻為何與如何執行曝光後烘烤。</li>
 <li>分別針對傳統與化學倍增式DUV光阻，描述其負與正光阻顯影製程。</li>
 <li>說明為何光阻顯影後，需進行硬烤處理。</li>
 <li>解釋顯影後檢查所具有之優點。</li>
 </ol>
-<h3 id="內容摘錄-4"><a href="#內容摘錄-4" class="headerlink" title="內容摘錄"></a>內容摘錄</h3><h4 id="POST-EXPOSURE-BAKE"><a href="#POST-EXPOSURE-BAKE" class="headerlink" title="POST-EXPOSURE BAKE"></a>POST-EXPOSURE BAKE</h4><ul>
+<h3><span id="內容摘錄">內容摘錄</span></h3><h4><span id="post-exposure-bake">POST-EXPOSURE BAKE</span></h4><ul>
 <li>使用化學倍增式光阻一定要做曝後烤</li>
 <li>做的好處：可以改善光阻的adhesion、減少駐波效應</li>
 </ul>
-<h4 id="DUV-Post-Exposure-Bake-PEB"><a href="#DUV-Post-Exposure-Bake-PEB" class="headerlink" title="DUV Post-Exposure Bake (PEB)"></a>DUV Post-Exposure Bake (PEB)</h4><ul>
+<h4><span id="duv-post-exposure-bake-peb">DUV Post-Exposure Bake (PEB)</span></h4><ul>
 <li>化學倍增式光阻有PAG，做曝後烤可加速酸化反應讓它易溶於顯影液</li>
 </ul>
-<h5 id="Chemically-Amplified-CA-DUV-Resist-1"><a href="#Chemically-Amplified-CA-DUV-Resist-1" class="headerlink" title="Chemically Amplified (CA) DUV Resist"></a>Chemically Amplified (CA) DUV Resist</h5><p><img src="https://hackmd.io/_uploads/rk0Skmt42.jpg"></p>
-<h4 id="Conventional-I-Line-PEB"><a href="#Conventional-I-Line-PEB" class="headerlink" title="Conventional I-Line PEB"></a>Conventional I-Line PEB</h4><ul>
+<h5><span id="chemically-amplified-ca-duv-resist">Chemically Amplified (CA) DUV Resist</span></h5><p><img src="https://hackmd.io/_uploads/rk0Skmt42.jpg"></p>
+<h4><span id="conventional-i-line-peb">Conventional I-Line PEB</span></h4><ul>
 <li>對於I-Line的光阻來說曝後烤可做可不做</li>
 <li>用抗反射層，也能減緩當UV光打過去有一部份反射造成線寬波浪形</li>
 <li>Reduction of Standing Wave Effect due to PEB<br><img src="https://hackmd.io/_uploads/BJqvlQKE3.jpg"></li>
 </ul>
-<h3 id="Develop"><a href="#Develop" class="headerlink" title="Develop"></a>Develop</h3><ul>
+<h3><span id="develop">Develop</span></h3><ul>
 <li>Negative Resist</li>
 <li>Positive Resist</li>
 </ul>
-<h4 id="Develop-1"><a href="#Develop-1" class="headerlink" title="Develop"></a>Develop</h4><p>The three primary types of development problems are </p>
+<h4><span id="develop">Develop</span></h4><p>The three primary types of development problems are </p>
 <ol>
 <li><strong>underdevelopment</strong><br>appears wider than a normal line and will have sloping sidewalls.</li>
 <li><strong>incomplete development</strong>:<br>has residual resist on the substrate that should have been removed during develop.</li>
 <li><strong>overdevelopment</strong><br>removes too much resist causing features to appear narrower and poorly-defined.</li>
 </ol>
 <p><img src="https://hackmd.io/_uploads/SyPn-XYN2.png"></p>
-<h4 id="Negative-Resist"><a href="#Negative-Resist" class="headerlink" title="Negative Resist"></a>Negative Resist</h4><ul>
+<h4><span id="negative-resist">Negative Resist</span></h4><ul>
 <li>2$\mu m$以下尺寸的光阻不適用，因為會吸顯影液，造成swelling &amp; distortion</li>
 </ul>
-<h4 id="Positive-Resist"><a href="#Positive-Resist" class="headerlink" title="Positive Resist"></a>Positive Resist</h4><ul>
+<h4><span id="positive-resist">Positive Resist</span></h4><ul>
 <li>the most common resists used in submicron wafer fabrication due to improved linewidth resolution.</li>
 <li>he two general types of positive resists used in wafer microlithography are <ul>
 <li>conventional DNQ i-line resists</li>
@@ -780,19 +884,19 @@
 </li>
 <li>Although these two resists are very different chemically, it is generally truethat phenolic resin is soluble in a base solution.</li>
 </ul>
-<h3 id="Developer"><a href="#Developer" class="headerlink" title="Developer"></a>Developer</h3><p>have selectivity(選擇比)</p>
+<h3><span id="developer">Developer</span></h3><p>have selectivity(選擇比)</p>
 <ul>
 <li>對兩種反應的差異很大</li>
 <li>需要反應的A會反應的很快，相對B就不靈敏</li>
 <li>如果顯影選擇比很高，顯影效果會比較好</li>
 </ul>
-<h3 id="HARD-BAKE"><a href="#HARD-BAKE" class="headerlink" title="HARD BAKE"></a>HARD BAKE</h3><ul>
+<h3><span id="hard-bake">HARD BAKE</span></h3><ul>
 <li>可以把光阻裡剩餘的solvent去除</li>
 <li>讓光阻變堅硬 (在之後蝕刻或離子植入時起到保護作用</li>
 <li>改善光阻和substrate的附著力</li>
 </ul>
-<h3 id="DEVELOP-INSPECT"><a href="#DEVELOP-INSPECT" class="headerlink" title="DEVELOP INSPECT"></a>DEVELOP INSPECT</h3><p>在進行蝕刻或離子植入前要經過顯影後檢視看顯影的圖跟設計是否一致<br>因為到了後面就沒法重做<br><img src="https://hackmd.io/_uploads/H1xsU7FNn.png"></p>
-<h3 id="HW-4"><a href="#HW-4" class="headerlink" title="HW"></a>HW</h3><ol>
+<h3><span id="develop-inspect">DEVELOP INSPECT</span></h3><p>在進行蝕刻或離子植入前要經過顯影後檢視看顯影的圖跟設計是否一致<br>因為到了後面就沒法重做<br><img src="https://hackmd.io/_uploads/H1xsU7FNn.png"></p>
+<h3><span id="hw">HW</span></h3><ol>
 <li>Q15.3: Why is temperature uniformity important for PEB?<br>:::spoiler <strong>Ans here</strong><br>PEB temperature non-uniformity (both in steady-state and transient phases) impacts across-wafer CD uniformity<br>:::</li>
 <li>Q15.17: Explain why hard bake is done.<br>:::spoiler <strong>Ans here</strong><ul>
 <li>可以把光阻裡剩餘的solvent去除</li>
@@ -801,16 +905,16 @@
 </ul>
 </li>
 </ol>
-<h2 id="第十六章-Photolithography-Etch"><a href="#第十六章-Photolithography-Etch" class="headerlink" title="第十六章 Photolithography: Etch"></a>第十六章 Photolithography: Etch</h2><h3 id="重點-5"><a href="#重點-5" class="headerlink" title="重點"></a>重點</h3><ol>
+<h2><span id="第十六章-photolithography-etch">第十六章 Photolithography: Etch</span></h2><h3><span id="重點">重點</span></h3><ol>
 <li>重要的蝕刻參數。</li>
 <li>何謂乾蝕刻，優點?</li>
 <li>物理性與化學性蝕刻機制。</li>
 </ol>
-<h3 id="內容摘錄-5"><a href="#內容摘錄-5" class="headerlink" title="內容摘錄"></a>內容摘錄</h3><h4 id="Intro-1"><a href="#Intro-1" class="headerlink" title="Intro"></a>Intro</h4><ul>
+<h3><span id="內容摘錄">內容摘錄</span></h3><h4><span id="intro">Intro</span></h4><ul>
 <li>可以以物理&#x2F;化學性方式去除掉晶圓表面不要的材料</li>
 <li>蝕刻選擇比要高<br><img src="https://hackmd.io/_uploads/Skr6v7YVn.png"></li>
 </ul>
-<h4 id="Etch-Process"><a href="#Etch-Process" class="headerlink" title="Etch Process"></a>Etch Process</h4><p>Two basic types of etch processes are used in semiconductor manufacturing: </p>
+<h4><span id="etch-process">Etch Process</span></h4><p>Two basic types of etch processes are used in semiconductor manufacturing: </p>
 <ul>
 <li>dry etch<ul>
 <li>使用氣體電漿進行蝕刻</li>
@@ -825,12 +929,12 @@
 </ul>
 </li>
 </ul>
-<h4 id="Etch-Parameters"><a href="#Etch-Parameters" class="headerlink" title="Etch Parameters"></a>Etch Parameters</h4><h5 id="Etch-rate"><a href="#Etch-rate" class="headerlink" title="Etch rate"></a>Etch rate</h5><ul>
+<h4><span id="etch-parameters">Etch Parameters</span></h4><h5><span id="etch-rate">Etch rate</span></h5><ul>
 <li>蝕刻速率&#x3D;所移除材料的總量(通常以薄膜厚度)&#x2F;蝕刻時間</li>
 <li>蝕刻速率與蝕刻液濃度成正比</li>
 <li><strong>loading effects</strong><br>在大面積蝕刻蝕時，跟蝕刻液反應會吸收掉蝕刻液的濃度<br>最後蝕刻的效率會較慢<br>反之在小面積比較不易稀釋蝕刻液，速率較快</li>
 </ul>
-<h5 id="Etch-profile"><a href="#Etch-profile" class="headerlink" title="Etch profile"></a>Etch profile</h5><p><em>Etch profile</em>: refers to the shape of the sidewall of the etched feature<br>分成兩種：</p>
+<h5><span id="etch-profile">Etch profile</span></h5><p><em>Etch profile</em>: refers to the shape of the sidewall of the etched feature<br>分成兩種：</p>
 <ul>
 <li>**isotropic(等向性)**：<ul>
 <li>定義：所有方向蝕刻速率都一樣</li>
@@ -845,7 +949,7 @@
 </li>
 <li>乾&#x2F;濕蝕刻造成的側壁輪廓<br><img src="https://hackmd.io/_uploads/H1wbr4mB2.png"></li>
 </ul>
-<h5 id="Etch-bias"><a href="#Etch-bias" class="headerlink" title="Etch bias"></a>Etch bias</h5><p><img src="https://hackmd.io/_uploads/SklirVmrn.png"></p>
+<h5><span id="etch-bias">Etch bias</span></h5><p><img src="https://hackmd.io/_uploads/SklirVmrn.png"></p>
 <ul>
 <li>定義：a measure of the change in linewidth or space of a critical dimension (CD) after performing an etch process</li>
 <li>通常由底切所造成抑或是蝕刻輪廓</li>
@@ -855,7 +959,7 @@
 </li>
 <li>overetch<br> <img src="https://hackmd.io/_uploads/B1z5YNmH3.png"></li>
 </ul>
-<h5 id="Selectivity"><a href="#Selectivity" class="headerlink" title="Selectivity"></a>Selectivity</h5><ul>
+<h5><span id="selectivity">Selectivity</span></h5><ul>
 <li>定義：how much faster one film etches than another film under the same etch conditions</li>
 <li>公式：$\displaystyle S_R&#x3D;\frac{E_f}{E_r}$<blockquote>
 <p>其中，<br>$E_f&#x3D;$ 進行蝕刻時薄膜的蝕刻速率<br>$E_r&#x3D;$ masking layer的蝕刻速率(e.g 光阻)</p>
@@ -863,29 +967,29 @@
 </li>
 <li>好的選擇比比例至少100:1以上(想要的比不想要的侵蝕快100倍以上)<br><img src="https://hackmd.io/_uploads/r1wfi4XSn.png"></li>
 </ul>
-<h5 id="Uniformity"><a href="#Uniformity" class="headerlink" title="Uniformity"></a>Uniformity</h5><ul>
+<h5><span id="uniformity">Uniformity</span></h5><ul>
 <li>定義：a measure of the capability of the process to etch evenly across the entire surface area of the wafer, across the entire wafer lot, and from lot to lot<br><img src="https://hackmd.io/_uploads/SJcZnN7r3.png"></li>
 </ul>
-<h4 id="Dry-Etch"><a href="#Dry-Etch" class="headerlink" title="Dry Etch"></a>Dry Etch</h4><h5 id="Advantages-of-Dry-Etch-over-Wet-Etch"><a href="#Advantages-of-Dry-Etch-over-Wet-Etch" class="headerlink" title="Advantages of Dry Etch over Wet Etch"></a>Advantages of Dry Etch over Wet Etch</h5><ol>
+<h4><span id="dry-etch">Dry Etch</span></h4><h5><span id="advantages-of-dry-etch-over-wet-etch">Advantages of Dry Etch over Wet Etch</span></h5><ol>
 <li>Etch profile is anisotropic with excellent control of sidewall profiles<br>乾蝕刻可以選擇氣體來源使薄膜可以形成異向性的蝕刻，對於側壁輪廓的控制就能精確</li>
 <li>Good CD control<br>線寬(CD)控制也非常的好</li>
 <li>Minimal resist lifting or adhesion problems<br>使光阻不容易掀掉和解決附著力的問題</li>
 <li>Good etch uniformity within wafer, wafer-to-wafer and lot-to-lot</li>
 <li>Lower chemical costs for usage and disposal<br>因為濕蝕刻都是用強酸&#x2F;鹼下去做薄膜侵蝕，必須經過一定程序處理掉<br>:::danger<br>這五點曾經出現在期末考問答題<br>:::</li>
 </ol>
-<h5 id="Chemical-and-Physical-Dry-Etch-Mechanisms"><a href="#Chemical-and-Physical-Dry-Etch-Mechanisms" class="headerlink" title="Chemical and Physical Dry Etch Mechanisms"></a>Chemical and Physical Dry Etch Mechanisms</h5><p><img src="https://hackmd.io/_uploads/H15xyrXSn.png"></p>
-<h3 id="HW-5"><a href="#HW-5" class="headerlink" title="HW"></a>HW</h3><ol>
+<h5><span id="chemical-and-physical-dry-etch-mechanisms">Chemical and Physical Dry Etch Mechanisms</span></h5><p><img src="https://hackmd.io/_uploads/H15xyrXSn.png"></p>
+<h3><span id="hw">HW</span></h3><ol>
 <li>Q16.1: Define etch. What is the goal of etching?<br>:::spoiler <strong>Ans here</strong><br>Etch is the process of selectively removing unneeded material from the wafer surface by using either chemical or physical means. The goal of etching is to accurately reproduce the mask features on the wafer.<br>:::</li>
 <li>Q16.2: What are the two types of etch process? Give a short description of each type.<br>:::spoiler <strong>Ans here</strong><br>Dry etch and wet etch. Dry etch exposes the wafer surface to a plasma created in the gaseous state. The plasma passes through the mask openings and interacts physically or chemically (or both) with the wafer to remove the surface material. Wet etch uses liquid chemicals such as acids, bases and solvents to chemically remove the wafer surface. It is generally applicable to geometries greater than $3\mu m$.<br>:::</li>
 </ol>
-<h2 id="第十七章-Doping-Processes"><a href="#第十七章-Doping-Processes" class="headerlink" title="第十七章 Doping Processes"></a>第十七章 Doping Processes</h2><h3 id="重點-6"><a href="#重點-6" class="headerlink" title="重點"></a>重點</h3><ol>
+<h2><span id="第十七章-doping-processes">第十七章 Doping Processes</span></h2><h3><span id="重點">重點</span></h3><ol>
 <li>解釋晶圓製作中，摻雜的目的與應用。</li>
 <li>討論摻質擴散的原理與製程。</li>
 <li>提供有關離子植入之概要說明，包括它的優缺點。</li>
 <li>討論題子植入時，有關劑量與範圍的重要性。</li>
 <li>解釋何謂離子植入之退火及通道效應。</li>
 </ol>
-<h3 id="內容摘錄-6"><a href="#內容摘錄-6" class="headerlink" title="內容摘錄"></a>內容摘錄</h3><h4 id="intro"><a href="#intro" class="headerlink" title="intro"></a>intro</h4><ul>
+<h3><span id="內容摘錄">內容摘錄</span></h3><h4><span id="intro">intro</span></h4><ul>
 <li>定義：the introduction of a dopant into the crystal structure of a semiconductor material to modify its electronic properties (e.g., electrical resistivity)</li>
 <li>Dopant species are also referred to as impurities(這是需要雜質的，像是加進去的dopants) but should not be confused with contaminating impurities (不要的稱為汙染物)</li>
 <li>有兩種技術可將dopant的元素加進wafer中：<ul>
@@ -900,8 +1004,8 @@
 </ul>
 </li>
 </ul>
-<h5 id="常用dopants"><a href="#常用dopants" class="headerlink" title="常用dopants"></a>常用dopants</h5><p><img src="https://hackmd.io/_uploads/BJVBIUXBh.png"></p>
-<h4 id="Doped-Regions"><a href="#Doped-Regions" class="headerlink" title="Doped Regions"></a>Doped Regions</h4><ul>
+<h5><span id="常用dopants">常用dopants</span></h5><p><img src="https://hackmd.io/_uploads/BJVBIUXBh.png"></p>
+<h4><span id="doped-regions">Doped Regions</span></h4><ul>
 <li>擴散的時候會拿一些元素當作擋罩(圖上是用oxide)<ul>
 <li>裸露出來的就是要doping的地方</li>
 </ul>
@@ -912,7 +1016,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="Diffusion"><a href="#Diffusion" class="headerlink" title="Diffusion"></a>Diffusion</h4><ul>
+<h4><span id="diffusion">Diffusion</span></h4><ul>
 <li>物質由高往低濃度移動</li>
 <li>氣、液、固態都可以發生</li>
 <li>當高濃度dopant打進wafer會產生固態的擴散</li>
@@ -927,18 +1031,18 @@
 </ul>
 </li>
 </ul>
-<h5 id="Solid-Solubility"><a href="#Solid-Solubility" class="headerlink" title="Solid Solubility()"></a>Solid Solubility()</h5><p>定義：&#x3D;&#x3D;At a given temperature&#x3D;&#x3D;, there is a limit to how much dopant can be absorbed by the silicon. This is referred to as the <strong>solid solubility limit</strong></p>
+<h5><span id="solid-solubility">Solid Solubility()</span></h5><p>定義：&#x3D;&#x3D;At a given temperature&#x3D;&#x3D;, there is a limit to how much dopant can be absorbed by the silicon. This is referred to as the <strong>solid solubility limit</strong></p>
 <ul>
 <li>Each a particular dopant has a solid solubility limit<br><img src="https://hackmd.io/_uploads/r1xNh8mB3.png"></li>
 </ul>
-<h4 id="Ion-implantation"><a href="#Ion-implantation" class="headerlink" title="Ion implantation"></a>Ion implantation</h4><p>定義：a method for introducing controlled amounts of dopants into the silicon substrate to change its electronic properties.</p>
+<h4><span id="ion-implantation">Ion implantation</span></h4><p>定義：a method for introducing controlled amounts of dopants into the silicon substrate to change its electronic properties.</p>
 <ul>
 <li>物理反應，</li>
 <li>沒有極限的問題打多少都沒關係</li>
 <li>大大大優點：可以精確的控制打進去dopant的濃度和深度</li>
 </ul>
-<h5 id="控制dopant濃度-x2F-深度"><a href="#控制dopant濃度-x2F-深度" class="headerlink" title="控制dopant濃度&#x2F;深度"></a>控制dopant濃度&#x2F;深度</h5><p><img src="https://hackmd.io/_uploads/BJufa8mBh.png"></p>
-<h5 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h5><p>Ion implant processing is done in one of the most complex semiconductor processing tools, called the <em>ion implanter</em> </p>
+<h5><span id="控制dopant濃度x2f深度">控制dopant濃度&#x2F;深度</span></h5><p><img src="https://hackmd.io/_uploads/BJufa8mBh.png"></p>
+<h5><span id="overview">Overview</span></h5><p>Ion implant processing is done in one of the most complex semiconductor processing tools, called the <em>ion implanter</em> </p>
 <ol>
 <li>The implanter has an ion source component that creates &#x3D;&#x3D;positive-charged&#x3D;&#x3D; dopant ions from a source material. </li>
 <li>The ions are extracted and then separated in a mass analyzer to form a beam of the desired dopant ions. <ul>
@@ -955,7 +1059,7 @@
 <ul>
 <li>All implanter processing is done in a high vacuum<br><img src="https://hackmd.io/_uploads/B1JtTUmB2.png"></li>
 </ul>
-<h5 id="Advantages-of-Ion-Implantation-會考很重要無限星星"><a href="#Advantages-of-Ion-Implantation-會考很重要無限星星" class="headerlink" title="Advantages of Ion Implantation(會考很重要無限星星)"></a>Advantages of Ion Implantation(會考很重要無限星星)</h5><ol>
+<h5><span id="advantages-of-ion-implantation會考很重要無限星星">Advantages of Ion Implantation(會考很重要無限星星)</span></h5><ol>
 <li><strong>Precise control of dopant concentration</strong></li>
 <li><strong>Good dopant uniformity</strong></li>
 <li><strong>Good control of dopant penetration depth</strong></li>
@@ -964,7 +1068,7 @@
 <li><strong>Ability to implant dopants through films</strong></li>
 <li><strong>No solid solubility limit</strong></li>
 </ol>
-<h5 id="Disadvantages-of-Ion-Implant"><a href="#Disadvantages-of-Ion-Implant" class="headerlink" title="Disadvantages of Ion Implant"></a>Disadvantages of Ion Implant</h5><ul>
+<h5><span id="disadvantages-of-ion-implant">Disadvantages of Ion Implant</span></h5><ul>
 <li>高能量離子束會把原本矽原子位置給打亂，需回復鍵結</li>
 <li>有兩種能量喪失的形式：<ul>
 <li><strong>Electronic stopping</strong><br>Electronic stopping of dopant atoms is caused by interactions with the target electrons, similar to stopping a projectile in a thick medium, such as a child jumping into a pile of plastic balls</li>
@@ -977,7 +1081,7 @@
 </li>
 <li>停在多少深度取決於喪失多少能量<br><img src="https://hackmd.io/_uploads/Hkf2VwmBn.png"></li>
 </ul>
-<h4 id="Annealing"><a href="#Annealing" class="headerlink" title="Annealing"></a>Annealing</h4><ul>
+<h4><span id="annealing">Annealing</span></h4><ul>
 <li>Ion implantation damages the silicon lattice by knocking atoms out of the lattice structure. </li>
 <li>These interstitial dopants are electrically inactive until activated by a high-temperature annealing step. <ul>
 <li>通常都是在相對高溫+維持一段時間，讓他有足夠的溫度和能量去完成活化的反應，修補這些鍵結</li>
@@ -990,22 +1094,22 @@
 </ul>
 </li>
 </ul>
-<h4 id="Channeing"><a href="#Channeing" class="headerlink" title="Channeing"></a>Channeing</h4><p>There are four ways that channeling is controlled during implant:</p>
+<h4><span id="channeing">Channeing</span></h4><p>There are four ways that channeling is controlled during implant:</p>
 <ol>
 <li>wafer tilt, </li>
 <li>screen oxide layer</li>
 <li><del>preamorphization of the silieen</del></li>
 <li><del>usingdopants with greater amu’s (atomie mass units)</del></li>
 </ol>
-<h5 id="Wafer-Tilt"><a href="#Wafer-Tilt" class="headerlink" title="Wafer Tilt"></a>Wafer Tilt</h5><p>直接把wafer轉下（7度）就比較不會有某一個方向通通不會有能量損失的問題</p>
-<h5 id="Screen-Oxide-Layer"><a href="#Screen-Oxide-Layer" class="headerlink" title="Screen Oxide Layer"></a>Screen Oxide Layer</h5><p>用一層很薄的oxide layer當作screen oxide layer當犧牲層，讓ion beam有能量的損失使其停在較淺介面，做完植入再去除掉犧牲層</p>
-<h3 id="HW-6"><a href="#HW-6" class="headerlink" title="HW"></a>HW</h3><ol>
+<h5><span id="wafer-tilt">Wafer Tilt</span></h5><p>直接把wafer轉下（7度）就比較不會有某一個方向通通不會有能量損失的問題</p>
+<h5><span id="screen-oxide-layer">Screen Oxide Layer</span></h5><p>用一層很薄的oxide layer當作screen oxide layer當犧牲層，讓ion beam有能量的損失使其停在較淺介面，做完植入再去除掉犧牲層</p>
+<h3><span id="hw">HW</span></h3><ol>
 <li>Q17.1: What is doping?<br>:::spoiler <strong>Ans here</strong><br>Doping is the introduction of a dopant (also known as an impurity) into the crystal structure of a semiconductor material to control its electronic properties (e.g., electrical resistivity)<br>:::</li>
 <li>Q17.3: Give a short description of thermal diffusion.<br>:::spoiler <strong>Ans here</strong><br>Thermal diffusion uses high temperature to move the dopant through the silicon lattice structure. This method is dependent on time and temperature<br>:::</li>
 <li>Q17.4: Give a short description of ion implantation.<br>:::spoiler <strong>Ans here</strong><br> Ion implantation introduces dopants into the substrate through a high-voltage ion bombardment. The dopants are implanted into the wafer through high-energy collisions at the atomic level<br>:::</li>
 </ol>
 <hr>
-<h2 id="期末分隔線"><a href="#期末分隔線" class="headerlink" title="期末分隔線"></a>期末分隔線</h2><hr>
+<h2><span id="期末分隔線">期末分隔線</span></h2><hr>
 
     </div>
     
@@ -1013,15 +1117,19 @@
     
     
     
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
+    
+    
     
     
 </div>
-
                     <footer id="footer">
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2023 棉花糖的小窩
+            2023 - 2023 棉花糖的小窩
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
@@ -1044,17 +1152,74 @@
                 </div>
             </transition>
             
+                    <!--pjax：防止跳转页面音乐暂停-->
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         </div>
         <script src="/js/main.js"></script>
         
         
 
 
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "enable",
+        
+    });
+</script>
+
 
 
         
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+        
+        <!--pjax：防止跳转页面音乐暂停-->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <div id="pjax-container">
+        <!-- 我使用的APlayer本体 -->
+            <div class="aplayer" 
+                data-id="2465890057" 
+                data-server="netease" 
+                data-type="playlist" 
+                data-fixed="true" 
+                data-autoplay="true" 
+                data-order="random" 
+                data-volume="0.55" 
+                data-theme="#cc543a" 
+                data-preload="auto" >
+            </div>
+        </div>
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        <!-- .css file path -->
+        <link rel="stylesheet" href="./player/index.bundle.css">
+        <!-- petite-vue CDN -->
+        <script src="https://unpkg.com/petite-vue"></script>
+        <!-- .js file path -->
+        <script src="./player/index.bundle.js"></script>
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/kp31/model.json"},"display":{"position":"right","width":200,"height":600},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
 </html>
 
-<script src="/js/<file>"></script>
-    <link rel="stylesheet" href="/css/<file>" />

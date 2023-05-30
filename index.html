@@ -2,7 +2,17 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
     <head>
+        <script>
+            // 对所有链接跳转事件绑定pjax容器pjax-container 
+            $(document).pjax('a', '#pjax-container', {
+            fragment:'#pjax-container',
+            timeout:8000
+            });   
+        </script>  
+        <!--pjax：防止跳转页面音乐暂停-->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         <meta charset="utf-8" />
+
         <title>棉花糖的小窩</title>
         <meta name="author" content="Marumallow" />
         <meta name="description" content="期末考我要炸了!!!" />
@@ -39,18 +49,72 @@
 
 <script src="/js/lib/home.js"></script>
 
+
 <link rel="stylesheet" href="/css/main.css" />
 
-    <meta name="generator" content="Hexo 6.3.0"></head>
+<script src="//cdn.jsdelivr.net/npm/vue-aplayer"></script>
+<script>
+  Vue.component('aplayer', VueAPlayer)
+</script>
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+        <div class="aplayer" 
+            data-id="2465890057" 
+            data-server="netease" 
+            data-type="playlist" 
+            data-fixed="true" 
+            data-autoplay="true" 
+            data-order="random" 
+            data-volume="0.55" 
+            data-theme="#cc543a" 
+            data-preload="auto" >
+        </div>
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+    <link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
     <body>
         <div id="layout">
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+            <div id="pjax-container">
+                <!-- 我使用的APlayer本体 -->
+                    <div class="aplayer" 
+                        data-id="2465890057" 
+                        data-server="netease" 
+                        data-type="playlist" 
+                        data-fixed="true" 
+                        data-autoplay="true" 
+                        data-order="random" 
+                        data-volume="0.55" 
+                        data-theme="#cc543a" 
+                        data-preload="none ">
+                    </div>
             <transition name="fade">
                 <div id="loading" v-show="loading">
                     <div id="loading-circle">
                         <h2>LOADING</h2>
                         <p>進度條正在跑跑中</p>
                         <img src="/images/loading.gif" />
+                            </div>
                     </div>
+                    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
                 </div>
             </transition>
             <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
@@ -182,11 +246,77 @@
     <div id="home-posts">
         
 
+    
+
+<div class="post">
+    <a href="/2023/05/29/NumPysum/">
+        <h2 class="post-title">NumPy 相關功能整理</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/Python/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Python
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/29
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>期末考導向</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ff7d73">期末考</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #ffa2c4">講義</a>
+        </span>
+        
+    </div>
+    <a href="/2023/05/29/NumPysum/" class="go-post">閱讀全文</a>
+</div>
+
+    
+
 <div class="post">
     <a href="/2023/05/28/Matplotlibsum/">
         <h2 class="post-title">Matplotlib 相關功能整理</h2>
     </a>
     <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/Python/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Python
+            </a>
+        </span>
         
         <span class="date">
             <span class="icon">
@@ -200,17 +330,33 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>期末考導向，只有講義的內容但對。</p>
+            <p>期末考導向</p>
 
             
         </div>
     </div>
     <div class="post-tags">
         
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #00bcd4">期末考</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #00bcd4">講義</a>
+        </span>
         
     </div>
     <a href="/2023/05/28/Matplotlibsum/" class="go-post">閱讀全文</a>
 </div>
+
+    
 
 <div class="post">
     <a href="/2023/05/28/SymPysum/">
@@ -218,6 +364,15 @@
     </a>
     <div class="category-and-date">
         
+        <span class="category">
+            <a href="/categories/Python/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Python
+            </a>
+        </span>
+        
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -230,23 +385,48 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>期末考導向，只有講義的內容但對。</p>
+            <p>期末考導向</p>
 
             
         </div>
     </div>
     <div class="post-tags">
         
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ff7d73">期末考</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #ffa2c4">講義</a>
+        </span>
         
     </div>
     <a href="/2023/05/28/SymPysum/" class="go-post">閱讀全文</a>
 </div>
 
+    
+
 <div class="post">
     <a href="/2023/05/28/OOP&classes/">
-        <h2 class="post-title">Object Oriented Programming and Classes **SUMMARY**</h2>
+        <h2 class="post-title">Object Oriented Programming and Classes SUMMARY</h2>
     </a>
     <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/Python/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                Python
+            </a>
+        </span>
         
         <span class="date">
             <span class="icon">
@@ -261,15 +441,32 @@
         <div class="content" v-pre>
             
             
+    <div id="aplayer-ChCobbIG" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="preload: auto" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
             
         </div>
     </div>
     <div class="post-tags">
         
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #00a596">期末考</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #00bcd4">講義</a>
+        </span>
         
     </div>
     <a href="/2023/05/28/OOP&classes/" class="go-post">閱讀全文</a>
 </div>
+
+    
 
 <div class="post">
     <a href="/2023/05/28/%E5%8D%8A%E5%B0%8E%E9%AB%94%E8%A3%BD%E7%A8%8B%E5%B0%8E%E8%AB%96_/">
@@ -326,7 +523,7 @@
         </div>
         <div class="name">Marumallow</div>
         <div class="description">
-            <p>這裡棉花糖~<br>目前正在各種學習中，寫一些小東西整理在這。</p>
+            <p>這裡棉花糖~<br>寫一些小東西整理在這。</p>
 
         </div>
         
@@ -371,6 +568,7 @@
             
         </div>
         
+
     </div>
 </div>
 
@@ -382,7 +580,7 @@
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2023 棉花糖的小窩
+            2023 - 2023 棉花糖的小窩
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
@@ -405,11 +603,51 @@
                 </div>
             </transition>
             
+                    <!--pjax：防止跳转页面音乐暂停-->
+            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         </div>
         <script src="/js/main.js"></script>
         
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+        
+        <!--pjax：防止跳转页面音乐暂停-->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <div id="pjax-container">
+        <!-- 我使用的APlayer本体 -->
+            <div class="aplayer" 
+                data-id="2465890057" 
+                data-server="netease" 
+                data-type="playlist" 
+                data-fixed="true" 
+                data-autoplay="true" 
+                data-order="random" 
+                data-volume="0.55" 
+                data-theme="#cc543a" 
+                data-preload="auto" >
+            </div>
+        </div>
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        <!-- .css file path -->
+        <link rel="stylesheet" href="./player/index.bundle.css">
+        <!-- petite-vue CDN -->
+        <script src="https://unpkg.com/petite-vue"></script>
+        <!-- .js file path -->
+        <script src="./player/index.bundle.js"></script>
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/kp31/model.json"},"display":{"position":"right","width":200,"height":600},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
 </html>
 
-<script src="/js/<file>"></script>
-    <link rel="stylesheet" href="/css/<file>" />
