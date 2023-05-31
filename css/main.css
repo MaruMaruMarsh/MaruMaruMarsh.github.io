@@ -906,6 +906,7 @@ ol li {
         width: 800px;
     }
 }
+
 @media (max-width: 900px) {
     #home-head #home-info {
         height: 350px;
