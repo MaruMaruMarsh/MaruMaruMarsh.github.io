@@ -300,12 +300,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #00a596">期末考</a>
+                <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ff7d73">期末考</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #03a9f4">講義</a>
+                <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #ff7d73">講義</a>
             </span>
             
         </span>
@@ -314,187 +314,235 @@
     
     <div class="content" v-pre>
         
-    <div id="aplayer-DgbVjJSY" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
-<h1><span id="symbolic-mathematics-in-python-with-sympy">Symbolic Mathematics in Python with <code>SymPy</code></span></h1><h2><span id="前言">前言</span></h2><ul>
+    <div id="aplayer-MTJlOrNF" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<h1><span id="symbolic-mathematics-in-python-with-sympy">Symbolic Mathematics in Python with <code>SymPy</code></span></h1>
+<h2><span id="前言">前言</span></h2>
+<ul>
 <li><code>SymPy</code> 是一款將編碼轉為可執行數學演算的 <code>Python</code> 套件。以其易執行的可做為的替代品，例如 <code>Mathematica</code>, <code>Maple</code>, <code>Sage</code> 等等。</li>
 <li><code>SymPy</code> 基本上全部建置在 <code>Python</code> 裡並不需要載額外封包。</li>
 </ul>
-<h2><span id="using-sympy-as-a-calculator">Using <code>SymPy</code> as a calculator</span></h2><pre><code class="lang-python">import sympy as sp
+<h2><span id="using-sympy-as-a-calculator">Using <code>SymPy</code> as a calculator</span></h2>
+<pre><code class="language-python">import sympy as sp
 </code></pre>
-<h3><span id="1-sympy-的基本運算">1. <code>SymPy</code> 的基本運算</span></h3><h4><span id="除法">除法</span></h4><pre><code class="lang-python">u = sp.Integer(24)
+<h3><span id="1-sympy-的基本運算">1. <code>SymPy</code> 的基本運算</span></h3>
+<h4><span id="除法">除法</span></h4>
+<pre><code class="language-python">u = sp.Integer(24)
 u/8, u/7
 ## Output: (3, 24/7)
 </code></pre>
-<h4><span id="rational-class">Rational class</span></h4><p>用分數的形式呈現</p>
-<pre><code class="lang-python">a = sp.Rational(1, 2)
+<h4><span id="rational-class">Rational class</span></h4>
+<p>用分數的形式呈現</p>
+<pre><code class="language-python">a = sp.Rational(1, 2)
 a, a*2
 ## Output: (1/2, 1)
 </code></pre>
-<h4><span id="float-class">Float class</span></h4><p>用浮點數的形式呈現</p>
-<pre><code class="lang-python">sp.Float(3.53) + sp.Float(3)
+<h4><span id="float-class">Float class</span></h4>
+<p>用浮點數的形式呈現</p>
+<pre><code class="language-python">sp.Float(3.53) + sp.Float(3)
 ## Output: 6.53
 </code></pre>
 <p>在一般的 <code>Python</code> 中，浮點數的運算會有誤差，但在 <code>SymPy</code> 中，浮點數的運算會是精確的。</p>
-<pre><code class="lang-python">3.53 + 3
+<pre><code class="language-python">3.53 + 3
 ## Output: 6.529999999999999
 </code></pre>
-<h4><span id="sympy-中的常數"><code>SymPy</code> 中的常數</span></h4><p>SymPy 中的常數是以 <code>sp.常數名稱</code> 的形式呈現，例如 <code>sp.pi</code>、<code>sp.E</code>、<code>sp.I</code> 等等。<br>如果要將常數轉為浮點數，可以使用 <code>evalf()</code> 函數。</p>
-<pre><code class="lang-python">sp.pi**2, sp.pi.evalf()
+<h4><span id="sympy-中的常數"><code>SymPy</code> 中的常數</span></h4>
+<p>SymPy 中的常數是以 <code>sp.常數名稱</code> 的形式呈現，例如 <code>sp.pi</code>、<code>sp.E</code>、<code>sp.I</code> 等等。<br>
+如果要將常數轉為浮點數，可以使用 <code>evalf()</code> 函數。</p>
+<pre><code class="language-python">sp.pi**2, sp.pi.evalf()
 ## Output: (pi**2, 3.14159265358979)
 (sp.pi + sp.exp(1)).evalf()
 ## Output: 5.85987448204884
 </code></pre>
-<h4><span id="表達特定位數的浮點數">表達特定位數的浮點數</span></h4><pre><code class="lang-python">sqrt2 = sp.sqrt(2).evalf(10)
+<h4><span id="表達特定位數的浮點數">表達特定位數的浮點數</span></h4>
+<pre><code class="language-python">sqrt2 = sp.sqrt(2).evalf(10)
 sqrt2
 ## Output: 1.414213562
 </code></pre>
-<h4><span id="sympy-中的無限大"><code>SymPy</code> 中的無限大</span></h4><pre><code class="lang-python">sp.oo
+<h4><span id="sympy-中的無限大"><code>SymPy</code> 中的無限大</span></h4>
+<pre><code class="language-python">sp.oo
 </code></pre>
-<h2><span id="defining-symbols-and-symbolic-operations">Defining symbols and symbolic operations</span></h2><h3><span id="定義符號">定義符號</span></h3><p>可以使用 <code>Symbol()</code> 函數來定義符號</p>
-<pre><code class="lang-python">x = sp.Symbol(&#39;x&#39;)
+<h2><span id="defining-symbols-and-symbolic-operations">Defining symbols and symbolic operations</span></h2>
+<h3><span id="定義符號">定義符號</span></h3>
+<p>可以使用 <code>Symbol()</code> 函數來定義符號</p>
+<pre><code class="language-python">x = sp.Symbol('x')
 </code></pre>
-<h3><span id="定義多個符號">定義多個符號</span></h3><p>定義多個符號時，可以使用 <code>symbols()</code> 函數</p>
-<pre><code class="lang-python">x,y = sp.symbols(&#39;x,y&#39;)
+<h3><span id="定義多個符號">定義多個符號</span></h3>
+<p>定義多個符號時，可以使用 <code>symbols()</code> 函數</p>
+<pre><code class="language-python">x,y = sp.symbols('x,y')
 </code></pre>
-<h3><span id="展開式">展開式</span></h3><pre><code class="lang-python">p = (x + 2)*(x + 3)
+<h3><span id="展開式">展開式</span></h3>
+<pre><code class="language-python">p = (x + 2)*(x + 3)
 p2 = sp.expand(p)
 ## Output: x**2 + 5*x + 6
 </code></pre>
-<h3><span id="因式分解">因式分解</span></h3><pre><code class="lang-python">sp.factor(p2)
+<h3><span id="因式分解">因式分解</span></h3>
+<pre><code class="language-python">sp.factor(p2)
 ## Output: (x + 2)*(x + 3)
 </code></pre>
-<h3><span id="x次方由小到大排列">x次方由小到大排列</span></h3><pre><code class="lang-python">sp.init_printing(order=&#39;rev-lex&#39;)
+<h3><span id="x次方由小到大排列">x次方由小到大排列</span></h3>
+<pre><code class="language-python">sp.init_printing(order='rev-lex')
 p2
 ## Output: 6 + 5*x + x**2
 </code></pre>
-<pre><code class="lang-python">sp.init_printing(order=&#39;lex&#39;)
-x = sp.Symbol(&#39;x&#39;)
-y = sp.Symbol(&#39;y&#39;)
+<pre><code class="language-python">sp.init_printing(order='lex')
+x = sp.Symbol('x')
+y = sp.Symbol('y')
 p3 = x*x + x*y + x*y + y*y
 p3
 ## Output: x**2 + 2*x*y + y**2
 </code></pre>
-<h3><span id="帶入值">帶入值</span></h3><pre><code class="lang-python">p3.subs(&#123;x:1, y:2&#125;) # We use dictionary to specify the values of x and y
+<h3><span id="帶入值">帶入值</span></h3>
+<pre><code class="language-python">p3.subs(&#123;x:1, y:2&#125;) # We use dictionary to specify the values of x and y
 ## Output: 9
 </code></pre>
-<h3><span id="簡化">簡化</span></h3><p>用<code>simplify()</code>函數來簡化</p>
-<pre><code class="lang-python">sp.simplify(p3.subs(&#123;x:1-y&#125;)) 
+<h3><span id="簡化">簡化</span></h3>
+<p>用<code>simplify()</code>函數來簡化</p>
+<pre><code class="language-python">sp.simplify(p3.subs(&#123;x:1-y&#125;)) 
 # The result turns out to be 1 because the other terms of the expression cancel each other.
 ## Output: 1
 </code></pre>
-<h2><span id="solving-equations-symbolically">Solving equations symbolically</span></h2><h3><span id="解方程式">解方程式</span></h3><p><code>solve()</code>函數可以解方程式</p>
-<pre><code class="lang-python">x = sp.Symbol(&#39;x&#39;)
+<h2><span id="solving-equations-symbolically">Solving equations symbolically</span></h2>
+<h3><span id="解方程式">解方程式</span></h3>
+<p><code>solve()</code>函數可以解方程式</p>
+<pre><code class="language-python">x = sp.Symbol('x')
 expr = x - 5 - 7
 sp.solve(expr)
 ## Output: [12]
 </code></pre>
-<h4><span id="字典形式">字典形式</span></h4><p>用<code>dict=True</code>得到字典形式</p>
-<pre><code class="lang-python">x = sp.Symbol(&#39;x&#39;)
+<h4><span id="字典形式">字典形式</span></h4>
+<p>用<code>dict=True</code>得到字典形式</p>
+<pre><code class="language-python">x = sp.Symbol('x')
 expr = x**2 + 5*x + 4
 sp.solve(expr), sp.solve(expr, dict=True)
 ## Output: ([-4, -1], [&#123;x: -4&#125;, &#123;x: -1&#125;])
 </code></pre>
-<h3><span id="解方程式組">解方程式組</span></h3><pre><code class="lang-python">x = sp.Symbol(&#39;x&#39;)
-y = sp.Symbol(&#39;y&#39;)
+<h3><span id="解方程式組">解方程式組</span></h3>
+<pre><code class="language-python">x = sp.Symbol('x')
+y = sp.Symbol('y')
 expr1 = 2*x + 3*y - 6
 expr2 = 3*x + 2*y - 12
 
 sp.solve((expr1, expr2), dict=True)
 ## Output: [&#123;x: 24/5, y: -6/5&#125;]
 </code></pre>
-<h4><span id="解的形式">解的形式</span></h4><p><code>nsolve()</code> -&gt; 帶著符號的解<br><code>nroots()</code> -&gt; 數值解</p>
-<pre><code class="lang-python">expr1 = x**3 + 2*x**2 -1
+<h4><span id="解的形式">解的形式</span></h4>
+<p><code>nsolve()</code> -&gt; 帶著符號的解<br>
+<code>nroots()</code> -&gt; 數值解</p>
+<pre><code class="language-python">expr1 = x**3 + 2*x**2 -1
 sp.solve(expr1), sp.nroots(expr1, n=3) # n is the number of digits to calculate
 </code></pre>
-<h2><span id="plotting-using-sympy">Plotting using <code>SymPy</code></span></h2><p>可以用<code>plot()</code>函數來畫圖<br>加上設定<code>title</code>、<code>xlabel</code>、<code>ylabel</code>等</p>
-<pre><code class="lang-python">x=sp.Symbol(&#39;x&#39;)
-sp.plot(2*x + 3, (x, -5, 5), title=&#39;A Line&#39;, xlabel=&#39;x&#39;, ylabel=&#39;2x+3&#39;);
+<h2><span id="plotting-using-sympy">Plotting using <code>SymPy</code></span></h2>
+<p>可以用<code>plot()</code>函數來畫圖<br>
+加上設定<code>title</code>、<code>xlabel</code>、<code>ylabel</code>等</p>
+<pre><code class="language-python">x=sp.Symbol('x')
+sp.plot(2*x + 3, (x, -5, 5), title='A Line', xlabel='x', ylabel='2x+3');
 </code></pre>
-<h2><span id="calculus-with-sympy">Calculus with <code>SymPy</code></span></h2><h3><span id="極限">極限</span></h3><pre><code class="lang-python">x = sp.Symbol(&#39;x&#39;)
+<h2><span id="calculus-with-sympy">Calculus with <code>SymPy</code></span></h2>
+<h3><span id="極限">極限</span></h3>
+<pre><code class="language-python">x = sp.Symbol('x')
 l = sp.Limit(1/x, x, sp.oo) # (function, variable, limit)
 </code></pre>
-<h4><span id="極限的實值">極限的實值</span></h4><pre><code class="lang-python">l.doit()
+<h4><span id="極限的實值">極限的實值</span></h4>
+<pre><code class="language-python">l.doit()
 ## Output: 0
 </code></pre>
-<h4><span id="負極限">負極限</span></h4><pre><code class="lang-python">sp.Limit(1/x, x, 0, dir=&#39;-&#39;).doit()
+<h4><span id="負極限">負極限</span></h4>
+<pre><code class="language-python">sp.Limit(1/x, x, 0, dir='-').doit()
 ## Output: -oo
 </code></pre>
-<h3><span id="微分">微分</span></h3><pre><code class="lang-python">t = sp.Symbol(&#39;t&#39;)
+<h3><span id="微分">微分</span></h3>
+<pre><code class="language-python">t = sp.Symbol('t')
 St = 5*t**2 + 2*t + 8
 sp.Derivative(St, t)
 ## Output: (d/dt)(5*t**2 + 2*t + 8, t)
 </code></pre>
-<h4><span id="微分的結果">微分的結果</span></h4><pre><code class="lang-python">sp.Derivative(St, t).doit()
+<h4><span id="微分的結果">微分的結果</span></h4>
+<pre><code class="language-python">sp.Derivative(St, t).doit()
 ## Output: 10*t + 2
 </code></pre>
 <p>我們也可以直接使用 <code>diff()</code> 函數來進行微分</p>
-<pre><code class="lang-python">sp.diff(St, t)
+<pre><code class="language-python">sp.diff(St, t)
 ## Output: 10*t + 2
 </code></pre>
-<h4><span id="帶入">帶入</span></h4><pre><code class="lang-python">t1 = sp.Symbol(&#39;t1&#39;)
+<h4><span id="帶入">帶入</span></h4>
+<pre><code class="language-python">t1 = sp.Symbol('t1')
 d.doit().subs(&#123;t:t1&#125;), d.doit().subs(&#123;t:1&#125;)
 ## Output: (10*t1 + 2, 12)
 </code></pre>
-<h3><span id="finding-the-integrals-of-functions">Finding the integrals of functions</span></h3><h4><span id="積分">積分</span></h4><pre><code class="lang-python">x = sp.Symbol(&#39;x&#39;)
+<h3><span id="finding-the-integrals-of-functions">Finding the integrals of functions</span></h3>
+<h4><span id="積分">積分</span></h4>
+<pre><code class="language-python">x = sp.Symbol('x')
 sp.Integral(sp.sin(x), x)
 ## Output: Integral(sin(x), x)dx
 </code></pre>
-<h5><span id="積分的結果">積分的結果</span></h5><pre><code class="lang-python">sp.Integral(sp.sin(x), x).doit()
+<h5><span id="積分的結果">積分的結果</span></h5>
+<pre><code class="language-python">sp.Integral(sp.sin(x), x).doit()
 ## Output: -cos(x)
 </code></pre>
 <p>同樣的，我們也可以直接使用 <code>integrate()</code> 函數來進行積分</p>
-<pre><code class="lang-python">sp.integrate(sp.sin(x), x), sp.integrate(sp.log(x), x)
+<pre><code class="language-python">sp.integrate(sp.sin(x), x), sp.integrate(sp.log(x), x)
 ## Output: (-cos(x), x*log(x) - x)
 </code></pre>
-<h4><span id="定積分">定積分</span></h4><p>要計算定積分，可以使用 <code>Integral()</code> 函數，並且指定積分的範圍</p>
-<pre><code class="lang-python"># sp.Integral(sp.sin(x), (x, 0, sp.pi / 2)).doit()
+<h4><span id="定積分">定積分</span></h4>
+<p>要計算定積分，可以使用 <code>Integral()</code> 函數，並且指定積分的範圍</p>
+<pre><code class="language-python"># sp.Integral(sp.sin(x), (x, 0, sp.pi / 2)).doit()
 sp.integrate(sp.sin(x), (x, 0, sp.pi / 2))
 ## Output: 1
 </code></pre>
 <p>反常積分也可以使用</p>
-<pre><code class="lang-python">sp.integrate(sp.exp(-x), (x, 0, sp.oo))
+<pre><code class="language-python">sp.integrate(sp.exp(-x), (x, 0, sp.oo))
 ## Output: 1
 </code></pre>
-<h3><span id="序列展開">序列展開</span></h3><p>我們可以使用 <code>series()</code> 函數來展開序列</p>
-<pre><code class="lang-python">sp.series(sp.cos(x), x, 0, 10)
+<h3><span id="序列展開">序列展開</span></h3>
+<p>我們可以使用 <code>series()</code> 函數來展開序列</p>
+<pre><code class="language-python">sp.series(sp.cos(x), x, 0, 10)
 ## Output: 1 - x**2/2 + x**4/24 - x**6/720 + x**8/40320 + O(x**10)
 </code></pre>
 <p>也可以移除 <code>O(x**10)</code> 的部分</p>
-<pre><code class="lang-python">sp.series(sp.cos(x), x, 0, 10).removeO()
+<pre><code class="language-python">sp.series(sp.cos(x), x, 0, 10).removeO()
 ## Output: 1 - x**2/2 + x**4/24 - x**6/720 + x**8/40320
 </code></pre>
-<h3><span id="lambafy">lambafy()</span></h3><p>lambafy() 函數可以將符號函數轉換成數值函數</p>
-<pre><code class="lang-python">expr = sp.series(sp.cos(x), x, 0, 10).removeO()
-f = sp.utilities.lambdify(x, expr, &#39;numpy&#39;)
+<h3><span id="lambafy">lambafy()</span></h3>
+<p>lambafy() 函數可以將符號函數轉換成數值函數</p>
+<pre><code class="language-python">expr = sp.series(sp.cos(x), x, 0, 10).removeO()
+f = sp.utilities.lambdify(x, expr, 'numpy')
 f(0)
 ## Output: 1.0
 </code></pre>
-<h2><span id="linear-algebra-with-sympy">Linear algebra with <code>SymPy</code></span></h2><p>建立矩陣</p>
-<pre><code class="lang-python">m1 = sp.Matrix([[a,b,c], [x, y, z], [a, b, c]])
+<h2><span id="linear-algebra-with-sympy">Linear algebra with <code>SymPy</code></span></h2>
+<p>建立矩陣</p>
+<pre><code class="language-python">m1 = sp.Matrix([[a,b,c], [x, y, z], [a, b, c]])
 m1
 ## Output: Matrix([
 ## [a, b, c],
 ## [x, y, z],
 ## [a, b, c]])
 </code></pre>
-<h3><span id="對角">對角</span></h3><p>用元素建立對角矩陣</p>
-<pre><code class="lang-python">m2 = sp.diag(a,b,c)
+<h3><span id="對角">對角</span></h3>
+<p>用元素建立對角矩陣</p>
+<pre><code class="language-python">m2 = sp.diag(a,b,c)
 m2
 ## Output: Matrix([
 ## [a, 0, 0],
 ## [0, b, 0],
 ## [0, 0, c]])
 </code></pre>
-<h3><span id="矩陣運算">矩陣運算</span></h3><h4><span id="相加">相加</span></h4><pre><code class="lang-python">3*m1 + m2
+<h3><span id="矩陣運算">矩陣運算</span></h3>
+<h4><span id="相加">相加</span></h4>
+<pre><code class="language-python">3*m1 + m2
 </code></pre>
-<h4><span id="相乘">相乘</span></h4><pre><code class="lang-python">m1*m2.T
+<h4><span id="相乘">相乘</span></h4>
+<pre><code class="language-python">m1*m2.T
 </code></pre>
-<h3><span id="反矩陣">反矩陣</span></h3><pre><code class="lang-python">m2.inv()
+<h3><span id="反矩陣">反矩陣</span></h3>
+<pre><code class="language-python">m2.inv()
 </code></pre>
-<h3><span id="找特徵值">找特徵值</span></h3><pre><code class="lang-python">m2.eigenvals()
+<h3><span id="找特徵值">找特徵值</span></h3>
+<pre><code class="language-python">m2.eigenvals()
 ## Output: &#123;a: 1, b: 1, c: 1&#125;
 </code></pre>
-<h3><span id="找特徵向量">找特徵向量</span></h3><pre><code class="lang-python">m2.eigenvects()
+<h3><span id="找特徵向量">找特徵向量</span></h3>
+<pre><code class="language-python">m2.eigenvects()
 </code></pre>
 
     </div>
