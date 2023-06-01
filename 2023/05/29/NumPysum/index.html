@@ -91,8 +91,17 @@
         ></canvas>
         <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
         <script src="/js/fireworks.min.js"></script>
-        <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
         <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+        <script>
+            var cursor = new MouseFollower();
+        </script>
+        <div id="cursor"></div>
+        <!-- <link rel="stylesheet" href="/css/cursor.min.css"> -->
+        <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+
+        <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+        <script src="/js/cusmo.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
         <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
         <script>
@@ -291,12 +300,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #03a9f4">期末考</a>
+                <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ff7d73">期末考</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #03a9f4">講義</a>
+                <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #ffa2c4">講義</a>
             </span>
             
         </span>
@@ -305,44 +314,33 @@
     
     <div class="content" v-pre>
         
-    <div id="aplayer-huTymcnL" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
-<h1><span id="array-oriented-programming-with-numpy"> Array-Oriented Programming with NumPy</span></h1>
-<h2><span id="介紹"> 介紹</span></h2>
-<ul>
+    <div id="aplayer-foCUYHwl" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<h1><span id="array-oriented-programming-with-numpy">Array-Oriented Programming with NumPy</span></h1><h2><span id="介紹">介紹</span></h2><ul>
 <li>Numpy提供了一個高效能的多維度陣列(<code>array</code>)物件</li>
-<li>能夠有 <strong>array-oriented programming</strong>，也就是用函數式的程式設計來處理陣列，讓陣列的操作簡潔而直覺，並且消除了明確編寫迴圈時可能發生的錯誤。</li>
-</ul>
-<h2><span id="效能比較"> 效能比較</span></h2>
-<ul>
-<li><code>NumPy</code>的<code>array</code>和<code>Python</code>的<code>list</code>的差異如下：
-<ul>
+<li>能夠有 <strong>array-oriented programming</strong>，也就是用函數式的程式設計來處理陣列，讓陣列的操作簡潔而直覺，並且消除了明確編寫迴圈時可能發生的錯誤。<h2><span id="效能比較">效能比較</span></h2></li>
+<li><code>NumPy</code>的<code>array</code>和<code>Python</code>的<code>list</code>的差異如下：<ul>
 <li><code>array</code>的大小是固定的，而<code>list</code>的大小是動態的</li>
 <li><code>array</code>的元素都是同樣的型態，而<code>list</code>的元素可以是不同的型態</li>
 <li><code>array</code>的運算是向量化的，而<code>list</code>的運算是迭代的</li>
-<li>在實作上，<code>array</code>是連續的記憶體空間，而<code>list</code>是不連續的記憶體空間<br>
-<img src="https://jakevdp.github.io/PythonDataScienceHandbook/figures/array_vs_list.png" alt></li>
+<li>在實作上，<code>array</code>是連續的記憶體空間，而<code>list</code>是不連續的記憶體空間<br><img src="https://jakevdp.github.io/PythonDataScienceHandbook/figures/array_vs_list.png" alt></li>
 </ul>
 </li>
-<li><code>NumPy</code>的<code>array</code>和<code>Python</code>的<code>list</code>的相似點如下：
-<ul>
+<li><code>NumPy</code>的<code>array</code>和<code>Python</code>的<code>list</code>的相似點如下：<ul>
 <li><code>array</code>和<code>list</code>都可以儲存多維度的資料</li>
 </ul>
 </li>
 </ul>
-<h2><span id="建立array"> 建立<code>array</code></span></h2>
-<pre class="highlight"><code class="python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<h2><span id="建立array">建立<code>array</code></span></h2><pre><code class="lang-python">import numpy as np
 </code></pre>
-<h3><span id="用nparray建立"> 用<code>np.array()</code>建立</span></h3>
-<pre class="highlight"><code class="python">numbers = np.array([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">11</span>])
-numbers, <span class="hljs-built_in">type</span>(numbers)
-<span class="hljs-comment"># Output: (array([ 2,  3,  5,  7, 11]), numpy.ndarray)</span>
+<h3><span id="用nparray建立">用<code>np.array()</code>建立</span></h3><pre><code class="lang-python">numbers = np.array([2, 3, 5, 7, 11])
+numbers, type(numbers)
+# Output: (array([ 2,  3,  5,  7, 11]), numpy.ndarray)
 </code></pre>
-<h3><span id="多維度的array"> 多維度的<code>array</code></span></h3>
-<pre class="highlight"><code class="python">np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]]), <span class="hljs-built_in">type</span>(np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]]))
-<span class="hljs-comment"># Output: (array([[1, 2, 3],</span>
-<span class="hljs-comment">#                 [4, 5, 6]]), numpy.ndarray)</span>
+<h3><span id="多維度的array">多維度的<code>array</code></span></h3><pre><code class="lang-python">np.array([[1, 2, 3], [4, 5, 6]]), type(np.array([[1, 2, 3], [4, 5, 6]]))
+# Output: (array([[1, 2, 3],
+#                 [4, 5, 6]]), numpy.ndarray)
 </code></pre>
-<h4><span id="array-attributes-屬性"> <code>array</code>  Attributes 屬性</span></h4>
+<h4><span id="array-attributes-屬性"><code>array</code>  Attributes 屬性</span></h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -373,18 +371,19 @@ numbers, <span class="hljs-built_in">type</span>(numbers)
 </tr>
 </tbody>
 </table>
-<pre class="highlight"><code class="python">integers = np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]])
+</div>
+<pre><code class="lang-python">integers = np.array([[1, 2, 3], [4, 5, 6]])
 integers.ndim, integers.shape, integers.size
-<span class="hljs-comment"># Output: (2, (2, 3), 6)</span>
+# Output: (2, (2, 3), 6)
 </code></pre>
-<pre class="highlight"><code class="python">floats = np.array([<span class="hljs-number">0.0</span>, <span class="hljs-number">0.1</span>, <span class="hljs-number">0.2</span>, <span class="hljs-number">0.3</span>, <span class="hljs-number">0.4</span>])
+<pre><code class="lang-python">floats = np.array([0.0, 0.1, 0.2, 0.3, 0.4])
 floats.ndim, floats.shape, floats.size
-<span class="hljs-comment"># Output: (1, (5,), 5)</span>
+# Output: (1, (5,), 5)
 </code></pre>
-<pre class="highlight"><code class="python">integers.dtype, floats.dtype
-<span class="hljs-comment"># Output: (dtype(&#x27;int64&#x27;), dtype(&#x27;float64&#x27;))</span>
+<pre><code class="lang-python">integers.dtype, floats.dtype
+# Output: (dtype(&#39;int64&#39;), dtype(&#39;float64&#39;))
 </code></pre>
-<h4><span id="array-methods-方法"> <code>array</code>  Methods 方法</span></h4>
+<h4><span id="array-methods-方法"><code>array</code>  Methods 方法</span></h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -451,373 +450,336 @@ floats.ndim, floats.shape, floats.size
 </tr>
 </tbody>
 </table>
-<h3><span id="creating-array-from-sequence-generated-by-different-methods"> Creating <code>array</code> from sequence generated by different methods</span></h3>
-<h4><span id="nparange"> <code>np.arange()</code></span></h4>
-<p>和<code>range()</code>類似，參數為<code>numpy.arange(start, stop, step)</code></p>
-<pre class="highlight"><code class="python">np.arange(<span class="hljs-number">5</span>)
-<span class="hljs-comment"># Output: array([0, 1, 2, 3, 4])</span>
-np.arange(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>)
-<span class="hljs-comment"># Output: array([5, 6, 7, 8, 9])</span>
-np.arange(<span class="hljs-number">10</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">2</span>) 
-<span class="hljs-comment"># Output: array([10,  8,  6,  4,  2])</span>
+</div>
+<h3><span id="creating-array-from-sequence-generated-by-different-methods">Creating <code>array</code> from sequence generated by different methods</span></h3><h4><span id="nparange"><code>np.arange()</code></span></h4><p>和<code>range()</code>類似，參數為<code>numpy.arange(start, stop, step)</code></p>
+<pre><code class="lang-python">np.arange(5)
+# Output: array([0, 1, 2, 3, 4])
+np.arange(5, 10)
+# Output: array([5, 6, 7, 8, 9])
+np.arange(10, 1, -2) 
+# Output: array([10,  8,  6,  4,  2])
 </code></pre>
-<h4><span id="linspace"> <code>linspace()</code></span></h4>
-<p>可以指定要產生的數列的個數，參數為<code>numpy.linspace(start, stop, num)</code></p>
-<pre class="highlight"><code class="python">np.linspace(<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>, num=<span class="hljs-number">5</span>)
-<span class="hljs-comment"># Output: array([0.  , 0.25, 0.5 , 0.75, 1.  ])</span>
+<h4><span id="linspace"><code>linspace()</code></span></h4><p>可以指定要產生的數列的個數，參數為<code>numpy.linspace(start, stop, num)</code></p>
+<pre><code class="lang-python">np.linspace(0.0, 1.0, num=5)
+# Output: array([0.  , 0.25, 0.5 , 0.75, 1.  ])
 </code></pre>
-<h4><span id="reshaping-an-array"> Reshaping an <code>array</code></span></h4>
-<pre class="highlight"><code class="python">np.arange(<span class="hljs-number">1</span>, <span class="hljs-number">21</span>).reshape(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
-<span class="hljs-comment"># Output: array([[ 1,  2,  3,  4,  5],</span>
-<span class="hljs-comment">#                [ 6,  7,  8,  9, 10],</span>
-<span class="hljs-comment">#                [11, 12, 13, 14, 15],</span>
-<span class="hljs-comment">#                [16, 17, 18, 19, 20]])</span>
+<h4><span id="reshaping-an-array">Reshaping an <code>array</code></span></h4><pre><code class="lang-python">np.arange(1, 21).reshape(4, 5)
+# Output: array([[ 1,  2,  3,  4,  5],
+#                [ 6,  7,  8,  9, 10],
+#                [11, 12, 13, 14, 15],
+#                [16, 17, 18, 19, 20]])
 </code></pre>
-<h3><span id="list-vs-array-performance-introducing-timeit"> <code>List</code> vs. <code>array</code>  Performance: Introducing  <code>%timeit</code></span></h3>
-<pre class="highlight"><code class="python"><span class="hljs-keyword">import</span> random
-%timeit rolls_list = [random.randint(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-number">6_000_000</span>)] <span class="hljs-comment">#_ is use to separate long integer</span>
-%timeit rolls_array = np.random.randint(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6_000_000</span>)
+<h3><span id="list-vs-array-performance-introducing-timeit"><code>List</code> vs. <code>array</code>  Performance: Introducing  <code>%timeit</code></span></h3><pre><code class="lang-python">import random
+%timeit rolls_list = [random.randint(1, 6) for i in range(0, 6_000_000)] #_ is use to separate long integer
+%timeit rolls_array = np.random.randint(1, 7, 6_000_000)
 </code></pre>
-<h2><span id="indexing-and-slicing-getter-and-setter"> Indexing and Slicing (Getter and Setter)</span></h2>
-<pre class="highlight"><code class="python">grades = np.array([[<span class="hljs-number">87</span>, <span class="hljs-number">96</span>, <span class="hljs-number">70</span>], [<span class="hljs-number">100</span>, <span class="hljs-number">87</span>, <span class="hljs-number">90</span>],
-                   [<span class="hljs-number">94</span>, <span class="hljs-number">77</span>, <span class="hljs-number">90</span>], [<span class="hljs-number">100</span>, <span class="hljs-number">81</span>, <span class="hljs-number">82</span>]])
+<h2><span id="indexing-and-slicing-getter-and-setter">Indexing and Slicing (Getter and Setter)</span></h2><pre><code class="lang-python">grades = np.array([[87, 96, 70], [100, 87, 90],
+                   [94, 77, 90], [100, 81, 82]])
 grades
-<span class="hljs-comment"># Output: array([[ 87,  96,  70],</span>
-<span class="hljs-comment">#                [100,  87,  90],</span>
-<span class="hljs-comment">#                [ 94,  77,  90],</span>
-<span class="hljs-comment">#                [100,  81,  82]])</span>
+# Output: array([[ 87,  96,  70],
+#                [100,  87,  90],
+#                [ 94,  77,  90],
+#                [100,  81,  82]])
 </code></pre>
-<h3><span id="一維度陣列的索引和切片"> 一維度陣列的索引和切片</span></h3>
-<pre class="highlight"><code class="python">grades[<span class="hljs-number">0</span>]
-<span class="hljs-comment"># Output: array([87, 96, 70])</span>
+<h3><span id="一維度陣列的索引和切片">一維度陣列的索引和切片</span></h3><pre><code class="lang-python">grades[0]
+# Output: array([87, 96, 70])
 </code></pre>
-<h3><span id="多維度陣列的索引和切片"> 多維度陣列的索引和切片</span></h3>
-<pre class="highlight"><code class="python">grades[<span class="hljs-number">1</span>, <span class="hljs-number">0</span>]
-<span class="hljs-comment"># Output: 100</span>
+<h3><span id="多維度陣列的索引和切片">多維度陣列的索引和切片</span></h3><pre><code class="lang-python">grades[1, 0]
+# Output: 100
 
-grades[<span class="hljs-number">0</span>:<span class="hljs-number">2</span>]
-<span class="hljs-comment"># Output: array([[ 87,  96,  70],</span>
-<span class="hljs-comment">#                [100,  87,  90]])</span>
+grades[0:2]
+# Output: array([[ 87,  96,  70],
+#                [100,  87,  90]])
 
-grades[[<span class="hljs-number">1</span>, <span class="hljs-number">3</span>]]
-<span class="hljs-comment"># Output: array([[100,  87,  90],</span>
-<span class="hljs-comment">#                [100,  81,  82]])</span>
+grades[[1, 3]]
+# Output: array([[100,  87,  90],
+#                [100,  81,  82]])
 
-grades[:, <span class="hljs-number">0</span>]
-<span class="hljs-comment"># Output: array([ 87, 100,  94, 100])</span>
+grades[:, 0]
+# Output: array([ 87, 100,  94, 100])
 
-grades[:, <span class="hljs-number">1</span>:<span class="hljs-number">3</span>]
-<span class="hljs-comment"># Output: array([[96, 70],</span>
-<span class="hljs-comment">#                [87, 90],</span>
-<span class="hljs-comment">#                [77, 90],</span>
-<span class="hljs-comment">#                [81, 82]])</span>
+grades[:, 1:3]
+# Output: array([[96, 70],
+#                [87, 90],
+#                [77, 90],
+#                [81, 82]])
 </code></pre>
-<h3><span id="views-shallow-copies"> Views: Shallow Copies</span></h3>
-<pre class="highlight"><code class="python">numbers = np.arange(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>)
+<h3><span id="views-shallow-copies">Views: Shallow Copies</span></h3><pre><code class="lang-python">numbers = np.arange(1, 6)
 numbers2 = numbers.view()
-<span class="hljs-built_in">id</span>(numbers), <span class="hljs-built_in">id</span>(numbers2)
-<span class="hljs-comment"># Output: (140539985316368, 140539985316928), We can see that the two arrays have different memory addresses</span>
+id(numbers), id(numbers2)
+# Output: (140539985316368, 140539985316928), We can see that the two arrays have different memory addresses
 np.shares_memory(numbers, numbers2)
-<span class="hljs-comment"># Output: True, We can see that the two arrays share the same memory</span>
-<span class="hljs-comment"># To prove that `numbers2` views the same data as `numbers`, let&#x27;s modify an element in `numbers`, then display both arrays:</span>
-numbers[<span class="hljs-number">1</span>] *= <span class="hljs-number">10</span>
+# Output: True, We can see that the two arrays share the same memory
+# To prove that `numbers2` views the same data as `numbers`, let&#39;s modify an element in `numbers`, then display both arrays:
+numbers[1] *= 10
 numbers2
-<span class="hljs-comment"># Output: array([ 1, 20,  3,  4,  5])</span>
-<span class="hljs-comment"># Similarly, changing a value in the view also changes that value in the original array:</span>
-numbers2[<span class="hljs-number">1</span>] /= <span class="hljs-number">5</span>
+# Output: array([ 1, 20,  3,  4,  5])
+# Similarly, changing a value in the view also changes that value in the original array:
+numbers2[1] /= 5
 numbers, numbers2
-<span class="hljs-comment"># Output: (array([ 1,  4,  3,  4,  5]), array([1, 4, 3, 4, 5]))</span>
+# Output: (array([ 1,  4,  3,  4,  5]), array([1, 4, 3, 4, 5]))
 </code></pre>
-<h3><span id="copies-deep-copies"> Copies: Deep Copies</span></h3>
-<pre class="highlight"><code class="python">numbers = np.arange(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>)
+<h3><span id="copies-deep-copies">Copies: Deep Copies</span></h3><pre><code class="lang-python">numbers = np.arange(1, 6)
 numbers2 = numbers.copy()
-<span class="hljs-built_in">id</span>(numbers), <span class="hljs-built_in">id</span>(numbers2)
-<span class="hljs-comment"># Output: (140539985316368, 140539985316928), We can see that the two arrays have different memory addresses</span>
+id(numbers), id(numbers2)
+# Output: (140539985316368, 140539985316928), We can see that the two arrays have different memory addresses
 np.shares_memory(numbers, numbers2)
-<span class="hljs-comment"># Output: False, We can see that the two arrays do not share the same memory</span>
-<span class="hljs-comment"># To prove that `numbers2` copies the same data as `numbers`, let&#x27;s modify an element in `numbers`, then display both arrays:</span>
-numbers[<span class="hljs-number">1</span>] *= <span class="hljs-number">10</span>
+# Output: False, We can see that the two arrays do not share the same memory
+# To prove that `numbers2` copies the same data as `numbers`, let&#39;s modify an element in `numbers`, then display both arrays:
+numbers[1] *= 10
 numbers
-<span class="hljs-comment"># Output: array([ 1, 40,  3,  4,  5])</span>
+# Output: array([ 1, 40,  3,  4,  5])
 numbers2
-<span class="hljs-comment"># Output: array([1, 2, 3, 4, 5])</span>
+# Output: array([1, 2, 3, 4, 5])
 </code></pre>
 <blockquote>
-<p><strong>Note:</strong> Recall that if you need deep copies of other types of <code>Python</code> objects, pass them to the <code>copy</code> module’s <code>deepcopy()</code> function.</p>
+<p><strong>Note:</strong> Recall that if you need deep copies of other types of <code>Python</code> objects, pass them to the <code>copy</code> module’s <code>deepcopy()</code> function. </p>
 </blockquote>
-<h3><span id="more-about-reshaping-and-transposing"> More about Reshaping and Transposing</span></h3>
-<p><code>reshape()</code> 和 <code>resize()</code> 都可以改變陣列的形狀，但是 <code>reshape()</code> 只是回傳一個新的陣列，而 <code>resize()</code> 則是直接改變原本的陣列。</p>
-<pre class="highlight"><code class="python">grades = np.array([[<span class="hljs-number">87</span>, <span class="hljs-number">96</span>, <span class="hljs-number">70</span>], [<span class="hljs-number">100</span>, <span class="hljs-number">87</span>, <span class="hljs-number">90</span>]])
+<h3><span id="more-about-reshaping-and-transposing">More about Reshaping and Transposing</span></h3><p><code>reshape()</code> 和 <code>resize()</code> 都可以改變陣列的形狀，但是 <code>reshape()</code> 只是回傳一個新的陣列，而 <code>resize()</code> 則是直接改變原本的陣列。</p>
+<pre><code class="lang-python">grades = np.array([[87, 96, 70], [100, 87, 90]])
 grades
-<span class="hljs-comment"># Output: array([[ 87,  96,  70],</span>
-<span class="hljs-comment">#                [100,  87,  90]])</span>
-grades.reshape(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>)
-grades2[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>] = <span class="hljs-number">0</span>
+# Output: array([[ 87,  96,  70],
+#                [100,  87,  90]])
+grades.reshape(1, 6)
+grades2[0, 0] = 0
 grades2, grades
-<span class="hljs-comment"># Output: (array([[ 0, 96, 70, 100, 87, 90]]), array([[ 0, 96, 70],</span>
-<span class="hljs-comment">#                                                  [100, 87, 90]]))</span>
+# Output: (array([[ 0, 96, 70, 100, 87, 90]]), array([[ 0, 96, 70],
+#                                                  [100, 87, 90]]))
 </code></pre>
 <blockquote>
 <p>一個常用的技巧是使用 <code>-1</code> 來代表剩下的維度，例如 <code>grades.reshape(-1)</code> 會回傳一個一維度的陣列。</p>
-</blockquote>
-<pre class="highlight"><code class="python">grades.reshape(-<span class="hljs-number">1</span>)
-<span class="hljs-comment"># Output: array([ 0, 96, 70, 100, 87, 90])</span>
+<pre><code class="lang-python">grades.reshape(-1)
+# Output: array([ 0, 96, 70, 100, 87, 90])
 </code></pre>
-<blockquote>
-<p><strong>Note:</strong> The <code>reshape()</code> method returns a view if the new shape is compatible with the original shape. Otherwise, it returns a copy.<br>
-resize會直接改變原本的陣列</p>
-</blockquote>
-<pre class="highlight"><code class="python">grades.resize(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>)
+<p><strong>Note:</strong> The <code>reshape()</code> method returns a view if the new shape is compatible with the original shape. Otherwise, it returns a copy.<br>resize會直接改變原本的陣列</p>
+<pre><code class="lang-python">grades.resize(1, 6)
 grades
-<span class="hljs-comment"># Output: array([[ 0, 96, 70, 100, 87, 90]])</span>
+# Output: array([[ 0, 96, 70, 100, 87, 90]])
 </code></pre>
-<blockquote>
 <p><strong>Note:</strong> The <code>resize()</code> method modifies the array itself. It does not return a view or a copy of the array.</p>
 </blockquote>
-<h4><span id="flatten-and-ravel"> flatten() and ravel()</span></h4>
-<pre class="highlight"><code class="python">flattened = grades.flatten()
+<h4><span id="flatten-and-ravel">flatten() and ravel()</span></h4><pre><code class="lang-python">flattened = grades.flatten()
 flattened
-<span class="hljs-comment"># Output: array([ 0, 96, 70, 100, 87, 90])</span>
-flattened[<span class="hljs-number">0</span>] = <span class="hljs-number">100</span>
+# Output: array([ 0, 96, 70, 100, 87, 90])
+flattened[0] = 100
 flattened, grades
-<span class="hljs-comment"># Output: (array([100,  96,  70, 100,  87,  90]), array([[ 0, 96, 70],</span>
-<span class="hljs-comment">#                                                      [100, 87, 90]]))</span>
+# Output: (array([100,  96,  70, 100,  87,  90]), array([[ 0, 96, 70],
+#                                                      [100, 87, 90]]))
 raveled = grades.ravel()
 raveled
-<span class="hljs-comment"># Output: array([ 0, 96, 70, 100, 87, 90])</span>
-raveled[<span class="hljs-number">0</span>] = <span class="hljs-number">100</span>
+# Output: array([ 0, 96, 70, 100, 87, 90])
+raveled[0] = 100
 raveled, grades
-<span class="hljs-comment"># Output: (array([100,  96,  70, 100,  87,  90]), array([[100,  96,  70],</span>
-<span class="hljs-comment">#                                                      [100,  87,  90]]))</span>
+# Output: (array([100,  96,  70, 100,  87,  90]), array([[100,  96,  70],
+#                                                      [100,  87,  90]]))
 </code></pre>
-<h4><span id="transposing-rows-and-columns"> Transposing Rows and Columns</span></h4>
-<pre class="highlight"><code class="python">transpose = grades.T
+<h4><span id="transposing-rows-and-columns">Transposing Rows and Columns</span></h4><pre><code class="lang-python">transpose = grades.T
 transpose
-<span class="hljs-comment"># Output: array([[100, 100],</span>
-<span class="hljs-comment">#                [ 96,  87],</span>
-<span class="hljs-comment">#                [ 70,  90]])</span>
+# Output: array([[100, 100],
+#                [ 96,  87],
+#                [ 70,  90]])
 </code></pre>
 <blockquote>
 <p><strong>Note:</strong> The <code>T</code> attribute returns a view of the array. It does not return a copy.</p>
 </blockquote>
-<h3><span id="stacking"> Stacking</span></h3>
-<pre class="highlight"><code class="python">grades2 = np.array([[<span class="hljs-number">94</span>, <span class="hljs-number">77</span>, <span class="hljs-number">90</span>], [<span class="hljs-number">100</span>, <span class="hljs-number">81</span>, <span class="hljs-number">82</span>]])
+<h3><span id="stacking">Stacking</span></h3><pre><code class="lang-python">grades2 = np.array([[94, 77, 90], [100, 81, 82]])
 
 np.hstack((grades, grades2))
-<span class="hljs-comment"># Output: array([[ 0, 96, 70, 94, 77, 90],</span>
-<span class="hljs-comment">#                [100, 87, 90, 100, 81, 82]])</span>
+# Output: array([[ 0, 96, 70, 94, 77, 90],
+#                [100, 87, 90, 100, 81, 82]])
 np.vstack((grades, grades2))
-<span class="hljs-comment"># Output: array([[ 0, 96, 70],</span>
-<span class="hljs-comment">#                [100, 87, 90],</span>
-<span class="hljs-comment">#                [ 94, 77, 90],</span>
-<span class="hljs-comment">#                [100, 81, 82]])</span>
+# Output: array([[ 0, 96, 70],
+#                [100, 87, 90],
+#                [ 94, 77, 90],
+#                [100, 81, 82]])
 </code></pre>
-<h2><span id="numpy-calculation-methods-reduction"> <code>NumPy</code> calculation methods (Reduction)</span></h2>
-<p>一個陣列包含了許多方法可以計算陣列中的元素，預設上這些方法會忽略陣列的形狀，並且使用所有的元素來計算。例如計算平均值時，會將所有的元素加總後除以總數。我們也可以針對每個維度來執行這些計算，例如在二維陣列中，我們可以計算每一列和每一行的平均值。</p>
-<pre class="highlight"><code class="python">grades = np.array([[<span class="hljs-number">87</span>, <span class="hljs-number">96</span>, <span class="hljs-number">70</span>], [<span class="hljs-number">100</span>, <span class="hljs-number">87</span>, <span class="hljs-number">90</span>],
-                   [<span class="hljs-number">94</span>, <span class="hljs-number">77</span>, <span class="hljs-number">90</span>], [<span class="hljs-number">100</span>, <span class="hljs-number">81</span>, <span class="hljs-number">82</span>]])
+<h2><span id="numpy-calculation-methods-reduction"><code>NumPy</code> calculation methods (Reduction)</span></h2><p>一個陣列包含了許多方法可以計算陣列中的元素，預設上這些方法會忽略陣列的形狀，並且使用所有的元素來計算。例如計算平均值時，會將所有的元素加總後除以總數。我們也可以針對每個維度來執行這些計算，例如在二維陣列中，我們可以計算每一列和每一行的平均值。</p>
+<pre><code class="lang-python">grades = np.array([[87, 96, 70], [100, 87, 90],
+                   [94, 77, 90], [100, 81, 82]])
 grades
-<span class="hljs-comment"># Output: array([[ 87,  96,  70],</span>
-<span class="hljs-comment">#                [100,  87,  90],</span>
-<span class="hljs-comment">#                [ 94,  77,  90],</span>
-<span class="hljs-comment">#                [100,  81,  82]])</span>
-<span class="hljs-built_in">print</span>(grades.<span class="hljs-built_in">sum</span>())
-<span class="hljs-built_in">print</span>(grades.<span class="hljs-built_in">min</span>())
-<span class="hljs-built_in">print</span>(grades.<span class="hljs-built_in">max</span>())
-<span class="hljs-built_in">print</span>(grades.mean())
-<span class="hljs-built_in">print</span>(grades.std())
-<span class="hljs-built_in">print</span>(grades.var())
-<span class="hljs-comment"># Output: 1054</span>
-<span class="hljs-comment">#         70</span>
-<span class="hljs-comment">#         100</span>
-<span class="hljs-comment">#         87.83333333333333</span>
-<span class="hljs-comment">#         8.781612133840075</span>
-<span class="hljs-comment">#         77.30555555555556</span>
+# Output: array([[ 87,  96,  70],
+#                [100,  87,  90],
+#                [ 94,  77,  90],
+#                [100,  81,  82]])
+print(grades.sum())
+print(grades.min())
+print(grades.max())
+print(grades.mean())
+print(grades.std())
+print(grades.var())
+# Output: 1054
+#         70
+#         100
+#         87.83333333333333
+#         8.781612133840075
+#         77.30555555555556
 </code></pre>
-<h3><span id="calculations-by-row-or-column"> Calculations by Row or Column</span></h3>
-<p>數值計算方法可以針對特定的維度來計算，這個維度被稱為 <code>axis</code>。這些方法可以接受一個 <code>axis</code> 參數來指定要使用的維度，這個參數提供了一個方便的方法來在二維陣列中針對每一列或每一行來計算。</p>
-<pre class="highlight"><code class="python"><span class="hljs-comment"># 假設我們想要找到每一次考試的最高分數，以列來說就是每一次考試的最高分數，以行來說就是每一個學生的最高分數。</span>
-<span class="hljs-comment"># 這個計算可以使用 `axis` 參數來指定要使用的維度，`axis=0` 代表要針對每一列來計算，`axis=1` 代表要針對每一行來計算。</span>
-grades, grades.<span class="hljs-built_in">max</span>(axis=<span class="hljs-number">0</span>), grades.argmax(axis=<span class="hljs-number">0</span>)
-<span class="hljs-comment"># Output: (array([[ 87,  96,  70],</span>
-<span class="hljs-comment">#                 [100,  87,  90],</span>
-<span class="hljs-comment">#                 [ 94,  77,  90],</span>
-<span class="hljs-comment">#                 [100,  81,  82]]), array([100,  96,  90]), array([1, 0, 1]))</span>
-grades, grades.mean(axis=<span class="hljs-number">0</span>)
-<span class="hljs-comment"># Output: (array([[ 87,  96,  70],</span>
-<span class="hljs-comment">#                 [100,  87,  90],</span>
-<span class="hljs-comment">#                 [ 94,  77,  90],</span>
-<span class="hljs-comment">#                 [100,  81,  82]]), array([95.25, 85.25, 83.  ]))</span>
-<span class="hljs-comment"># 因此，95.25 代表第一列的平均值 (87, 100, 94, 100)，85.25 代表第二列的平均值 (96, 87, 77, 81)，83 代表第三列的平均值 (70, 90, 90, 82)。</span>
-<span class="hljs-comment"># 同樣的，指定 `axis=1` 會針對每一行的所有列來計算。要計算每一個學生的平均分數，我們可以使用：</span>
-grades, grades.mean(axis=<span class="hljs-number">1</span>)
-<span class="hljs-comment"># Output: (array([[ 87,  96,  70],</span>
-<span class="hljs-comment">#                 [100,  87,  90],</span>
-<span class="hljs-comment">#                 [ 94,  77,  90],</span>
-<span class="hljs-comment">#                 [100,  81,  82]]), array([84.33333333, 92.33333333, 87.        , 87.66666667]))</span>
+<h3><span id="calculations-by-row-or-column">Calculations by Row or Column</span></h3><p>數值計算方法可以針對特定的維度來計算，這個維度被稱為 <code>axis</code>。這些方法可以接受一個 <code>axis</code> 參數來指定要使用的維度，這個參數提供了一個方便的方法來在二維陣列中針對每一列或每一行來計算。</p>
+<pre><code class="lang-python"># 假設我們想要找到每一次考試的最高分數，以列來說就是每一次考試的最高分數，以行來說就是每一個學生的最高分數。
+# 這個計算可以使用 `axis` 參數來指定要使用的維度，`axis=0` 代表要針對每一列來計算，`axis=1` 代表要針對每一行來計算。
+grades, grades.max(axis=0), grades.argmax(axis=0)
+# Output: (array([[ 87,  96,  70],
+#                 [100,  87,  90],
+#                 [ 94,  77,  90],
+#                 [100,  81,  82]]), array([100,  96,  90]), array([1, 0, 1]))
+grades, grades.mean(axis=0)
+# Output: (array([[ 87,  96,  70],
+#                 [100,  87,  90],
+#                 [ 94,  77,  90],
+#                 [100,  81,  82]]), array([95.25, 85.25, 83.  ]))
+# 因此，95.25 代表第一列的平均值 (87, 100, 94, 100)，85.25 代表第二列的平均值 (96, 87, 77, 81)，83 代表第三列的平均值 (70, 90, 90, 82)。
+# 同樣的，指定 `axis=1` 會針對每一行的所有列來計算。要計算每一個學生的平均分數，我們可以使用：
+grades, grades.mean(axis=1)
+# Output: (array([[ 87,  96,  70],
+#                 [100,  87,  90],
+#                 [ 94,  77,  90],
+#                 [100,  81,  82]]), array([84.33333333, 92.33333333, 87.        , 87.66666667]))
 </code></pre>
-<h2><span id="array-operators"> <code>array</code>  Operators</span></h2>
-<h3><span id="the-slowness-of-loops"> The slowness of loops</span></h3>
-<p>計算 <code>NumPy</code> 陣列的速度可以從非常快到非常慢，為了優化效能，建議使用<em><strong>向量化</strong></em>的操作，這些操作通常是透過 <code>NumPy</code> 的通用函式 (<code>ufuncs</code>) 來實作。在執行許多小操作的情境中，<code>Python</code> 的運算速度通常會變得明顯的緩慢。其中一個例子是當我們使用迴圈來對陣列中的每個元素執行操作。例如，假設我們有一個值的陣列，並且需要計算每個值的倒數。一個直接的方法可能會包含：</p>
-<pre class="highlight"><code class="python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">compute_reciprocals</span>(<span class="hljs-params">values</span>):
-    output = np.empty(<span class="hljs-built_in">len</span>(values))
-    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(values)):
-        output[i] = <span class="hljs-number">1.0</span> / values[i]
-    <span class="hljs-keyword">return</span> output
+<h2><span id="array-operators"><code>array</code>  Operators</span></h2><h3><span id="the-slowness-of-loops">The slowness of loops</span></h3><p>計算 <code>NumPy</code> 陣列的速度可以從非常快到非常慢，為了優化效能，建議使用<strong><em>向量化</em></strong>的操作，這些操作通常是透過 <code>NumPy</code> 的通用函式 (<code>ufuncs</code>) 來實作。在執行許多小操作的情境中，<code>Python</code> 的運算速度通常會變得明顯的緩慢。其中一個例子是當我們使用迴圈來對陣列中的每個元素執行操作。例如，假設我們有一個值的陣列，並且需要計算每個值的倒數。一個直接的方法可能會包含：</p>
+<pre><code class="lang-python">def compute_reciprocals(values):
+    output = np.empty(len(values))
+    for i in range(len(values)):
+        output[i] = 1.0 / values[i]
+    return output
 
-values = np.random.randint(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>, <span class="hljs-number">5</span>)
+values = np.random.randint(1, 10, 5)
 compute_reciprocals(values)
-<span class="hljs-comment"># Output: array([0.5       , 0.33333333, 0.5       , 0.5       , 0.25      ])</span>
+# Output: array([0.5       , 0.33333333, 0.5       , 0.5       , 0.25      ])
 </code></pre>
 <p>但是如果我們測量這段程式碼的執行時間，我們會發現這段程式碼的執行速度非常慢：</p>
-<pre class="highlight"><code class="python">big_array = np.random.randint(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>, <span class="hljs-number">1_000_000</span>)
+<pre><code class="lang-python">big_array = np.random.randint(1, 10, 1_000_000)
 %timeit compute_reciprocals(big_array)
-<span class="hljs-comment"># Output: 1.55 s ± 9.21 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)</span>
+# Output: 1.55 s ± 9.21 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </code></pre>
-<h4><span id="element-wise-arithmetic"> Element-wise arithmetic</span></h4>
-<p>NumPy提供了許多運算子，讓我們可以建立簡單的運算式，這些運算式可以對整個陣列進行操作，並返回另一個陣列。首先，讓我們使用算術運算子和擴增指定來執行<strong>陣列和數值之間的元素運算</strong>。元素運算是針對每個元素進行的，因此下面的片段會將每個元素加倍並將每個元素立方。每個運算都會返回一個包含結果的新陣列：</p>
-<pre class="highlight"><code class="python">numbers = np.arange(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>) <span class="hljs-comment"># array([1, 2, 3, 4, 5, 6])</span>
-numbers * <span class="hljs-number">2</span>
-<span class="hljs-comment"># Output: array([ 2,  4,  6,  8, 10, 12])</span>
-numbers ** <span class="hljs-number">3</span>
-<span class="hljs-comment"># Output: array([  1,   8,  27,  64, 125, 216])</span>
+<h4><span id="element-wise-arithmetic">Element-wise arithmetic</span></h4><p>NumPy提供了許多運算子，讓我們可以建立簡單的運算式，這些運算式可以對整個陣列進行操作，並返回另一個陣列。首先，讓我們使用算術運算子和擴增指定來執行<strong>陣列和數值之間的元素運算</strong>。元素運算是針對每個元素進行的，因此下面的片段會將每個元素加倍並將每個元素立方。每個運算都會返回一個包含結果的新陣列：</p>
+<pre><code class="lang-python">numbers = np.arange(1, 7) # array([1, 2, 3, 4, 5, 6])
+numbers * 2
+# Output: array([ 2,  4,  6,  8, 10, 12])
+numbers ** 3
+# Output: array([  1,   8,  27,  64, 125, 216])
 </code></pre>
 <p>增廣指定運算子也可以用來修改現有陣列的值。</p>
-<pre class="highlight"><code class="python">numbers += <span class="hljs-number">10</span>
+<pre><code class="lang-python">numbers += 10
 numbers
-<span class="hljs-comment"># Output: array([11, 12, 13, 14, 15, 16])</span>
+# Output: array([11, 12, 13, 14, 15, 16])
 </code></pre>
-<h3><span id="broadcasting"> Broadcasting</span></h3>
-<p>典型地，算術運算需要兩個與操作數相同大小和形狀的陣列。當一個操作數是單個值時，稱為標量，NumPy會像樣的陣列一樣進行元素運算，但是標量值存在於所有元素中。這被稱為<strong>廣播</strong>。上面的片段演示了這種能力。例如，<code>numbers * 2</code> 等同於 <code>numbers * [2, 2, 2, 2, 2, 2]</code>。</p>
-<h4><span id="arithmetic-operations-between-arrays"> Arithmetic Operations Between <code>arrays</code></span></h4>
-<pre class="highlight"><code class="python">numbers2 = np.linspace(<span class="hljs-number">1.1</span>, <span class="hljs-number">6.6</span>, <span class="hljs-number">6</span>) <span class="hljs-comment"># 算術運算子可以用於兩個陣列，並且會對相應的元素進行運算。</span>
-numbers * numbers2 <span class="hljs-comment"># array([11, 12, 13, 14, 15, 16]) * array([ 1.1,  2.2,  3.3,  4.4,  5.5, 6.6])</span>
-<span class="hljs-comment"># Output: array([12.1, 26.4, 42.9, 61.6, 82.5, 105.6])</span>
-c = np.ones((<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment"># 算數運算子也可以用在整數和浮點數陣列之間。</span>
+<h3><span id="broadcasting">Broadcasting</span></h3><p>典型地，算術運算需要兩個與操作數相同大小和形狀的陣列。當一個操作數是單個值時，稱為標量，NumPy會像樣的陣列一樣進行元素運算，但是標量值存在於所有元素中。這被稱為<strong>廣播</strong>。上面的片段演示了這種能力。例如，<code>numbers * 2</code> 等同於 <code>numbers * [2, 2, 2, 2, 2, 2]</code>。</p>
+<h4><span id="arithmetic-operations-between-arrays">Arithmetic Operations Between <code>arrays</code></span></h4><pre><code class="lang-python">numbers2 = np.linspace(1.1, 6.6, 6) # 算術運算子可以用於兩個陣列，並且會對相應的元素進行運算。
+numbers * numbers2 # array([11, 12, 13, 14, 15, 16]) * array([ 1.1,  2.2,  3.3,  4.4,  5.5, 6.6])
+# Output: array([12.1, 26.4, 42.9, 61.6, 82.5, 105.6])
+c = np.ones((3, 3)) # 算數運算子也可以用在整數和浮點數陣列之間。
 c * c 
-<span class="hljs-comment"># Output: array([[1., 1., 1.],</span>
-<span class="hljs-comment">#                [1., 1., 1.],</span>
-<span class="hljs-comment">#                [1., 1., 1.]])</span>
-<span class="hljs-comment"># 進行矩陣乘法，可以使用 dot 函式或 @ 運算子。</span>
-<span class="hljs-number">1.</span> c.dot(c) 
-<span class="hljs-number">2.</span> c @ c 
-  <span class="hljs-comment"># Output: array([[3., 3., 3.],</span>
-  <span class="hljs-comment">#                [3., 3., 3.],</span>
-  <span class="hljs-comment">#                [3., 3., 3.]])</span>
-<span class="hljs-comment"># 我們可以把廣播應用到更高維度的陣列，例如，考慮將一維陣列加到二維陣列，並觀察結果：</span>
-a = np.array([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>])
-M = np.ones((<span class="hljs-number">3</span>, <span class="hljs-number">3</span>))
-<span class="hljs-built_in">print</span>(a.shape, M.shape)
+# Output: array([[1., 1., 1.],
+#                [1., 1., 1.],
+#                [1., 1., 1.]])
+# 進行矩陣乘法，可以使用 dot 函式或 @ 運算子。
+1. c.dot(c) 
+2. c @ c 
+  # Output: array([[3., 3., 3.],
+  #                [3., 3., 3.],
+  #                [3., 3., 3.]])
+# 我們可以把廣播應用到更高維度的陣列，例如，考慮將一維陣列加到二維陣列，並觀察結果：
+a = np.array([0, 1, 2])
+M = np.ones((3, 3))
+print(a.shape, M.shape)
 M + a
-<span class="hljs-comment"># Output: array([[1., 2., 3.],</span>
-<span class="hljs-comment">#                [1., 2., 3.],</span>
-<span class="hljs-comment">#                [1., 2., 3.]])</span>
-<span class="hljs-comment"># 在這裡，一維陣列 a 被拉伸或廣播，以匹配 M 的形狀。</span>
+# Output: array([[1., 2., 3.],
+#                [1., 2., 3.],
+#                [1., 2., 3.]])
+# 在這裡，一維陣列 a 被拉伸或廣播，以匹配 M 的形狀。
 </code></pre>
-<h4><span id="rules-of-broadcasting"> Rules of Broadcasting</span></h4>
-<p>在 <code>NumPy</code> 中，廣播遵循一套嚴格的規則，這些規則規定了兩個陣列如何相互交互。這些規則如下：</p>
+<h4><span id="rules-of-broadcasting">Rules of Broadcasting</span></h4><p>在 <code>NumPy</code> 中，廣播遵循一套嚴格的規則，這些規則規定了兩個陣列如何相互交互。這些規則如下：</p>
 <ol>
 <li>當兩個陣列之間的維度數量不同時，陣列的維度較少的一方在其前面（左側）填充一個維度，以匹配另一個陣列的維度數量。</li>
 <li>如果兩個陣列在任何維度上的形狀都不匹配，則在該維度上形狀為 1 的陣列會擴展以匹配另一個陣列的形狀。</li>
 <li>如果兩個陣列在任何維度上的大小衝突，並且都不等於 1，則會引發錯誤。</li>
 </ol>
 <p>看一個例子：</p>
-<pre class="highlight"><code class="python">a = np.arange(<span class="hljs-number">0</span>, <span class="hljs-number">40</span>, <span class="hljs-number">10</span>).reshape(<span class="hljs-number">4</span>,<span class="hljs-number">1</span>)
-b = np.arange(<span class="hljs-number">3</span>)
-<span class="hljs-built_in">print</span>(a.shape, b.shape)
+<pre><code class="lang-python">a = np.arange(0, 40, 10).reshape(4,1)
+b = np.arange(3)
+print(a.shape, b.shape)
 a + b
-<span class="hljs-comment"># Output: array([[ 0,  1,  2],</span>
-<span class="hljs-comment">#                [10, 11, 12],</span>
-<span class="hljs-comment">#                [20, 21, 22],</span>
-<span class="hljs-comment">#                [30, 31, 32]])</span>
+# Output: array([[ 0,  1,  2],
+#                [10, 11, 12],
+#                [20, 21, 22],
+#                [30, 31, 32]])
 a + b
-<span class="hljs-comment"># Output: array([[ 0,  1,  2],</span>
-<span class="hljs-comment">#                [10, 11, 12],</span>
-<span class="hljs-comment">#                [20, 21, 22],</span>
-<span class="hljs-comment">#                [30, 31, 32]])</span>
+# Output: array([[ 0,  1,  2],
+#                [10, 11, 12],
+#                [20, 21, 22],
+#                [30, 31, 32]])
 </code></pre>
 <ol>
 <li>要開始，我們需要確定兩個陣列的形狀：<code>a.shape</code> 是 <code>(4,1)</code>，<code>b.shape</code> 是 <code>(3,)</code>。根據規則 1，我們必須在 <code>b</code> 的形狀中添加 1，以使其維度與 <code>a</code> 的維度匹配。因此，<code>b.shape</code> 變成 <code>(1,3)</code>。</li>
 <li>接下來，規則 2 規定，我們需要擴展 <code>b.shape</code> 中的每個 1，以匹配另一個陣列的相應大小。因此，<code>a.shape</code> 變成 <code>(4,3)</code>，而 <code>b.shape</code> 變成 <code>(4,3)</code>，因為 1 被複製了三次以匹配 <code>a</code> 的大小。</li>
 <li>由於兩個陣列的形狀現在匹配，因此它們是兼容的。</li>
 </ol>
-<p>這整個過程可以如下圖所示：<br>
-<img src="https://drive.google.com/uc?id=1zKGHApvzo2NvyuB2vLfu6en9WI0_QCUj" alt></p>
-<h4><span id="comparing-arrays"> Comparing arrays</span></h4>
-<pre class="highlight"><code class="python">numbers &gt;= <span class="hljs-number">13</span> <span class="hljs-comment"># numbers = array([11, 12, 13, 14, 15, 16])</span>
-<span class="hljs-comment"># Output: array([False, False, True, True, True, True])</span>
-numbers2 &lt; numbers <span class="hljs-comment"># numbers2 = array([ 1.1,  2.2,  3.3,  4.4,  5.5, 6.6])</span>
-<span class="hljs-comment"># Output: array([ True,  True,  True,  True,  True,  True])</span>
+<p>這整個過程可以如下圖所示：<br><img src="https://drive.google.com/uc?id=1zKGHApvzo2NvyuB2vLfu6en9WI0_QCUj" alt></p>
+<h4><span id="comparing-arrays">Comparing arrays</span></h4><pre><code class="lang-python">numbers &gt;= 13 # numbers = array([11, 12, 13, 14, 15, 16])
+# Output: array([False, False, True, True, True, True])
+numbers2 &lt; numbers # numbers2 = array([ 1.1,  2.2,  3.3,  4.4,  5.5, 6.6])
+# Output: array([ True,  True,  True,  True,  True,  True])
 numbers == numbers2
-<span class="hljs-comment"># Output: array([False, False, False, False, False, False])</span>
+# Output: array([False, False, False, False, False, False])
 numbers == numbers
-<span class="hljs-comment"># Output: array([ True,  True,  True,  True,  True,  True])</span>
+# Output: array([ True,  True,  True,  True,  True,  True])
 </code></pre>
-<h3><span id="universal-functions-vectorization"> Universal Functions (Vectorization)</span></h3>
-<p>現在我們將深入研究 <code>NumPy</code> 如何在不使用 <code>for</code> 迴圈的情況下對 <code>array</code> 執行元素級操作：</p>
+<h3><span id="universal-functions-vectorization">Universal Functions (Vectorization)</span></h3><p>現在我們將深入研究 <code>NumPy</code> 如何在不使用 <code>for</code> 迴圈的情況下對 <code>array</code> 執行元素級操作：</p>
 <ul>
-<li><code>NumPy</code> 提供了更多的運算子/函式作為獨立的<em><strong>通用函式</strong></em>（也稱為 <code>ufuncs</code>），這些函式以元素級的方式執行各種操作，這意味著它們將相同的操作應用於 <code>array</code> 中的每個元素。
-<ul>
+<li><code>NumPy</code> 提供了更多的運算子/函式作為獨立的<strong><em>通用函式</em></strong>（也稱為 <code>ufuncs</code>），這些函式以元素級的方式執行各種操作，這意味著它們將相同的操作應用於 <code>array</code> 中的每個元素。<ul>
 <li>這些函式對一個或兩個類似 <code>array</code> 的參數（例如 <code>lists</code>）進行操作，並用於執行任務。</li>
 <li>當使用 <code>array</code> 與 <code>+</code> 和 <code>*</code> 等運算子時，會自動調用其中一些函式。每個 <code>ufunc</code> 生成一個新的 <code>array</code>，其中包含操作的結果。</li>
 </ul>
 </li>
-<li><code>NumPy</code> 提供一個實用的接口，用於各種直接訪問靜態類型和編譯過程的操作。
-<ul>
-<li>這些操作稱為<em><strong>向量化操作</strong></em>。通過使用 <code>array</code> 操作（例如加法、減法、乘法和除法），可以實現向量化。</li>
+<li><code>NumPy</code> 提供一個實用的接口，用於各種直接訪問靜態類型和編譯過程的操作。<ul>
+<li>這些操作稱為<strong><em>向量化操作</em></strong>。通過使用 <code>array</code> 操作（例如加法、減法、乘法和除法），可以實現向量化。</li>
 <li>此外，還可以通過使用 <code>ufunc</code> 來實現。這些向量化方法旨在將循環移動到支撐 <code>NumPy</code> 的編譯層，從而讓執行速度更快。</li>
 </ul>
 </li>
 </ul>
-<h4><span id="exploring-numpys-ufuncs"> Exploring <code>NumPy</code>’s <code>Ufuncs</code></span></h4>
-<p>把兩個 <code>array</code> 相加，<code>NumPy</code> 會自動調用 <code>add()</code> 函式：</p>
-<pre class="highlight"><code class="python">numbers2 = np.arange(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>) * <span class="hljs-number">10</span>  <span class="hljs-comment"># array([10, 20, 30, 40, 50, 60])</span>
-np.add(numbers, numbers2)        <span class="hljs-comment"># equivalent to numbers + numbers2, numbers = array([11, 12, 13, 14, 15, 16])</span>
-<span class="hljs-comment"># Output: array([21, 32, 43, 54, 65, 76])</span>
+<h4><span id="exploring-numpys-ufuncs">Exploring <code>NumPy</code>’s <code>Ufuncs</code></span></h4><p>把兩個 <code>array</code> 相加，<code>NumPy</code> 會自動調用 <code>add()</code> 函式：</p>
+<pre><code class="lang-python">numbers2 = np.arange(1, 7) * 10  # array([10, 20, 30, 40, 50, 60])
+np.add(numbers, numbers2)        # equivalent to numbers + numbers2, numbers = array([11, 12, 13, 14, 15, 16])
+# Output: array([21, 32, 43, 54, 65, 76])
 </code></pre>
-<h4><span id="broadcasting-with-universal-functions"> Broadcasting with Universal Functions</span></h4>
-<p>使用 <code>multiply()</code> 通用函式將 <code>numbers2</code> 的每個元素乘以標量值 5：</p>
-<pre class="highlight"><code class="python">np.multiply(numbers2, <span class="hljs-number">5</span>) <span class="hljs-comment"># equivalent to numbers2 * 5</span>
-<span class="hljs-comment"># Output: array([ 50, 100, 150, 200, 250, 300])</span>
+<h4><span id="broadcasting-with-universal-functions">Broadcasting with Universal Functions</span></h4><p>使用 <code>multiply()</code> 通用函式將 <code>numbers2</code> 的每個元素乘以標量值 5：</p>
+<pre><code class="lang-python">np.multiply(numbers2, 5) # equivalent to numbers2 * 5
+# Output: array([ 50, 100, 150, 200, 250, 300])
 
-<span class="hljs-comment"># 重塑 numbers2 成為一個 2x3 的陣列，然後將其值乘以一維陣列的三個元素：</span>
-numbers3 = numbers2.reshape(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
-numbers4 = np.array([<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>])
+# 重塑 numbers2 成為一個 2x3 的陣列，然後將其值乘以一維陣列的三個元素：
+numbers3 = numbers2.reshape(2, 3)
+numbers4 = np.array([2, 4, 6])
 numbers3, numbers4
-<span class="hljs-comment"># Output: (array([[10, 20, 30],</span>
-<span class="hljs-comment">#                 [40, 50, 60]]),</span>
-<span class="hljs-comment">#          array([2, 4, 6]))</span>
-np.multiply(numbers3, numbers4) <span class="hljs-comment"># Equivalent to numbers3 * numbers4</span>
-<span class="hljs-comment"># Output: array([[ 20,  80, 180],</span>
-<span class="hljs-comment">#                [ 80, 200, 360]])</span>
+# Output: (array([[10, 20, 30],
+#                 [40, 50, 60]]),
+#          array([2, 4, 6]))
+np.multiply(numbers3, numbers4) # Equivalent to numbers3 * numbers4
+# Output: array([[ 20,  80, 180],
+#                [ 80, 200, 360]])
 </code></pre>
 <p>在這種情況下，<code>numbers4</code> 的長度與 <code>numbers3</code> 的每一行相同，允許 <code>NumPy</code> 將乘法操作應用於 <code>array</code>，並將 <code>numbers4</code> 視為具有以下值的 <code>array</code>：</p>
-<pre class="highlight"><code class="python">array([[<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>],
-       [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>]])
+<pre><code class="lang-python">array([[2, 4, 6],
+       [2, 4, 6]])
 </code></pre>
-<p>如果通用函式接收到兩個不支持廣播的不同形狀的 <code>array</code>，則會引發 <code>ValueError</code>。<br>
-向量化和 <code>ufunc</code> 函式與 <code>NumPy</code> 中的廣播緊密相關，因為它們經常一起使用，以在具有不同形狀的 <code>array</code> 上執行元素級操作。<br>
-通過結合向量化、<code>ufunc</code> 函式和廣播，我們可以有效地在 <code>NumPy</code> <code>array</code> 上執行複雜的算術操作。</p>
+<p>如果通用函式接收到兩個不支持廣播的不同形狀的 <code>array</code>，則會引發 <code>ValueError</code>。<br>向量化和 <code>ufunc</code> 函式與 <code>NumPy</code> 中的廣播緊密相關，因為它們經常一起使用，以在具有不同形狀的 <code>array</code> 上執行元素級操作。<br>通過結合向量化、<code>ufunc</code> 函式和廣播，我們可以有效地在 <code>NumPy</code> <code>array</code> 上執行複雜的算術操作。</p>
 <p>還有其他特殊的數學 <code>ufunc</code>。讓我們創建一個陣列，並使用 <code>sin()</code> 通用函式計算其值的平方根：</p>
-<pre class="highlight"><code class="python">numbers = np.array([<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">16</span>, <span class="hljs-number">25</span>, <span class="hljs-number">36</span>])
+<pre><code class="lang-python">numbers = np.array([1, 4, 9, 16, 25, 36])
 np.sin(numbers)
-<span class="hljs-comment"># Output: array([ 0.84147098, -0.7568025 ,  0.41211849, -0.28790332, -0.13235175, -0.99177885])</span>
+# Output: array([ 0.84147098, -0.7568025 ,  0.41211849, -0.28790332, -0.13235175, -0.99177885])
 </code></pre>
-<h4><span id="create-our-own-vectorizing-functions"> Create our own vectorizing functions</span></h4>
-<p>向量化操作通常更簡潔，因此建議避免對向量和矩陣進行逐元素循環，而是使用向量化算法。<br>
-將標量算法轉換為向量化算法的初始步驟涉及驗證我們創建的函式是否可以使用向量輸入運行：</p>
-<pre class="highlight"><code class="python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">Theta</span>(<span class="hljs-params">x, th</span>):
-    <span class="hljs-string">&quot;&quot;&quot;
+<h4><span id="create-our-own-vectorizing-functions">Create our own vectorizing functions</span></h4><p>向量化操作通常更簡潔，因此建議避免對向量和矩陣進行逐元素循環，而是使用向量化算法。<br>將標量算法轉換為向量化算法的初始步驟涉及驗證我們創建的函式是否可以使用向量輸入運行：</p>
+<pre><code class="lang-python">def Theta(x, th):
+    &quot;&quot;&quot;
     Scalar implemenation of a variant of Heaviside step function.
-    &quot;&quot;&quot;</span>
-    <span class="hljs-keyword">if</span> x &gt;= th:
-        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
-    <span class="hljs-keyword">else</span>:
-        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+    &quot;&quot;&quot;
+    if x &gt;= th:
+        return 1
+    else:
+        return 0
 
 Theta_vec = np.vectorize(Theta)
-Theta_vec(np.array([-<span class="hljs-number">3</span>,-<span class="hljs-number">2</span>,-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]), <span class="hljs-number">1</span>)
-<span class="hljs-comment"># Output: array([0, 0, 0, 0, 1, 1, 1])</span>
+Theta_vec(np.array([-3,-2,-1,0,1,2,3]), 1)
+# Output: array([0, 0, 0, 0, 1, 1, 1])
 </code></pre>
 
     </div>
