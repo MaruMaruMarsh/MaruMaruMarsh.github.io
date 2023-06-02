@@ -53,3 +53,4 @@ $(document).on('pjax:start', function () {
 });
 
 app.mount("#layout");
+

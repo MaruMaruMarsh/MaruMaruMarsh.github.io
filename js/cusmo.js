@@ -1,14 +1,10 @@
-const cursor = new MouseFollower({
-    iconSvgSrc: '/assets/img/sprites/svgsprites.svg',
-    iconSvgClassName: 'my-spritesheet',
-    iconSvgNamePrefix: '-',
-});
-const el = document.querySelector('.my-element');
+const cursor = new MouseFollower();
+const el = document.querySelector('.maru');
 
 el.addEventListener('mouseenter', () => {
-    cursor.setIcon('arrow-left');
+    cursor.hide();
 });
 
 el.addEventListener('mouseleave', () => {
-    cursor.removeIcon();
+    cursor.show();
 });
