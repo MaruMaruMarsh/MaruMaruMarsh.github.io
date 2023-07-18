@@ -21,7 +21,7 @@
         <!--pjax：防止跳转页面音乐暂停-->
         <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         <meta charset="utf-8" />
-        <title>棉花糖的小窩</title>
+        <title>Aviutl | 棉花糖的小窩</title>
         <meta name="author" content="棉花糖" />
         <meta name="description" content="點文章跳轉的時候會播歌請注意一下" />
         <meta name="keywords" content="" />
@@ -55,7 +55,8 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
 
 
 <link rel="stylesheet" href="/css/main.css" />
@@ -106,7 +107,10 @@
 
     <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
     <body>
         <div id="layout">
             <div id="pjax-container">
@@ -255,78 +259,26 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        
-        <span class="info">
-            <div class="wrap">
-                <h1>棉花糖的小窩</h1>
-                <h3></h3>
-                <h5>點文章跳轉的時候會播歌請注意一下</h5>
-            </div>
-        </span>
+                    <div class="article">
+
+    <!--pjax：防止跳转页面音乐暂停-->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    <div>
+        <h1>Aviutl</h1>
     </div>
-</div>
-
-<div id="home-posts-wrap"  ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-    
-
-<div class="post">
-    <a href="/2023/07/17/R%E8%AA%9E%E8%A8%80Day1/">
-        <h2 class="post-title">資料框整理技巧</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/R%E8%AA%9E%E8%A8%80/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                R語言
-            </a>
-        </span>
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/7/17
+            2023/6/11
         </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>學習R的第一步</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/07/17/R%E8%AA%9E%E8%A8%80Day1/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/06/11/aviutl/">
-        <h2 class="post-title">Aviutl</h2>
-    </a>
-    <div class="category-and-date">
         
         <span class="category">
             <a href="/categories/%E8%BB%9F%E4%BB%B6%E5%AE%89%E8%A3%9D/">
@@ -337,487 +289,72 @@
             </a>
         </span>
         
-        <span class="date">
+        
+        <span class="tags">
             <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/6/11
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>安裝</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Aviutl/" style="color: #03a9f4">Aviutl</a>
-        </span>
-        
-    </div>
-    <a href="/2023/06/11/aviutl/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/30/test/">
-        <h2 class="post-title">試試就逝世的擴充套件測試空白頁</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E9%9B%9C%E7%89%A9/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                雜物
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/30
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>明明那麼短 搞了我好久啊</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="color: #03a9f4">測試</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/30/test/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/29/NumPysum/">
-        <h2 class="post-title">NumPy 相關功能整理</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/Python/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Python
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>期末考導向</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #03a9f4">期末考</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #ff7d73">講義</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Python/" style="color: #00a596">Python</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/29/NumPysum/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/28/Matplotlibsum/">
-        <h2 class="post-title">Matplotlib 相關功能整理</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/Python/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Python
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>期末考導向</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #03a9f4">期末考</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #03a9f4">講義</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Python/" style="color: #ffa2c4">Python</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/28/Matplotlibsum/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/28/SymPysum/">
-        <h2 class="post-title">SymPy 相關功能整理</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/Python/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Python
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>期末考導向</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #00a596">期末考</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #00bcd4">講義</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Python/" style="color: #00a596">Python</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/28/SymPysum/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/28/OOP&classes/">
-        <h2 class="post-title">OOP &amp; Classes 相關功能整理</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/Python/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Python
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>期末考導向</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ff7d73">期末考</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #03a9f4">講義</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Python/" style="color: #00bcd4">Python</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/28/OOP&classes/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/28/%E5%8D%8A%E5%B0%8E%E9%AB%94%E8%A3%BD%E7%A8%8B%E5%B0%8E%E8%AB%96_/">
-        <h2 class="post-title">&lt;半導體製程導論&gt;</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>偏考試導向的重點整理啦</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/05/28/%E5%8D%8A%E5%B0%8E%E9%AB%94%E8%A3%BD%E7%A8%8B%E5%B0%8E%E8%AB%96_/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/27/p1/">
-        <h2 class="post-title">好想睡覺</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/27
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>原本想放甚麼的，結果忘了，只好放這個了。</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/05/27/p1/" class="go-post">閱讀全文</a>
-</div>
-
-
-        <div class="page-current">
-    <div class="prev">
-        
-    </div>
-    <div class="page-index">
-        
-        <span class="current">1</span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
-
-    </div>
-    
-    <div id="home-card">
-        <div id="card-div">
-    <div class="card-style">
-        <div class="avatar">
-            <img src="/images/avatar.gif" alt="avatar" />
-        </div>
-        <div class="name">棉花糖</div>
-        
-        <div class="description">
-            <p>期末臨時避難站、<br />
-寫一些小東西整理or搬筆記。</p>
-
-        </div>
-        
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/MaruMaruMarsh">
-                    <i
-                        class="fa-brands fa-github fa-fw"
-                        
-                    ></i>
-                </a>
+                <i class="fa-solid fa-tags fa-fw"></i>
             </span>
             
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://twitter.com/marshmathllow">
-                    <i
-                        class="fa-brands fa-twitter fa-fw"
-                        
-                    ></i>
-                </a>
+            <span class="tag">
+                
+                <a href="/tags/Aviutl/" style="color: #ffa2c4">Aviutl</a>
             </span>
             
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCo_rIbAiGNPwY1cZxM1-O9g">
-                    <i
-                        class="fa-brands fa-youtube fa-fw"
-                        
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://steamcommunity.com/profiles/76561198255899261/">
-                    <i
-                        class="fa-brands fa-steam fa-fw"
-                        
-                    ></i>
-                </a>
-            </span>
-            
-        </div>
-        
-        
-        <div class="friend-links">
-            
-        </div>
-        <div data-cursor-img="/images/avaar.jpg">這個咚咚很可愛</div>
+        </span>
         
     </div>
     
-</div>
+    <div class="content" v-pre>
+        
+    <div id="aplayer-ONPlUoNo" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<h1><span id="aviutl">Aviutl</span></h1>
+<h2><span id="本體安裝amp設定">本體安裝&amp;設定</span></h2>
+<h3><span id="語言變更">語言變更</span></h3>
+<p>在實際下載前，打開<br>
+控制台 → 時間與區域 → 地區 → 系統管理 → 非unicode程式的語言 → 變更設定，<br>
+請換成日文或是根據場合也可以換成其他語言。<br>
+<img src="https://truth.bahamut.com.tw/s01/202101/30adebb85b5aadc11562a9fab9c9752d.JPG?w=1000" alt></p>
+<h3><span id="下載">下載</span></h3>
+<p><a target="_blank" rel="noopener" href="https://ref.gamer.com.tw/redir.php?url=http%3A%2F%2Fspring-fragrance.mints.ne.jp%2Faviutl%2F">aviutlのお部屋</a><br>
+點進去之後會看到很多zip檔，<br>
+選擇<strong>aviutl110.zip</strong>和<strong>exedit93rc1.zip(テスト版)</strong>，<br>
+下載後解壓塞在同一個資料夾裡，再點主程式就完成開啟。</p>
+<h3><span id="設定">設定</span></h3>
+<p>flies的優先度調整<br>
+點選設定→フィルタ順序の設定→ビデオフィルタの設定，<br>
+照圖片上的順序排列。<br>
+<img src="https://truth.bahamut.com.tw/s01/202101/818d28ced9f82bde6df89d0e18648dc8.JPG?w=1000" alt><br>
+<img src="https://truth.bahamut.com.tw/s01/202101/4660d33c50d7eb90c1eeb6d8a34588d1.JPG?w=1000" alt></p>
+<p>走漢化版的看這：<a target="_blank" rel="noopener" href="https://tieba.baidu.com/p/5541881662#:~:text=%E9%A6%96%E6%AC%A1%E6%8A%8A%E7%8E%A9%E7%9A%84%E8%90%8C%E6%96%B0%E5%90%AF%E5%8A%A8%E5%90%8E%E4%BE%9D%E6%AC%A1%E6%89%93%E5%BC%80%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E2%86%92%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A%E2%86%92%E8%A8%80%E8%AA%9E%E3%81%AE%E8%A8%AD%E5%AE%9A,%28Language%29%2C%E9%80%89%E6%8B%A9%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%90%8E%E9%80%80%E5%87%BA%E9%87%8D%E5%90%AF%E5%8D%B3%E4%B8%BA%E4%B8%AD%E6%96%87%E7%89%88%2C%E4%B9%8B%E5%90%8E%E8%BF%98%E9%9C%80%E5%9C%A8%E8%AE%BE%E7%BD%AE%E9%87%8C%E5%8B%BE%E9%80%89%22%E9%AB%98%E7%BA%A7%E7%BC%96%E8%BE%91%E8%AE%BE%E7%BD%AE%22.%20%E4%B8%AD%E6%96%87%E6%B1%89%E5%8C%96%E7%89%88%E8%BF%90%E8%A1%8C%E4%BA%8E%E9%9D%9E%E4%B8%AD%2C%E8%8B%B1%E6%96%87%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%8F%AF%E8%83%BD%E5%B9%B6%E4%B8%8D%E8%83%BD%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87.">完全汉化版 AviUtl_CN(Mod 1.00)</a></p>
+<h2><span id="插件介紹">插件介紹</span></h2>
+<h3><span id="入力設定">入力設定</span></h3>
+<p>原始設定中，aviutl只能載入avi. jpg. wav.等格式的檔案，mp4之類的都不能輸入。<br>
+要擴充他的載入格式範圍，可以用L-SMASH Works和DirectShow File Reader兩個插件。</p>
+<h4><span id="l-smash-works">L-SMASH Works</span></h4>
+<p>安裝教學：<a target="_blank" rel="noopener" href="https://sosakubiyori.com/aviutl-lsmashworks/">【AviUtl】入力プラグイン「L-SMASH Works」のダウンロード＆インストール</a></p>
+<h4><span id="directshow-file-reader">DirectShow File Reader</span></h4>
+<p>安裝教學：<a target="_blank" rel="noopener" href="https://sosakubiyori.com/aviutl-dsfr/">【AviUtl】入力プラグイン「DirectShow File Reader」のダウンロード＆インストール</a></p>
+<h3><span id="出力設定">出力設定</span></h3>
+<h4><span id="nvenc">NVEnc</span></h4>
+<p>安裝教學：<a target="_blank" rel="noopener" href="https://github.com/rigaya/NVEnc/blob/master/NVEnc_auo_readme.md#nvenc-%E3%81%AE-aviutl-%E3%81%B8%E3%81%AE%E5%B0%8E%E5%85%A5%E6%9B%B4%E6%96%B0">NVEnc.auo</a></p>
+<h3><span id="參考資料">參考資料</span></h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://home.gamer.com.tw/creationDetail.php?sn=5054421">AviUtl研究筆記1 - mado21的創作 - 巴哈姆特</a></li>
+<li><a target="_blank" rel="noopener" href="https://watashinokyoukasyo.com/x264guiex-plugins-aviutl/">【AviUtl】出力プラグイン【x264guiEx】の導入方法【初心者向け設定】</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=iWsqr_JBh9Q">AviUtlの使い方【最短でマスターするための10ステップ】</a></li>
+</ul>
 
     </div>
     
+    
+    
+    
+    
+    
+    
+    
+    
 </div>
-
-
                     <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -852,6 +389,12 @@
 
 
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
