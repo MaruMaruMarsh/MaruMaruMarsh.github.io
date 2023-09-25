@@ -21,7 +21,7 @@
         <!--pjax：防止跳转页面音乐暂停-->
         <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         <meta charset="utf-8" />
-        <title>棉花糖的小窩</title>
+        <title>Archives | 棉花糖的小窩</title>
         <meta name="author" content="棉花糖" />
         <meta name="description" content="點文章跳轉的時候會播歌請注意一下" />
         <meta name="keywords" content="" />
@@ -53,9 +53,8 @@
 
 
 
+<script src="/js/lib/search.js"></script>
 
-
-<script src="/js/lib/home.js"></script>
 
 
 <link rel="stylesheet" href="/css/main.css" />
@@ -255,638 +254,374 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
-    <div id="home-info" @click="homeClick">
+                    
+<div id="archives">
+    
+    <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
+    
+    <div id="timeline-wrap" ref="timeline">
         
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        
-        <span class="info">
-            <div class="wrap">
-                <h1>棉花糖的小窩</h1>
-                <h3></h3>
-                <h5>點文章跳轉的時候會播歌請注意一下</h5>
+        <div class="timeline" data-title="hexo快捷鍵整理">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/27</div>
+                <a href="/2023/05/27/p1/">
+                    <h3>Hexo 快捷鍵整理</h3>
+                </a>
+                <div class="info">
+                    
+                    
+                </div>
             </div>
-        </span>
-    </div>
-</div>
-
-<div id="home-posts-wrap"  ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-    
-
-<div class="post">
-    <a href="/2023/09/24/Biology_immune_system/">
-        <h2 class="post-title">免疫系統全貌 (Immune system)</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/Biology/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Biology
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/9/24
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>Bio02</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/09/24/Biology_immune_system/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/09/23/Biology_RAAS/">
-        <h2 class="post-title">腎素-血管收縮素-醛固酮系統 (RAAS)</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/Biology/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Biology
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/9/23
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>Bio01</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/09/23/Biology_RAAS/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/07/17/R%E8%AA%9E%E8%A8%80Day1/">
-        <h2 class="post-title">資料框整理技巧</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E4%B8%83%E6%9C%88%E7%9A%84%E6%96%99/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                七月的料
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/7/17
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>E01</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/R%E8%AA%9E%E8%A8%80/" style="color: #00a596">R語言</a>
-        </span>
-        
-    </div>
-    <a href="/2023/07/17/R%E8%AA%9E%E8%A8%80Day1/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/06/11/aviutl/">
-        <h2 class="post-title">Aviutl</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E8%BB%9F%E4%BB%B6%E5%AE%89%E8%A3%9D/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                軟件安裝
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/6/11
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>安裝</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Aviutl/" style="color: #00a596">Aviutl</a>
-        </span>
-        
-    </div>
-    <a href="/2023/06/11/aviutl/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/30/test/">
-        <h2 class="post-title">試試就逝世的擴充套件測試空白頁</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E9%9B%9C%E7%89%A9/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                雜物
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/30
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>明明那麼短 搞了我好久啊</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="color: #ffa2c4">測試</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/30/test/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/29/NumPysum/">
-        <h2 class="post-title">NumPy 相關功能整理</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/Python/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Python
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>期末考導向</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ffa2c4">期末考</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #03a9f4">講義</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Python/" style="color: #00bcd4">Python</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/29/NumPysum/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/28/Matplotlibsum/">
-        <h2 class="post-title">Matplotlib 相關功能整理</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/Python/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Python
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>期末考導向</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #03a9f4">期末考</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #00bcd4">講義</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Python/" style="color: #ff7d73">Python</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/28/Matplotlibsum/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/28/SymPysum/">
-        <h2 class="post-title">SymPy 相關功能整理</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/Python/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Python
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>期末考導向</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ff7d73">期末考</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #03a9f4">講義</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Python/" style="color: #ffa2c4">Python</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/28/SymPysum/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/28/OOP&classes/">
-        <h2 class="post-title">OOP &amp; Classes 相關功能整理</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/Python/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                Python
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>期末考導向</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ff7d73">期末考</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #00bcd4">講義</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Python/" style="color: #ff7d73">Python</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/28/OOP&classes/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/28/%E5%8D%8A%E5%B0%8E%E9%AB%94%E8%A3%BD%E7%A8%8B%E5%B0%8E%E8%AB%96_/">
-        <h2 class="post-title">&lt;半導體製程導論&gt;</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>偏考試導向的重點整理啦</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/05/28/%E5%8D%8A%E5%B0%8E%E9%AB%94%E8%A3%BD%E7%A8%8B%E5%B0%8E%E8%AB%96_/" class="go-post">閱讀全文</a>
-</div>
-
-
-        <div class="page-current">
-    <div class="prev">
-        
-    </div>
-    <div class="page-index">
-        
-        <span class="current">1</span>
-        
-        <span>
-            <a class="page-num" href="/page/2/">2</a>
-            
-            
-        </span>
-        
-    </div>
-    <div class="next">
-        
-        <a class="page-num" href="/page/2/">
-            <i class="fa-solid fa-caret-right fa-fw"></i>
-        </a>
-        
-    </div>
-</div>
-
-    </div>
-    
-    <div id="home-card">
-        <div id="card-div">
-    <div class="card-style">
-        <div class="avatar">
-            <img src="/images/avatar.gif" alt="avatar" />
-        </div>
-        <div class="name">棉花糖</div>
-        
-        <div class="description">
-            <p>期末臨時避難站、<br />
-寫一些小東西整理or搬筆記。</p>
-
         </div>
         
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/MaruMaruMarsh">
-                    <i
-                        class="fa-brands fa-github fa-fw"
-                        
-                    ></i>
+        <div class="timeline" data-title="<半導體製程導論>">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/28</div>
+                <a href="/2023/05/28/%E5%8D%8A%E5%B0%8E%E9%AB%94%E8%A3%BD%E7%A8%8B%E5%B0%8E%E8%AB%96_/">
+                    <h3>&lt;半導體製程導論&gt;</h3>
                 </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://twitter.com/marshmathllow">
-                    <i
-                        class="fa-brands fa-twitter fa-fw"
-                        
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCo_rIbAiGNPwY1cZxM1-O9g">
-                    <i
-                        class="fa-brands fa-youtube fa-fw"
-                        
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://steamcommunity.com/profiles/76561198255899261/">
-                    <i
-                        class="fa-brands fa-steam fa-fw"
-                        
-                    ></i>
-                </a>
-            </span>
-            
+                <div class="info">
+                    
+                    
+                </div>
+            </div>
         </div>
         
-        
-        <div class="friend-links">
-            
+        <div class="timeline" data-title="oop&classes相關功能整理">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/28</div>
+                <a href="/2023/05/28/OOP&classes/">
+                    <h3>OOP &amp; Classes 相關功能整理</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Python/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Python
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #00a596">期末考</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #00bcd4">講義</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Python/" style="color: #ff7d73">Python</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
         </div>
-        <div data-cursor-img="/images/avaar.jpg">這個咚咚很可愛</div>
+        
+        <div class="timeline" data-title="sympy相關功能整理">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/28</div>
+                <a href="/2023/05/28/SymPysum/">
+                    <h3>SymPy 相關功能整理</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Python/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Python
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ffa2c4">期末考</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #00bcd4">講義</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Python/" style="color: #00a596">Python</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="matplotlib相關功能整理">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/28</div>
+                <a href="/2023/05/28/Matplotlibsum/">
+                    <h3>Matplotlib 相關功能整理</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Python/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Python
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ff7d73">期末考</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #ffa2c4">講義</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Python/" style="color: #00a596">Python</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="numpy相關功能整理">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/29</div>
+                <a href="/2023/05/29/NumPysum/">
+                    <h3>NumPy 相關功能整理</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Python/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Python
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ffa2c4">期末考</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #ffa2c4">講義</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Python/" style="color: #00a596">Python</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="試試就逝世的擴充套件測試空白頁">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/30</div>
+                <a href="/2023/05/30/test/">
+                    <h3>試試就逝世的擴充套件測試空白頁</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E9%9B%9C%E7%89%A9/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            雜物
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="color: #03a9f4">測試</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="aviutl">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/6/11</div>
+                <a href="/2023/06/11/aviutl/">
+                    <h3>Aviutl</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E8%BB%9F%E4%BB%B6%E5%AE%89%E8%A3%9D/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            軟件安裝
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Aviutl/" style="color: #ff7d73">Aviutl</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="資料框整理技巧">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/7/17</div>
+                <a href="/2023/07/17/R%E8%AA%9E%E8%A8%80Day1/">
+                    <h3>資料框整理技巧</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E4%B8%83%E6%9C%88%E7%9A%84%E6%96%99/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            七月的料
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/R%E8%AA%9E%E8%A8%80/" style="color: #ff7d73">R語言</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="腎素-血管收縮素-醛固酮系統(raas)">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/9/23</div>
+                <a href="/2023/09/23/Biology_RAAS/">
+                    <h3>腎素-血管收縮素-醛固酮系統 (RAAS)</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Biology/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Biology
+                        </a>
+                    </span>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="免疫系統全貌(immunesystem)">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/9/24</div>
+                <a href="/2023/09/24/Biology_immune_system/">
+                    <h3>免疫系統全貌 (Immune system)</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Biology/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Biology
+                        </a>
+                    </span>
+                    
+                    
+                </div>
+            </div>
+        </div>
         
     </div>
-    
 </div>
-
-    </div>
-    
-</div>
-
 
                     <footer id="footer">
     <div id="footer-wrap">

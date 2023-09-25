@@ -21,7 +21,7 @@
         <!--pjax：防止跳转页面音乐暂停-->
         <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         <meta charset="utf-8" />
-        <title>好想睡覺 | 棉花糖的小窩</title>
+        <title>Hexo 快捷鍵整理 | 棉花糖的小窩</title>
         <meta name="author" content="棉花糖" />
         <meta name="description" content="點文章跳轉的時候會播歌請注意一下" />
         <meta name="keywords" content="" />
@@ -107,7 +107,10 @@
 
     <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
     <body>
         <div id="layout">
             <div id="pjax-container">
@@ -267,7 +270,7 @@
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     <div>
-        <h1>好想睡覺</h1>
+        <h1>Hexo 快捷鍵整理</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -281,7 +284,66 @@
     </div>
     
     <div class="content" v-pre>
-        <p>原本想放甚麼的，結果忘了，只好放這個了。</p>
+        
+    <div id="aplayer-OXSIsqCu" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<h1><span id="指令"> 指令</span></h1>
+<h2><span id="init"> init</span></h2>
+<pre class="highlight"><code class="hexo">hexo init
+</code></pre>
+<h2><span id="new"> new</span></h2>
+<pre class="highlight"><code class>hexo new [layout] &lt;title&gt;
+</code></pre>
+<h2><span id="generate"> generate</span></h2>
+<pre class="highlight"><code class="hexo">hexo generate
+</code></pre>
+<h2><span id="server"> server</span></h2>
+<p>啟動伺服器，預設是 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
+<pre class="highlight"><code class="hexo">hexo server
+</code></pre>
+<h2><span id="deploy"> deploy</span></h2>
+<p>部署網站</p>
+<pre class="highlight"><code class="hexo">hexo deploy
+</code></pre>
+<h2><span id="clean"> clean</span></h2>
+<pre class="highlight"><code class="hexo">hexo clean
+</code></pre>
+<h2><span id="list"> list</span></h2>
+<pre class="highlight"><code class="hexo">hexo list &lt;type&gt;
+</code></pre>
+<h2><span id="version"> version</span></h2>
+<p>顯示版本資訊</p>
+<pre class="highlight"><code class="hexo">hexo version
+</code></pre>
+<h2><span id="migrate"> migrate</span></h2>
+<p>從其他系統轉移內容</p>
+<pre class="highlight"><code class="hexo">hexo migrate &lt;type&gt;
+</code></pre>
+<h1><span id="選項"> 選項</span></h1>
+<h2><span id="安全模式"> 安全模式</span></h2>
+<pre class="highlight"><code class="hexo">$ hexo --safe
+</code></pre>
+<p>在安全模式下，不會載入外掛和腳本。當您在安裝新外掛後遭遇問題時，可以嘗試以安全模式重新執行。</p>
+<h2><span id="除錯模式"> 除錯模式</span></h2>
+<pre class="highlight"><code class="hexo">$ hexo --debug
+</code></pre>
+<p>在終端機中顯示除錯訊息並儲存記錄檔到 debug.log。當您碰到問題時，試著以除錯模式重新執行一次，並 把除錯訊息貼到 GitHub。</p>
+<h2><span id="安靜模式"> 安靜模式</span></h2>
+<pre class="highlight"><code class="hexo">$ hexo --silent
+</code></pre>
+<p>隱藏終端機的訊息。</p>
+<h2><span id="自訂配置檔的路徑"> 自訂配置檔的路徑</span></h2>
+<pre class="highlight"><code class="hexo">$ hexo --config custom.yml
+</code></pre>
+<p>自訂配置檔的路徑而不是使用 <code>_config.yml</code>。此參數也接受以逗號分隔的 JSON 或 YAML 檔列表字串 (不得含有空格)，它們將會被合併產生一個 <code>_multiconfig.yml</code></p>
+<pre class="highlight"><code class="hexo">$ hexo --config custom.yml,custom2.json
+</code></pre>
+<h2><span id="顯示草稿"> 顯示草稿</span></h2>
+<pre class="highlight"><code class="hexo">$ hexo --draft
+</code></pre>
+<p>顯示 `source/_drafts`` 資料夾中的草稿文章。</p>
+<h2><span id="自定-cwd"> 自定 CWD</span></h2>
+<pre class="highlight"><code class="hexo">$ hexo --cwd /path/to/cwd
+</code></pre>
 
     </div>
     
