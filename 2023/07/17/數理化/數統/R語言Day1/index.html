@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/mhchem.min.js" integrity="sha384-LIgAiYlGSAdpNC9+YDjDPF6JeS/RRIumtNo0CmyQERZ/+g0h9MbuYQwf/5pQ4Y4M" crossorigin="anonymous"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        <script type="text/x-mathjax-config">
+
+</script>
+        <meta charset="utf-8" />
+        <title>資料框整理技巧 | 棉花糖的小窩</title>
+        <meta name="author" content="棉花糖" />
+        <meta name="description" content="點文章跳轉的時候會播歌請注意一下" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<script src="//cdn.jsdelivr.net/npm/vue-aplayer"></script>
+<script>
+  Vue.component('aplayer', VueAPlayer)
+</script>
+
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        <canvas
+        id="fireworks"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"
+        ></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+        <script>
+            var cursor = new MouseFollower();
+        </script>
+        <div id="pjax-container">
+                <div class="aplayer" 
+                    data-id="4948519534" 
+                    data-server="netease" 
+                    data-type="playlist" 
+                    data-fixed="true" 
+                    data-autoplay="true"
+                    data-order="random" 
+                    data-volume="0" 
+                    data-theme="#cc543a" 
+                    data-preload="none">
+                    
+                </div>
+
+    <!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+    <body>
+        <div id="layout">
+
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>進度條正在跑跑中</p>
+                        <img src="/images/loading.gif" />
+                        
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>棉花糖的小窩</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+        <a href="/Links">
+            <i class="fa-solid fa-link fa-fw"></i>
+            <span>&ensp;Links</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;棉花糖的小窩</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+                <a href="/Links">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-link fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Links</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+
+    <!--pjax：防止跳转页面音乐暂停-->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    <div>
+        <h1>資料框整理技巧</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/7/17
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%95%B8%E7%90%86%E5%8C%96/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                數理化
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/R%E8%AA%9E%E8%A8%80/" style="color: #ff7d73">R語言</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        
+    <div id="aplayer-ksYLnedg" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<!-- toc -->
+<ul>
+<li><a href="#%E5%BB%BA%E7%AB%8B%E8%88%87%E6%8E%A2%E7%B4%A2%E8%B3%87%E6%96%99%E6%A1%86">建立與探索資料框</a>
+<ul>
+<li><a href="#%E5%BB%BA%E7%AB%8B%E8%B3%87%E6%96%99%E6%A1%86">建立資料框</a></li>
+<li><a href="#%E6%8E%A2%E7%B4%A2%E8%B3%87%E6%96%99%E6%A1%86">探索資料框</a></li>
+<li><a href="#%E4%BE%9D%E6%93%9A%E6%AC%84%E4%BD%8D%E6%8E%92%E5%BA%8F%E8%B3%87%E6%96%99%E6%A1%86">依據欄位排序資料框</a></li>
+</ul>
+</li>
+<li><a href="#%E6%AC%84%E8%88%87%E5%88%97%E7%9A%84%E7%9B%B8%E9%97%9C%E6%8A%80%E5%B7%A7">欄與列的相關技巧</a>
+<ul>
+<li><a href="#%E6%96%B0%E5%A2%9E%E6%AC%84%E4%BD%8D">新增欄位</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E%E6%AC%84%E4%BD%8D2">新增欄位（2）</a></li>
+<li><a href="#%E5%88%AA%E9%99%A4%E6%AC%84%E4%BD%8D">刪除欄位</a></li>
+<li><a href="#%E5%88%AA%E9%99%A4%E6%AC%84%E4%BD%8D2">刪除欄位（2）</a></li>
+<li><a href="#%E7%82%BA%E6%AC%84%E4%BD%8D%E9%87%8D%E6%96%B0%E5%91%BD%E5%90%8D">為欄位重新命名</a></li>
+<li><a href="#%E9%91%BD%E7%A0%94-subset-%E5%87%BD%E6%95%B8">鑽研 subset() 函數</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E%E5%88%97%E6%95%B8">新增列數</a></li>
+</ul>
+</li>
+<li><a href="#%E7%94%9F%E6%88%90%E8%A1%8D%E7%94%9F%E8%AE%8A%E6%95%B8">生成衍生變數</a>
+<ul>
+<li><a href="#%E9%A1%9E%E5%88%A5%E5%9E%8B%E8%AE%8A%E6%95%B8%E7%9A%84%E5%88%86%E9%A1%9E">類別型變數的分類</a></li>
+<li><a href="#%E9%A1%9E%E5%88%A5%E5%9E%8B%E8%AE%8A%E6%95%B8%E7%9A%84%E5%88%86%E9%A1%9E2">類別型變數的分類（2）</a></li>
+<li><a href="#%E6%95%B8%E5%80%BC%E5%9E%8B%E8%AE%8A%E6%95%B8%E7%9A%84%E5%88%86%E9%A1%9E">數值型變數的分類</a></li>
+<li><a href="#%E8%A1%8D%E7%94%9F%E8%A8%88%E7%AE%97%E6%95%B8%E5%80%BC%E5%9E%8B%E8%AE%8A%E6%95%B8">衍生計算數值型變數</a></li>
+<li><a href="#%E8%BC%83%E9%9B%A3%E7%9A%84%E8%A1%8D%E7%94%9F%E8%AE%8A%E6%95%B8">較難的衍生變數</a></li>
+<li><a href="#%E8%BC%83%E9%9B%A3%E7%9A%84%E8%A1%8D%E7%94%9F%E8%AE%8A%E6%95%B82">較難的衍生變數（2）</a></li>
+<li><a href="#%E8%BC%83%E9%9B%A3%E7%9A%84%E8%A1%8D%E7%94%9F%E8%AE%8A%E6%95%B83">較難的衍生變數（3）</a></li>
+</ul>
+</li>
+<li><a href="#%E6%AC%84%E4%BD%8D%E8%81%9A%E5%90%88%E8%88%87%E8%B3%87%E6%96%99%E8%BD%89%E7%BD%AE">欄位聚合與資料轉置</a>
+<ul>
+<li><a href="#%E6%91%98%E8%A6%81%E7%B5%B1%E8%A8%88">摘要統計</a></li>
+<li><a href="#%E6%91%98%E8%A6%81%E7%B5%B1%E8%A8%882">摘要統計（2）</a></li>
+<li><a href="#%E8%B3%87%E6%96%99%E8%BD%89%E7%BD%AE%E5%AF%AC%E8%AE%8A%E9%95%B7">資料轉置：寬變長</a></li>
+<li><a href="#%E8%B3%87%E6%96%99%E8%BD%89%E7%BD%AE%E5%AF%AC%E8%AE%8A%E9%95%B72">資料轉置：寬變長（2）</a></li>
+<li><a href="#%E8%B3%87%E6%96%99%E8%BD%89%E7%BD%AE%E9%95%B7%E8%AE%8A%E5%AF%AC">資料轉置：長變寬</a></li>
+</ul>
+</li>
+<li><a href="#%E8%81%AF%E7%B5%90%E8%B3%87%E6%96%99%E6%A1%86">聯結資料框</a>
+<ul>
+<li><a href="#%E5%85%A7%E9%83%A8%E8%81%AF%E7%B5%90">內部聯結</a></li>
+<li><a href="#%E5%B7%A6%E5%A4%96%E9%83%A8%E8%81%AF%E7%B5%90">左外部聯結</a></li>
+<li><a href="#%E5%8F%B3%E5%A4%96%E9%83%A8%E8%81%AF%E7%B5%90">右外部聯結</a></li>
+<li><a href="#%E5%85%A8%E5%A4%96%E9%83%A8%E8%81%AF%E7%B5%90">全外部聯結</a></li>
+<li><a href="#%E5%A4%9A%E5%80%8B%E5%8F%83%E7%85%A7%E6%AC%84%E4%BD%8D">多個參照欄位</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<hr>
+<h1><span id="建立與探索資料框"> 建立與探索資料框</span></h1>
+<h2><span id="建立資料框"> 建立資料框</span></h2>
+<p>建立資料框之前通常習慣先將各個欄位生成為向量，我們大概猜想得到姓名應該是<strong>字串型</strong>的向量，而年齡會是<strong>數值型</strong>的向量。<br>
+資料框特性是可以容納不同的資料格式。</p>
+<p>草帽海賊團主要角色設定有：</p>
+<ul>
+<li>姓名</li>
+<li>性別</li>
+<li>職業</li>
+<li>賞金</li>
+<li>年齡</li>
+<li>生日</li>
+<li>身高</li>
+</ul>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># 角色設定的向量</span>
+name <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Monkey D. Luffy&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Roronoa Zoro&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Nami&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Usopp&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Vinsmoke Sanji&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Tony Tony Chopper&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Nico Robin&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Franky&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Brook&quot;</span><span class="hljs-punctuation">)</span>
+gender <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Male&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Male&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Female&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Male&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Male&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Male&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Female&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Male&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Male&quot;</span><span class="hljs-punctuation">)</span>
+occupation <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Captain&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Swordsman&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Navigator&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Sniper&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Cook&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Doctor&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Archaeologist&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Shipwright&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Musician&quot;</span><span class="hljs-punctuation">)</span>
+bounty <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-number">500000000</span><span class="hljs-punctuation">,</span> <span class="hljs-number">320000000</span><span class="hljs-punctuation">,</span> <span class="hljs-number">66000000</span><span class="hljs-punctuation">,</span> <span class="hljs-number">200000000</span><span class="hljs-punctuation">,</span> <span class="hljs-number">177000000</span><span class="hljs-punctuation">,</span> <span class="hljs-number">100</span><span class="hljs-punctuation">,</span> <span class="hljs-number">130000000</span><span class="hljs-punctuation">,</span> <span class="hljs-number">94000000</span><span class="hljs-punctuation">,</span> <span class="hljs-number">83000000</span><span class="hljs-punctuation">)</span>
+age <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-number">19</span><span class="hljs-punctuation">,</span> <span class="hljs-number">21</span><span class="hljs-punctuation">,</span> <span class="hljs-number">20</span><span class="hljs-punctuation">,</span> <span class="hljs-number">19</span><span class="hljs-punctuation">,</span> <span class="hljs-number">21</span><span class="hljs-punctuation">,</span> <span class="hljs-number">17</span><span class="hljs-punctuation">,</span> <span class="hljs-number">30</span><span class="hljs-punctuation">,</span> <span class="hljs-number">36</span><span class="hljs-punctuation">,</span> <span class="hljs-number">90</span><span class="hljs-punctuation">)</span>
+birthday <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;05-05&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;11-11&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;07-03&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;04-01&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;03-02&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;12-24&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;02-06&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;03-09&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;04-03&quot;</span><span class="hljs-punctuation">)</span>
+height <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-number">174</span><span class="hljs-punctuation">,</span> <span class="hljs-number">181</span><span class="hljs-punctuation">,</span> <span class="hljs-number">170</span><span class="hljs-punctuation">,</span> <span class="hljs-number">176</span><span class="hljs-punctuation">,</span> <span class="hljs-number">180</span><span class="hljs-punctuation">,</span> <span class="hljs-number">90</span><span class="hljs-punctuation">,</span> <span class="hljs-number">188</span><span class="hljs-punctuation">,</span> <span class="hljs-number">240</span><span class="hljs-punctuation">,</span> <span class="hljs-number">277</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 建立草帽海賊團角色設定的資料框</span>
+straw_hat_df <span class="hljs-operator">&lt;-</span> data.frame<span class="hljs-punctuation">(</span>name<span class="hljs-punctuation">,</span> gender<span class="hljs-punctuation">,</span> occupation<span class="hljs-punctuation">,</span> bounty<span class="hljs-punctuation">,</span> age<span class="hljs-punctuation">,</span> birthday<span class="hljs-punctuation">,</span> height<span class="hljs-punctuation">)</span>
+</code></pre>
+<h2><span id="探索資料框"> 探索資料框</span></h2>
+<p>我們可以使用幾個好用的函數來快速探索一個資料框：</p>
+<ul>
+<li>
+<p><code>dim()</code> 函數會回傳資料框的列數與欄數</p>
+</li>
+<li>
+<p><code>head()</code> 函數會回傳資料框的前六列<br>
+<img src="https://i.postimg.cc/QdHV5hQr/2023-07-18-000435.png" alt></p>
+</li>
+<li>
+<p><code>tail()</code> 函數會回傳資料框的後六列<br>
+<img src="https://i.postimg.cc/DwMJY8vZ/2023-07-18-000415.png" alt></p>
+</li>
+<li>
+<p><code>str()</code> 函數不僅會列出資料框的觀察值個數與變數個數，還會列出每個欄位的資* 料類型以及前幾個觀測值<br>
+<img src="https://i.postimg.cc/C5kswbKm/2023-07-18-000344.png" alt></p>
+</li>
+<li>
+<p><code>summary()</code> 函數會回傳量值型變數的敘述性統計資料，以及類別型變數的屬性資料<br>
+<img src="https://i.postimg.cc/rs876Zh8/2023-07-17-235512.png" alt></p>
+</li>
+</ul>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 已經預先載入</span>
+<span class="hljs-comment"># 對 straw_hat_df 使用 dim() 、 head() 、 tail() 、 str() 與 summary()</span>
+<span class="hljs-built_in">dim</span><span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">)</span>
+head<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">)</span>
+tail<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">)</span>
+str<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">)</span>
+summary<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">)</span>
+</code></pre>
+<h2><span id="依據欄位排序資料框"> 依據欄位排序資料框</span></h2>
+<p>有時候我們對於資料框的外觀與排列會有自己的意見，例如會希望依照字母順序或者年齡大小的方式排序，在 R 語言可以使用 <code>order()</code> 函數來實現：<br>
+<code>df[order(df$col, decreasing = FALSE)]</code><br>
+order() 函數預設都是遞增排序，所以 decreasing = 的參數預設為 FALSE，如果我們希望是遞減排序就必須將參數設為 decreasing = TRUE。</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 已經預先載入</span>
+
+<span class="hljs-comment"># 用 height 遞增排序</span>
+straw_hat_df<span class="hljs-punctuation">[</span>order<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-operator">$</span>height<span class="hljs-punctuation">,</span> decreasing <span class="hljs-operator">=</span> <span class="hljs-literal">FALSE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <span class="hljs-punctuation">]</span>
+
+<span class="hljs-comment"># 用 bounty 遞減排序</span>
+straw_hat_df<span class="hljs-punctuation">[</span>order<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-operator">$</span>bounty<span class="hljs-punctuation">,</span> decreasing <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <span class="hljs-punctuation">]</span>
+</code></pre>
+<h1><span id="欄與列的相關技巧"> 欄與列的相關技巧</span></h1>
+<h2><span id="新增欄位"> 新增欄位</span></h2>
+<p>將 <code>favorite_food</code> 加入 <code>straw_hat_df</code> 中。</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 已經預先載入</span>
+<span class="hljs-comment"># 最喜愛料理的向量</span>
+favorite_food <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Meat&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Food matches wine&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Orange&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Fish&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Food matches black tea&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Sweets&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Food matches coffee&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Food matches coke&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Milk&quot;</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將向量加入資料框中成為新的欄位</span>
+straw_hat_df<span class="hljs-operator">$</span>favorite_food <span class="hljs-operator">&lt;-</span> favorite_food
+
+<span class="hljs-comment"># 將資料框輸出在 R Console</span>
+straw_hat_df
+</code></pre>
+<h2><span id="新增欄位2"> 新增欄位（2）</span></h2>
+<p>R 語言有一個很可愛的特性是殊途同歸，做同樣一件事情，可能有多種方式可以達成。<br>
+在這個練習中我們要介紹如何使用 <code>cbind()</code> 函數來將 <code>favorite_food</code> 加入 <code>straw_hat_df</code> 中。<br>
+<code>df &lt;- cbind(df, column_to_add)</code></p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># 最喜愛料理的向量</span>
+favorite_food <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Meat&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Food matches wine&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Orange&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Fish&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Food matches black tea&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Sweets&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Food matches coffee&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Food matches coke&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Milk&quot;</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 利用 cbind() 函數將向量加入資料框中成為新的欄位</span>
+straw_hat_df <span class="hljs-operator">&lt;-</span> cbind<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">,</span> favorite_food<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將資料框輸出在 R Console</span>
+straw_hat_df
+</code></pre>
+<h2><span id="刪除欄位"> 刪除欄位</span></h2>
+<p>將 <code>favorite_food</code> 從 <code>straw_hat_df</code> 中移除，在 R 語言中要將資料框中的欄位移除非常容易，只需要把該欄位指派為 NULL 即可：</p>
+<pre class="highlight"><code class="r">df<span class="hljs-operator">$</span>column_to_delete <span class="hljs-operator">&lt;-</span> <span class="hljs-literal">NULL</span>
+</code></pre>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># 刪除最喜愛料理的欄位</span>
+straw_hat_df<span class="hljs-operator">$</span>favorite_food <span class="hljs-operator">&lt;-</span> <span class="hljs-literal">NULL</span>
+<span class="hljs-comment"># 將資料框輸出在 R Console</span>
+straw_hat_df
+</code></pre>
+<h2><span id="刪除欄位2"> 刪除欄位（2）</span></h2>
+<p>我們也可以利用<code>subset()</code>來刪除欄位，只需在想要刪除的欄位名稱前面加上減號，而且提供了更進階的功能，可以一次刪除多個欄位。<br>
+<code>df &lt;- subset(df, select = -col1)</code><br>
+<code>df &lt;- subset(df, select = c(-col1, -col2, ...))</code></p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># 用 subset 函數一次刪除職業與身高兩個欄位</span>
+straw_hat_df <span class="hljs-operator">&lt;-</span> subset<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">,</span> select <span class="hljs-operator">=</span> <span class="hljs-operator">-</span><span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span>occupation<span class="hljs-punctuation">,</span> height<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將資料框輸出在 R Console</span>
+straw_hat_df
+</code></pre>
+<h2><span id="為欄位重新命名"> 為欄位重新命名</span></h2>
+<p>R 語言可以使用 <code>names()</code> 函數將資料框的「變數名稱」以向量的型態輸出：</p>
+<pre class="highlight"><code class="r"><span class="hljs-built_in">names</span><span class="hljs-punctuation">(</span>df<span class="hljs-punctuation">)</span>
+</code></pre>
+<p>透過指定索引值就可以對欄位重新命名：</p>
+<pre class="highlight"><code class="r"><span class="hljs-built_in">names</span><span class="hljs-punctuation">(</span>df<span class="hljs-punctuation">)</span><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">&lt;-</span> <span class="hljs-string">&quot;new_name_column1&quot;</span>
+</code></pre>
+<p>注意 R 語言的索引值是由 1 起算，這一點跟其他程式語言從 0 起算是不一樣的！</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 資料框已預先載入</span>
+
+<span class="hljs-comment"># 將賞金欄位 straw_hat_df$bounty 改命名為 straw_hat_df$reward</span>
+<span class="hljs-built_in">names</span><span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">)</span><span class="hljs-punctuation">[</span><span class="hljs-built_in">names</span><span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">)</span> <span class="hljs-operator">==</span> <span class="hljs-string">&quot;bounty&quot;</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">&lt;-</span> <span class="hljs-string">&quot;reward&quot;</span>
+
+<span class="hljs-comment"># 將 straw_hat_df 的欄位名稱輸出在 R Console</span>
+<span class="hljs-built_in">names</span><span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">)</span>
+</code></pre>
+<h2><span id="鑽研-subset-函數"> 鑽研 subset() 函數</span></h2>
+<p>前面練習示範的刪除欄位只是 <code>subset()</code> 函數的其中一個功能。<code>subset()</code> 函數在篩選觀測值與變數非常實用<br>
+<code>subset(straw_hat_df, name == &quot;Monkey D. Luffy&quot;, select = c(name, bounty))</code></p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 資料框已預先載入</span>
+
+<span class="hljs-comment"># 篩選賞金大於 1000 萬貝里並且年齡小於 30 歲，欄位只需要包含姓名、賞金與年齡</span>
+subset<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">,</span> bounty <span class="hljs-operator">&gt;</span> <span class="hljs-number">10000000</span> <span class="hljs-operator">&amp;</span> age <span class="hljs-operator">&lt;</span> <span class="hljs-number">30</span><span class="hljs-punctuation">,</span> select <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span>name<span class="hljs-punctuation">,</span> bounty<span class="hljs-punctuation">,</span> age<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
+</code></pre>
+<h2><span id="新增列數"> 新增列數</span></h2>
+<p>除了 <code>cbind()</code> 函數能協助新增欄位，也有相對應的函數可以協助新增列數。<br>
+R 語言有相對應的 <code>rbind()</code> 函數：<br>
+<code>df &lt;- rbind(df, row_to_add)</code></p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 資料框已預先載入</span>
+
+<span class="hljs-comment"># 薇薇公主</span>
+princess_vivi <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Nefeltari Vivi&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Female&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Princess of Alabasta&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-literal">NA</span><span class="hljs-punctuation">,</span> <span class="hljs-number">18</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;02-02&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-literal">NA</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將薇薇公主加入草帽海賊團資料框</span>
+straw_hat_df <span class="hljs-operator">&lt;-</span> rbind<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">,</span> princess_vivi<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 把 straw_hat_df 輸出在 R Console</span>
+straw_hat_df
+</code></pre>
+<h1><span id="生成衍生變數"> 生成衍生變數</span></h1>
+<h2><span id="類別型變數的分類"> 類別型變數的分類</span></h2>
+<p>交戰區分為兩種類型：輔助型與戰鬥型。多加一個欄位紀錄船員們的戰鬥類型 <code>battle_role</code>，這樣的二元重新分類可以善用 <code>ifelse()</code> 函數<br>
+<code>ifelse(test, yes, no)</code><br>
+在對比文字時我們使用一個特殊的運算子符號 %in%，如果運算子左方的文字有出現在右方的向量中，就會回傳 TRUE 反之則回傳 FALSE。</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 已預先載入</span>
+
+<span class="hljs-comment"># 填入適當的值</span>
+straw_hat_df<span class="hljs-operator">$</span>battle_role <span class="hljs-operator">&lt;-</span> ifelse<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-operator">$</span>occupation <span class="hljs-operator">%in%</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Navigator&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Sniper&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Doctor&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Archaeologist&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Support&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Fighter&quot;</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將資料框輸出在 R Console</span>
+straw_hat_df
+</code></pre>
+<h2><span id="類別型變數的分類2"> 類別型變數的分類（2）</span></h2>
+<p>在輔助型戰鬥角色中，再將狙擊手（Sniper）另外歸類為遠距攻擊型（Range），而船醫（Doctor）、考古學家（Archaeologist）與航海士（Navigator）仍然歸類為輔助型（Support），原本歸類為戰鬥型（Fighter）的船長（Captain）、劍士（Swordsman）、廚師（Cook）、船匠（Shipwright）與音樂家（Musician）則維持原歸類，如此一來類別會達到三種，這時採用向量索引值進行歸類。</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 已預先載入</span>
+
+<span class="hljs-comment"># 填入適當的值</span>
+straw_hat_df<span class="hljs-operator">$</span>battle_role<span class="hljs-punctuation">[</span>straw_hat_df<span class="hljs-operator">$</span>occupation <span class="hljs-operator">==</span> <span class="hljs-string">&quot;Sniper&quot;</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">&lt;-</span> <span class="hljs-string">&quot;Range&quot;</span>
+straw_hat_df<span class="hljs-operator">$</span>battle_role<span class="hljs-punctuation">[</span>straw_hat_df<span class="hljs-operator">$</span>occupation <span class="hljs-operator">%in%</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Navigator&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Doctor&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Archaeologist&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">&lt;-</span> <span class="hljs-string">&quot;Support&quot;</span>
+straw_hat_df<span class="hljs-operator">$</span>battle_role<span class="hljs-punctuation">[</span>straw_hat_df<span class="hljs-operator">$</span>occupation <span class="hljs-operator">%in%</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Captain&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Swordsman&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Cook&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Shipwright&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Musician&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">]</span> <span class="hljs-operator">&lt;-</span> <span class="hljs-string">&quot;Fighter&quot;</span>
+
+<span class="hljs-comment"># 將資料框輸出在 R Console</span>
+straw_hat_df
+</code></pre>
+<h2><span id="數值型變數的分類"> 數值型變數的分類</span></h2>
+<p>想要將船員依照賞金級距切分為低、中與高三個等級，這個作法如同新增加了一個類別型變數，但卻是由既有的數值型變數所衍生得到。在 R 語言中，我們可以善用 <code>cut()</code> 函數來做這件事情。<br>
+<code>df$new_column &lt;- cut(df$column, breaks = c(0, break1, break2, Inf), labels = c(&quot;label1&quot;, &quot;label2&quot;, &quot;label3&quot;))</code><br>
+其中 <code>breaks</code> 參數設定必須要有一個最小值與最大值，範例中是指介於 0 - break1 的數值歸類為 <code>label1</code>，介於 <code>break1 - break2</code> 的數值歸類為 <code>label2</code>，而介於 <code>break2 - Inf</code> 的數值歸類為 <code>label3</code>，<code>Inf</code> 在 R 語言中是無限大的數值，你可以在 R Console 中輸入 <code>class(Inf)</code> 來驗證。</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 已預先載入</span>
+
+<span class="hljs-comment"># 填入適當的值</span>
+straw_hat_df<span class="hljs-operator">$</span>bounty_level <span class="hljs-operator">&lt;-</span> cut<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-operator">$</span>bounty<span class="hljs-punctuation">,</span> breaks <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-number">0</span><span class="hljs-punctuation">,</span> <span class="hljs-number">83000000</span><span class="hljs-punctuation">,</span> <span class="hljs-number">180000000</span><span class="hljs-punctuation">,</span> <span class="hljs-literal">Inf</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> labels <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Low&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Medium&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;High&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將資料框輸出在 R Console</span>
+straw_hat_df
+</code></pre>
+<h2><span id="衍生計算數值型變數"> 衍生計算數值型變數</span></h2>
+<p>通常在處理較大數量級的變數時會轉換單位，像是千、百萬或者十億。現在就讓我們來新增一個以百萬元貝里作為單位的變數 <code>bounty_million</code>。</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 已預先載入</span>
+
+<span class="hljs-comment"># 新增一個以百萬元貝里作為單位的 straw_hat_df$bounty_million</span>
+straw_hat_df<span class="hljs-operator">$</span>bounty_million <span class="hljs-operator">&lt;-</span> straw_hat_df<span class="hljs-operator">$</span>bounty<span class="hljs-operator">/</span><span class="hljs-number">1000000</span>
+
+<span class="hljs-comment"># 將資料框輸出在 R Console</span>
+straw_hat_df
+</code></pre>
+<h2><span id="較難的衍生變數"> 較難的衍生變數</span></h2>
+<p>我們要先介紹 <code>Sys.Date()</code> 這個函數，它會回傳現在的系統日期，你可以在 R Console 輸入：</p>
+<ul>
+<li>
+<p><code>Sys.Date()</code><br>
+R Console 會將現在的系統日期以 <code>&quot;%Y-%m-%d&quot;</code> 的格式回傳。%Y 代表四位數字的西元紀年，<code>%m</code> 代表兩位數字的月份，<code>%d</code> 代表兩位數字的日期。而運用 <code>format()</code> 函數可以得到我們需要的西元年。</p>
+</li>
+<li>
+<p><code>format(Sys.Date(), '%Y')</code><br>
+產生出來的西元年格式是字元，如果想要做運算還需要利用 <code>as.numeric()</code> 轉為數值。<br>
+<code>as.numeric(format(Sys.Date(), '%Y'))</code></p>
+</li>
+</ul>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># 產生 sys_date</span>
+sys_date <span class="hljs-operator">&lt;-</span> Sys.Date<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 產生 sys_date_year</span>
+sys_date_year <span class="hljs-operator">&lt;-</span> format<span class="hljs-punctuation">(</span>Sys.Date<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&#x27;%Y&#x27;</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 產生 sys_date_year_num</span>
+sys_date_year_num <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">as.numeric</span><span class="hljs-punctuation">(</span>format<span class="hljs-punctuation">(</span>Sys.Date<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&#x27;%Y&#x27;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將 sys_date 、 sys_date_year 與 sys_date_year_num 輸出在 R Console</span>
+sys_date
+sys_date_year
+sys_date_year_num
+</code></pre>
+<h2><span id="較難的衍生變數2"> 較難的衍生變數（2）</span></h2>
+<p>前面已經生成被儲存為數值類型的系統日期西元年份，接下來用每個船員各自的年齡來計算生日的西元年份，R 語言的使用者在產生衍生變數的過程不喜歡扛著整個資料框，於是我們會先將要使用於計算的變數獨立出來：<br>
+<code>rvector1 &lt;- df$col1</code><br>
+計算後我們會得到船員的生日西元年份，但是你忽然想起來 <code>birthday</code> 是儲存成字元的資料格式，於是在結合之前可別忘了使用 <code>as.character()</code> 函數轉換為字元！</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 與 sys_date_year_num 已預先載入</span>
+
+<span class="hljs-comment"># 宣告 age 向量</span>
+age <span class="hljs-operator">&lt;-</span> straw_hat_df<span class="hljs-operator">$</span>age
+
+<span class="hljs-comment"># 宣告 birthday 向量</span>
+birthday <span class="hljs-operator">&lt;-</span> straw_hat_df<span class="hljs-operator">$</span>birthday
+
+<span class="hljs-comment"># 用 sys_date_year_num 減去 age 並指派給 birth_year</span>
+birth_year <span class="hljs-operator">&lt;-</span> sys_date_year_num<span class="hljs-operator">-</span>age
+
+<span class="hljs-comment"># 利用 as.character 將 birth_year 轉換成字元並指派給 birth_year_char</span>
+birth_year_char <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">as.character</span><span class="hljs-punctuation">(</span>birth_year<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將 birth_year 與 birth_year_char 輸出在 R Console</span>
+birth_year
+birth_year_char
+</code></pre>
+<h2><span id="較難的衍生變數3"> 較難的衍生變數（3）</span></h2>
+<p>接下來要將剛剛生成的 <code>birth_year_char</code> 與 <code>birthday</code> 結合，字串的結合我們要使用 <code>paste()</code> 函數：<br>
+<code>char_pasted &lt;- paste(char1, char2, sep = &quot; &quot;)</code><br>
+注意預設的 <code>sep =</code> 參數是空格，由於西元日期會以 - 連接，所以記得要使用 <code>sep = &quot;-&quot;</code>。結合好以後我們只需使用 <code>as.Date()</code> 函數將字元轉換成日期格式，就可以將這個向量新增至資料框了！</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 、 birthday 與 birth_year_char 已預先載入</span>
+
+<span class="hljs-comment"># 結合 birth_year_char 與 birthday</span>
+birth_date_char <span class="hljs-operator">&lt;-</span> paste<span class="hljs-punctuation">(</span>birth_year_char<span class="hljs-punctuation">,</span> birthday<span class="hljs-punctuation">,</span> sep <span class="hljs-operator">=</span> <span class="hljs-string">&quot;-&quot;</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將 birth_date_char 轉成日期 birth_date</span>
+birth_date <span class="hljs-operator">&lt;-</span> as.Date<span class="hljs-punctuation">(</span>birth_date_char<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將 birth_date 新增至資料框</span>
+straw_hat_df<span class="hljs-operator">$</span>birth_date <span class="hljs-operator">&lt;-</span> birth_date
+
+<span class="hljs-comment"># 將資料框輸出在 R Console</span>
+straw_hat_df
+</code></pre>
+<h1><span id="欄位聚合與資料轉置"> 欄位聚合與資料轉置</span></h1>
+<h2><span id="摘要統計"> 摘要統計</span></h2>
+<p>之前有介紹 <code>summary()</code> 函數，它可以幫助你快速暸解資料框的摘要，而<code>summary()</code> 函數除了可以應用在整個資料框之外，其實也可以使用在單一的變數上：<br>
+<code>summary(df$col)</code><br>
+我們也可以善用簡單的 <code>sum()</code> 函數或 <code>sd()</code> 函數產出統計值，不一定只能仰賴 <code>summary()</code> 函數產出既定的摘要統計值。</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 已預先載入</span>
+
+<span class="hljs-comment"># 對 straw_hat_df 使用 summary()</span>
+summary<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 對 straw_hat_df$height 使用 summary()</span>
+summary<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-operator">$</span>height<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 對 straw_hat_df$bounty 使用 sum()</span>
+<span class="hljs-built_in">sum</span><span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-operator">$</span>bounty<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 對 straw_hat_df$bounty 使用 sd()</span>
+sd<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-operator">$</span>bounty<span class="hljs-punctuation">)</span>
+</code></pre>
+<h2><span id="摘要統計2"> 摘要統計（2）</span></h2>
+<p>接下來學習使用類似在 Excel 中常用的樞紐分析表，為了簡單地達成，使用 <code>ddply()</code> 函數，由於它不是 R 語言的原生函數，而是源自於一個套件 <code>plyr</code>，因此在使用前必須要使用 <code>library()</code> 函數將 <code>plyr</code> 套件載入。<br>
+<code>library(plyr)</code><br>
+<code>ddply()</code> 函數需要輸入較多參數，<code>.variables =</code> 要放的是欲分別摘要的類別型變數，<code>.fun = summarise</code> 在現階段先不做更動，後面則是加上聚合計算欄位的名稱與算式：<br>
+<code>ddply(df, .variables = c(&quot;category1&quot;, &quot;category2&quot;, ...), .fun = summarise, mean_value1 = mean(value))</code></p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 已預先載入</span>
+
+<span class="hljs-comment"># 用 head() 函數看一下 straw_hat_df</span>
+head<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 載入 plyr 套件</span>
+library<span class="hljs-punctuation">(</span>plyr<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 依據 gender 計算平均身高</span>
+ddply<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">,</span> .variables <span class="hljs-operator">=</span> <span class="hljs-string">&quot;gender&quot;</span><span class="hljs-punctuation">,</span> .fun <span class="hljs-operator">=</span> summarise<span class="hljs-punctuation">,</span> avg_height <span class="hljs-operator">=</span> mean<span class="hljs-punctuation">(</span>height<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 依據 battle_role 計算加總賞金</span>
+
+ddply<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">,</span> .variables <span class="hljs-operator">=</span> <span class="hljs-string">&quot;battle_role&quot;</span><span class="hljs-punctuation">,</span> .fun <span class="hljs-operator">=</span> summarise<span class="hljs-punctuation">,</span> ttl_bounty <span class="hljs-operator">=</span> <span class="hljs-built_in">sum</span><span class="hljs-punctuation">(</span>bounty<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
+<span class="hljs-comment"># 依據 gender 與 battle_role 計算平均身高與加總賞金</span>
+ddply<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">,</span> .variables <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;gender&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;battle_role&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> .fun <span class="hljs-operator">=</span> summarise<span class="hljs-punctuation">,</span> avg_height <span class="hljs-operator">=</span> mean<span class="hljs-punctuation">(</span>height<span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> ttl_bounty <span class="hljs-operator">=</span> <span class="hljs-built_in">sum</span><span class="hljs-punctuation">(</span>bounty<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
+</code></pre>
+<h2><span id="資料轉置寬變長"> 資料轉置：寬變長</span></h2>
+<p>我們首先介紹如何將一個寬資料框變為長資料框，在之前資料框中有 2 個整數欄位，分別是 <code>age</code> 和 <code>height</code>，我們可以改用一個類別欄位儲存數值的種類以及一個數值欄位儲存數值。</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 已預先載入</span>
+straw_hat_df
+
+<span class="hljs-comment"># 建立一個新的資料框 straw_hat_wide_df 僅包含姓名、年齡與身高</span>
+straw_hat_wide_df <span class="hljs-operator">&lt;-</span> straw_hat_df<span class="hljs-punctuation">[</span><span class="hljs-punctuation">,</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;name&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;age&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;height&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">]</span>
+straw_hat_wide_df
+</code></pre>
+<h2><span id="資料轉置寬變長2"> 資料轉置：寬變長（2）</span></h2>
+<p>寬資料框變為長資料框時需要使用 <code>gather()</code> 函數，源自 <code>tidyr</code> 這個套件。</p>
+<p>接著使用 <code>gather()</code> 函數來把寬資料框變為長資料框，<code>gather()</code> 函數必須要指定幾個參數，第一個是寬資料框名稱，而 <code>key =</code> 是轉置後用來儲存數值種類的欄位名稱，<code>value =</code> 是轉置後用來儲存數值的欄位名稱。後面則輸入需要被轉置的原始欄位名稱 :<br>
+<code>gather(df_wide, key = 新命名一個變數區分數值的種類, value = 新命名一個變數存放數值, 原始數值欄位1, 原始數值欄位2, ...)</code></p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_wide_df 、 tidyr 已預先載入</span>
+<span class="hljs-comment"># 轉置</span>
+straw_hat_long_df <span class="hljs-operator">&lt;-</span> gather<span class="hljs-punctuation">(</span>straw_hat_wide_df<span class="hljs-punctuation">,</span> key <span class="hljs-operator">=</span> new<span class="hljs-punctuation">,</span> value <span class="hljs-operator">=</span> name<span class="hljs-punctuation">,</span> age<span class="hljs-punctuation">,</span> height<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將資料框輸出在 R Console</span>
+straw_hat_long_df
+</code></pre>
+<h2><span id="資料轉置長變寬"> 資料轉置：長變寬</span></h2>
+<p>進行長資料框轉置為寬資料框時我們使用同樣源於 <code>tidyr</code> 套件的 <code>spread()</code> 函數。函數必須要指定幾個參數，第一個是長資料框名稱，而 <code>key =</code> 是用來儲存數值種類的欄位名稱，<code>value =</code> 是用來儲存數值的欄位名稱：<br>
+<code>spread(df_long, key = 類別欄位, value = 數值欄位)</code></p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_long_df 、 tidyr 已預先載入</span>
+
+<span class="hljs-comment"># 將 straw_hat_long_df 輸出在 R Console看看</span>
+straw_hat_long_df
+
+<span class="hljs-comment"># 轉置</span>
+straw_hat_wide_df <span class="hljs-operator">&lt;-</span> spread<span class="hljs-punctuation">(</span>straw_hat_long_df<span class="hljs-punctuation">,</span> key <span class="hljs-operator">=</span>cate <span class="hljs-punctuation">,</span> value <span class="hljs-operator">=</span> int<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將 straw_hat_wide_df 輸出在 R Console看看</span>
+straw_hat_wide_df
+</code></pre>
+<h1><span id="聯結資料框"> 聯結資料框</span></h1>
+<h2><span id="內部聯結"> 內部聯結</span></h2>
+<p>現在你手邊已經取得了 <code>straw_hat_devil_fruit</code>，接著你想要把它加入原本的資料框中。<br>
+R 語言使用 <code>merge()</code> 函數來進行資料框的聯結，如果你沒有使用過關聯式資料資料庫，你可以想像一下 Excel 的 <code>vlookup</code> 函數功能。<br>
+<code>merge(df1, df2, by = &quot;foreign_key_column&quot;, ...)</code><br>
+<code>by =</code> 參數要指定兩個資料框參照的欄位，由於我們的資料框要參照的欄位名稱是相同的： name，因此在使用 <code>merge()</code> 函數時不需要指定 <code>by =</code> 參數。</p>
+<p>輸出的結果會保留兩個資料框中有參照到的觀測值，這就是俗稱的內部聯結！</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 與 straw_hat_devil_fruit 已預先載入</span>
+
+<span class="hljs-comment"># 聯結資料框</span>
+straw_hat_df_devil_fruit <span class="hljs-operator">&lt;-</span>merge<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">,</span> straw_hat_devil_fruit<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將結果輸出在 R Console</span>
+straw_hat_df_devil_fruit
+</code></pre>
+<h2><span id="左外部聯結"> 左外部聯結</span></h2>
+<p>回憶前一個練習最後的輸出，我們原本的資料框有 9 個船員，但是其中只有 4 個船員是惡魔果實能力者，因此當 <code>merge()</code> 函數沒有做其他參數設定時，預設即為內部聯結，輸出結果只會有兩個資料框交集的船員。</p>
+<p>如果想要保留所有船員的資料，要在 <code>merge()</code> 函數中額外指定參數 <code>all.x = TRUE</code> 請 R 語言將第一個資料框的所有觀測值都保留下來：<br>
+<code>merge(df1, df2, all.x = TRUE)</code><br>
+輸出的結果會保留第一個資料框中的所有觀測值，而參照不到惡魔果實的船員會以遺漏值記錄，這就是俗稱的左外部聯結！</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 與 straw_hat_devil_fruit 已預先載入</span>
+
+<span class="hljs-comment"># 左外部聯結</span>
+straw_hat_df_devil_fruit <span class="hljs-operator">&lt;-</span> merge<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">,</span> straw_hat_devil_fruit<span class="hljs-punctuation">,</span> all.x <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將結果輸出在 R Console</span>
+straw_hat_df_devil_fruit
+</code></pre>
+<h2><span id="右外部聯結"> 右外部聯結</span></h2>
+<p>與前一個練習相呼應，既然有保留第一個資料框所有觀測值的左外部聯結，我們一定也有保留第二個資料框所有觀測值的右外部聯結。想要保留所有惡魔果實能力者的資料，要在 <code>merge()</code> 函數中額外指定參數 <code>all.y = TRUE</code> 請 R 語言將第二個資料框的所有觀測值都保留下來：<br>
+<code>merge(df1, df2, all.y = TRUE)</code><br>
+為了展示右外部聯結的效果，我們稍微修改了第一個資料框 <code>straw_hat_df</code> 留下四個船員的角色設定，兩個能力者與兩個非能力者。輸出的結果會保留第二個資料框中的所有觀測值，而參照不到主要角色設定的惡魔果實能力者欄位會以遺漏值記錄，這就是俗稱的右外部聯結！</p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 與 straw_hat_devil_fruit 已預先載入</span>
+
+<span class="hljs-comment"># 將 straw_hat_df 輸出在 R Console</span>
+straw_hat_df
+
+<span class="hljs-comment"># 右外部聯結</span>
+straw_hat_df_devil_fruit <span class="hljs-operator">&lt;-</span> merge<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">,</span> straw_hat_devil_fruit<span class="hljs-punctuation">,</span> all.y <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將結果輸出在 R Console</span>
+straw_hat_df_devil_fruit
+</code></pre>
+<h2><span id="全外部聯結"> 全外部聯結</span></h2>
+<p>既然有保留第一個資料框所有觀測值的左外部聯結，亦有保留第二個資料框所有觀測值的右外部聯結，聰明如你一定想到我們必定有保留兩個資料框所有觀測值的聯結，你的推測沒有錯，那就是俗稱的全外部聯結，在 <code>merge()</code> 函數中額外指定參數 <code>all.x = TRUE</code> 以及 <code>all.y = TRUE</code> 請 R 語言將兩個資料框的所有觀測值都保留下來：<br>
+<code>merge(df1, df2, all.x = TRUE, all.y = TRUE)</code></p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># straw_hat_df 與 straw_hat_devil_fruit 已預先載入</span>
+
+<span class="hljs-comment"># 將 straw_hat_df 輸出在 R Console</span>
+straw_hat_df
+
+<span class="hljs-comment"># 全外部聯結</span>
+straw_hat_df_devil_fruit <span class="hljs-operator">&lt;-</span> merge<span class="hljs-punctuation">(</span>straw_hat_df<span class="hljs-punctuation">,</span> straw_hat_devil_fruit<span class="hljs-punctuation">,</span> all.x <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">,</span> all.y <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將結果輸出在 R Console</span>
+straw_hat_df_devil_fruit
+</code></pre>
+<h2><span id="多個參照欄位"> 多個參照欄位</span></h2>
+<p>們如果要參照不只一個欄位時，在 <code>by = </code>的參數設定要使用 <code>c()</code> 將多個參照欄位寫入：<br>
+<code>merge(df1, df2, by = c(&quot;col1&quot;, &quot;col2&quot;, ...))</code></p>
+<pre class="highlight"><code class="r"><span class="hljs-comment"># luffy_event_bounty 與 luffy_event 都已預先載入</span>
+
+<span class="hljs-comment"># 將 luffy_event_bounty 與 luffy_event 輸出在 R Console</span>
+luffy_event
+luffy_event_bounty
+
+<span class="hljs-comment"># 內部聯結</span>
+luffy_bounty <span class="hljs-operator">&lt;-</span> merge<span class="hljs-punctuation">(</span>luffy_event<span class="hljs-punctuation">,</span> luffy_event_bounty<span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># 將 luffy_bounty 輸出在 R Console</span>
+luffy_bounty
+</code></pre>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 棉花糖的小窩
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;棉花糖
+        </div>
+        
+    </div>
+</footer>
+                </div>
+            </transition>
+            
+                
+                
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+
+
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        
+<div id="RightDownBtn">
+    <a id="btn" href="javascript:void(0)" target="_self" style="">
+        <svg style=" width: 1.5em;height: 1.5em;" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-xuanfufanhuidingbu">
+                <svg id="icon-xuanfufanhuidingbu" viewBox="0 0 1024 1024">
+                    <path d="M0 512c0 282.624 229.376 512 512 512s512-229.376 512-512S794.624 0 512 0 0 229.376 0 512z"
+                        fill="#1989FA"></path>
+                    <path
+                        d="M736.768 263.68H287.232c-12.288 0-23.04 10.752-23.04 23.04s10.752 23.04 23.04 23.04H737.28c12.288 0 23.04-10.752 23.04-23.04s-10.752-23.04-23.552-23.04m-207.872 105.472c-1.536-1.536-4.608-4.608-7.68-4.608-3.072-1.536-6.144-1.536-7.68-1.536-3.072 0-6.144 0-7.68 1.536-3.072 1.536-4.608 3.072-7.68 4.608l-186.368 186.368c-9.216 9.216-9.216 23.04 0 32.768 9.216 9.216 23.04 9.216 32.768 0l145.92-145.92V737.28c0 12.288 10.752 23.04 23.04 23.04s23.04-10.752 23.04-23.04V442.368l145.92 145.92c4.608 4.608 10.752 6.144 16.896 6.144 6.144 0 12.288-1.536 16.896-6.144 9.216-9.216 9.216-23.04 0-32.768l-187.392-186.368z"
+                        fill="#FFFFFF"></path>
+                </svg>
+            </use>
+        </svg>
+
+    <a id="say" href="#vcomments" target="_self">
+        <svg style=" width: 1.5em;height: 1.5em;" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-ketangtaolun">
+                <svg id="icon-ketangtaolun" viewBox="0 0 1234 1024">
+                    <path
+                        d="M736.914286 393.472c-20.114286-46.628571-47.542857-88.685714-84.114286-121.6-34.742857-34.742857-74.971429-62.171429-123.428571-82.285714-46.628571-20.114286-95.085714-30.171429-149.028572-29.257143-53.942857 0-102.4 11.885714-149.028571 32-46.628571 20.114286-86.857143 49.371429-121.6 84.114286-34.742857 34.742857-60.342857 76.8-81.371429 124.342857-20.114286 47.542857-28.342857 96.914286-28.342857 151.771428 1.828571 50.285714 11.885714 98.742857 29.257143 141.714286 19.2 42.971429 42.057143 82.285714 72.228571 116.114286 8.228571 10.057143 14.628571 21.942857 17.371429 34.742857 1.828571 11.885714-2.742857 21.942857-14.628572 27.428571-21.942857 11.885714-49.371429 20.114286-79.542857 25.6-5.485714 1.828571 5.485714 5.485714 34.742857 15.542857 29.257143 10.057143 74.057143 17.371429 134.4 22.857143 27.428571 2.742857 52.114286 4.571429 74.057143 5.485715h59.428572c17.371429 0 32.914286-1.828571 47.542857-2.742858 14.628571-1.828571 27.428571-2.742857 40.228571-4.571428 49.371429-5.485714 95.085714-19.2 137.142857-42.057143 42.971429-21.942857 79.542857-50.285714 111.542858-85.028571 32-34.742857 56.685714-74.057143 74.057142-118.857143 17.371429-44.8 25.6-92.342857 25.6-143.542857 4.571429-53.028571-6.4-104.228571-26.514285-151.771429"
+                        fill="#E6E6E6"></path>
+                    <path
+                        d="M736.914286 393.472c-20.114286-46.628571-47.542857-88.685714-84.114286-121.6-34.742857-34.742857-74.971429-62.171429-123.428571-82.285714-46.628571-20.114286-95.085714-30.171429-149.028572-29.257143-53.942857 0-102.4 11.885714-149.028571 32-46.628571 20.114286-86.857143 49.371429-121.6 84.114286-34.742857 34.742857-60.342857 76.8-81.371429 124.342857-20.114286 47.542857-28.342857 96.914286-28.342857 151.771428 1.828571 50.285714 11.885714 98.742857 29.257143 141.714286 19.2 42.971429 42.057143 82.285714 72.228571 116.114286 8.228571 10.057143 14.628571 21.942857 17.371429 34.742857 1.828571 11.885714-2.742857 21.942857-14.628572 27.428571-21.942857 11.885714-49.371429 20.114286-79.542857 25.6-5.485714 1.828571 5.485714 5.485714 34.742857 15.542857 29.257143 10.057143 74.057143 17.371429 134.4 22.857143 27.428571 2.742857 52.114286 4.571429 74.057143 5.485715h59.428572c17.371429 0 32.914286-1.828571 47.542857-2.742858 14.628571-1.828571 27.428571-2.742857 40.228571-4.571428 49.371429-5.485714 95.085714-19.2 137.142857-42.057143 42.971429-21.942857 79.542857-50.285714 111.542858-85.028571 32-34.742857 56.685714-74.057143 74.057142-118.857143 17.371429-44.8 25.6-92.342857 25.6-143.542857 4.571429-53.028571-6.4-104.228571-26.514285-151.771429"
+                        fill="#22E5B1"></path>
+                    <path
+                        d="M1101.714286 933.814857c-14.628571-8.228571-20.114286-20.114286-19.2-34.742857 2.742857-15.542857 10.057143-29.257143 21.942857-42.971429 37.485714-42.057143 67.657143-89.6 91.428571-144.457142 22.857143-56.685714 36.571429-116.114286 37.485715-179.2 1.828571-67.657143-11.885714-131.657143-36.571429-191.085715s-59.428571-111.542857-102.4-156.342857c-42.971429-44.8-94.171429-79.542857-153.6-106.057143-58.514286-26.514286-120.685714-39.314286-187.428571-41.142857-66.742857-1.828571-129.828571 11.885714-188.342858 36.571429-59.428571 24.685714-109.714286 59.428571-154.514285 102.4-44.8 43.885714-79.542857 94.171429-106.057143 153.6-25.6 59.428571-39.314286 123.428571-39.314286 189.257143-1.828571 64 10.057143 124.342857 32 181.028571 21.942857 56.685714 53.942857 106.971429 94.171429 150.857143 40.228571 42.971429 86.857143 79.542857 140.8 106.971428 53.942857 29.257143 112.457143 46.628571 175.542857 52.114286 15.542857 2.742857 32.914286 4.571429 52.114286 5.485714 19.2 1.828571 39.314286 2.742857 60.342857 2.742858 21.942857 1.828571 47.542857 1.828571 74.971428 0 27.428571-1.828571 57.6-2.742857 92.342857-7.314286 76.8-7.314286 133.485714-17.371429 170.971429-29.257143 37.485714-11.885714 52.114286-19.2 44.8-20.114286-39.314286-3.657143-72.228571-13.714286-101.485714-28.342857"
+                        fill="#E6E6E6"></path>
+                    <path
+                        d="M1056 897.243429c-14.628571-8.228571-20.114286-20.114286-19.2-34.742858 2.742857-15.542857 10.057143-29.257143 21.942857-42.971428 37.485714-42.057143 67.657143-89.6 91.428572-144.457143 22.857143-56.685714 36.571429-116.114286 37.485714-179.2 1.828571-67.657143-11.885714-131.657143-36.571429-191.085714-24.685714-59.428571-59.428571-111.542857-102.4-156.342857-42.971429-45.714286-93.257143-80.457143-152.685714-106.971429-59.428571-25.6-121.6-38.4-188.342857-40.228571-66.742857-1.828571-129.828571 11.885714-188.342857 36.571428-59.428571 24.685714-109.714286 59.428571-154.514286 102.4-44.8 43.885714-79.542857 94.171429-106.057143 153.6-25.6 59.428571-39.314286 123.428571-39.314286 189.257143-1.828571 64 10.057143 124.342857 32 181.028571 21.942857 56.685714 53.942857 106.971429 94.171429 150.857143 40.228571 42.971429 86.857143 79.542857 140.8 106.971429 53.942857 29.257143 112.457143 46.628571 175.542857 52.114286 15.542857 2.742857 32.914286 4.571429 52.114286 5.485714 19.2 1.828571 39.314286 2.742857 60.342857 2.742857 21.942857 1.828571 47.542857 1.828571 74.971429 0 27.428571-1.828571 57.6-2.742857 92.342857-7.314286 76.8-7.314286 133.485714-17.371429 170.971428-29.257143 37.485714-11.885714 52.114286-19.2 44.8-20.114285-39.314286-3.657143-72.228571-13.714286-101.485714-28.342857"
+                        fill="#16D7A3"></path>
+                    <path
+                        d="M896.914286 429.714286H739.657143L768 223.085714c1.828571-5.485714-2.742857-11.885714-8.228571-14.628571-5.485714-4.571429-12.8-4.571429-17.371429 0L499.2 496.457143c-1.828571 1.828571-2.742857 4.571429-4.571429 5.485714-0.914286 1.828571-0.914286 4.571429-0.914285 7.314286 0 8.228571 7.314286 15.542857 15.542857 15.542857h159.085714l-30.171428 233.142857v2.742857c-1.828571 5.485714 0 11.885714 4.571428 15.542857 5.485714 5.485714 15.542857 5.485714 21.942857 0l244.114286-320.914285c2.742857-2.742857 4.571429-7.314286 4.571429-11.885715 0-6.4-7.314286-13.714286-16.457143-13.714285"
+                        fill="#FFFFFF"></path>
+                </svg>
+            </use>
+        </svg>
+    </div>
+
+<script>
+    
+    function BackTOP() {
+        $("#btn").hide();
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 50) {
+                    $("#btn").fadeIn(200);
+                } else {
+                    $("#btn").fadeOut(200);
+                }
+            });
+            $("#btn").click(function () {
+                $('body,html').animate({
+                        scrollTop: 0
+                    },
+                    500);
+                return false;
+            });
+        });
+        $(function () {
+            $("#say").click(function () {
+                $('body,html').animate({
+                        scrollTop: $('html, body').get(0).scrollHeight
+                    },
+                    500);
+                return false;
+            });
+        })
+    }
+
+    $('#readmode').click(function () {
+            $('body').toggleClass('read-mode')
+        })
+        
+    function SiderMenu() {
+        $('#main-container').toggleClass('open');
+        $('.iconflat').css('width', '50px').css('height', '50px');
+        $('.openNav').css('height', '50px');
+        $('#main-container,#mo-nav,.openNav').toggleClass('open')
+    }
+
+    BackTOP();
+</script>
+
+<style>
+    #RightDownBtn {
+        position: fixed;
+        left: 1.875rem;
+        bottom: 30rem;
+        padding: 0.3125rem 0.625rem;
+        background: #fff;
+        border-radius: 0.1875rem;
+        box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .4);
+        transition: 0.3s ease all;
+        z-index: 1000;
+        align-items: flex-end;
+        flex-direction: column;
+        display: -moz-flex;
+        display: flex;
+        float: right;
+    }
+
+    #RightDownBtn>a,
+    #RightDownBtn>label {
+        width: 1.5em;
+        height: 1.5em;
+        margin: 0.3125rem 0;
+        transition: .2s cubic-bezier(.25, .46, .45, .94);
+    }
+
+    a {
+        color: #3273dc;
+        cursor: pointer !important;
+        text-decoration: none;
+    }
+    /* font color */
+</style>
+
+<!-- left side bar.end -->
+
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/hk416_3401/model.json"},"display":{"position":"right","width":300,"height":450},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+    
+</html>
+

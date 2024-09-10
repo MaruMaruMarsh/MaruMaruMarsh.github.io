@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/mhchem.min.js" integrity="sha384-LIgAiYlGSAdpNC9+YDjDPF6JeS/RRIumtNo0CmyQERZ/+g0h9MbuYQwf/5pQ4Y4M" crossorigin="anonymous"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        <script type="text/x-mathjax-config">
+
+</script>
+        <meta charset="utf-8" />
+        <title>生理學介紹 | 棉花糖的小窩</title>
+        <meta name="author" content="棉花糖" />
+        <meta name="description" content="點文章跳轉的時候會播歌請注意一下" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<script src="//cdn.jsdelivr.net/npm/vue-aplayer"></script>
+<script>
+  Vue.component('aplayer', VueAPlayer)
+</script>
+
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        <canvas
+        id="fireworks"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"
+        ></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+        <script>
+            var cursor = new MouseFollower();
+        </script>
+        <div id="pjax-container">
+                <div class="aplayer" 
+                    data-id="4948519534" 
+                    data-server="netease" 
+                    data-type="playlist" 
+                    data-fixed="true" 
+                    data-autoplay="true"
+                    data-order="random" 
+                    data-volume="0" 
+                    data-theme="#cc543a" 
+                    data-preload="none">
+                    
+                </div>
+
+    <!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+    <body>
+        <div id="layout">
+
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>進度條正在跑跑中</p>
+                        <img src="/images/loading.gif" />
+                        
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>棉花糖的小窩</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+        <a href="/Links">
+            <i class="fa-solid fa-link fa-fw"></i>
+            <span>&ensp;Links</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;棉花糖的小窩</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+                <a href="/Links">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-link fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Links</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+
+    <!--pjax：防止跳转页面音乐暂停-->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    <div>
+        <h1>生理學介紹</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/6/13
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E7%94%9F%E9%86%AB/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                生醫
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        
+    <div id="aplayer-SGgPobnf" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<h1><span id="一-概要"> 一、概要</span></h1>
+<p><img src="https://i.imgur.com/43puTYI.jpeg" alt></p>
+<ul>
+<li>中樞神經系統 (central nervous system, CNS): <strong>大腦</strong>和<strong>脊髓</strong></li>
+<li>周邊神經系統 (peripheral nervous system, PNS): 所有神經及其他除了中樞系統以外的部分</li>
+</ul>
+<h1><span id="二-神經系統的細胞組成"> 二、神經系統的細胞組成</span></h1>
+<p><img src="https://i.imgur.com/jpp88v0.jpg" alt></p>
+<h3><span id="神經元neuron"> 神經元(neuron)</span></h3>
+<p><img src="https://i.imgur.com/a3lnQUZ.png" alt><br>
+超過一億個，形成<strong>迴路(circuits)<strong>或</strong>網路(networks)</strong></p>
+<h4><span id="神經元種類"> 神經元種類</span></h4>
+<ol>
+<li>多極性神經元 (multipolar neuron)<br>
+<img src="https://i.imgur.com/71FY11x.jpg" width="300" height="300"><br>
+中樞神經裡最豐富的種類
+<blockquote>
+<p>例：大腦、脊髓</p>
+</blockquote>
+</li>
+<li>偽單極神經元 (pseudounipolar neuron)<br>
+<img src="https://i.imgur.com/2jCrCkC.jpg" width="300" height="300"><br>
+樹突性軸突接收從周邊來的感覺訊息，越過細胞體再送到脊髓
+<blockquote>
+<p>脊神經節感覺神經元</p>
+</blockquote>
+</li>
+<li>雙極性神經元 (bipolar neuron)<br>
+<img src="https://i.imgur.com/e4oYEky.jpg" width="300" height="300"><br>
+主要的樹突接收突觸性的訊息，接著傳送到細胞體，再經由軸突傳到下一層細胞
+<blockquote>
+<p>例：視網膜、嗅覺上皮、內耳</p>
+</blockquote>
+</li>
+</ol>
+<h3><span id="神經元傳遞"> 神經元傳遞</span></h3>
+  <img src="https://i.imgur.com/P8YXOcT.jpg">
+<ol>
+<li>傳入神經元（Afferent neurons）
+<ul>
+<li>訊號傳遞途徑：周邊神經接收器 -&gt; 中樞神經系統</li>
+<li>單向自細胞體在PNS中較長的軸突經由另一個細胞體較短的軸突傳到CNS</li>
+</ul>
+</li>
+<li>傳出神經元（Efferent neurons）
+<ul>
+<li>訊號傳遞途徑：中樞神經系統 -&gt; 傳出神經元（特別是肌肉、腺體、神經元和其他細胞）</li>
+<li>擁有多個樹突和一小段軸突的細胞體在CNS中，大部分軸突在PNS</li>
+</ul>
+</li>
+<li>中間神經元（Interneurons）
+<ul>
+<li>作為收集器和信號改變器</li>
+<li>將輸入、輸出神經元集合成反射迴路</li>
+<li>全位於CNS中</li>
+<li>佔比全部的神經元中99%以上</li>
+</ul>
+</li>
+</ol>
+<h4><span id="突觸synapse種類"> 突觸(synapse)種類</span></h4>
+<p>連接兩個神經元細胞。電位訊號經由突觸從神經元傳送到另一神經元</p>
+<blockquote>
+<ul>
+<li>突觸前神經元 (presynaptic neuron)：訊息的<strong>發送</strong></li>
+<li>突觸後神經元 (postsynaptic neuron)：訊息的<strong>接收</strong></li>
+</ul>
+</blockquote>
+<ol>
+<li>軸突 - 樹突：CNS中最常見<br>
+<img src="https://i.imgur.com/flUsjSR.jpg" width="400" height="200"></li>
+<li>軸突 - 細胞體：CNS中較少見<br>
+<img src="https://i.imgur.com/W6xYbgq.jpg" width="400" height="250"></li>
+<li>軸突 - 軸突：通常在軸丘或接近軸丘處，可以提供較強的作用<br>
+<img src="https://i.imgur.com/TF4EeJz.jpg" width="400" height="350"></li>
+</ol>
+<h3><span id="神經膠細胞glia-cell"> 神經膠細胞(glia cell)</span></h3>
+<ul>
+<li>支撐和保護神經元/免疫反應</li>
+<li>在數量上 &amp; 相對於神經元的比例，脊椎動物都高於無脊椎動物</li>
+</ul>
+<h4><span id="神經膠細胞種類"> 神經膠細胞種類</span></h4>
+<blockquote>
+<p>共通：提供神經元結構、代謝的支撐。一生都維持分裂能力。</p>
+</blockquote>
+<ol>
+<li>星狀膠細胞（Astrocytes）
+<ul>
+<li>主要的功能為支持和提供營養給神經元</li>
+<li>回收突觸過量的神經傳導物質和維持神經元周圍的離子（平衡：吸收Glutamate再轉成Glutamine）</li>
+<li>末端的足排列在腦部的血管壁上，為血腦屏障中相當重要的一部分</li>
+<li>放射狀膠細胞(radial glia)：發育過程中提供方向和支架給軸突移動和導向</li>
+</ul>
+</li>
+<li>寡樹突膠細胞（Oligodendroglia）
+<ul>
+<li>CNS中形成髓鞘的細胞(myelinating cells)，提供絕緣和保護層</li>
+<li>髓鞘的厚度和軸突的直徑有密切的關係，髓鞘在規則的區段會有間隙，形成蘭氏節(node of Ranvier)，可以讓離子通過</li>
+</ul>
+</li>
+<li>許旺氏細胞（Schwann cells）
+<ul>
+<li>周邊神經系統(PNS)形成髓鞘的細胞</li>
+<li>在神經肌肉接合(Neuromuscular junction)處或運動神經和肌肉纖維連接處，其會吸收過量的神經傳導物質和維持離子平衡，幫助訊號有效的傳遞</li>
+</ul>
+</li>
+<li>微小膠細胞（Microglia）
+<ul>
+<li>為中樞神經系統中的<strong>免疫細胞</strong>，遍布在中樞神經系統中</li>
+<li>被活化後可被吸引到神經元受傷的區域吞噬細胞殘骸和參與抗原呈現，和血液中巨噬細胞的功能相似</li>
+</ul>
+</li>
+<li>多突觸細胞（Polydendrocytes）
+<ul>
+<li>為組成腦部的幹細胞，可以形成膠細胞和神經元</li>
+<li>在去髓鞘性疾病特別有趣，因為他們會被活化而作為寡樹突細胞的前驅細胞，為第一階段的髓鞘再生</li>
+</ul>
+</li>
+<li>室管膜細胞（Ependymal cells）
+<ul>
+<li>為<strong>上皮細胞</strong>排列在腦室表面，將腦脊液和神經組織或神經纖維網分開</li>
+<li>表面的頂端有許多的纖毛，有些腦室的室管膜細胞具有特別的功能而形成脈絡叢Choroid plexus，能產生腦脊髓液(500ml/day)</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>血腦屏障（blood-brain barrier / BBB）</p>
+<ul>
+<li>目的：防止可能導致腦部感染的循環毒素或病原體，同時允許重要的營養物質到達大腦</li>
+<li>中樞神經系統需要精確調節的環境，不可以被營養、代謝物或其他血液輸送物質波動而影響</li>
+<li>上皮細胞藉由tighy juctions緊密連接，而星狀膠細胞突起從從神經纖維網那側接觸血管，有效將血液和神經纖維網分開</li>
+<li>小分子的脂質分子、水分和氣體可以藉由擴散通過血腦屏障，其他的物質必須用主動運輸</li>
+</ul>
+</blockquote>
+<h1><span id="三-基礎神經生理學"> 三、基礎神經生理學</span></h1>
+<h3><span id="定義介紹"> 定義介紹</span></h3>
+<ul>
+<li>離子穿越細胞膜：離子的移動可以使訊號傳遞並產生動作電位，也包括了神經傳導物質的作用</li>
+<li>平衡電位：細胞內外的某離子有濃度差異時給予一個特定細胞膜內外電位差並造成離子不再有淨移動，即平衡時就稱為該離子的平衡電位</li>
+<li>膜電位：細胞膜內外帶電荷的離子分布不平均，使細胞膜內的電壓較細胞膜外為<strong>負</strong>，此電位差稱為靜止膜電位resting membrane potential(RMP)，形成原因主要有
+<ul>
+<li>鈉鉀幫浦</li>
+<li>細胞內的蛋白分子大、帶負電荷無法通過細胞膜</li>
+</ul>
+</li>
+</ul>
+<h3><span id="離子通道種類"> 離子通道種類</span></h3>
+<ol>
+<li>電位控制型離子通道（voltage-gated ion channels）
+<ul>
+<li>藉由細胞膜電位調節</li>
+</ul>
+</li>
+<li>配位體控制型離子通道（ligand-gated ion channels）
+<ul>
+<li>藉由特定的分子結合到離子通道，打開離子通道孔讓離子通過</li>
+</ul>
+</li>
+<li>機械控制型離子通道（mechanically gated ion channels）
+<ul>
+<li>透過機械性作用打開</li>
+</ul>
+</li>
+<li>溫度控制型離子通道（thermally gated ion channels）
+<ul>
+<li>由溫度調節，通道蛋白作為溫度計，溫度改變時打開通道孔</li>
+</ul>
+</li>
+</ol>
+<h3><span id="動作電位action-potential"> 動作電位（action potential）</span></h3>
+<ul>
+<li>動作電位為神經元間的溝通方式</li>
+<li>其機制為細胞膜對於不同離子的通透性改變，首先在動作電位的起始是納離子，接著在恢復期是鉀離子</li>
+</ul>
+<blockquote>
+<p>全有全無(all-or-none law)：給予閾值以上的刺激，則以恆定、最大的強度傳導。反之，則不會產生動作電位<br>
+去極化(depolarization)：納離子通道打開 &lt;-&gt; 超極化(hyperpolarization)：鉀離子通道打開</p>
+</blockquote>
+<ul>
+<li>不反應期(refractory period)：當細胞膜處於動作電位時，它對另外的一個刺激不會產生反應
+<ol>
+<li>絕對不反應期 absolute refractory period(ARP)</li>
+<li>相對不反應期 relative refractory period(RRP)</li>
+</ol>
+</li>
+</ul>
+<h3><span id="神經衝動的傳導方式"> 神經衝動的傳導方式</span></h3>
+<ol>
+<li>連續傳導（continuous conduction）<br>
+無髓鞘纖維傳導神經衝動(較慢)</li>
+<li>跳躍傳導（saltatory conduction）<br>
+有髓鞘的神經纖維在產生動作電位時，電流是由一個蘭氏節到另一個蘭氏節跳躍(較快，耗能少)</li>
+</ol>
+<h3><span id="突觸間傳導"> 突觸間傳導</span></h3>
+<h4><span id="突觸類型"> 突觸類型</span></h4>
+<ol>
+<li>電性突觸（electrical synapse）
+<ul>
+<li>神經元之間的直接連接，透過縫隙連接(gap junctions)傳遞電流。為一個具有孔洞的蛋白質複合體(連接蛋白connexon)，提供了低電阻的電性通道而使離子流到下一個神經元</li>
+<li>特徵：快速、雙向</li>
+</ul>
+</li>
+<li>化學性突觸（chemical synapse）
+<ul>
+<li>藉由突觸前神經元的突觸囊泡釋放化學的神經傳遞物質(neurotransmitter)，經由擴散作用通過突觸間隙而引起突觸後細胞產生反應</li>
+</ul>
+</li>
+</ol>
+<h4><span id="突觸間互動"> 突觸間互動</span></h4>
+<ul>
+<li>突觸訊號傳遞</li>
+<li>突觸的傳導
+<ul>
+<li>興奮性傳導(excitatory conduction)
+<ul>
+<li>興奮性的傳遞物質與突觸後細胞膜上接收器作用，使其易於興奮(膜電位增加)，此種位化稱為興奮性突觸後電位excitatory postsynaptic potential(EPSP)</li>
+<li>若有70個突觸球約在同一時間釋出其神經傳遞物質，則合併的效果可能引發一次神經動此為加成作用</li>
+</ul>
+</li>
+<li>抑制性傳導(inhibitory conduction)
+<ul>
+<li>抑制性的傳遞物質與突觸後細胞膜上接收器作用，使細胞內的電位產生過極化，這種化稱為抑制性突觸後電位 inhibitory postsynaptic potential(IPSP)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>突觸的整合<br>
+突觸後神經元是整合器，能接受興奮、抑制性訊號並整合之(時間加成/空間加成)<br>
+突觸後神經元可能以下列幾種方式反應
+<ul>
+<li>興奮&gt;抑制
+<ul>
+<li>總合&lt;刺激閾值：只能產生促進作用而不能引起衝動</li>
+<li>總合&gt;刺激閾值：引起一個衝動</li>
+</ul>
+</li>
+<li>抑制&gt;興奮：抑制衝動的產生</li>
+</ul>
+</li>
+</ul>
+<h3><span id="神經傳導物質"> 神經傳導物質</span></h3>
+<p>神經傳遞物質必須滿足以下幾個條件：</p>
+<ol>
+<li>存在於突觸</li>
+<li>能改變突觸後膜對離子的通透性</li>
+<li>能在突觸間隙內被酶分解而失去活性，或被回收到突觸內</li>
+</ol>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 棉花糖的小窩
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;棉花糖
+        </div>
+        
+    </div>
+</footer>
+                </div>
+            </transition>
+            
+                
+                
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+
+
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        
+<div id="RightDownBtn">
+    <a id="btn" href="javascript:void(0)" target="_self" style="">
+        <svg style=" width: 1.5em;height: 1.5em;" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-xuanfufanhuidingbu">
+                <svg id="icon-xuanfufanhuidingbu" viewBox="0 0 1024 1024">
+                    <path d="M0 512c0 282.624 229.376 512 512 512s512-229.376 512-512S794.624 0 512 0 0 229.376 0 512z"
+                        fill="#1989FA"></path>
+                    <path
+                        d="M736.768 263.68H287.232c-12.288 0-23.04 10.752-23.04 23.04s10.752 23.04 23.04 23.04H737.28c12.288 0 23.04-10.752 23.04-23.04s-10.752-23.04-23.552-23.04m-207.872 105.472c-1.536-1.536-4.608-4.608-7.68-4.608-3.072-1.536-6.144-1.536-7.68-1.536-3.072 0-6.144 0-7.68 1.536-3.072 1.536-4.608 3.072-7.68 4.608l-186.368 186.368c-9.216 9.216-9.216 23.04 0 32.768 9.216 9.216 23.04 9.216 32.768 0l145.92-145.92V737.28c0 12.288 10.752 23.04 23.04 23.04s23.04-10.752 23.04-23.04V442.368l145.92 145.92c4.608 4.608 10.752 6.144 16.896 6.144 6.144 0 12.288-1.536 16.896-6.144 9.216-9.216 9.216-23.04 0-32.768l-187.392-186.368z"
+                        fill="#FFFFFF"></path>
+                </svg>
+            </use>
+        </svg>
+
+    <a id="say" href="#vcomments" target="_self">
+        <svg style=" width: 1.5em;height: 1.5em;" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-ketangtaolun">
+                <svg id="icon-ketangtaolun" viewBox="0 0 1234 1024">
+                    <path
+                        d="M736.914286 393.472c-20.114286-46.628571-47.542857-88.685714-84.114286-121.6-34.742857-34.742857-74.971429-62.171429-123.428571-82.285714-46.628571-20.114286-95.085714-30.171429-149.028572-29.257143-53.942857 0-102.4 11.885714-149.028571 32-46.628571 20.114286-86.857143 49.371429-121.6 84.114286-34.742857 34.742857-60.342857 76.8-81.371429 124.342857-20.114286 47.542857-28.342857 96.914286-28.342857 151.771428 1.828571 50.285714 11.885714 98.742857 29.257143 141.714286 19.2 42.971429 42.057143 82.285714 72.228571 116.114286 8.228571 10.057143 14.628571 21.942857 17.371429 34.742857 1.828571 11.885714-2.742857 21.942857-14.628572 27.428571-21.942857 11.885714-49.371429 20.114286-79.542857 25.6-5.485714 1.828571 5.485714 5.485714 34.742857 15.542857 29.257143 10.057143 74.057143 17.371429 134.4 22.857143 27.428571 2.742857 52.114286 4.571429 74.057143 5.485715h59.428572c17.371429 0 32.914286-1.828571 47.542857-2.742858 14.628571-1.828571 27.428571-2.742857 40.228571-4.571428 49.371429-5.485714 95.085714-19.2 137.142857-42.057143 42.971429-21.942857 79.542857-50.285714 111.542858-85.028571 32-34.742857 56.685714-74.057143 74.057142-118.857143 17.371429-44.8 25.6-92.342857 25.6-143.542857 4.571429-53.028571-6.4-104.228571-26.514285-151.771429"
+                        fill="#E6E6E6"></path>
+                    <path
+                        d="M736.914286 393.472c-20.114286-46.628571-47.542857-88.685714-84.114286-121.6-34.742857-34.742857-74.971429-62.171429-123.428571-82.285714-46.628571-20.114286-95.085714-30.171429-149.028572-29.257143-53.942857 0-102.4 11.885714-149.028571 32-46.628571 20.114286-86.857143 49.371429-121.6 84.114286-34.742857 34.742857-60.342857 76.8-81.371429 124.342857-20.114286 47.542857-28.342857 96.914286-28.342857 151.771428 1.828571 50.285714 11.885714 98.742857 29.257143 141.714286 19.2 42.971429 42.057143 82.285714 72.228571 116.114286 8.228571 10.057143 14.628571 21.942857 17.371429 34.742857 1.828571 11.885714-2.742857 21.942857-14.628572 27.428571-21.942857 11.885714-49.371429 20.114286-79.542857 25.6-5.485714 1.828571 5.485714 5.485714 34.742857 15.542857 29.257143 10.057143 74.057143 17.371429 134.4 22.857143 27.428571 2.742857 52.114286 4.571429 74.057143 5.485715h59.428572c17.371429 0 32.914286-1.828571 47.542857-2.742858 14.628571-1.828571 27.428571-2.742857 40.228571-4.571428 49.371429-5.485714 95.085714-19.2 137.142857-42.057143 42.971429-21.942857 79.542857-50.285714 111.542858-85.028571 32-34.742857 56.685714-74.057143 74.057142-118.857143 17.371429-44.8 25.6-92.342857 25.6-143.542857 4.571429-53.028571-6.4-104.228571-26.514285-151.771429"
+                        fill="#22E5B1"></path>
+                    <path
+                        d="M1101.714286 933.814857c-14.628571-8.228571-20.114286-20.114286-19.2-34.742857 2.742857-15.542857 10.057143-29.257143 21.942857-42.971429 37.485714-42.057143 67.657143-89.6 91.428571-144.457142 22.857143-56.685714 36.571429-116.114286 37.485715-179.2 1.828571-67.657143-11.885714-131.657143-36.571429-191.085715s-59.428571-111.542857-102.4-156.342857c-42.971429-44.8-94.171429-79.542857-153.6-106.057143-58.514286-26.514286-120.685714-39.314286-187.428571-41.142857-66.742857-1.828571-129.828571 11.885714-188.342858 36.571429-59.428571 24.685714-109.714286 59.428571-154.514285 102.4-44.8 43.885714-79.542857 94.171429-106.057143 153.6-25.6 59.428571-39.314286 123.428571-39.314286 189.257143-1.828571 64 10.057143 124.342857 32 181.028571 21.942857 56.685714 53.942857 106.971429 94.171429 150.857143 40.228571 42.971429 86.857143 79.542857 140.8 106.971428 53.942857 29.257143 112.457143 46.628571 175.542857 52.114286 15.542857 2.742857 32.914286 4.571429 52.114286 5.485714 19.2 1.828571 39.314286 2.742857 60.342857 2.742858 21.942857 1.828571 47.542857 1.828571 74.971428 0 27.428571-1.828571 57.6-2.742857 92.342857-7.314286 76.8-7.314286 133.485714-17.371429 170.971429-29.257143 37.485714-11.885714 52.114286-19.2 44.8-20.114286-39.314286-3.657143-72.228571-13.714286-101.485714-28.342857"
+                        fill="#E6E6E6"></path>
+                    <path
+                        d="M1056 897.243429c-14.628571-8.228571-20.114286-20.114286-19.2-34.742858 2.742857-15.542857 10.057143-29.257143 21.942857-42.971428 37.485714-42.057143 67.657143-89.6 91.428572-144.457143 22.857143-56.685714 36.571429-116.114286 37.485714-179.2 1.828571-67.657143-11.885714-131.657143-36.571429-191.085714-24.685714-59.428571-59.428571-111.542857-102.4-156.342857-42.971429-45.714286-93.257143-80.457143-152.685714-106.971429-59.428571-25.6-121.6-38.4-188.342857-40.228571-66.742857-1.828571-129.828571 11.885714-188.342857 36.571428-59.428571 24.685714-109.714286 59.428571-154.514286 102.4-44.8 43.885714-79.542857 94.171429-106.057143 153.6-25.6 59.428571-39.314286 123.428571-39.314286 189.257143-1.828571 64 10.057143 124.342857 32 181.028571 21.942857 56.685714 53.942857 106.971429 94.171429 150.857143 40.228571 42.971429 86.857143 79.542857 140.8 106.971429 53.942857 29.257143 112.457143 46.628571 175.542857 52.114286 15.542857 2.742857 32.914286 4.571429 52.114286 5.485714 19.2 1.828571 39.314286 2.742857 60.342857 2.742857 21.942857 1.828571 47.542857 1.828571 74.971429 0 27.428571-1.828571 57.6-2.742857 92.342857-7.314286 76.8-7.314286 133.485714-17.371429 170.971428-29.257143 37.485714-11.885714 52.114286-19.2 44.8-20.114285-39.314286-3.657143-72.228571-13.714286-101.485714-28.342857"
+                        fill="#16D7A3"></path>
+                    <path
+                        d="M896.914286 429.714286H739.657143L768 223.085714c1.828571-5.485714-2.742857-11.885714-8.228571-14.628571-5.485714-4.571429-12.8-4.571429-17.371429 0L499.2 496.457143c-1.828571 1.828571-2.742857 4.571429-4.571429 5.485714-0.914286 1.828571-0.914286 4.571429-0.914285 7.314286 0 8.228571 7.314286 15.542857 15.542857 15.542857h159.085714l-30.171428 233.142857v2.742857c-1.828571 5.485714 0 11.885714 4.571428 15.542857 5.485714 5.485714 15.542857 5.485714 21.942857 0l244.114286-320.914285c2.742857-2.742857 4.571429-7.314286 4.571429-11.885715 0-6.4-7.314286-13.714286-16.457143-13.714285"
+                        fill="#FFFFFF"></path>
+                </svg>
+            </use>
+        </svg>
+    </div>
+
+<script>
+    
+    function BackTOP() {
+        $("#btn").hide();
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 50) {
+                    $("#btn").fadeIn(200);
+                } else {
+                    $("#btn").fadeOut(200);
+                }
+            });
+            $("#btn").click(function () {
+                $('body,html').animate({
+                        scrollTop: 0
+                    },
+                    500);
+                return false;
+            });
+        });
+        $(function () {
+            $("#say").click(function () {
+                $('body,html').animate({
+                        scrollTop: $('html, body').get(0).scrollHeight
+                    },
+                    500);
+                return false;
+            });
+        })
+    }
+
+    $('#readmode').click(function () {
+            $('body').toggleClass('read-mode')
+        })
+        
+    function SiderMenu() {
+        $('#main-container').toggleClass('open');
+        $('.iconflat').css('width', '50px').css('height', '50px');
+        $('.openNav').css('height', '50px');
+        $('#main-container,#mo-nav,.openNav').toggleClass('open')
+    }
+
+    BackTOP();
+</script>
+
+<style>
+    #RightDownBtn {
+        position: fixed;
+        left: 1.875rem;
+        bottom: 30rem;
+        padding: 0.3125rem 0.625rem;
+        background: #fff;
+        border-radius: 0.1875rem;
+        box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .4);
+        transition: 0.3s ease all;
+        z-index: 1000;
+        align-items: flex-end;
+        flex-direction: column;
+        display: -moz-flex;
+        display: flex;
+        float: right;
+    }
+
+    #RightDownBtn>a,
+    #RightDownBtn>label {
+        width: 1.5em;
+        height: 1.5em;
+        margin: 0.3125rem 0;
+        transition: .2s cubic-bezier(.25, .46, .45, .94);
+    }
+
+    a {
+        color: #3273dc;
+        cursor: pointer !important;
+        text-decoration: none;
+    }
+    /* font color */
+</style>
+
+<!-- left side bar.end -->
+
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/hk416_3401/model.json"},"display":{"position":"right","width":300,"height":450},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+    
+</html>
+

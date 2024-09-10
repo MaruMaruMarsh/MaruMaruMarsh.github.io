@@ -1,0 +1,931 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/mhchem.min.js" integrity="sha384-LIgAiYlGSAdpNC9+YDjDPF6JeS/RRIumtNo0CmyQERZ/+g0h9MbuYQwf/5pQ4Y4M" crossorigin="anonymous"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        <script type="text/x-mathjax-config">
+
+</script>
+        <meta charset="utf-8" />
+        <title>OOP &amp; Classes 相關功能整理 | 棉花糖的小窩</title>
+        <meta name="author" content="棉花糖" />
+        <meta name="description" content="點文章跳轉的時候會播歌請注意一下" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<script src="//cdn.jsdelivr.net/npm/vue-aplayer"></script>
+<script>
+  Vue.component('aplayer', VueAPlayer)
+</script>
+
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        <canvas
+        id="fireworks"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"
+        ></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+        <script>
+            var cursor = new MouseFollower();
+        </script>
+        <div id="pjax-container">
+                <div class="aplayer" 
+                    data-id="4948519534" 
+                    data-server="netease" 
+                    data-type="playlist" 
+                    data-fixed="true" 
+                    data-autoplay="true"
+                    data-order="random" 
+                    data-volume="0" 
+                    data-theme="#cc543a" 
+                    data-preload="none">
+                    
+                </div>
+
+    <!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+    <body>
+        <div id="layout">
+
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>進度條正在跑跑中</p>
+                        <img src="/images/loading.gif" />
+                        
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>棉花糖的小窩</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+        <a href="/Links">
+            <i class="fa-solid fa-link fa-fw"></i>
+            <span>&ensp;Links</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;棉花糖的小窩</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+                <a href="/Links">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-link fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Links</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+
+    <!--pjax：防止跳转页面音乐暂停-->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    <div>
+        <h1>OOP &amp; Classes 相關功能整理</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/28
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                程式設計
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #00a596">課堂筆記</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Python/" style="color: #00bcd4">Python</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        
+    <div id="aplayer-MjhLjVyZ" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<h1><span id="object-oriented-programming-and-classes"> Object Oriented Programming and Classes</span></h1>
+<hr>
+<!-- toc -->
+<ul>
+<li><a href="#creating-and-using-a-class">Creating and Using a Class</a>
+<ul>
+<li><a href="#%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E9%A1%9E%E5%88%A5class%E7%9A%84%E7%94%A8%E6%B3%95">最基本的類別（Class）的用法</a></li>
+<li><a href="#the-__init__-method">The <strong>init</strong>() Method</a>
+<ul>
+<li><a href="#%E5%BB%BA%E6%A7%8B%E5%AD%90constructor">建構子（Constructor）</a></li>
+</ul>
+</li>
+<li><a href="#%E6%88%90%E5%93%A1%E8%AE%8A%E6%95%B8class-member">成員變數（Class member）</a></li>
+<li><a href="#%E6%88%90%E5%93%A1%E5%87%BD%E5%BC%8Fmember-function">成員函式（Member function）</a></li>
+</ul>
+</li>
+<li><a href="#working-with-classes-and-instances">Working with Classes and Instances</a>
+<ul>
+<li><a href="#the-car-class">The <code>Car</code> Class</a></li>
+<li><a href="#modifying-attribute-values">Modifying Attribute Values</a></li>
+<li><a href="#__repr__-and-__str__-method"><code>__repr__</code> and <code>__str__</code> method</a></li>
+</ul>
+</li>
+<li><a href="#oop%E4%B8%89%E5%A4%A7%E6%9E%B6%E6%A7%8B%E7%B9%BC%E6%89%BFinheritance-%E5%B0%81%E8%A3%9D-encapsulation-%E5%A4%9A%E5%9E%8Bpolymorphism">OOP三大架構：繼承(Inheritance)、封裝 (Encapsulation)、多型(Polymorphism)</a>
+<ul>
+<li><a href="#inheritance-%E7%B9%BC%E6%89%BF">Inheritance (繼承)</a>
+<ul>
+<li><a href="#the-__init__-method-for-a-child-class">The <code>__init__()</code> method for a Child Class</a></li>
+<li><a href="#overriding-methods-from-the-parent-class">Overriding Methods from the Parent Class</a></li>
+<li><a href="#use-composition-to-organize-the-code">Use <code>composition</code> to organize the code</a></li>
+</ul>
+</li>
+<li><a href="#encapsulation-%E5%B0%81%E8%A3%9D">Encapsulation (封裝)</a></li>
+<li><a href="#polymorphism-%E5%A4%9A%E5%9E%8B">Polymorphism (多型)</a>
+<ul>
+<li><a href="#simulating-private-attributes">Simulating “Private” Attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#class-methods">Class Methods</a>
+<ul>
+<li><a href="#class-attributes">Class Attributes</a></li>
+<li><a href="#static-methods">Static Methods</a></li>
+<li><a href="#operator-overloading">Operator overloading</a></li>
+</ul>
+</li>
+<li><a href="#data-class">Data Class</a></li>
+</ul>
+<!-- tocstop -->
+<hr>
+<h2><span id="creating-and-using-a-class"> Creating and Using a Class</span></h2>
+<h3><span id="最基本的類別class的用法"> 最基本的類別（Class）的用法</span></h3>
+<p>假設我要設計一個 Animal 的 class 類別，那程式會長這樣，裡面什麼東西都沒有的話要加上一個 pass 語句，</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span>:
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+<h3><span id="the-init-method"> The <strong>init</strong>() Method</span></h3>
+<h4><span id="建構子constructor"> 建構子（Constructor）</span></h4>
+<p>那我要加入 Animal 類別一個建構子的話（參數為空），是這樣寫的，加入 <strong>init</strong> 函式，第一個參數必須為self，self 表示這個類別</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">pass</span>
+
+</code></pre>
+<p><code>__init__()</code>方法是一個特殊的方法，有兩個前導下劃線和兩個尾隨下劃線有助於防止<code>Python</code>的默認方法名與您的方法名衝突。</p>
+<h3><span id="成員變數class-member"> 成員變數（Class member）</span></h3>
+<p>那我要讓建構子傳入 name 參數並且保存到成員變數的話，<a target="_blank" rel="noopener" href="http://self.name">self.name</a> 表示這個類別的 name 成員變數，pass 移除是因為建構子裡面有寫東西了所以不用擺 pass 語句了</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name</span>):
+        self.name = name
+</code></pre>
+<ol>
+<li><code>self</code>參數在方法定義中是必需的，並且必須在任何其他參數之前出現。它必須包含在定義中，因為當<code>Python</code>稍後調用此方法時，方法調用將自動傳遞<code>self</code>參數。</li>
+<li>在<code>__init__()</code>方法的主體中定義的兩個變量都具有前綴<code>self</code>。任何以<code>self</code>為前綴的變量（稱為實例屬性）都可用於類中的每個方法，我們還可以通過從類創建的任何實例來訪問這些變量，這些變量可以在實例之間不同。</li>
+<li><code>self.name = name</code>這行將與參數<code>name</code>關聯的值賦給變量<code>name</code>，然後將其附加到正在創建的實例。<code>self.age = age</code>也是同樣的過程。像這樣通過實例訪問的變量稱為（實例）<em><strong>屬性</strong></em>。</li>
+</ol>
+<h3><span id="成員函式member-function"> 成員函式（Member function）</span></h3>
+<p>這個 Animal 類別要有一個 eat 的函式，並且印出該動物吃的是什麼東東，那這個食物就讓 Animal 類別建構的時候一併傳進來保存到成員變數裡，</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, food</span>):
+        self.name = name
+        self.food = food
+        
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">eat</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;I am &quot;</span> + self.name + <span class="hljs-string">&quot;, I eat &quot;</span> + self.food)
+</code></pre>
+<h2><span id="working-with-classes-and-instances"> Working with Classes and Instances</span></h2>
+<h3><span id="the-car-class"> The <code>Car</code> Class</span></h3>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Car</span>:
+    <span class="hljs-string">&quot;&quot;&quot;A simple attempt to represent a car.&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, make, model, year</span>):
+        <span class="hljs-string">&quot;&quot;&quot;Initialize attributes to describe a car.&quot;&quot;&quot;</span>
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = <span class="hljs-number">0</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_descriptive_name</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-string">&quot;&quot;&quot;Return a neatly formatted descriptive name.&quot;&quot;&quot;</span>
+        long_name = <span class="hljs-string">f&quot;Created in <span class="hljs-subst">&#123;self.year&#125;</span>, <span class="hljs-subst">&#123;self.make&#125;</span> <span class="hljs-subst">&#123;self.model&#125;</span>&quot;</span>
+        <span class="hljs-keyword">return</span> long_name.title()
+    
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">read_odometer</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-string">&quot;&quot;&quot;Print a statement showing the car&#x27;s mileage.&quot;&quot;&quot;</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;This car has <span class="hljs-subst">&#123;self.odometer_reading&#125;</span> miles on it.&quot;</span>)
+</code></pre>
+<ol>
+<li>首先定義了<code>__init__()</code>方法</li>
+<li>給它其他參數：<code>make</code>，<code>model</code>，<code>year</code>和<code>odometer_reading</code>。<code>__init__()</code>方法接收這些參數並將它們分配給從此類創建的實例相關聯的屬性。<br>
+當我們創建一個新的<code>Car</code>實例時，我們需要為我們的實例指定一個<code>make</code>，<code>model</code>和<code>year</code>。我們定義了一個名為<code>get_descriptive_name()</code>的方法，它將一輛汽車的<code>year</code>，<code>make</code>和<code>model</code>放入一個字符串中，並將汽車描述得很好。要在此方法中使用屬性值，我們使用<code>self.make</code>，<code>self.model</code>和<code>self.year</code>。</li>
+</ol>
+<p>當創建一個實例時，屬性可以在不作為參數傳遞的情況下定義。這些屬性可以在<code>__init__()</code>方法中定義，該方法分配了一個默認值。在上面的示例中，名為<code>odometer_reading</code>的屬性始終從0開始。最後，有一個方法<code>read_odometer()</code>，它可以幫助我們讀取每輛汽車的里程表。</p>
+<h3><span id="modifying-attribute-values"> Modifying Attribute Values</span></h3>
+<pre class="highlight"><code class="python">my_new_car.odometer_reading = <span class="hljs-number">23</span>
+my_new_car.read_odometer()
+<span class="hljs-comment"># Output: This car has 23 miles on it.</span>
+</code></pre>
+<p>有時候，有些方法可以幫助我們更新屬性值。我們不直接訪問屬性，而是將新值傳遞給一個方法，該方法在內部處理更新。</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Car</span>:
+    <span class="hljs-string">&quot;&quot;&quot;A simple attempt to represent a car.&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, make, model, year</span>):
+        <span class="hljs-string">&quot;&quot;&quot;初始化屬性&quot;&quot;&quot;</span>
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = <span class="hljs-number">0</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_descriptive_name</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-string">&quot;&quot;&quot;回傳一個整潔的描述性名稱&quot;&quot;&quot;</span>
+        long_name = <span class="hljs-string">f&quot;Created in <span class="hljs-subst">&#123;self.year&#125;</span>, <span class="hljs-subst">&#123;self.make&#125;</span> <span class="hljs-subst">&#123;self.model&#125;</span>&quot;</span>
+        <span class="hljs-keyword">return</span> long_name.title()
+    
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">read_odometer</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-string">&quot;&quot;&quot;把車的里程表讀出來&quot;&quot;&quot;</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;This car has <span class="hljs-subst">&#123;self.odometer_reading&#125;</span> miles on it.&quot;</span>)
+
+
+    <span class="hljs-comment">## We add these there methods!</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">update_odometer</span>(<span class="hljs-params">self, mileage</span>):
+        <span class="hljs-string">&quot;&quot;&quot;
+        把里程表設定為指定的值
+        禁止把里程表往回調
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">if</span> mileage &gt;= self.odometer_reading:
+            self.odometer_reading = mileage
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;You can&#x27;t roll back an odometer!&quot;</span>)
+            
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">increment_odometer</span>(<span class="hljs-params">self, miles</span>):
+        <span class="hljs-string">&quot;&quot;&quot;里程表增加指定的量&quot;&quot;&quot;</span>
+        self.odometer_reading += miles
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">fill_gas_tank</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-string">&quot;&quot;&quot;填滿油箱&quot;&quot;&quot;</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;The gas tank is now full!&quot;</span>)
+</code></pre>
+<ol>
+<li><code>Car</code>類中唯一的修改是添加<code>update_odometer()</code>。此方法接收里程值並將其分配給<code>self.odometer_reading</code>。</li>
+<li>檢查新的讀數是否合理，然後再修改屬性。如果里程數提供的值大於或等於現有里程數<code>self.odometer_reading</code>，則可以將里程表讀數更新為新里程數。如果新里程小於現有里程，則會收到無法返回里程表的警告</li>
+<li>此外，我們還定義了一個新方法<code>increment_odometer()</code>，它接收一個里程數並將此值添加到<code>self.odometer_reading</code>。</li>
+<li>最後，還向類別添加了一個方法<code>fill_gas_tank()</code>。</li>
+</ol>
+<pre class="highlight"><code class="python">my_new_car = Car(<span class="hljs-string">&#x27;audi&#x27;</span>, <span class="hljs-string">&#x27;a4&#x27;</span>, <span class="hljs-number">2023</span>)
+<span class="hljs-built_in">print</span>(my_new_car.get_descriptive_name())
+
+my_new_car.update_odometer(<span class="hljs-number">23</span>)
+my_new_car.read_odometer()
+
+my_new_car.fill_gas_tank()
+my_new_car.increment_odometer(<span class="hljs-number">100</span>)
+my_new_car.read_odometer()
+
+<span class="hljs-comment"># Created In 2023, Audi A4</span>
+<span class="hljs-comment"># This car has 23 miles on it.</span>
+<span class="hljs-comment"># The gas tank is now full!</span>
+<span class="hljs-comment"># This car has 123 miles on it.</span>
+</code></pre>
+<h3><span id="__repr__-and-__str__-method"> <code>__repr__</code> and <code>__str__</code> method</span></h3>
+<p><code>Python</code>文檔指出，<code>__repr__</code>返回對象的“官方”字符串表示形式。<br>
+我們還定義了<code>__str__</code>特殊方法，該方法用於在某些情況下替換<code>__repr__</code>的行為。<br>
+當您使用內置函數<code>str()</code>將對象轉換為字符串時，將調用此方法，例如在打印對象或明確調用<code>str()</code>時。</p>
+<pre class="highlight"><code class="python"><span class="hljs-built_in">print</span>(my_new_car)
+<span class="hljs-built_in">str</span>(my_new_car)
+<span class="hljs-comment"># Output: &lt;__main__.Car object at 0x0000020E4F6F4E80&gt;</span>
+</code></pre>
+<blockquote>
+<p>像<code>__init__()</code>，<code>__str__()</code>和<code>__repr__</code>這樣的特殊方法被稱為<em><strong>dunder methods</strong></em>（雙下劃線）。 有許多dunder方法可用於自定義類</p>
+</blockquote>
+<h2><span id="oop三大架構繼承inheritance-封裝-encapsulation-多型polymorphism"> OOP三大架構：繼承(Inheritance)、封裝 (Encapsulation)、多型(Polymorphism)</span></h2>
+<h3><span id="inheritance-繼承"> Inheritance (繼承)</span></h3>
+<blockquote>
+<p><em><strong>“is a” releationship</strong></em></p>
+</blockquote>
+<p>繼承主要是讓程式碼可以重複被使用，借此可以減少浪費在重複性工作的時間。</p>
+<p>當子類需要繼承父類的 Attribute 時，需加上 super().<strong>init</strong>()，並於第二個括號中填入欲繼承的屬性。<br>
+範例中 ElectricCar 直接繼承了 Car 的全部屬性，</p>
+<blockquote>
+<p>若再加上 ElectricCar 需求的屬性，general。故於建立 Object 時，若需呼叫子類則必須填上4個變數，而非原本父類的3個。</p>
+</blockquote>
+<h4><span id="the-__init__-method-for-a-child-class"> The <code>__init__()</code> method for a Child Class</span></h4>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ElectricCar</span>(<span class="hljs-title class_ inherited__">Car</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, make, model, year</span>):
+        <span class="hljs-built_in">super</span>().__init__(make, model, year)
+</code></pre>
+<ol>
+<li>定義子類時，必須在括號內指定父類的名稱。</li>
+<li>方法<code>super()</code>是一個特殊函數，它幫助Python將父類和子類關聯起來。這行代碼讓Python調用<code>ElectricCar</code>的父類的方法<code>__init__()</code>，讓<code>ElectricCar</code>實例包含父類的所有屬性。</li>
+<li>父類也稱為<strong>超類</strong>（superclass），名稱<code>super</code>來自這個名詞。</li>
+</ol>
+<h4><span id="overriding-methods-from-the-parent-class"> Overriding Methods from the Parent Class</span></h4>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ElectricCar</span>(<span class="hljs-title class_ inherited__">Car</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, make, model, year</span>):
+        <span class="hljs-built_in">super</span>().__init__(make, model, year)
+        self.battery_size = <span class="hljs-number">75</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">describe_battery</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;This car has a <span class="hljs-subst">&#123;self.battery_size&#125;</span>-kWh battery.&quot;</span>)
+</code></pre>
+<ol>
+<li>定義了一個名為<code>describe_battery()</code>的方法，它顯示一條描述電瓶容量的消息。</li>
+<li>這個方法覆蓋了父類<code>Car</code>中的方法<code>describe_battery()</code>。在子類<code>ElectricCar</code>中定義的這個方法將忽略父類<code>Car</code>中的這個方法。</li>
+</ol>
+<h4><span id="use-composition-to-organize-the-code"> Use <code>composition</code> to organize the code</span></h4>
+<p>有時候，你會發現你的類描述的是一個物件的部分行為，而不是整個行為。在這種情況下，你可以將這個類作為另一個類的屬性，這被稱為<strong>組合</strong>。</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Battery</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, battery_size=<span class="hljs-number">75</span></span>):
+        self.battery_size = battery_size
+
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;This car has a <span class="hljs-subst">&#123;self.battery_size&#125;</span>-kWh battery.&quot;</span>)
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ElectricCar</span>(<span class="hljs-title class_ inherited__">Car</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, make, model, year</span>):
+        <span class="hljs-built_in">super</span>().__init__(make, model, year)
+        self.battery = Battery()
+</code></pre>
+<ol>
+<li>定義了一個名為<code>Battery</code>的新類，它沒有繼承任何類。<code>Battery</code>類有兩個屬性和一個方法：<code>__init__()</code>，<code>battery_size</code>和<code>describe_battery()</code>。</li>
+<li>在<code>ElectricCar</code>類中，我們添加了一個名為<code>self.battery</code>的屬性。這行代碼讓Python創建一個新的Battery實例（由於沒有指定大小，因此獲得預設值75），並將該實例存儲在屬性self.battery中。每當方法<code>__init__()</code>被調用時，都會執行該操作；因此，現在每個ElectricCar實例都包含一個自動創建的Battery實例。</li>
+<li>我們創建了一個名為<code>self.battery</code>的Battery實例，並將該實例存儲在屬性self.battery中。這樣，就可以在需要時使用電瓶了。</li>
+</ol>
+<p>當我們需要知道一個對象的類型時，我們可以將對象傳遞給內置的<code>type()</code>函數。<br>
+但是，如果我們正在對對象進行類型檢查，最好使用更靈活的<code>isinstance()</code>內置函數。如果對象是給定類的子類，則<code>isinstance()</code>函數將返回<code>True</code>。</p>
+<pre class="highlight"><code class="python">my_tesla = ElectricCar(<span class="hljs-string">&#x27;tesla&#x27;</span>, <span class="hljs-string">&#x27;model s&#x27;</span>, <span class="hljs-number">2019</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">isinstance</span>(my_tesla, ElectricCar)) <span class="hljs-comment"># True</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">isinstance</span>(my_tesla, Car)) <span class="hljs-comment"># True</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">isinstance</span>(my_tesla, Battery)) <span class="hljs-comment"># False</span>
+</code></pre>
+<h3><span id="encapsulation-封裝"> Encapsulation (封裝)</span></h3>
+<p>大多數面向對象的編程語言都可以將對象的數據<strong>封裝 (encapsulate)</strong>（或隱藏）起來。這些語言中的數據被稱為<strong>私有數據 (private data)</strong>。<br>
+<code>Python</code>沒有私有數據。相反，您可以使用命名約定來設計類，以鼓勵正確使用。<br>
+按照慣例，**Python程序員知道以下劃線（<code>_</code>）開頭的任何屬性名僅用於類的內部使用。**代碼應使用類的方法來與每個對象的內部使用數據屬性交互。其標識符不以下劃線（<code>_</code>）開頭的屬性被認為是公開可訪問的。<br>
+Let’s develop a <code>Time</code> class that stores the time in 24-hour clock format with hours in the range 0–23 and minutes and seconds each in the range 0–59:</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Time</span>:
+    <span class="hljs-string">&quot;&quot;&quot;Represents the time of day.
+
+    attributes: hour, minute, second
+    &quot;&quot;&quot;</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, hour=<span class="hljs-number">0</span>, minute=<span class="hljs-number">0</span>, second=<span class="hljs-number">0</span></span>):
+        <span class="hljs-string">&quot;&quot;&quot;Initializes a time object.
+
+        hour: int
+        minute: int
+        second: int or float
+        &quot;&quot;&quot;</span>
+        self.hour = hour
+        self.minute = minute
+        self.second = second
+</code></pre>
+<ol>
+<li><code>Time</code>類有三個屬性：<code>hour</code>，<code>minute</code>和<code>second</code>。這些屬性將存儲整數值，但也可以存儲浮點值。</li>
+<li><code>__init__()</code>方法的參數提供了默認值，因此如果我們只傳遞一個時間參數，則分鐘和秒鐘將為零。</li>
+<li>為了創建一個新的<code>Time</code>對象，我們調用<code>Time</code>類的構造函數。我們將<code>Time</code>對象分配給<code>start</code>變量。</li>
+</ol>
+<pre class="highlight"><code class="python">wake_up = Time(hour=<span class="hljs-number">6</span>, minute=<span class="hljs-number">30</span>)
+wake_up.get_hour()
+<span class="hljs-comment"># Instead of wake_up._hour</span>
+wake_up.set_hour(<span class="hljs-number">8</span>)
+<span class="hljs-comment"># Instead of wake_up._hour = 8</span>
+</code></pre>
+<p>類<code>Time</code>的getter和setter定義了類的公共接口，即程序員應該用來與該類的對象交互的屬性集。就像上面的私有屬性一樣，並非所有方法都需要作為類的接口的一部分。有些方法只用作類內部使用的<strong>utility methods</strong>，不是用於類的公共接口的一部分。此類方法應以單個下劃線開頭命名。在其他面向對象的語言（如C ++，Java和C＃）中，此類方法通常實現為<strong>private methods</strong>。</p>
+<h3><span id="polymorphism-多型"> Polymorphism (多型)</span></h3>
+<p>多態性允許將一種類型的對象視為另一種類型的對象。</p>
+<ol>
+<li>例如<code>len()</code>函數返回傳遞給它的參數的長度。<br>
+您可以將<code>string</code>傳遞給<code>len()</code>以查看它有多少個字符，也可以將<code>list</code>或<code>dictionary</code>傳遞給<code>len()</code>以查看它有多少個項目或鍵值對。函數的這種多態性稱為通用函數或<em><strong>method/function overloading</strong></em>，因為它可以處理許多不同類型的對象。</li>
+<li>多態性還包括<em><strong>operator overloading</strong></em>，其中運算符（例如<code>+</code>或<code>*</code>）可以根據它們正在操作的對象的類型而表現出不同的行為。例如，當操作兩個<code>integer</code>或<code>float</code>值時，<code>+</code>運算符執行數學加法，但是當操作兩個字符串時，它執行字符串連接。</li>
+</ol>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name</span>):
+        self.name = name
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">speak</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>(<span class="hljs-title class_ inherited__">Animal</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">speak</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Woof!&quot;</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span>(<span class="hljs-title class_ inherited__">Animal</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">speak</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Meow!&quot;</span>
+
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">speak</span>(<span class="hljs-params">animal</span>):
+    <span class="hljs-built_in">print</span>(animal.speak())
+
+animals = [Dog(<span class="hljs-string">&quot;Rufus&quot;</span>), Cat(<span class="hljs-string">&quot;Whiskers&quot;</span>), Dog(<span class="hljs-string">&quot;Buddy&quot;</span>)]
+
+<span class="hljs-comment"># method overriding</span>
+<span class="hljs-keyword">for</span> animal <span class="hljs-keyword">in</span> animals:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;animal.name&#125;</span> : <span class="hljs-subst">&#123;animal.speak()&#125;</span>&#x27;</span>)
+
+<span class="hljs-comment"># method overloading</span>
+<span class="hljs-keyword">for</span> animal <span class="hljs-keyword">in</span> animals:
+    speak(animal)
+
+<span class="hljs-comment"># Output:</span>
+<span class="hljs-comment"># Rufus : Woof!</span>
+<span class="hljs-comment"># Whiskers : Meow!</span>
+<span class="hljs-comment"># Buddy : Woof!</span>
+<span class="hljs-comment"># Woof!</span>
+<span class="hljs-comment"># Meow!</span>
+<span class="hljs-comment"># Woof!</span>
+</code></pre>
+<p>在這個例子中，<code>Animal</code>類定義了<code>speak</code>方法作為<code>pass</code>語句，這意味著<strong>它什麼也不做</strong>。<br>
+但是，<code>Dog</code>和<code>Cat</code>類都覆蓋了該方法，並使用它們的方法實現該方法。這種方法稱為<em><strong>method overriding</strong></em>，也是多態的一種形式。<br>
+<code>speak()</code>函數接受實現<code>speak()</code>方法的任何對象，這意味著它可以處理不同類型的動物。在這裡，我們可以將<code>Dog</code>和<code>Cat</code>對象都傳遞給<code>speak()</code>函數，因為它們都從<code>Animal</code>類繼承了<code>speak()</code>方法。</p>
+<h4><span id="simulating-private-attributes"> Simulating “Private” Attributes</span></h4>
+<p>下面的代碼定義了一個名為<code>PrivateClass</code>的類，其中包含一個公共屬性和一個私有屬性。<br>
+私有屬性的名稱以兩個下劃線開頭，但沒有下劃線結尾。是一種規定，用於區分公共屬性和私有屬性。</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">PrivateClass</span>:
+    <span class="hljs-string">&quot;&quot;&quot;Class with public and private attributes.&quot;&quot;&quot;</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-string">&quot;&quot;&quot;Initialize the public and private attributes.&quot;&quot;&quot;</span>
+        self.public_data = <span class="hljs-string">&quot;public&quot;</span>  <span class="hljs-comment"># public attribute</span>
+        self.__private_data = <span class="hljs-string">&quot;private&quot;</span>  <span class="hljs-comment"># private attribute</span>
+
+my_object = PrivateClass()
+my_object.public_data
+<span class="hljs-comment"># &#x27;public&#x27;</span>
+my_object.__private_data
+<span class="hljs-comment"># AttributeError: &#x27;PrivateClass&#x27; object has no attribute &#x27;__private_data&#x27;</span>
+</code></pre>
+<p>我們可以訪問<code>my_object</code>的公共屬性，但不能訪問私有屬性。如果我們嘗試訪問私有屬性，則會出現<code>AttributeError</code>。</p>
+<blockquote>
+<p>即便如此，我們仍然可以訪問私有屬性。我們可以通過使用<code>_Classname__private_data</code>來訪問私有屬性。</p>
+</blockquote>
+<h2><span id="class-methods"> Class Methods</span></h2>
+<p>類方法是與類本身相關聯的函數。它們與類的實例無關。我們可以使用<code>@classmethod</code>裝飾器來定義類方法。類方法的第一個參數是<code>cls</code>，它是類本身。類方法可以訪問類的屬性，但不能訪問類的實例的屬性。</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ExampleClass</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">exampleRegularMethod</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;This is a regular method.&#x27;</span>)
+
+<span class="hljs-meta">    @classmethod </span><span class="hljs-comment"># This is the &quot;decorator&quot; that takes another function as input, extends or modifies its behavior, and returns a new function</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">exampleClassMethod</span>(<span class="hljs-params">cls</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;This is a class method.&#x27;</span>)
+
+<span class="hljs-comment"># Call the class method without instantiating an object:</span>
+ExampleClass.exampleClassMethod()
+
+obj = ExampleClass()
+<span class="hljs-comment"># Given the above line, these two lines are equivalent:</span>
+obj.exampleClassMethod()
+obj.__class__.exampleClassMethod()
+</code></pre>
+<p><code>cls</code>參數的作用類似於<code>self</code>，但是<code>self</code>指的是一個對象，而<code>cls</code>參數指的是對象的類。<strong>這意味著類方法中的代碼不能訪問單個對象的屬性或調用對象的常規方法</strong>。類方法只能調用其他類方法或訪問類屬性。我們使用<code>cls</code>的名稱，因為<code>class</code>是Python關鍵字。我們通常通過類來調用類方法，例如<code>ExampleClass.exampleClassMethod()</code>。但是我們也可以通過類的任何對象來調用它們，例如<code>obj.exampleClassMethod()</code>。</p>
+<p>類方法不常用。最常見的用例是除了<code>__init__()</code>之外提供替代構造函數。例如，如果構造函數可以接受新對象所需的數據的<code>string</code>，或者包含新對象所需數據的文件名的<code>string</code>，該怎麼辦？我們不希望<code>__init__()</code>方法的參數冗長且令人困惑。相反，讓我們使用類方法來返回一個新對象。例如，讓我們創建一個<code>AsciiArt</code>類：</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">AsciiArt</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, characters</span>):
+        <span class="hljs-string">&quot;&quot;&quot; Approach1: Initialize it with string &quot;&quot;&quot;</span>
+        self._characters = characters
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">fromFile</span>(<span class="hljs-params">cls, filename</span>):
+        <span class="hljs-string">&quot;&quot;&quot; Approach2: Initialize it with filename &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(filename) <span class="hljs-keyword">as</span> fileObj:
+            characters = fileObj.read()
+        <span class="hljs-keyword">return</span> cls(characters) <span class="hljs-comment"># This calls the __init__ function</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">display</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(self._characters)
+
+    <span class="hljs-comment"># Other AsciiArt methods would go here...</span>
+</code></pre>
+<h3><span id="class-attributes"> Class Attributes</span></h3>
+<p>以前我們寫實例屬性時，都將屬性的初值設定放在建構子constructor之內。但是類別屬性卻不一樣，它們必須放在建構子的「外面」，前置後置都行，就是不能位於constructor裡面：</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Tree</span>():
+    count = <span class="hljs-number">0</span>      <span class="hljs-comment"># 放在constructor外面(前置)的是class attributes。</span>
+    total_age = <span class="hljs-number">0</span> 
+    average_age = <span class="hljs-number">0</span>    
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, breed: <span class="hljs-built_in">str</span>, age: <span class="hljs-built_in">int</span></span>):   <span class="hljs-comment"># constructor</span>
+        ...
+</code></pre>
+<p>或：</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Tree</span>():
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, breed: <span class="hljs-built_in">str</span>, age: <span class="hljs-built_in">int</span></span>):   <span class="hljs-comment"># constructor</span>
+        ...
+    count = <span class="hljs-number">0</span>      <span class="hljs-comment"># 放在constructor外面(後置)的是class attributes。</span>
+    total_age = <span class="hljs-number">0</span> 
+    average_age = <span class="hljs-number">0</span>    
+</code></pre>
+<p>不過，類別屬性一般都寫在建構子的前面。</p>
+<h3><span id="static-methods"> Static Methods</span></h3>
+<p>靜態方法通常會以<code>@staticmethod</code>裝飾器包裝。</p>
+<ul>
+<li>用類別.方法()或物件.方法()兩種方式都可以呼叫</li>
+<li>靜態方法本來就屬於整個類別，和物件無關，即使未建立任何物件也可以使用。</li>
+<li>靜態方法和非靜態方法相比，語法上有一個很大的不同：靜態方法的第一個參數既不是self也不是cls。事實上靜態方法根本「不能有」self或cls。原因為：static methods不會接收隱藏的第一個參數。</li>
+<li>正因其參數列沒有self或cls，靜態方法無法存取類別內的任何屬性，也不能呼叫類別的任何方法，連其他靜態方法也沒法呼叫。靜態方法是「獨善其身」。</li>
+</ul>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ExampleClassWithStaticMethod</span>:
+<span class="hljs-meta">    @staticmethod</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">sayHello</span>():
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello!&#x27;</span>)
+
+<span class="hljs-comment"># Note that no object is created, the class name precedes sayHello():</span>
+ExampleClassWithStaticMethod.sayHello()
+
+<span class="hljs-comment"># Output: Hello!</span>
+</code></pre>
+<blockquote>
+<p>Static Methods在其他沒有Python靈活語言功能的語言中更常見。 Python包含靜態方法模仿其他語言的功能，但實際價值不大。</p>
+</blockquote>
+<h3><span id="operator-overloading"> Operator overloading</span></h3>
+<p><code>Python</code>有幾種<em><strong>dunder</strong></em>方法。<br>
+您已經熟悉<code>__init__()</code>dunder方法名稱，但是<code>Python</code>還有其他幾種方法。<br>
+我們通常使用它們來進行運算符重載-即添加自定義行為，使我們能夠使用我們類的對象與<code>Python</code>運算符（例如<code>+</code>或<code>&gt; =</code>）一起使用。其他dunder方法讓我們類的對象與<code>Python</code>的內置函數一起使用，例如<code>len()</code>。</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Point</span>:
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, x, y</span>):
+        self.x = x
+        self.y = y
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__add__</span>(<span class="hljs-params">self, other</span>):
+        <span class="hljs-keyword">return</span> Point(self.x + other.x, self.y + other.y)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__eq__</span>(<span class="hljs-params">self, other</span>):
+        <span class="hljs-keyword">return</span> (self.x == other.x) <span class="hljs-keyword">and</span> (self.y == other.y)
+
+<span class="hljs-comment"># 調用__add__方法</span>
+p1 = Point(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
+p2 = Point(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
+p3 = p1 + p2
+p4 = Point(<span class="hljs-number">4</span>, <span class="hljs-number">6</span>)
+<span class="hljs-built_in">print</span>(p3.x, p3.y)  <span class="hljs-comment"># Output: 4 6</span>
+<span class="hljs-built_in">print</span>(p3 == p4)
+</code></pre>
+<h2><span id="data-class"> Data Class</span></h2>
+<p>中文翻譯：Data classes是Python 3.7最重要的新功能之一。它們通過使用更簡潔的表示法並自動生成大多數類中常見的“樣板”代碼來幫助您更快地構建類。</p>
+<p>數據類自動生成<code>__init__</code>，<code>__repr__</code>和<code>__eq__</code>，節省您的時間。<br>
+數據類可以自動生成重載<code>&lt;</code>，<code>&lt;=</code>，<code>&gt;</code>和<code>&gt;=</code>比較運算符的特殊方法。<br>
+當您更改數據類中定義的數據屬性，然後在腳本或交互式會話中使用它時，自動生成的代碼會自動更新。 因此，您需要維護和調試的代碼更少。<br>
+某些靜態代碼分析工具和IDE可以檢查變量註釋，並在代碼使用錯誤類型時發出警告。 這可以幫助您在執行代碼之前找到代碼中的邏輯錯誤。</p>
+<p>詳細：<a target="_blank" rel="noopener" href="https://realpython.com/python-data-classes/">Here</a>以獲取更多詳細信息。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 棉花糖的小窩
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;棉花糖
+        </div>
+        
+    </div>
+</footer>
+                </div>
+            </transition>
+            
+                
+                
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+
+
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        
+<div id="RightDownBtn">
+    <a id="btn" href="javascript:void(0)" target="_self" style="">
+        <svg style=" width: 1.5em;height: 1.5em;" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-xuanfufanhuidingbu">
+                <svg id="icon-xuanfufanhuidingbu" viewBox="0 0 1024 1024">
+                    <path d="M0 512c0 282.624 229.376 512 512 512s512-229.376 512-512S794.624 0 512 0 0 229.376 0 512z"
+                        fill="#1989FA"></path>
+                    <path
+                        d="M736.768 263.68H287.232c-12.288 0-23.04 10.752-23.04 23.04s10.752 23.04 23.04 23.04H737.28c12.288 0 23.04-10.752 23.04-23.04s-10.752-23.04-23.552-23.04m-207.872 105.472c-1.536-1.536-4.608-4.608-7.68-4.608-3.072-1.536-6.144-1.536-7.68-1.536-3.072 0-6.144 0-7.68 1.536-3.072 1.536-4.608 3.072-7.68 4.608l-186.368 186.368c-9.216 9.216-9.216 23.04 0 32.768 9.216 9.216 23.04 9.216 32.768 0l145.92-145.92V737.28c0 12.288 10.752 23.04 23.04 23.04s23.04-10.752 23.04-23.04V442.368l145.92 145.92c4.608 4.608 10.752 6.144 16.896 6.144 6.144 0 12.288-1.536 16.896-6.144 9.216-9.216 9.216-23.04 0-32.768l-187.392-186.368z"
+                        fill="#FFFFFF"></path>
+                </svg>
+            </use>
+        </svg>
+
+    <a id="say" href="#vcomments" target="_self">
+        <svg style=" width: 1.5em;height: 1.5em;" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-ketangtaolun">
+                <svg id="icon-ketangtaolun" viewBox="0 0 1234 1024">
+                    <path
+                        d="M736.914286 393.472c-20.114286-46.628571-47.542857-88.685714-84.114286-121.6-34.742857-34.742857-74.971429-62.171429-123.428571-82.285714-46.628571-20.114286-95.085714-30.171429-149.028572-29.257143-53.942857 0-102.4 11.885714-149.028571 32-46.628571 20.114286-86.857143 49.371429-121.6 84.114286-34.742857 34.742857-60.342857 76.8-81.371429 124.342857-20.114286 47.542857-28.342857 96.914286-28.342857 151.771428 1.828571 50.285714 11.885714 98.742857 29.257143 141.714286 19.2 42.971429 42.057143 82.285714 72.228571 116.114286 8.228571 10.057143 14.628571 21.942857 17.371429 34.742857 1.828571 11.885714-2.742857 21.942857-14.628572 27.428571-21.942857 11.885714-49.371429 20.114286-79.542857 25.6-5.485714 1.828571 5.485714 5.485714 34.742857 15.542857 29.257143 10.057143 74.057143 17.371429 134.4 22.857143 27.428571 2.742857 52.114286 4.571429 74.057143 5.485715h59.428572c17.371429 0 32.914286-1.828571 47.542857-2.742858 14.628571-1.828571 27.428571-2.742857 40.228571-4.571428 49.371429-5.485714 95.085714-19.2 137.142857-42.057143 42.971429-21.942857 79.542857-50.285714 111.542858-85.028571 32-34.742857 56.685714-74.057143 74.057142-118.857143 17.371429-44.8 25.6-92.342857 25.6-143.542857 4.571429-53.028571-6.4-104.228571-26.514285-151.771429"
+                        fill="#E6E6E6"></path>
+                    <path
+                        d="M736.914286 393.472c-20.114286-46.628571-47.542857-88.685714-84.114286-121.6-34.742857-34.742857-74.971429-62.171429-123.428571-82.285714-46.628571-20.114286-95.085714-30.171429-149.028572-29.257143-53.942857 0-102.4 11.885714-149.028571 32-46.628571 20.114286-86.857143 49.371429-121.6 84.114286-34.742857 34.742857-60.342857 76.8-81.371429 124.342857-20.114286 47.542857-28.342857 96.914286-28.342857 151.771428 1.828571 50.285714 11.885714 98.742857 29.257143 141.714286 19.2 42.971429 42.057143 82.285714 72.228571 116.114286 8.228571 10.057143 14.628571 21.942857 17.371429 34.742857 1.828571 11.885714-2.742857 21.942857-14.628572 27.428571-21.942857 11.885714-49.371429 20.114286-79.542857 25.6-5.485714 1.828571 5.485714 5.485714 34.742857 15.542857 29.257143 10.057143 74.057143 17.371429 134.4 22.857143 27.428571 2.742857 52.114286 4.571429 74.057143 5.485715h59.428572c17.371429 0 32.914286-1.828571 47.542857-2.742858 14.628571-1.828571 27.428571-2.742857 40.228571-4.571428 49.371429-5.485714 95.085714-19.2 137.142857-42.057143 42.971429-21.942857 79.542857-50.285714 111.542858-85.028571 32-34.742857 56.685714-74.057143 74.057142-118.857143 17.371429-44.8 25.6-92.342857 25.6-143.542857 4.571429-53.028571-6.4-104.228571-26.514285-151.771429"
+                        fill="#22E5B1"></path>
+                    <path
+                        d="M1101.714286 933.814857c-14.628571-8.228571-20.114286-20.114286-19.2-34.742857 2.742857-15.542857 10.057143-29.257143 21.942857-42.971429 37.485714-42.057143 67.657143-89.6 91.428571-144.457142 22.857143-56.685714 36.571429-116.114286 37.485715-179.2 1.828571-67.657143-11.885714-131.657143-36.571429-191.085715s-59.428571-111.542857-102.4-156.342857c-42.971429-44.8-94.171429-79.542857-153.6-106.057143-58.514286-26.514286-120.685714-39.314286-187.428571-41.142857-66.742857-1.828571-129.828571 11.885714-188.342858 36.571429-59.428571 24.685714-109.714286 59.428571-154.514285 102.4-44.8 43.885714-79.542857 94.171429-106.057143 153.6-25.6 59.428571-39.314286 123.428571-39.314286 189.257143-1.828571 64 10.057143 124.342857 32 181.028571 21.942857 56.685714 53.942857 106.971429 94.171429 150.857143 40.228571 42.971429 86.857143 79.542857 140.8 106.971428 53.942857 29.257143 112.457143 46.628571 175.542857 52.114286 15.542857 2.742857 32.914286 4.571429 52.114286 5.485714 19.2 1.828571 39.314286 2.742857 60.342857 2.742858 21.942857 1.828571 47.542857 1.828571 74.971428 0 27.428571-1.828571 57.6-2.742857 92.342857-7.314286 76.8-7.314286 133.485714-17.371429 170.971429-29.257143 37.485714-11.885714 52.114286-19.2 44.8-20.114286-39.314286-3.657143-72.228571-13.714286-101.485714-28.342857"
+                        fill="#E6E6E6"></path>
+                    <path
+                        d="M1056 897.243429c-14.628571-8.228571-20.114286-20.114286-19.2-34.742858 2.742857-15.542857 10.057143-29.257143 21.942857-42.971428 37.485714-42.057143 67.657143-89.6 91.428572-144.457143 22.857143-56.685714 36.571429-116.114286 37.485714-179.2 1.828571-67.657143-11.885714-131.657143-36.571429-191.085714-24.685714-59.428571-59.428571-111.542857-102.4-156.342857-42.971429-45.714286-93.257143-80.457143-152.685714-106.971429-59.428571-25.6-121.6-38.4-188.342857-40.228571-66.742857-1.828571-129.828571 11.885714-188.342857 36.571428-59.428571 24.685714-109.714286 59.428571-154.514286 102.4-44.8 43.885714-79.542857 94.171429-106.057143 153.6-25.6 59.428571-39.314286 123.428571-39.314286 189.257143-1.828571 64 10.057143 124.342857 32 181.028571 21.942857 56.685714 53.942857 106.971429 94.171429 150.857143 40.228571 42.971429 86.857143 79.542857 140.8 106.971429 53.942857 29.257143 112.457143 46.628571 175.542857 52.114286 15.542857 2.742857 32.914286 4.571429 52.114286 5.485714 19.2 1.828571 39.314286 2.742857 60.342857 2.742857 21.942857 1.828571 47.542857 1.828571 74.971429 0 27.428571-1.828571 57.6-2.742857 92.342857-7.314286 76.8-7.314286 133.485714-17.371429 170.971428-29.257143 37.485714-11.885714 52.114286-19.2 44.8-20.114285-39.314286-3.657143-72.228571-13.714286-101.485714-28.342857"
+                        fill="#16D7A3"></path>
+                    <path
+                        d="M896.914286 429.714286H739.657143L768 223.085714c1.828571-5.485714-2.742857-11.885714-8.228571-14.628571-5.485714-4.571429-12.8-4.571429-17.371429 0L499.2 496.457143c-1.828571 1.828571-2.742857 4.571429-4.571429 5.485714-0.914286 1.828571-0.914286 4.571429-0.914285 7.314286 0 8.228571 7.314286 15.542857 15.542857 15.542857h159.085714l-30.171428 233.142857v2.742857c-1.828571 5.485714 0 11.885714 4.571428 15.542857 5.485714 5.485714 15.542857 5.485714 21.942857 0l244.114286-320.914285c2.742857-2.742857 4.571429-7.314286 4.571429-11.885715 0-6.4-7.314286-13.714286-16.457143-13.714285"
+                        fill="#FFFFFF"></path>
+                </svg>
+            </use>
+        </svg>
+    </div>
+
+<script>
+    
+    function BackTOP() {
+        $("#btn").hide();
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 50) {
+                    $("#btn").fadeIn(200);
+                } else {
+                    $("#btn").fadeOut(200);
+                }
+            });
+            $("#btn").click(function () {
+                $('body,html').animate({
+                        scrollTop: 0
+                    },
+                    500);
+                return false;
+            });
+        });
+        $(function () {
+            $("#say").click(function () {
+                $('body,html').animate({
+                        scrollTop: $('html, body').get(0).scrollHeight
+                    },
+                    500);
+                return false;
+            });
+        })
+    }
+
+    $('#readmode').click(function () {
+            $('body').toggleClass('read-mode')
+        })
+        
+    function SiderMenu() {
+        $('#main-container').toggleClass('open');
+        $('.iconflat').css('width', '50px').css('height', '50px');
+        $('.openNav').css('height', '50px');
+        $('#main-container,#mo-nav,.openNav').toggleClass('open')
+    }
+
+    BackTOP();
+</script>
+
+<style>
+    #RightDownBtn {
+        position: fixed;
+        left: 1.875rem;
+        bottom: 30rem;
+        padding: 0.3125rem 0.625rem;
+        background: #fff;
+        border-radius: 0.1875rem;
+        box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .4);
+        transition: 0.3s ease all;
+        z-index: 1000;
+        align-items: flex-end;
+        flex-direction: column;
+        display: -moz-flex;
+        display: flex;
+        float: right;
+    }
+
+    #RightDownBtn>a,
+    #RightDownBtn>label {
+        width: 1.5em;
+        height: 1.5em;
+        margin: 0.3125rem 0;
+        transition: .2s cubic-bezier(.25, .46, .45, .94);
+    }
+
+    a {
+        color: #3273dc;
+        cursor: pointer !important;
+        text-decoration: none;
+    }
+    /* font color */
+</style>
+
+<!-- left side bar.end -->
+
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/hk416_3401/model.json"},"display":{"position":"right","width":300,"height":450},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+    
+</html>
+

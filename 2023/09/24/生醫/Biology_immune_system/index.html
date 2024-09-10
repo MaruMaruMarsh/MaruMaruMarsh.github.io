@@ -1,0 +1,917 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.css" integrity="sha384-ThssJ7YtjywV52Gj4JE/1SQEDoMEckXyhkFVwaf4nDSm5OBlXeedVYjuuUd0Yua+" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/katex.min.js" integrity="sha384-Bi8OWqMXO1ta+a4EPkZv7bYGIes7C3krGSZoTGNTAnAn5eYQc7IIXrJ/7ck1drAi" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/mhchem.min.js" integrity="sha384-LIgAiYlGSAdpNC9+YDjDPF6JeS/RRIumtNo0CmyQERZ/+g0h9MbuYQwf/5pQ4Y4M" crossorigin="anonymous"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.3/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        <script type="text/x-mathjax-config">
+
+</script>
+        <meta charset="utf-8" />
+        <title>免疫系統全貌 (Immune system) | 棉花糖的小窩</title>
+        <meta name="author" content="棉花糖" />
+        <meta name="description" content="點文章跳轉的時候會播歌請注意一下" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<script src="//cdn.jsdelivr.net/npm/vue-aplayer"></script>
+<script>
+  Vue.component('aplayer', VueAPlayer)
+</script>
+
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        <canvas
+        id="fireworks"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"
+        ></canvas>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="/js/fireworks.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+        <script>
+            var cursor = new MouseFollower();
+        </script>
+        <div id="pjax-container">
+                <div class="aplayer" 
+                    data-id="4948519534" 
+                    data-server="netease" 
+                    data-type="playlist" 
+                    data-fixed="true" 
+                    data-autoplay="true"
+                    data-order="random" 
+                    data-volume="0" 
+                    data-theme="#cc543a" 
+                    data-preload="none">
+                    
+                </div>
+
+    <!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+    <body>
+        <div id="layout">
+
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>進度條正在跑跑中</p>
+                        <img src="/images/loading.gif" />
+                        
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>棉花糖的小窩</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+        <a href="/Links">
+            <i class="fa-solid fa-link fa-fw"></i>
+            <span>&ensp;Links</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;棉花糖的小窩</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+                <a href="/Links">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-link fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Links</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+
+    <!--pjax：防止跳转页面音乐暂停-->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    <div>
+        <h1>免疫系統全貌 (Immune system)</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/24
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E7%94%9F%E9%86%AB/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                生醫
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        
+    <div id="aplayer-rSdPrdtr" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+<h3><span id="免疫反應防禦作用"> 免疫反應(防禦作用)</span></h3>
+<ul>
+<li>抵抗異物入侵，如
+<ul>
+<li>微生物
+<ul>
+<li>定義: 顯微鏡才能觀察到的生物</li>
+<li>包含: 細菌、病毒、黴菌、小型真菌、小型寄生蟲</li>
+</ul>
+</li>
+<li>過敏原</li>
+</ul>
+</li>
+</ul>
+<h4><span id="非專一性先天免疫-出生時就具備的免疫反應"> 非專一性(先天)免疫: 出生時就具備的免疫反應</span></h4>
+<ol>
+<li>第一道防線
+<ul>
+<li>物理性阻隔
+<ul>
+<li>皮膚具角質多層扁平皮膜</li>
+<li>黏膜具黏液</li>
+<li>汗液與皮脂形成薄膜</li>
+<li>呼吸道纖毛擺動</li>
+<li>腸道蠕動</li>
+<li>膀胱排尿</li>
+</ul>
+</li>
+<li>化學性阻隔
+<ul>
+<li>皮膚與共生菌分泌的脂肪酸</li>
+<li>唾液與淚液中的溶菌酶</li>
+<li>胃中的胃酸、消化道中的酵素</li>
+</ul>
+</li>
+<li>生物性阻隔
+<ul>
+<li>共生的細菌和真菌</li>
+<li>如喝母乳之嬰兒的腸道與女性陰道(pH=4.5)中有乳酸菌</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>第二道防線
+<ul>
+<li>吞噬作用</li>
+<li>發炎反應
+<blockquote>
+<p><img src="https://media.discordapp.net/attachments/956160966054277143/1155322597349793893/Screenshot_20230924_095808_YouTube.jpg?width=852&amp;height=662" alt></p>
+</blockquote>
+<ul>
+<li>受傷細胞分泌<strong>發炎介質</strong>，如組織胺</li>
+<li>血管擴張，通透性增加</li>
+<li>產生紅腫痛熱的發炎症狀
+<ul>
+<li>紅-&gt;局部組織血流量增加</li>
+<li>腫-&gt;組織液增加而水腫</li>
+<li>痛-&gt;水腫壓迫神經，受傷組織分泌<strong>舒緩肽(使痛覺神經的阈值下降)</strong></li>
+<li>熱-&gt;血流帶來熱量</li>
+</ul>
+</li>
+<li>發炎物質誘使白血球進入組織</li>
+<li>某些白血球分泌的發炎介質造成發燒、倦怠等症狀<br>
+<img src="https://media.discordapp.net/attachments/956160966054277143/1155322597584683008/Screenshot_20230924_095853_YouTube.jpg?width=1018&amp;height=662" alt></li>
+</ul>
+</li>
+<li>抗微生物蛋白質 - <strong>補體</strong>
+<ul>
+<li>對抗細菌</li>
+<li>由肝臟製造，分布於血清內</li>
+<li>超顧20種蛋白質</li>
+<li>由細菌、病毒等病原體與抗原-抗體複合體引發補體的活化</li>
+<li>經活化作用，組成攻擊細胞膜之複合體，造成微生物<strong>細胞溶解</strong></li>
+<li>部分補體蛋白為<strong>趨化因子</strong>，可吸引白血球進入組織</li>
+<li><strong>調理作用</strong>: 使抗原更容易被吞噬</li>
+<li>刺激發炎反應，使顆粒球吞噬細胞產生具殺菌能力的含氧代謝物，並釋出溶體酵素殺死入侵細菌</li>
+</ul>
+</li>
+<li>抗微生物蛋白質 - <strong>干擾素</strong>
+<blockquote>
+<p><img src="https://media.discordapp.net/attachments/956160966054277143/1155330590103568385/Screenshot_20230924_103048_YouTube.jpg?width=1440&amp;height=355" alt></p>
+</blockquote>
+<ul>
+<li>對抗病毒</li>
+<li>由被病毒感染的細胞與巨噬細胞所分泌</li>
+<li>可使鄰近未被感染的細胞對抗病毒感染</li>
+<li>具物種專一性，不具防禦對象(病毒)的專一性</li>
+</ul>
+</li>
+<li>抗微生物蛋白質 - <strong>溶菌酶</strong>
+<ul>
+<li>對抗細菌</li>
+<li>溶體素(溶菌酶): 可溶解細菌細胞壁(肽聚醣分解酶)</li>
+</ul>
+</li>
+<li>發燒
+<ul>
+<li>病原體釋出之<strong>毒素</strong>與白血球釋出之**致熱原(pyrogens，又稱發燒素)調高體熱設定(全身性作用)</li>
+<li>可抑制微生物生長，幫助吞噬作用，組織維護</li>
+<li>普拿疼(paracetmol)和阿斯匹靈(aspirin)可抑制下視丘的發燒指令</li>
+</ul>
+</li>
+<li>NK細胞</li>
+</ul>
+</li>
+</ol>
+<h4><span id="專一性後天免疫-需要接觸過抗原才能產生的免疫反應"> 專一性(後天)免疫: 需要接觸過抗原才能產生的免疫反應</span></h4>
+<ol>
+<li>第三道防線(由淋巴器官中的淋巴球執行)
+<ul>
+<li>抗體免疫: B淋巴球</li>
+<li>細胞免疫: T淋巴球</li>
+</ul>
+</li>
+</ol>
+<h3><span id="白血球"> 白血球</span></h3>
+<p><img src="https://media.discordapp.net/attachments/956160966054277143/1155339257200779324/Screenshot_20230924_110535_YouTube.jpg?width=866&amp;height=662" alt></p>
+<ul>
+<li>
+<p>顆粒球</p>
+<ul>
+<li>中性粒細胞
+<ul>
+<li>最先進入發炎部位，具吞噬作用</li>
+<li>佔白血球總數的65-70%</li>
+<li>顆粒中含有殺菌相關酵素(如溶菌酶)</li>
+<li>可產生具殺菌能力的含氧代謝物(如過氧化氫)</li>
+<li>具趨化性，壽命只有數天</li>
+<li>若發炎時間較長，死亡的嗜中性球、病原體、組織細胞累積較多形成<strong>膿</strong></li>
+</ul>
+</li>
+<li>嗜酸性粒細胞
+<ul>
+<li>佔白血球總數的1.5%</li>
+<li>對抗<strong>寄生蟲</strong></li>
+<li>釋出酵素破壞外壁</li>
+</ul>
+</li>
+<li>嗜鹼性粒細胞
+<ul>
+<li>與<strong>過敏</strong>引發的發炎反應有關</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>淋巴球</p>
+<ul>
+<li>B淋巴球
+<ul>
+<li>幹細胞-&gt;原始淋巴細胞-&gt;留於骨隨成熟-&gt;至淋巴結執行功能</li>
+<li>於骨隨(bone marrow)或鳥類的nursa of Fabricius成熟</li>
+</ul>
+</li>
+<li>T淋巴球
+<ul>
+<li>幹細胞-&gt;原始淋巴細胞-&gt;至胸腺成熟-&gt;至淋巴結執行功能</li>
+<li>於胸腺(thymus)成熟</li>
+</ul>
+</li>
+</ul>
+<p>分為</p>
+<ul>
+<li>輔助T細胞(Help T cell)
+<ul>
+<li>分泌細胞激素(細胞激活素)</li>
+<li>自身、胞毒淋巴球、B淋巴球、巨噬細胞、NK細胞活化與成熟</li>
+</ul>
+</li>
+<li>胞毒T細胞(Cytotoxic T cell)
+<ul>
+<li>表面具受體</li>
+<li>清除背病毒感染的細胞</li>
+<li>攻擊表面具異常蛋白的腫瘤細胞</li>
+<li>可分泌<strong>穿孔素(perforin)、顆粒酵素(granzyme)</strong>，使受感染細胞破裂、細胞凋亡</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>單核球</p>
+<ul>
+<li>單核細胞</li>
+<li>樹突細胞
+<ul>
+<li>分布於全身器官、組織、循環系統</li>
+<li>吞噬能力強</li>
+<li>是<strong>抗原呈現細胞</strong></li>
+</ul>
+</li>
+<li>巨噬細胞
+<ul>
+<li>吞噬作用的主力部隊</li>
+<li>數目比嗜中性球少</li>
+<li>分布於全身: 可分為游離型與固定型</li>
+<li>具趨化性</li>
+<li>屬<strong>抗原呈現細胞(呈現抗原給淋巴球)</strong>，活化淋巴球，引發專一性免疫</li>
+<li>分泌細胞激素，協助發炎、活化輔助T細胞</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>自然殺手細胞(NK細胞)</p>
+<ul>
+<li>不在胸腺成熟</li>
+<li>佔白血球5-10%</li>
+<li>含大顆粒狀內含物，顆粒中含穿孔素、顆粒酵素等</li>
+<li>破壞被感染與異常的細胞(如癌細胞)，造成細胞穿孔式破壞</li>
+<li>不直接殺死入侵的微生物</li>
+</ul>
+</li>
+</ul>
+<h3><span id="淋巴器官"> 淋巴器官:</span></h3>
+<ul>
+<li>將多餘之組織液與小腸吸收的脂溶性養分送回血液循環</li>
+<li>依據功能分為初級與次級淋巴器官</li>
+</ul>
+<h4><span id="初級淋巴器官"> 初級淋巴器官</span></h4>
+<ul>
+<li>白血球生成與發育(紅骨隨、胸腺)</li>
+<li>胚胎時期白血球由肝臟與卵黃囊製造</li>
+<li>個體成熟後白血球來自<strong>紅骨隨</strong>的幹細胞</li>
+</ul>
+<blockquote>
+<p><strong>紅骨隨</strong>分布於扁型骨: 具造血功能(肋骨、脊椎骨、胸骨、<strong>髖骨</strong>等)<br>
+<strong>黃骨隨</strong>分布於長型骨: 具貯存脂肪功能(肱骨、股骨等)</p>
+</blockquote>
+<ul>
+<li><strong>胸腺</strong>: 兩葉，心臟前上方，胸骨背側分泌<strong>胸腺素</strong>，使T細胞成熟。成年後萎縮(由脂肪細胞取代)</li>
+</ul>
+<h4><span id="次級淋巴器官"> 次級淋巴器官</span></h4>
+<ul>
+<li>淋巴球活化與進行免疫反應(淋巴結、脾臟、扁桃腺)</li>
+<li>淋巴結:
+<ul>
+<li>直徑大小不一</li>
+<li>多位於皮下與內臟附近，與鼠蹊部、腋窩、頸部</li>
+<li>可過濾並吞噬淋巴液中的雜質</li>
+</ul>
+</li>
+<li>脾臟:
+<ul>
+<li>腹部左上方</li>
+<li>紫紅色</li>
+<li>製造一部分淋巴球</li>
+<li>脾臟組織分成白髓區與紅髓區
+<ul>
+<li>白髓區:
+<ul>
+<li>其間有血管使血液經過白髓匯入紅髓</li>
+<li>進行專一性免疫</li>
+<li>富含T淋巴球、B淋巴球、巨噬細胞、樹突細胞</li>
+</ul>
+</li>
+<li>紅髓區:
+<ul>
+<li>靜脈血進入</li>
+<li>儲存血液、過濾血液與破壞衰老紅血球</li>
+<li>富含巨噬細胞、淋巴球、紅血球</li>
+<li>脾臟的血管能擴張具彈性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>黏膜表皮層:
+<ul>
+<li>呼吸、消化與泌尿生殖系統中</li>
+<li>富含T淋巴球、B淋巴球、巨噬細胞、或顆粒球與肥大細胞</li>
+<li>在表皮細胞之間夾雜<strong>M細胞</strong>，負責捕捉抗原，活化專一性免疫</li>
+</ul>
+</li>
+<li>扁桃腺: 口咽部後方與舌根兩側</li>
+<li>闌尾: 為一指狀盲管，富含淋巴球</li>
+<li>腸道中的<strong>淋巴小結</strong></li>
+</ul>
+<h3><span id="專一性防禦的參與分子"> 專一性防禦的參與分子</span></h3>
+<ul>
+<li>抗原(antigen): antibody generating<br>
+可激發專一性免疫反應的物質</li>
+<li>抗原呈現細胞:
+<ul>
+<li>樹突細胞</li>
+<li>巨噬細胞</li>
+<li>B淋巴球</li>
+</ul>
+</li>
+<li>主要組織相容複合體: 細胞膜表面(major histocompatibility complex, MHC)
+<ul>
+<li>第一型MHC:<br>
+所有具細胞核的細胞皆具有，作為自我辨識的身分證</li>
+<li>第二型MHC:<br>
+巨噬細胞、B淋巴球、胸腺細胞、活化的T細胞，用於呈現外來抗原</li>
+</ul>
+<blockquote>
+<p>最早發現的人類MHC為人類白血球抗原(Human Leukocyte Antigen, HLA)</p>
+</blockquote>
+</li>
+</ul>
+<h3><span id="抗體的功能"> 抗體的功能</span></h3>
+<ul>
+<li>凝集、沉澱作用</li>
+<li>中和毒素、病毒<br>
+*促進吞噬: 調理作用</li>
+<li>溶菌反應: 抗原-抗體複合物活化補體</li>
+<li>引起過敏反應: 肥大細胞</li>
+<li>增進胞殺作用</li>
+</ul>
+<h3><span id="抗體依賴胞毒作用"> 抗體依賴胞毒作用</span></h3>
+<ul>
+<li>一群非專一性胞毒作用的細胞具抗體受體</li>
+<li>當抗體接合於目標細胞上可藉抗體受體活化胞毒作用(釋放穿孔素、顆粒酶)</li>
+</ul>
+<h4><span id="antibody-dependent-cell-mediated-cytotoxicity-adcc"> antibody-dependent cell-mediated cytotoxicity (ADCC)</span></h4>
+<ul>
+<li>由NK細胞</li>
+<li>巨噬細胞</li>
+<li>嗜中性粒細胞*</li>
+<li>嗜酸性球</li>
+</ul>
+<h4><span id="胸腺依賴抗原thymus-dependent-antigen-tda"> 胸腺依賴抗原(Thymus-dependent antigen, TDA)</span></h4>
+<p>過程:</p>
+<ol>
+<li>B細胞辨識蛋白質(外毒素)</li>
+<li>蛋白質由受體媒介胞吞進B細胞</li>
+<li>蛋白質被分解呈現在MAC II上</li>
+<li>T helper細胞偵測到</li>
+<li>T helper細胞分泌細胞激素活化B細胞</li>
+<li>產生記憶B細胞與漿細胞-&gt;分泌抗體</li>
+</ol>
+<h4><span id="胸腺非依賴抗原thymus-independent-antigen-tida"> 胸腺非依賴抗原(Thymus-independent antigen, TIDA)</span></h4>
+<p>過程:</p>
+<ol>
+<li>B細胞辨識脂多醣(內毒素)</li>
+<li>B細胞分化為漿細胞-&gt;分泌抗體</li>
+</ol>
+<blockquote>
+<p>此過程不需要T細胞的參與，不會產生記憶B細胞</p>
+</blockquote>
+<h3><span id="主動被動免疫"> 主動/被動免疫</span></h3>
+<h4><span id="主動免疫"> 主動免疫</span></h4>
+<ul>
+<li>經病原體入侵或接種疫苗，使個體本身產生抗體防禦病原體</li>
+</ul>
+<ol>
+<li>利用<strong>免疫系統的記憶細胞</strong>特性(更強、更快的反應)</li>
+<li>疫苗:
+<ul>
+<li>利用專一性免疫</li>
+<li>能產生一群記憶細胞的特性</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>疫苗的產生</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>類毒素</td>
+<td>對病原體產生的毒素加熱或化學處理，使毒性不傷害身體</td>
+<td>白喉、破傷風</td>
+</tr>
+<tr>
+<td>死菌疫苗</td>
+<td>將病原體加熱殺死製成</td>
+<td>百日咳、日本腦炎、小兒麻痺疫苗、(沙克疫苗)</td>
+</tr>
+<tr>
+<td>滅毒疫苗</td>
+<td>將病原體致病力降低至對人體無害</td>
+<td>卡介苗、口服小兒麻痹疫苗(沙賓疫苗)、狂犬病、天花</td>
+</tr>
+<tr>
+<td>血清疫苗</td>
+<td>利用B肝帶原者血清分離出病毒表面抗原，再濃縮純化</td>
+<td>B型肝炎血清</td>
+</tr>
+<tr>
+<td>基因工程疫苗</td>
+<td>利用基因重組方式使酵母菌產生B肝表面抗原的疫苗</td>
+<td>B肝疫苗</td>
+</tr>
+</tbody>
+</table>
+<h4><span id="被動免疫"> 被動免疫</span></h4>
+<ul>
+<li>直接施予抗體對抗疾病</li>
+<li>抗體非個體產生，將逐漸分解，故作用雖快但持續時間短</li>
+<li>利用實驗動物生產抗體，製得的血清中含多種抗體(多株抗體)</li>
+<li>利用融合瘤細胞產生單一種類的抗體(單株抗體)</li>
+</ul>
+<h3><span id="過敏反應allergic-reaction"> 過敏反應(allergic reaction)</span></h3>
+<ul>
+<li>屬專一性免疫</li>
+<li>立即性過敏: 數分鐘內反應</li>
+<li>過程
+<ol>
+<li>第一次接觸抗原(過敏原)使漿細胞分泌抗體(IgE)</li>
+<li>IgE連接至肥大細胞或嗜鹼性球表面(具受體)</li>
+<li>第二次接觸抗原</li>
+<li>抗原與其細胞膜上的抗體結合</li>
+<li>刺激肥大細胞分泌發炎介質的顆粒(發炎介質)</li>
+<li>引發平滑肌收縮、血管擴張、黏膜分泌增加、白血球聚集等紅、腫、癢之症狀</li>
+</ol>
+<blockquote>
+<p>輕度結膜炎、皮膚起紅斑發癢(蕁麻疹)、鼻塞(過敏性鼻炎)、呼吸困難、氣喘(過敏性氣喘、哮喘)</p>
+</blockquote>
+</li>
+</ul>
+<h4><span id="過敏反應的種類與機制"> 過敏反應的種類與機制</span></h4>
+<table>
+<thead>
+<tr>
+<th>行式</th>
+<th>時間</th>
+<th>參與者</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一型(立即過敏型)</td>
+<td>2~30 min</td>
+<td>IgE、肥大細胞、嗜鹼性粒細胞</td>
+<td>全身性過敏、局部性過敏、花粉熱、蕁麻疹、食物過敏、哮喘</td>
+</tr>
+<tr>
+<td>第二型(細胞毒殺性過敏)</td>
+<td>5~8小時</td>
+<td>IgG、IgM及補體</td>
+<td>輸血反應、胎兒紅血球母細胞壞死症、重肌症無力</td>
+</tr>
+<tr>
+<td>第三型(免疫複合物過敏)</td>
+<td>2~8小時</td>
+<td>IgG、IgM、補體</td>
+<td>局部阿瑟氏(Arthus)反應、全身性血清疾病、紅斑性狼瘡、類風濕性管節炎、腎絲球炎</td>
+</tr>
+<tr>
+<td>第四型(細胞媒介性過敏)</td>
+<td>24~72小時</td>
+<td>T細胞</td>
+<td>接觸性皮膚炎、結核病、移植排斥、愛迪生症</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>參考資料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ecJUKwQVBEc">10802高三選修生物ch10 2 01免疫作用簡介三禮g</a></li>
+</ol>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2024 棉花糖的小窩
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;棉花糖
+        </div>
+        
+    </div>
+</footer>
+                </div>
+            </transition>
+            
+                
+                
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+
+
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+        <!-- require MetingJS -->
+        <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+        <!-- 我使用的APlayer本体 -->
+
+        <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+        <!-- require JQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <!-- require pjax -->
+        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+
+        <script src="./node_modules/pjax/pjax.js"></script>
+        <script src="./pjax.min.js"></script>
+        <script>
+            $(document).pjax('a[target!=_blank]', '#contentleft', {fragment:'#contentleft', timeout:8000});
+        </script>
+        
+<div id="RightDownBtn">
+    <a id="btn" href="javascript:void(0)" target="_self" style="">
+        <svg style=" width: 1.5em;height: 1.5em;" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-xuanfufanhuidingbu">
+                <svg id="icon-xuanfufanhuidingbu" viewBox="0 0 1024 1024">
+                    <path d="M0 512c0 282.624 229.376 512 512 512s512-229.376 512-512S794.624 0 512 0 0 229.376 0 512z"
+                        fill="#1989FA"></path>
+                    <path
+                        d="M736.768 263.68H287.232c-12.288 0-23.04 10.752-23.04 23.04s10.752 23.04 23.04 23.04H737.28c12.288 0 23.04-10.752 23.04-23.04s-10.752-23.04-23.552-23.04m-207.872 105.472c-1.536-1.536-4.608-4.608-7.68-4.608-3.072-1.536-6.144-1.536-7.68-1.536-3.072 0-6.144 0-7.68 1.536-3.072 1.536-4.608 3.072-7.68 4.608l-186.368 186.368c-9.216 9.216-9.216 23.04 0 32.768 9.216 9.216 23.04 9.216 32.768 0l145.92-145.92V737.28c0 12.288 10.752 23.04 23.04 23.04s23.04-10.752 23.04-23.04V442.368l145.92 145.92c4.608 4.608 10.752 6.144 16.896 6.144 6.144 0 12.288-1.536 16.896-6.144 9.216-9.216 9.216-23.04 0-32.768l-187.392-186.368z"
+                        fill="#FFFFFF"></path>
+                </svg>
+            </use>
+        </svg>
+
+    <a id="say" href="#vcomments" target="_self">
+        <svg style=" width: 1.5em;height: 1.5em;" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-ketangtaolun">
+                <svg id="icon-ketangtaolun" viewBox="0 0 1234 1024">
+                    <path
+                        d="M736.914286 393.472c-20.114286-46.628571-47.542857-88.685714-84.114286-121.6-34.742857-34.742857-74.971429-62.171429-123.428571-82.285714-46.628571-20.114286-95.085714-30.171429-149.028572-29.257143-53.942857 0-102.4 11.885714-149.028571 32-46.628571 20.114286-86.857143 49.371429-121.6 84.114286-34.742857 34.742857-60.342857 76.8-81.371429 124.342857-20.114286 47.542857-28.342857 96.914286-28.342857 151.771428 1.828571 50.285714 11.885714 98.742857 29.257143 141.714286 19.2 42.971429 42.057143 82.285714 72.228571 116.114286 8.228571 10.057143 14.628571 21.942857 17.371429 34.742857 1.828571 11.885714-2.742857 21.942857-14.628572 27.428571-21.942857 11.885714-49.371429 20.114286-79.542857 25.6-5.485714 1.828571 5.485714 5.485714 34.742857 15.542857 29.257143 10.057143 74.057143 17.371429 134.4 22.857143 27.428571 2.742857 52.114286 4.571429 74.057143 5.485715h59.428572c17.371429 0 32.914286-1.828571 47.542857-2.742858 14.628571-1.828571 27.428571-2.742857 40.228571-4.571428 49.371429-5.485714 95.085714-19.2 137.142857-42.057143 42.971429-21.942857 79.542857-50.285714 111.542858-85.028571 32-34.742857 56.685714-74.057143 74.057142-118.857143 17.371429-44.8 25.6-92.342857 25.6-143.542857 4.571429-53.028571-6.4-104.228571-26.514285-151.771429"
+                        fill="#E6E6E6"></path>
+                    <path
+                        d="M736.914286 393.472c-20.114286-46.628571-47.542857-88.685714-84.114286-121.6-34.742857-34.742857-74.971429-62.171429-123.428571-82.285714-46.628571-20.114286-95.085714-30.171429-149.028572-29.257143-53.942857 0-102.4 11.885714-149.028571 32-46.628571 20.114286-86.857143 49.371429-121.6 84.114286-34.742857 34.742857-60.342857 76.8-81.371429 124.342857-20.114286 47.542857-28.342857 96.914286-28.342857 151.771428 1.828571 50.285714 11.885714 98.742857 29.257143 141.714286 19.2 42.971429 42.057143 82.285714 72.228571 116.114286 8.228571 10.057143 14.628571 21.942857 17.371429 34.742857 1.828571 11.885714-2.742857 21.942857-14.628572 27.428571-21.942857 11.885714-49.371429 20.114286-79.542857 25.6-5.485714 1.828571 5.485714 5.485714 34.742857 15.542857 29.257143 10.057143 74.057143 17.371429 134.4 22.857143 27.428571 2.742857 52.114286 4.571429 74.057143 5.485715h59.428572c17.371429 0 32.914286-1.828571 47.542857-2.742858 14.628571-1.828571 27.428571-2.742857 40.228571-4.571428 49.371429-5.485714 95.085714-19.2 137.142857-42.057143 42.971429-21.942857 79.542857-50.285714 111.542858-85.028571 32-34.742857 56.685714-74.057143 74.057142-118.857143 17.371429-44.8 25.6-92.342857 25.6-143.542857 4.571429-53.028571-6.4-104.228571-26.514285-151.771429"
+                        fill="#22E5B1"></path>
+                    <path
+                        d="M1101.714286 933.814857c-14.628571-8.228571-20.114286-20.114286-19.2-34.742857 2.742857-15.542857 10.057143-29.257143 21.942857-42.971429 37.485714-42.057143 67.657143-89.6 91.428571-144.457142 22.857143-56.685714 36.571429-116.114286 37.485715-179.2 1.828571-67.657143-11.885714-131.657143-36.571429-191.085715s-59.428571-111.542857-102.4-156.342857c-42.971429-44.8-94.171429-79.542857-153.6-106.057143-58.514286-26.514286-120.685714-39.314286-187.428571-41.142857-66.742857-1.828571-129.828571 11.885714-188.342858 36.571429-59.428571 24.685714-109.714286 59.428571-154.514285 102.4-44.8 43.885714-79.542857 94.171429-106.057143 153.6-25.6 59.428571-39.314286 123.428571-39.314286 189.257143-1.828571 64 10.057143 124.342857 32 181.028571 21.942857 56.685714 53.942857 106.971429 94.171429 150.857143 40.228571 42.971429 86.857143 79.542857 140.8 106.971428 53.942857 29.257143 112.457143 46.628571 175.542857 52.114286 15.542857 2.742857 32.914286 4.571429 52.114286 5.485714 19.2 1.828571 39.314286 2.742857 60.342857 2.742858 21.942857 1.828571 47.542857 1.828571 74.971428 0 27.428571-1.828571 57.6-2.742857 92.342857-7.314286 76.8-7.314286 133.485714-17.371429 170.971429-29.257143 37.485714-11.885714 52.114286-19.2 44.8-20.114286-39.314286-3.657143-72.228571-13.714286-101.485714-28.342857"
+                        fill="#E6E6E6"></path>
+                    <path
+                        d="M1056 897.243429c-14.628571-8.228571-20.114286-20.114286-19.2-34.742858 2.742857-15.542857 10.057143-29.257143 21.942857-42.971428 37.485714-42.057143 67.657143-89.6 91.428572-144.457143 22.857143-56.685714 36.571429-116.114286 37.485714-179.2 1.828571-67.657143-11.885714-131.657143-36.571429-191.085714-24.685714-59.428571-59.428571-111.542857-102.4-156.342857-42.971429-45.714286-93.257143-80.457143-152.685714-106.971429-59.428571-25.6-121.6-38.4-188.342857-40.228571-66.742857-1.828571-129.828571 11.885714-188.342857 36.571428-59.428571 24.685714-109.714286 59.428571-154.514286 102.4-44.8 43.885714-79.542857 94.171429-106.057143 153.6-25.6 59.428571-39.314286 123.428571-39.314286 189.257143-1.828571 64 10.057143 124.342857 32 181.028571 21.942857 56.685714 53.942857 106.971429 94.171429 150.857143 40.228571 42.971429 86.857143 79.542857 140.8 106.971429 53.942857 29.257143 112.457143 46.628571 175.542857 52.114286 15.542857 2.742857 32.914286 4.571429 52.114286 5.485714 19.2 1.828571 39.314286 2.742857 60.342857 2.742857 21.942857 1.828571 47.542857 1.828571 74.971429 0 27.428571-1.828571 57.6-2.742857 92.342857-7.314286 76.8-7.314286 133.485714-17.371429 170.971428-29.257143 37.485714-11.885714 52.114286-19.2 44.8-20.114285-39.314286-3.657143-72.228571-13.714286-101.485714-28.342857"
+                        fill="#16D7A3"></path>
+                    <path
+                        d="M896.914286 429.714286H739.657143L768 223.085714c1.828571-5.485714-2.742857-11.885714-8.228571-14.628571-5.485714-4.571429-12.8-4.571429-17.371429 0L499.2 496.457143c-1.828571 1.828571-2.742857 4.571429-4.571429 5.485714-0.914286 1.828571-0.914286 4.571429-0.914285 7.314286 0 8.228571 7.314286 15.542857 15.542857 15.542857h159.085714l-30.171428 233.142857v2.742857c-1.828571 5.485714 0 11.885714 4.571428 15.542857 5.485714 5.485714 15.542857 5.485714 21.942857 0l244.114286-320.914285c2.742857-2.742857 4.571429-7.314286 4.571429-11.885715 0-6.4-7.314286-13.714286-16.457143-13.714285"
+                        fill="#FFFFFF"></path>
+                </svg>
+            </use>
+        </svg>
+    </div>
+
+<script>
+    
+    function BackTOP() {
+        $("#btn").hide();
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 50) {
+                    $("#btn").fadeIn(200);
+                } else {
+                    $("#btn").fadeOut(200);
+                }
+            });
+            $("#btn").click(function () {
+                $('body,html').animate({
+                        scrollTop: 0
+                    },
+                    500);
+                return false;
+            });
+        });
+        $(function () {
+            $("#say").click(function () {
+                $('body,html').animate({
+                        scrollTop: $('html, body').get(0).scrollHeight
+                    },
+                    500);
+                return false;
+            });
+        })
+    }
+
+    $('#readmode').click(function () {
+            $('body').toggleClass('read-mode')
+        })
+        
+    function SiderMenu() {
+        $('#main-container').toggleClass('open');
+        $('.iconflat').css('width', '50px').css('height', '50px');
+        $('.openNav').css('height', '50px');
+        $('#main-container,#mo-nav,.openNav').toggleClass('open')
+    }
+
+    BackTOP();
+</script>
+
+<style>
+    #RightDownBtn {
+        position: fixed;
+        left: 1.875rem;
+        bottom: 30rem;
+        padding: 0.3125rem 0.625rem;
+        background: #fff;
+        border-radius: 0.1875rem;
+        box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .4);
+        transition: 0.3s ease all;
+        z-index: 1000;
+        align-items: flex-end;
+        flex-direction: column;
+        display: -moz-flex;
+        display: flex;
+        float: right;
+    }
+
+    #RightDownBtn>a,
+    #RightDownBtn>label {
+        width: 1.5em;
+        height: 1.5em;
+        margin: 0.3125rem 0;
+        transition: .2s cubic-bezier(.25, .46, .45, .94);
+    }
+
+    a {
+        color: #3273dc;
+        cursor: pointer !important;
+        text-decoration: none;
+    }
+    /* font color */
+</style>
+
+<!-- left side bar.end -->
+
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/hk416_3401/model.json"},"display":{"position":"right","width":300,"height":450},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+    
+</html>
+

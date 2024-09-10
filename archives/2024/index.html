@@ -11,15 +11,6 @@
         <script type="text/x-mathjax-config">
 
 </script>
-        <script>
-            // 对所有链接跳转事件绑定pjax容器pjax-container 
-            $(document).pjax('a', '#pjax-container', {
-            fragment:'#pjax-container',
-            timeout:8000
-            });   
-        </script>
-        <!--pjax：防止跳转页面音乐暂停-->
-        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
         <meta charset="utf-8" />
         <title>Archives | 棉花糖的小窩</title>
         <meta name="author" content="棉花糖" />
@@ -94,45 +85,25 @@
         <script>
             var cursor = new MouseFollower();
         </script>
-        <div id="cursor"></div>
-        <!-- <link rel="stylesheet" href="/css/cursor.min.css"> -->
-        <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
-        <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
-        <script src="/js/cusmo.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-        <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
-
+        <div id="pjax-container">
+                <div class="aplayer" 
+                    data-id="4948519534" 
+                    data-server="netease" 
+                    data-type="playlist" 
+                    data-fixed="true" 
+                    data-autoplay="true"
+                    data-order="random" 
+                    data-volume="0" 
+                    data-theme="#cc543a" 
+                    data-preload="none">
+                    
+                </div>
 
     <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
     <body>
         <div id="layout">
-            <div id="pjax-container">
-                <!-- 我使用的APlayer本体 -->
-                    <div class="aplayer" 
-                        data-id="2465890057" 
-                        data-server="netease" 
-                        data-type="playlist" 
-                        data-fixed="true" 
-                        data-autoplay="true" 
-                        data-order="random" 
-                        data-volume="0.55" 
-                        data-theme="#cc543a" 
-                        data-preload="none ">
-                    </div>
-            <script>
-                // 对所有链接跳转事件绑定pjax容器pjax-container 
-                $(document).pjax('a', '#pjax-container', {
-                fragment:'#pjax-container',
-                timeout:8000
-                });   
-            </script>
-            
-            <!--pjax：防止跳转页面音乐暂停-->
-            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
-            <meta charset="utf-8" />
-            <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
 
             <transition name="fade">
                 <div id="loading" v-show="loading">
@@ -140,7 +111,7 @@
                         <h2>LOADING</h2>
                         <p>進度條正在跑跑中</p>
                         <img src="/images/loading.gif" />
-                            </div>
+                        
                     </div>
                     <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
                 </div>
@@ -265,10 +236,19 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/5/27</div>
-                <a href="/2023/05/27/p1/">
+                <a href="/2023/05/27/%E9%9B%9C/p1/">
                     <h3>Hexo 快捷鍵整理</h3>
                 </a>
                 <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E7%84%A1%E5%88%86%E9%A1%9E/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            無分類
+                        </a>
+                    </span>
                     
                     
                 </div>
@@ -279,10 +259,19 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/5/28</div>
-                <a href="/2023/05/28/%E5%8D%8A%E5%B0%8E%E9%AB%94%E8%A3%BD%E7%A8%8B%E5%B0%8E%E8%AB%96_/">
+                <a href="/2023/05/28/%E5%B7%A5%E7%A7%91/%E5%8D%8A%E5%B0%8E%E9%AB%94%E8%A3%BD%E7%A8%8B%E5%B0%8E%E8%AB%96_/">
                     <h3>&lt;半導體製程導論&gt;</h3>
                 </a>
                 <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E5%B7%A5%E7%A7%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            工科
+                        </a>
+                    </span>
                     
                     
                 </div>
@@ -293,17 +282,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/5/28</div>
-                <a href="/2023/05/28/OOP&classes/">
+                <a href="/2023/05/28/%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/OOP&classes/">
                     <h3>OOP &amp; Classes 相關功能整理</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/Python/">
+                        <a href="/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            Python
+                            程式設計
                         </a>
                     </span>
                     
@@ -315,17 +304,12 @@
                         
                         <span class="tag">
                             
-                            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ff7d73">期末考</a>
+                            <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #00a596">課堂筆記</a>
                         </span>
                         
                         <span class="tag">
                             
-                            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #ff7d73">講義</a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Python/" style="color: #00a596">Python</a>
+                            <a href="/tags/Python/" style="color: #03a9f4">Python</a>
                         </span>
                         
                     </span>
@@ -338,17 +322,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/5/28</div>
-                <a href="/2023/05/28/SymPysum/">
+                <a href="/2023/05/28/%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/SymPysum/">
                     <h3>SymPy 相關功能整理</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/Python/">
+                        <a href="/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            Python
+                            程式設計
                         </a>
                     </span>
                     
@@ -360,12 +344,7 @@
                         
                         <span class="tag">
                             
-                            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #00bcd4">期末考</a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #00bcd4">講義</a>
+                            <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #ff7d73">課堂筆記</a>
                         </span>
                         
                         <span class="tag">
@@ -383,17 +362,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/5/28</div>
-                <a href="/2023/05/28/Matplotlibsum/">
+                <a href="/2023/05/28/%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/Matplotlibsum/">
                     <h3>Matplotlib 相關功能整理</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/Python/">
+                        <a href="/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            Python
+                            程式設計
                         </a>
                     </span>
                     
@@ -405,17 +384,12 @@
                         
                         <span class="tag">
                             
-                            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ffa2c4">期末考</a>
+                            <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #ff7d73">課堂筆記</a>
                         </span>
                         
                         <span class="tag">
                             
-                            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #00a596">講義</a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Python/" style="color: #03a9f4">Python</a>
+                            <a href="/tags/Python/" style="color: #ffa2c4">Python</a>
                         </span>
                         
                     </span>
@@ -428,17 +402,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/5/29</div>
-                <a href="/2023/05/29/NumPysum/">
+                <a href="/2023/05/29/%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/NumPysum/">
                     <h3>NumPy 相關功能整理</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/Python/">
+                        <a href="/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            Python
+                            程式設計
                         </a>
                     </span>
                     
@@ -450,17 +424,12 @@
                         
                         <span class="tag">
                             
-                            <a href="/tags/%E6%9C%9F%E6%9C%AB%E8%80%83/" style="color: #ff7d73">期末考</a>
+                            <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #00bcd4">課堂筆記</a>
                         </span>
                         
                         <span class="tag">
                             
-                            <a href="/tags/%E8%AC%9B%E7%BE%A9/" style="color: #ff7d73">講義</a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Python/" style="color: #00bcd4">Python</a>
+                            <a href="/tags/Python/" style="color: #ff7d73">Python</a>
                         </span>
                         
                     </span>
@@ -473,32 +442,20 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/5/30</div>
-                <a href="/2023/05/30/test/">
+                <a href="/2023/05/30/%E9%9B%9C/test/">
                     <h3>試試就逝世的擴充套件測試空白頁</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/%E9%9B%9C%E7%89%A9/">
+                        <a href="/categories/%E7%84%A1%E5%88%86%E9%A1%9E/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            雜物
+                            無分類
                         </a>
                     </span>
                     
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/%E6%B8%AC%E8%A9%A6/" style="color: #ff7d73">測試</a>
-                        </span>
-                        
-                    </span>
                     
                 </div>
             </div>
@@ -508,17 +465,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/6/11</div>
-                <a href="/2023/06/11/aviutl/">
+                <a href="/2023/06/11/%E9%9B%9C/aviutl/">
                     <h3>Aviutl</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/%E8%BB%9F%E4%BB%B6%E5%AE%89%E8%A3%9D/">
+                        <a href="/categories/%E7%84%A1%E5%88%86%E9%A1%9E/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            軟件安裝
+                            無分類
                         </a>
                     </span>
                     
@@ -530,7 +487,7 @@
                         
                         <span class="tag">
                             
-                            <a href="/tags/Aviutl/" style="color: #ff7d73">Aviutl</a>
+                            <a href="/tags/Aviutl-%E8%BB%9F%E4%BB%B6%E5%AE%89%E8%A3%9D/" style="color: #03a9f4">Aviutl 軟件安裝</a>
                         </span>
                         
                     </span>
@@ -543,17 +500,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/7/17</div>
-                <a href="/2023/07/17/R%E8%AA%9E%E8%A8%80Day1/">
+                <a href="/2023/07/17/%E6%95%B8%E7%90%86%E5%8C%96/%E6%95%B8%E7%B5%B1/R%E8%AA%9E%E8%A8%80Day1/">
                     <h3>資料框整理技巧</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/%E4%B8%83%E6%9C%88%E7%9A%84%E6%96%99/">
+                        <a href="/categories/%E6%95%B8%E7%90%86%E5%8C%96/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            七月的料
+                            數理化
                         </a>
                     </span>
                     
@@ -565,7 +522,7 @@
                         
                         <span class="tag">
                             
-                            <a href="/tags/R%E8%AA%9E%E8%A8%80/" style="color: #ffa2c4">R語言</a>
+                            <a href="/tags/R%E8%AA%9E%E8%A8%80/" style="color: #ff7d73">R語言</a>
                         </span>
                         
                     </span>
@@ -578,17 +535,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/9/23</div>
-                <a href="/2023/09/23/Biology_RAAS/">
+                <a href="/2023/09/23/%E7%94%9F%E9%86%AB/Biology_RAAS/">
                     <h3>腎素-血管收縮素-醛固酮系統 (RAAS)</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/Biology/">
+                        <a href="/categories/%E7%94%9F%E9%86%AB/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            Biology
+                            生醫
                         </a>
                     </span>
                     
@@ -601,17 +558,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/9/24</div>
-                <a href="/2023/09/24/Biology_immune_system/">
+                <a href="/2023/09/24/%E7%94%9F%E9%86%AB/Biology_immune_system/">
                     <h3>免疫系統全貌 (Immune system)</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/Biology/">
+                        <a href="/categories/%E7%94%9F%E9%86%AB/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            Biology
+                            生醫
                         </a>
                     </span>
                     
@@ -624,17 +581,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/9/25</div>
-                <a href="/2023/09/25/Biology_plants/">
+                <a href="/2023/09/25/%E7%94%9F%E9%86%AB/Biology_plants/">
                     <h3>Plants</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/Biology/">
+                        <a href="/categories/%E7%94%9F%E9%86%AB/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            Biology
+                            生醫
                         </a>
                     </span>
                     
@@ -647,17 +604,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2023/9/25</div>
-                <a href="/2023/09/25/Biology_Receptor_binding_and_signal_transduction/">
+                <a href="/2023/09/25/%E7%94%9F%E9%86%AB/Biology_Receptor_binding_and_signal_transduction/">
                     <h3>Receptor binding and signal transduction</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/Biology/">
+                        <a href="/categories/%E7%94%9F%E9%86%AB/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            Biology
+                            生醫
                         </a>
                     </span>
                     
@@ -670,17 +627,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2024/6/13</div>
-                <a href="/2024/06/13/NS1/">
+                <a href="/2024/06/13/%E7%94%9F%E9%86%AB/NS1/">
                     <h3>生理學介紹</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/Biology/">
+                        <a href="/categories/%E7%94%9F%E9%86%AB/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            Biology
+                            生醫
                         </a>
                     </span>
                     
@@ -693,17 +650,85 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2024/6/15</div>
-                <a href="/2024/06/15/Statistic1/">
+                <a href="/2024/06/15/%E6%95%B8%E7%90%86%E5%8C%96/%E6%95%B8%E7%B5%B1/Statistic1/">
                     <h3>統計學(一)</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/%E7%AD%86%E8%A8%98/">
+                        <a href="/categories/%E6%95%B8%E7%90%86%E5%8C%96/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            筆記
+                            數理化
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/LaTeX/" style="color: #00bcd4">LaTeX</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Statistics/" style="color: #03a9f4">Statistics</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #03a9f4">課堂筆記</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="神經科學概論(2)">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2024/6/23</div>
+                <a href="/2024/06/23/%E7%94%9F%E9%86%AB/NS2/">
+                    <h3>神經科學概論(2)</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E7%94%9F%E9%86%AB/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            生醫
+                        </a>
+                    </span>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="統計學(二)">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2024/6/25</div>
+                <a href="/2024/06/25/%E6%95%B8%E7%90%86%E5%8C%96/%E6%95%B8%E7%B5%B1/Statistic2/">
+                    <h3>統計學(二)</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%95%B8%E7%90%86%E5%8C%96/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            數理化
                         </a>
                     </span>
                     
@@ -723,67 +748,9 @@
                             <a href="/tags/Statistics/" style="color: #ff7d73">Statistics</a>
                         </span>
                         
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="神經科學概論(2)">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2024/6/23</div>
-                <a href="/2024/06/23/NS2/">
-                    <h3>神經科學概論(2)</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/Biology/">
-                            <span class="icon">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                            </span>
-                            Biology
-                        </a>
-                    </span>
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="統計學(二)">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2024/6/25</div>
-                <a href="/2024/06/25/Statistic2/">
-                    <h3>統計學(二)</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/%E7%AD%86%E8%A8%98/">
-                            <span class="icon">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                            </span>
-                            筆記
-                        </a>
-                    </span>
-                    
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </span>
-                        
                         <span class="tag">
                             
-                            <a href="/tags/LaTeX/" style="color: #00bcd4">LaTeX</a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Statistics/" style="color: #00bcd4">Statistics</a>
+                            <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #ffa2c4">課堂筆記</a>
                         </span>
                         
                     </span>
@@ -796,17 +763,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2024/6/27</div>
-                <a href="/2024/06/27/Statistic3/">
+                <a href="/2024/06/27/%E6%95%B8%E7%90%86%E5%8C%96/%E6%95%B8%E7%B5%B1/Statistic3/">
                     <h3>統計學(三)</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/%E7%AD%86%E8%A8%98/">
+                        <a href="/categories/%E6%95%B8%E7%90%86%E5%8C%96/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            筆記
+                            數理化
                         </a>
                     </span>
                     
@@ -818,12 +785,17 @@
                         
                         <span class="tag">
                             
-                            <a href="/tags/LaTeX/" style="color: #00a596">LaTeX</a>
+                            <a href="/tags/LaTeX/" style="color: #03a9f4">LaTeX</a>
                         </span>
                         
                         <span class="tag">
                             
-                            <a href="/tags/Statistics/" style="color: #00a596">Statistics</a>
+                            <a href="/tags/Statistics/" style="color: #ffa2c4">Statistics</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #00bcd4">課堂筆記</a>
                         </span>
                         
                     </span>
@@ -836,17 +808,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2024/6/29</div>
-                <a href="/2024/06/29/Statistic4/">
+                <a href="/2024/06/29/%E6%95%B8%E7%90%86%E5%8C%96/%E6%95%B8%E7%B5%B1/Statistic4/">
                     <h3>統計學(四)</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/%E7%AD%86%E8%A8%98/">
+                        <a href="/categories/%E6%95%B8%E7%90%86%E5%8C%96/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            筆記
+                            數理化
                         </a>
                     </span>
                     
@@ -858,12 +830,17 @@
                         
                         <span class="tag">
                             
-                            <a href="/tags/LaTeX/" style="color: #03a9f4">LaTeX</a>
+                            <a href="/tags/LaTeX/" style="color: #ffa2c4">LaTeX</a>
                         </span>
                         
                         <span class="tag">
                             
                             <a href="/tags/Statistics/" style="color: #03a9f4">Statistics</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #00a596">課堂筆記</a>
                         </span>
                         
                     </span>
@@ -876,17 +853,17 @@
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2024/6/30</div>
-                <a href="/2024/06/30/Statistic5/">
+                <a href="/2024/06/30/%E6%95%B8%E7%90%86%E5%8C%96/%E6%95%B8%E7%B5%B1/Statistic5/">
                     <h3>統計學(五)</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/%E7%AD%86%E8%A8%98/">
+                        <a href="/categories/%E6%95%B8%E7%90%86%E5%8C%96/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            筆記
+                            數理化
                         </a>
                     </span>
                     
@@ -898,12 +875,17 @@
                         
                         <span class="tag">
                             
-                            <a href="/tags/LaTeX/" style="color: #03a9f4">LaTeX</a>
+                            <a href="/tags/LaTeX/" style="color: #ff7d73">LaTeX</a>
                         </span>
                         
                         <span class="tag">
                             
-                            <a href="/tags/Statistics/" style="color: #03a9f4">Statistics</a>
+                            <a href="/tags/Statistics/" style="color: #ffa2c4">Statistics</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #00a596">課堂筆記</a>
                         </span>
                         
                     </span>
@@ -912,21 +894,21 @@
             </div>
         </div>
         
-        <div class="timeline" data-title="神經科學概論(2)">
+        <div class="timeline" data-title="神經科學概論(3)">
             <div class="timeline-tail"></div>
             <div class="timeline-content">
                 <div class="item-time">2024/7/4</div>
-                <a href="/2024/07/04/NS3/">
-                    <h3>神經科學概論(2)</h3>
+                <a href="/2024/07/04/%E7%94%9F%E9%86%AB/NS3/">
+                    <h3>神經科學概論(3)</h3>
                 </a>
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/Biology/">
+                        <a href="/categories/%E7%94%9F%E9%86%AB/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            Biology
+                            生醫
                         </a>
                     </span>
                     
@@ -948,15 +930,9 @@
             </span>
             &commat;棉花糖
         </div>
-        <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
-        </div>
         
     </div>
 </footer>
-<!--頁面點擊小紅心-->
-<script type="text/javascript" src="/love.js"></script>
                 </div>
             </transition>
             
@@ -1113,7 +1089,7 @@
 <!-- left side bar.end -->
 
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/hk416_3401/model.json"},"display":{"position":"right","width":300,"height":450},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/hk416_3401/model.json"},"display":{"position":"right","width":300,"height":450},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
     
 </html>
 
