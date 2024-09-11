@@ -69,7 +69,8 @@
         <!-- require JQuery -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
         <!-- require pjax -->
-        <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 
         <script src="./node_modules/pjax/pjax.js"></script>
         <script src="./pjax.min.js"></script>
@@ -87,26 +88,11 @@
         <script>
             var cursor = new MouseFollower();
         </script>
-        <div id="pjax-container">
-                <div class="aplayer" 
-                    data-id="4948519534" 
-                    data-server="netease" 
-                    data-type="playlist" 
-                    data-fixed="true" 
-                    data-autoplay="true"
-                    data-order="random" 
-                    data-volume="0" 
-                    data-theme="#cc543a" 
-                    data-preload="none">
-                    
-                </div>
+        
 
     <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
-<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
-</head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
     <body>
         <div id="layout">
 
@@ -121,6 +107,7 @@
                     <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script> 
                 </div>
             </transition>
+            
             <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <div id="desktop-menu">
         <a class="title" href="/">
@@ -268,17 +255,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/LaTeX/" style="color: #00a596">LaTeX</a>
+                <a href="/tags/LaTeX/" style="color: #ff7d73">LaTeX</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Statistics/" style="color: #00a596">Statistics</a>
+                <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #ffa2c4">課堂筆記</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #ff7d73">課堂筆記</a>
+                <a href="/tags/Statistics/" style="color: #00bcd4">Statistics</a>
             </span>
             
         </span>
@@ -286,9 +273,7 @@
     </div>
     
     <div class="content" v-pre>
-        
-    <div id="aplayer-qmCjVCmy" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="autoplay" data-server="preload:auto" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
-<!-- toc -->
+        <!-- toc -->
 <ul>
 <li><a href="#%E9%9A%A8%E6%A9%9F%E8%AE%8A%E9%87%8F">隨機變量</a>
 <ul>
@@ -521,7 +506,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
             
         </div>
 
-
+        
         <script src="/js/main.js"></script>
         
         
@@ -543,6 +528,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
         <!-- require pjax -->
         <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/index.min.js"></script>
+        
 
         <script src="./node_modules/pjax/pjax.js"></script>
         <script src="./pjax.min.js"></script>
@@ -669,7 +655,65 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 
 <!-- left side bar.end -->
 
+        <!-- require APlayer -->
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    <div style="opacity:0.7">
+        <meting-js
+            server="netease"
+            type="playlist"
+            id="4948519534"
+            fixed="true"
+            volume="0.3"
+            order="random"
+            >
+        </meting-js>
+    </div>
+
+    <script>
+        ap = null
+        Object.defineProperty(document.querySelector('meting-js'),"aplayer",{
+            set: function(aplayer) {
+                ap=aplayer
+                ready();
+            }
+        });
+
+        isRecover = false;
+        function ready(){
+            ap.on('canplay', function () {
+                if(!isRecover){
+                    if(localStorage.getItem("musicIndex") != null){
+                        musicIndex = localStorage.getItem("musicIndex");
+                        musicTime = localStorage.getItem("musicTime");
+                        if(ap.list.index != musicIndex){
+                            ap.list.switch(musicIndex);
+                        }else{
+                            ap.seek(musicTime);
+                            ap.play();
+                            localStorage.clear();
+                            isRecover = true;
+                        }
+                    }else{
+                        isRecover = true;
+                    }
+                }
+            });
+        }
+
+        window.onbeforeunload = function(event) {
+            if(!ap.audio.paused){
+                musicIndex = ap.list.index;
+                musicTime = ap.audio.currentTime;
+                localStorage.setItem("musicIndex",musicIndex);
+                localStorage.setItem("musicTime",musicTime);
+            }
+        };
+    </script>
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"https://cdn.jsdelivr.net/gh/evrstr/live2d-widget-models/live2d_evrstr/hk416_3401/model.json"},"display":{"position":"right","width":300,"height":450},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body>
     
 </html>
