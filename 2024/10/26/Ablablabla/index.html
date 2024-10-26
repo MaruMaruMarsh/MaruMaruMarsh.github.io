@@ -12,7 +12,7 @@
 
 </script>
         <meta charset="utf-8" />
-        <title>棉花糖的小窩</title>
+        <title>紀錄 | 棉花糖的小窩</title>
         <meta name="author" content="棉花糖" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -46,7 +46,8 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
 
 
 <link rel="stylesheet" href="/css/main.css" />
@@ -216,381 +217,70 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        
-        <span class="info">
-            <div class="wrap">
-                <h1>棉花糖的小窩</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
+                    <div class="article">
+
+    <!--pjax：防止跳转页面音乐暂停-->
+    <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    <div>
+        <h1>紀錄</h1>
     </div>
-</div>
-
-<div id="home-posts-wrap"  ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-    
-
-<div class="post">
-    <a href="/2023/05/28/%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/Matplotlibsum/">
-        <h2 class="post-title">Matplotlib 相關功能整理</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                程式設計
-            </a>
-        </span>
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/28
+            2024/10/26
         </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>期末考導向</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #03a9f4">課堂筆記</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Python/" style="color: #00a596">Python</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/28/%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/Matplotlibsum/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/28/%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/SymPysum/">
-        <h2 class="post-title">SymPy 相關功能整理</h2>
-    </a>
-    <div class="category-and-date">
         
         <span class="category">
-            <a href="/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/">
+            <a href="/categories/%E6%95%B8%E7%90%86%E5%8C%96/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                程式設計
+                數理化
             </a>
         </span>
         
-        <span class="date">
+        
+        <span class="tags">
             <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>期末考導向</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #ffa2c4">課堂筆記</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Python/" style="color: #00a596">Python</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/28/%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/SymPysum/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/28/%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/OOP&classes/">
-        <h2 class="post-title">OOP &amp; Classes 相關功能整理</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                程式設計
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>期末考導向</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #ff7d73">課堂筆記</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Python/" style="color: #00bcd4">Python</a>
-        </span>
-        
-    </div>
-    <a href="/2023/05/28/%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E7%9B%B8%E9%97%9C/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/OOP&classes/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/28/%E5%B7%A5%E7%A7%91/%E5%8D%8A%E5%B0%8E%E9%AB%94%E8%A3%BD%E7%A8%8B%E5%B0%8E%E8%AB%96_/">
-        <h2 class="post-title">&lt;半導體製程導論&gt;</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E5%B7%A5%E7%A7%91/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                工科
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>偏考試導向的重點整理啦</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/05/28/%E5%B7%A5%E7%A7%91/%E5%8D%8A%E5%B0%8E%E9%AB%94%E8%A3%BD%E7%A8%8B%E5%B0%8E%E8%AB%96_/" class="go-post">閱讀全文</a>
-</div>
-
-    
-
-<div class="post">
-    <a href="/2023/05/27/%E9%9B%9C/p1/">
-        <h2 class="post-title">Hexo 快捷鍵整理</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E7%84%A1%E5%88%86%E9%A1%9E/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                無分類
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/27
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-
-            
-            <p>不然每次都要找好麻煩</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/05/27/%E9%9B%9C/p1/" class="go-post">閱讀全文</a>
-</div>
-
-
-        <div class="page-current">
-    <div class="prev">
-        
-        <a class="page-num" href="/page/2/">
-            <i class="fa-solid fa-caret-left fa-fw"></i>
-        </a>
-        
-    </div>
-    <div class="page-index">
-        
-        <span>
-            
-            
-            
-            <a class="page-num" href="/">1</a>
-            
-            
-            
-            <a class="page-num" href="/page/2/">2</a>
-        </span>
-        
-        <span class="current">3</span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
-
-    </div>
-    
-    <div id="home-card">
-        <div id="card-div">
-    <div class="card-style">
-        <div class="avatar">
-            <img src="/images/avatar.gif" alt="avatar" />
-        </div>
-        <div class="name">棉花糖</div>
-        
-        <div class="description">
-            <p>期末臨時避難站、<br>寫一些小東西整理or搬筆記。</p>
-
-        </div>
-        
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/MaruMaruMarsh">
-                    <i
-                        class="fa-brands fa-github fa-fw"
-                        
-                    ></i>
-                </a>
+                <i class="fa-solid fa-tags fa-fw"></i>
             </span>
             
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://x.com/Altheaofficin?t=A13pSg0cd7ysrkuL3DGeSA&s=09">
-                    <i
-                        class="fa-brands fa-twitter fa-fw"
-                        
-                    ></i>
-                </a>
+            <span class="tag">
+                
+                <a href="/tags/%E8%AA%B2%E5%A0%82%E7%AD%86%E8%A8%98/" style="color: #00bcd4">課堂筆記</a>
             </span>
             
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCo_rIbAiGNPwY1cZxM1-O9g">
-                    <i
-                        class="fa-brands fa-youtube fa-fw"
-                        
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://steamcommunity.com/profiles/76561198255899261/">
-                    <i
-                        class="fa-brands fa-steam fa-fw"
-                        
-                    ></i>
-                </a>
-            </span>
-            
-        </div>
-        
-        
-        <div class="friend-links">
-            
-        </div>
-        <div data-cursor-img="/images/avaar.jpg">這個咚咚很可愛</div>
+        </span>
         
     </div>
     
-</div>
-
+    <div class="content" v-pre>
+        <blockquote>
+<p>努力看懂天書</p>
+<h2><span id><span id="more"></span></span></h2><h2><span id="bessels-inequality">Bessel’s Inequality</span></h2><h4><span id="theorem">Theorem:</span></h4><p>令 $H$ 為一 Hilbert Space 且 $x\in H$。<br>若 ${e_i}\subset H$ 為一組 orthonormal sequence 則  </p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^{\infty} |\langle x, e_i \rangle|^2 \leq \|x\|^2</script></blockquote>
+<h4><span id="proof">Proof:</span></h4><p>參閱 <a target="_blank" rel="noopener" href="https://ch-hsieh.blogspot.com/2017/05/bessels-inequality.html">Bessel’s Inequality</a></p>
+<h2><span id="parsarals-equality">Parsaral’s equality</span></h2>
     </div>
     
+    
+    
+    
+    
+    
+    
+    
+    
 </div>
-
-
                     <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -619,6 +309,12 @@
 
         
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><!--APlayer的样式-->
