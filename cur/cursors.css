@@ -1,0 +1,9 @@
+body {
+    cursor:url('/cur/normal.ani'),
+          default;
+  }
+  a,
+  link {
+    cursor:url('/cur/link.ani'),
+          default;
+  }

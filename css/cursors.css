@@ -1,0 +1,10 @@
+body {
+    cursor:url('Normal.cur'),
+          auto;
+  }
+  a,
+  link {
+    cursor:url('Link.cur'),
+          default;
+  }
+
