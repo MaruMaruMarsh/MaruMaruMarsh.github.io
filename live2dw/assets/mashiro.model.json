@@ -1,0 +1,13 @@
+{
+  "conf_ver": 1,
+  "type": 0,
+  "model": "mashiro_other-28.moc",
+  "textures": [
+    "texture_00.png",
+    "texture_01.png"
+  ],
+  "physics": "mashiro_other-28.physics.json",
+  "physics_v2": {
+    "file": "mashiro_other-28.physics.json"
+  }
+}
